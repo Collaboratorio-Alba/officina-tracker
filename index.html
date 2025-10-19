@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <title>Officina Tracker - Formazione</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      display: flex;
+      height: 100vh;
+    }
+    aside {
+      width: 260px;
+      background: #343a40;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    aside h2 { margin-bottom: 10px; font-size: 1.1rem; }
+    .filters { flex: 1; overflow-y: auto; }
+    select, input {
+      width: 100%;
+      margin: 8px 0 12px;
+      padding: 6px;
+      border: none;
+      border-radius: 4px;
+    }
+        
+    .view-switch {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .view-switch h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .view-switch button {
+      width: 100%;
+      margin-bottom: 8px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .view-switch button.active {
+      background: #17a2b8;
+    }
+
+    .view-switch button:hover {
+      background: #0056b3;
+    }
+
+    button {
+      padding: 8px 12px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover { background: #0062cc; }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+    th { background: #007bff; color: white; }
+
+    /* Larghezze personalizzate delle colonne */
+    #modules-table th:nth-child(4),
+    #modules-table td:nth-child(4) {
+      min-width: 140px;     /* spazio per il menu a tendina dello stato */
+    }
+
+    #modules-table select.status-select {
+      width: 100%;
+      padding: 4px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 0.9rem;
+    }
+    
+    /* Colonne adattive per qualità e soddisfazione */
+    #modules-table th:nth-child(6),
+    #modules-table td:nth-child(6),
+    #modules-table th:nth-child(7),
+    #modules-table td:nth-child(7) {
+      width: auto;
+      white-space: nowrap;
+    }
+
+    #modules-table select.quality-select,
+    #modules-table select.satisfaction-select {
+      min-width: 85px;
+      width: auto;
+      padding: 3px 5px;
+      font-size: 0.9rem;
+    }
+
+
+    .status-in-progress { color: #ff9800; }
+    .status-completed { color: #28a745; }
+    .status-not-started { color: #6c757d; }
+    .applied-yes { color: #28a745; }
+    .applied-no { color: #dc3545; }
+
+    /* Modale */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal.active { display: flex; }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+    }
+    .modal-content h3 { margin-bottom: 10px; }
+    .modal-content label { display: block; margin-top: 10px; }
+    .modal-content textarea {
+      width: 100%;
+      height: 80px;
+      resize: vertical;
+    }
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 15px;
+    }
+    
+    /* Pulsante hamburger (solo mobile) */
+    .mobile-menu-btn {
+      display: none;
+    }
+
+    /* Responsive layout: sidebar mobile a scomparsa */
+    @media (max-width: 768px) {
+
+      /* Pulsante hamburger */
+      .mobile-menu-btn {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+        background: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 12px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      /* Sidebar trasformata in menu scorrevole */
+      #sidebar {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 240px;
+        height: 100%;
+        background: #343a40;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        z-index: 999;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+      }
+      
+      #sidebar > h2 {
+        margin-top: 60px;
+      }
+
+      #sidebar.open { 
+        left: 0; 
+        }
+
+      /* Filtri e campi ridimensionati ma visibili */
+      .filters label,
+      .filters select,
+      .filters input {
+        font-size: 0.9rem;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      /* Adatta main content e tabella */
+      main {
+        padding: 10px;
+        margin-top: 55px; /* spazio per pulsante hamburger */
+      }
+
+      table { font-size: 0.9rem; }
+    }
+    
+    #module-graph text {
+      font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      paint-order: fill;
+      stroke: none;
+      shape-rendering: optimizeLegibility;
+    }
+    
+    #graph-view {
+      width: 100%;
+      height: calc(100vh - 40px); /* riempie tutta la finestra meno un margine */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f5f5f5;
+      overflow: hidden;
+    }
+
+    #module-graph {
+      width: 100%;
+      height: 100%;
+    }
+
+
+    /* Modalità stampa */
+    @media print {
+      body {
+        flex-direction: column;
+        background: white;
+        color: black;
+      }
+
+      #sidebar,
+      .mobile-menu-btn {
+        display: none !important;      /* nasconde sidebar e pulsante filtri */
+      }
+
+      .modal {
+        display: none !important;      /* nasconde eventuale modale aperto */
+      }
+
+      main {
+        width: 100%;
+        padding: 0;
+      }
+
+      table {
+        box-shadow: none;
+        border: 1px solid #777;
+        font-size: 0.9rem;
+      }
+
+      th {
+        background: #ddd !important;
+        color: #000 !important;
+      }
+
+      td, th {
+        border: 1px solid #777;
+      }
+      
+    }
+
+  </style>
+</head>
+
+<body>
+  <button id="menu-toggle" class="mobile-menu-btn">☰</button>
+  <aside id="sidebar">
+    <h2>Filtri</h2>
+    <div class="filters">
+      <label>Categoria</label>
+      <select id="filter-category">
+        <option value="all">Tutte</option>
+      </select>
+
+      <label>Stato</label>
+      <select id="filter-status">
+        <option value="all">Tutti</option>
+        <option value="completed">Completati</option>
+        <option value="in-progress">In corso</option>
+        <option value="not-started">Da iniziare</option>
+      </select>
+
+      <label>Insegnamento</label>
+      <select id="filter-teaching">
+        <option value="all">Tutti</option>
+      </select>
+
+      <label>Cerca moduli</label>
+      <input type="text" id="search-modules" placeholder="Testo libero...">
+      
+      <label>
+        <input type="checkbox" id="filter-unlocked">
+        Mostra solo moduli sbloccati
+      </label>
+
+    </div>
+    <div class="view-switch">
+      <h3>Vista</h3>
+      <button id="table-view-btn" class="active">Tabella</button>
+      <button id="graph-view-btn">Grafico</button>
+    </div>
+  </aside>
+
+  <main>
+    <h1>Mappa delle conoscenze</h1>
+    <p>Traccia dei progressi e autovalutazioni pratiche.</p>
+
+    <div id="view-container">
+      <div id="table-view">
+        <table id="modules-table">
+          <thead>
+            <tr>
+              <th>Modulo</th>
+              <th>Categoria</th>
+              <th>Insegnamento</th>
+              <th>Stato</th>
+              <th>Praticato</th>
+              <th>Risultato</th>
+              <th>Soddisfazione</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="graph-view" style="display:none;">
+        <svg id="module-graph" width="100%"></svg>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modale Valutazione -->
+  <div id="assessment-modal" class="modal">
+    <div class="modal-content">
+      <h3>Valutazione pratica</h3>
+      <form id="assessment-form">
+        <input type="hidden" id="module-id">
+        <label>Apprendimento applicato in pratica:
+          <input type="checkbox" id="practical-applied">
+        </label>
+
+        <label>Risultato:
+          <select id="result-quality">
+            <option value="-">-</option>
+            <option value="1">Scarso</option>
+            <option value="2">Basso</option>
+            <option value="3">Medio</option>
+            <option value="4">Buono</option>
+            <option value="5">Ottimo</option>
+          </select>
+        </label>
+
+        <label>Soddisfazione:
+          <select id="satisfaction-level">
+            <option value="-">-</option>
+            <option value="1">Scarsa</option>
+            <option value="2">Sufficiente</option>
+            <option value="3">Buona</option>
+            <option value="4">Ottima</option>
+            <option value="5">Eccellente</option>
+          </select>
+        </label>
+
+
+        <label>Note:</label>
+        <textarea id="assessment-notes"></textarea>
+
+        <div class="actions">
+          <button type="button" id="cancel-btn">Annulla</button>
+          <button type="submit" id="save-btn">Salva</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="./js/app.js"></script>
+  <script type="module">
+  import AssessmentManager from './js/database/assessment-manager.js';
+  import ProgressManager from './js/database/progress-manager.js';
+  import ModuleManager from './js/database/module-manager.js';
+  import db from './js/database/db-config.js';
+
+  const tableBody = document.querySelector('#modules-table tbody');
+
+  // Popola opzioni filtro per categoria e insegnamento
+  async function populateFilters() {
+    const selectTeaching = document.getElementById('filter-teaching');
+    const selectCategory = document.getElementById('filter-category');
+    selectTeaching.innerHTML = '<option value="all">Tutti</option>';
+    selectCategory.innerHTML = '<option value="all">Tutte</option>';
+    const modules = await db.modules.toArray();
+    const areas = [...new Set(modules.map(m => m.teachingArea).filter(a => a))];
+    const categories = [...new Set(modules.map(m => m.category).filter(c => c))];
+    areas.forEach(a => {
+      const opt = document.createElement('option');
+      opt.value = a; opt.textContent = a;
+      selectTeaching.appendChild(opt);
+    });
+    categories.forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = c; opt.textContent = c;
+      selectCategory.appendChild(opt);
+    });
+  }
+
+  // Funzione principale di render con editing inline
+  let renderingInProgress = false; // blocca doppi render
+
+  async function renderModules() {
+    if (renderingInProgress) return;  // previene doppi richiami sovrapposti
+    renderingInProgress = true;
+
+    // Pulisce la tabella
+    tableBody.innerHTML = '';
+
+    const fCategory = document.getElementById('filter-category').value;
+    const fStatus = document.getElementById('filter-status').value;
+    const fTeaching = document.getElementById('filter-teaching').value;
+    const query = document.getElementById('search-modules').value.toLowerCase().trim();
+    const showOnlyUnlocked = document.getElementById('filter-unlocked').checked;
+
+    const [modules, progress, assessments, dependencies] = await Promise.all([
+      db.modules.toArray(),
+      db.progress.toArray(),
+      db.assessments.toArray(),
+      db.dependencies.toArray()
+    ]);
+
+    const pMap = new Map(progress.map(p => [p.moduleId, p]));
+    const aMap = new Map(assessments.map(a => [a.moduleId, a]));
+
+    const filteredModules = modules.filter(m => {
+      const p = pMap.get(m.id);
+      const status = p?.status ?? 'not-started';
+
+      const matchCategory =
+        fCategory === 'all' ||
+        (m.category && m.category.toLowerCase().trim() === fCategory.toLowerCase().trim());
+      const matchTeaching =
+        fTeaching === 'all' ||
+        (m.teachingArea && m.teachingArea.toLowerCase().trim() === fTeaching.toLowerCase().trim());
+      const matchStatus = fStatus === 'all' || status === fStatus;
+      const matchQuery = !query || m.title.toLowerCase().includes(query);
+
+      if (!matchCategory || !matchTeaching || !matchStatus || !matchQuery) return false;
+
+      if (showOnlyUnlocked) {
+        const prereqs = dependencies.filter(d => d.moduleId === m.id).map(d => d.prerequisiteId);
+        if (prereqs.length > 0) {
+          const allDone = prereqs.every(pid => {
+            const pr = progress.find(p => p.moduleId === pid);
+            return pr && pr.status === 'completed';
+          });
+          if (!allDone) return false;
+        }
+      }
+
+      return true;
+    });
+
+    // Costruisce righe
+    for (const m of filteredModules) {
+      const p = pMap.get(m.id);
+      const a = aMap.get(m.id);
+      const status = p?.status ?? 'not-started';
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${
+          m.link
+            ? '<a href="' + m.link + '" target="_blank" class="module-link">' + m.title + '</a>'
+            : m.title
+        }</td>
+        <td>${m.category}</td>
+        <td>${m.teachingArea ?? '-'}</td>
+        <td>
+          <select class="status-select" data-id="${m.id}">
+            <option value="not-started" ${status === 'not-started' ? 'selected' : ''}>Da iniziare</option>
+            <option value="in-progress" ${status === 'in-progress' ? 'selected' : ''}>In corso</option>
+            <option value="completed" ${status === 'completed' ? 'selected' : ''}>Completato</option>
+          </select>
+        </td>
+        <td>
+          <input type="checkbox" class="applied-check" data-id="${m.id}" ${a?.practicalApplied ? 'checked' : ''}>
+        </td>
+        <td>
+          <select class="quality-select" data-id="${m.id}">
+            <option value="-">-</option>
+            <option value="1" ${a?.resultQuality == 1 ? 'selected' : ''}>Scarso</option>
+            <option value="2" ${a?.resultQuality == 2 ? 'selected' : ''}>Basso</option>
+            <option value="3" ${a?.resultQuality == 3 ? 'selected' : ''}>Medio</option>
+            <option value="4" ${a?.resultQuality == 4 ? 'selected' : ''}>Buono</option>
+            <option value="5" ${a?.resultQuality == 5 ? 'selected' : ''}>Ottimo</option>
+          </select>
+        </td>
+        <td>
+          <select class="satisfaction-select" data-id="${m.id}">
+            <option value="-">-</option>
+            <option value="1" ${a?.satisfactionLevel == 1 ? 'selected' : ''}>Scarsa</option>
+            <option value="2" ${a?.satisfactionLevel == 2 ? 'selected' : ''}>Bassa</option>
+            <option value="3" ${a?.satisfactionLevel == 3 ? 'selected' : ''}>Media</option>
+            <option value="4" ${a?.satisfactionLevel == 4 ? 'selected' : ''}>Buona</option>
+            <option value="5" ${a?.satisfactionLevel == 5 ? 'selected' : ''}>Ottima</option>
+          </select>
+        </td>
+      `;
+      tableBody.appendChild(tr);
+    }
+
+    // Listener inline
+    tableBody.querySelectorAll('.status-select').forEach(sel => {
+      sel.addEventListener('change', async e => {
+        const id = Number(e.target.dataset.id);
+        const val = e.target.value;
+        await ProgressManager.updateProgress(id, val, {});
+        await renderModules();
+      });
+    });
+
+    tableBody.querySelectorAll('.applied-check').forEach(chk => {
+      chk.addEventListener('change', async e => {
+        const id = Number(e.target.dataset.id);
+        let a = await db.assessments.where('moduleId').equals(id).first();
+        if (!a) a = { moduleId: id, progressId: id };
+        a.practicalApplied = e.target.checked;
+        await AssessmentManager.upsertAssessment(id, id, a);
+        await renderModules();
+      });
+    });
+
+    ['quality', 'satisfaction'].forEach(type => {
+      tableBody.querySelectorAll(`.${type}-select`).forEach(sel => {
+        sel.addEventListener('change', async e => {
+          const id = Number(e.target.dataset.id);
+          const val = e.target.value === '-' ? null : Number(e.target.value);
+          let a = await db.assessments.where('moduleId').equals(id).first();
+          if (!a) a = { moduleId: id, progressId: id };
+          if (type === 'quality') a.resultQuality = val;
+          else a.satisfactionLevel = val;
+          await AssessmentManager.upsertAssessment(id, id, a);
+          await renderModules();
+        });
+      });
+    });
+
+    renderingInProgress = false; // sblocco sempre a fine
+  }
+
+
+
+  async function renderGraph() {
+      // Corretto l'ID dell'SVG
+      const svg = d3.select("#module-graph");
+      svg.selectAll("*").remove();
+      
+      // Definisce il marker freccia visibile
+      const defs = svg.append("defs");
+
+      defs.append("marker")
+        .attr("id", "arrowhead")
+        .attr("viewBox", "0 -3 10 6")  // area visibile corretta
+        .attr("refX", 30)              // distanza dal centro del rettangolo, regola in base a width
+        .attr("refY", 0)
+        .attr("markerWidth", 6)
+        .attr("markerHeight", 6)
+        .attr("orient", "auto")
+        .append("path")
+        .attr("d", "M0,-3L10,0L0,3")   // triangolo standard
+        .attr("fill", "#555")
+        .attr("opacity", 0.9);
+
+
+      // Calcolo dimensioni sicure (fallback numerico nel caso di width="100%")
+      const width = svg.node()?.clientWidth || 900;
+      const height = +svg.attr("height") || 600;
+
+      const showOnlyUnlocked = document.getElementById("filter-unlocked")?.checked;
+      const fCategory = document.getElementById("filter-category")?.value || "all";
+      const fTeaching = document.getElementById("filter-teaching")?.value || "all";
+      const fStatus = document.getElementById("filter-status")?.value || "all";
+      const query = document.getElementById("search-modules")?.value.toLowerCase() ?? "";
+
+      const modules = await db.modules.toArray();
+      const progress = await db.progress.toArray();
+      const dependencies = await db.dependencies.toArray();
+
+      const pMap = new Map(progress.map(p => [p.moduleId, p]));
+      const completedModules = progress
+          .filter(p => p.status === "completed")
+          .map(p => p.moduleId);
+
+      // FILTRO coerente con renderModules()
+      const filteredModules = modules.filter(m => {
+          const p = pMap.get(m.id);
+          const status = p?.status ?? "not-started";
+
+          if (fCategory !== "all" && m.category !== fCategory) return false;
+          if (fTeaching !== "all" && m.teachingArea !== fTeaching) return false;
+          if (fStatus !== "all" && status !== fStatus) return false;
+          if (query && !m.title.toLowerCase().includes(query)) return false;
+
+          if (showOnlyUnlocked) {
+              const prereqs = dependencies
+                  .filter(d => d.moduleId === m.id)
+                  .map(d => d.prerequisiteId);
+              if (prereqs.length > 0) {
+                  const allPreDone = prereqs.every(id => completedModules.includes(id));
+                  if (!allPreDone) return false;
+              }
+          }
+          return true;
+      });
+
+      // COSTRUZIONE nodi e link del grafo
+      const nodes = filteredModules.map(m => ({
+          id: m.id,
+          title: m.title,
+          status: pMap.get(m.id)?.status ?? "not-started",
+      }));
+
+      const links = dependencies
+          .filter(d =>
+              filteredModules.some(m => m.id === d.moduleId) &&
+              filteredModules.some(m => m.id === d.prerequisiteId)
+          )
+          .map(d => ({ source: d.prerequisiteId, target: d.moduleId }));
+
+      const colorScale = d3.scaleOrdinal()
+          .domain(["not-started", "in-progress", "completed"])
+          .range(["#cccccc", "#ffe082", "#81c784"]);
+
+      // Usa let o assegna nuovi nomi per evitare conflitti
+      let svgWidth = document.getElementById("graph-view").clientWidth;
+      let svgHeight = document.getElementById("graph-view").clientHeight;
+
+      const simulation = d3.forceSimulation(nodes)
+        .force("link", d3.forceLink(links).id(d => d.id).distance(150))
+        .force("charge", d3.forceManyBody().strength(-300))
+        .force("center", d3.forceCenter(svgWidth / 2, svgHeight / 2));
+
+
+      const link = svg.append("g")
+        .attr("stroke", "#666")
+        .attr("stroke-opacity", 0.7)
+        .attr("stroke-width", 1.4)
+        .lower() // mette le linee sotto i nodi
+        .selectAll("line")
+        .data(links)
+        .join("line")
+        .attr("marker-end", "url(#arrowhead)");
+
+      const node = svg.append("g")
+          .selectAll("circle")
+          .data(nodes)
+          .join("circle")
+          .attr("r", 18)
+          .attr("fill", d => colorScale(d.status))
+          .call(drag(simulation));
+
+      const labels = svg.append("g")
+          .selectAll("text")
+          .data(nodes)
+          .join("text")
+          .attr("text-anchor", "middle")
+          .attr("dy", 4)
+          .attr("font-size", 11)
+          .text(d => d.title);
+
+      simulation.on("tick", () => {
+          link
+              .attr("x1", d => d.source.x)
+              .attr("y1", d => d.source.y)
+              .attr("x2", d => d.target.x)
+              .attr("y2", d => d.target.y);
+          node
+              .attr("cx", d => d.x)
+              .attr("cy", d => d.y);
+          labels
+              .attr("x", d => d.x)
+              .attr("y", d => d.y + 25);
+      });
+
+      function drag(sim) {
+          function dragstarted(event, d) {
+              if (!event.active) sim.alphaTarget(0.3).restart();
+              d.fx = d.x;
+              d.fy = d.y;
+          }
+          function dragged(event, d) {
+              d.fx = event.x;
+              d.fy = event.y;
+          }
+          function dragended(event, d) {
+              if (!event.active) sim.alphaTarget(0);
+              d.fx = null;
+              d.fy = null;
+          }
+          return d3.drag()
+              .on("start", dragstarted)
+              .on("drag", dragged)
+              .on("end", dragended);
+      }
+  }
+
+
+
+  // Collega eventi ai filtri
+  ['filter-category','filter-status','filter-teaching','search-modules','filter-unlocked']
+    .forEach(id => {
+      document.getElementById(id).addEventListener('input', async () => {
+        if (document.getElementById('graph-view').style.display === 'block') {
+          await renderGraph();
+        } else {
+          await renderModules();
+        }
+      });
+    });
+
+
+  // Inizializzazione
+  await populateFilters();
+  await renderModules();
+  
+  const tableBtn = document.getElementById('table-view-btn');
+  const graphBtn = document.getElementById('graph-view-btn');
+  const graphView = document.getElementById('graph-view');
+  const tableView = document.getElementById('table-view');
+
+  tableBtn.addEventListener('click', async () => {
+    graphView.style.display = 'none';
+    tableView.style.display = 'block';
+    tableBtn.classList.add('active');
+    graphBtn.classList.remove('active');
+    await renderModules(); // forza aggiornamento coerente ai filtri
+  });
+
+  graphBtn.addEventListener('click', async () => {
+    graphView.style.display = 'block';
+    tableView.style.display = 'none';
+    graphBtn.classList.add('active');
+    tableBtn.classList.remove('active');
+    await renderGraph(); // forza aggiornamento coerente ai filtri
+  });
+
+
+  document.getElementById('filter-unlocked').addEventListener('change', renderModules);
+
+  // Gestione apertura/chiusura menu mobile
+  const sidebar = document.getElementById('sidebar');
+  const menuBtn = document.getElementById('menu-toggle');
+
+  menuBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    sidebar.classList.toggle('open');
+  });
+
+  // Chiudi sidebar cliccando fuori
+  document.addEventListener('click', e => {
+    const clickInsideSidebar = sidebar.contains(e.target);
+    const clickOnButton = e.target === menuBtn;
+    if (!clickInsideSidebar && !clickOnButton && sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+    }
+  });
+  </script>
+
+</body>
+</html>

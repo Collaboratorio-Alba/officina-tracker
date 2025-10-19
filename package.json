@@ -1,0 +1,27 @@
+{
+  "name": "officina-tracker",
+  "version": "1.0.0",
+  "description": "Sistema di tracciamento moduli formativi per ciclofficina popolare",
+  "type": "module",
+  "main": "js/app.js",
+  "scripts": {
+    "dev": "npx http-server -p 8080 -o",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ciclofficina",
+    "officina",
+    "training",
+    "tracker",
+    "bicycle",
+    "skills"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dexie": "^4.0.11"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
