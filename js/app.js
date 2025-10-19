@@ -45,13 +45,32 @@ async function initApp() {
  */
 async function loadSampleData() {
   try {
-    // Importa dati di esempio
-    const response = await fetch('./js/data/sample-modules.json');
-    const sampleModules = await response.json();
-
+    // Importa struttura completa dei corsi
+    const response = await fetch('./js/data/courses-structure.json');
+    const courseData = await response.json();
+    
     // Importa moduli
-    await ModuleManager.bulkImportModules(sampleModules);
-    console.log(`✅ Importati ${sampleModules.length} moduli di esempio`);
+    await ModuleManager.bulkImportModules(courseData.modules);
+    console.log(`✅ Importati ${courseData.modules.length} moduli`);
+    
+    // Crea dipendenze dai dati JSON
+    const modules = await db.modules.toArray();
+    const moduleMap = new Map(modules.map(m => [m.code, m.id]));
+    
+    let dependencyCount = 0;
+    for (const dependency of courseData.dependencies) {
+      const moduleId = moduleMap.get(dependency.moduleCode);
+      const prerequisiteId = moduleMap.get(dependency.prerequisiteCode);
+      
+      if (moduleId && prerequisiteId) {
+        await DependencyManager.addDependency(moduleId, prerequisiteId, dependency.type);
+        dependencyCount++;
+      } else {
+        console.warn(`⚠️ Dipendenza non creata: ${dependency.moduleCode} -> ${dependency.prerequisiteCode}`);
+      }
+    }
+    
+    console.log(`✅ Create ${dependencyCount} dipendenze`);
     
   } catch (error) {
     console.error('❌ Errore caricamento dati di esempio:', error);

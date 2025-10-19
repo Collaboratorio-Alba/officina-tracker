@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -8,26 +9,101 @@
   <script src="https://d3js.org/d3.v7.min.js"></script>
 
   <style>
+    /* CSS Variables for Theme System */
+    :root {
+      /* Primary Colors */
+      --primary-purple: #8000E5;
+      --primary-yellow: #FFDA00;
+      
+      /* Grayscale */
+      --black: #000000;
+      --gray-90: #1A1A1A;
+      --gray-80: #333333;
+      --gray-70: #4D4D4D;
+      --gray-60: #666666;
+      --gray-50: #808080;
+      --gray-40: #999999;
+      --gray-30: #B3B3B3;
+      --gray-20: #CCCCCC;
+      --gray-10: #E6E6E6;
+      --gray-5: #F2F2F2;
+      --white: #FFFFFF;
+      
+      /* Theme Colors - Light (Default) */
+      --bg-primary: var(--white);
+      --bg-secondary: var(--gray-5);
+      --bg-sidebar: var(--gray-90);
+      --bg-table-header: var(--primary-purple);
+      --bg-graph: var(--gray-5);
+      --text-primary: var(--gray-90);
+      --text-secondary: var(--gray-60);
+      --text-sidebar: var(--white);
+      --text-table-header: var(--white);
+      --border-primary: var(--gray-20);
+      --border-secondary: var(--gray-10);
+      --accent-primary: var(--primary-purple);
+      --accent-secondary: var(--primary-yellow);
+      --status-completed: #28a745;
+      --status-in-progress: var(--primary-yellow);
+      --status-not-started: var(--gray-40);
+      --shadow: rgba(0,0,0,0.1);
+    }
+
+    /* Dark Theme */
+    [data-theme="dark"] {
+      --bg-primary: var(--gray-90);
+      --bg-secondary: var(--gray-80);
+      --bg-sidebar: var(--black);
+      --bg-table-header: var(--primary-purple);
+      --bg-graph: var(--gray-80);
+      --text-primary: var(--white);
+      --text-secondary: var(--gray-30);
+      --text-sidebar: var(--white);
+      --text-table-header: var(--white);
+      --border-primary: var(--gray-70);
+      --border-secondary: var(--gray-60);
+      --accent-primary: var(--primary-purple);
+      --accent-secondary: var(--primary-yellow);
+      --status-completed: #28a745;
+      --status-in-progress: var(--primary-yellow);
+      --status-not-started: var(--gray-50);
+      --shadow: rgba(0,0,0,0.3);
+    }
+
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #f5f7fa;
-      color: #333;
+      background: var(--bg-primary);
+      color: var(--text-primary);
       display: flex;
       height: 100vh;
+      min-height: 500px; /* Minimum height to prevent sidebar overflow */
     }
     aside {
       width: 260px;
-      background: #343a40;
-      color: #fff;
+      background: var(--bg-sidebar);
+      color: var(--text-sidebar);
       display: flex;
       flex-direction: column;
       padding: 20px;
+      min-height: 100vh;
+      overflow-y: auto; /* Enable scrolling when content overflows */
+    }
+    
+    .sidebar-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      overflow-y: auto;
     }
     aside h2 { margin-bottom: 10px; font-size: 1.1rem; }
-    .filters { flex: 1; overflow-y: auto; }
+    .filters {
+      flex-shrink: 0; /* Prevent filters from shrinking */
+      overflow-y: visible; /* Keep filters fully visible */
+      min-height: 200px; /* Ensure filters section has minimum height */
+    }
     select, input {
       width: 100%;
       margin: 8px 0 12px;
@@ -40,19 +116,20 @@
       margin-top: 10px;
       padding-top: 10px;
       border-top: 1px solid rgba(255,255,255,0.2);
+      flex-shrink: 0; /* Prevent view switch from shrinking */
     }
 
     .view-switch h3 {
       font-size: 1rem;
       margin-bottom: 6px;
-      color: #fff;
+      color: var(--text-sidebar);
     }
 
     .view-switch button {
       width: 100%;
       margin-bottom: 8px;
-      background: #007bff;
-      color: #fff;
+      background: var(--accent-primary);
+      color: var(--text-table-header);
       border: none;
       border-radius: 4px;
       padding: 8px;
@@ -60,22 +137,104 @@
     }
 
     .view-switch button.active {
-      background: #17a2b8;
+      background: var(--accent-secondary);
+      color: var(--black);
     }
 
     .view-switch button:hover {
-      background: #0056b3;
+      background: var(--gray-70);
+      color: var(--white);
+    }
+
+    .theme-switch {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      flex-shrink: 0; /* Prevent theme switch from shrinking */
+    }
+
+    .theme-switch h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--text-sidebar);
+    }
+
+    .theme-switch button {
+      width: 100%;
+      margin-bottom: 8px;
+      background: var(--accent-primary);
+      color: var(--text-table-header);
+      border: none;
+      border-radius: 4px;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .theme-switch button.active {
+      background: var(--accent-secondary);
+      color: var(--black);
+    }
+
+    .theme-switch button:hover {
+      background: var(--gray-70);
+      color: var(--white);
+    }
+
+    .backup-section {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      flex-shrink: 0; /* Prevent backup section from shrinking */
+      overflow-y: auto; /* Allow backup section to scroll if needed */
+    }
+
+    .backup-section h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: var(--text-sidebar);
+    }
+
+    .backup-section button {
+      width: 100%;
+      margin-bottom: 8px;
+      background: var(--status-completed);
+      color: var(--text-table-header);
+      border: none;
+      border-radius: 4px;
+      padding: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .backup-section button:hover {
+      background: var(--gray-70);
+    }
+
+    .backup-section button:nth-child(3) {
+      background: var(--accent-primary);
+    }
+
+    .backup-section button:nth-child(3):hover {
+      background: var(--gray-70);
+    }
+
+    .backup-section button:nth-child(4) {
+      background: var(--gray-60);
+    }
+
+    .backup-section button:nth-child(4):hover {
+      background: var(--gray-70);
     }
 
     button {
       padding: 8px 12px;
-      background: #007bff;
-      color: #fff;
+      background: var(--accent-primary);
+      color: var(--text-table-header);
       border: none;
       border-radius: 4px;
       cursor: pointer;
     }
-    button:hover { background: #0062cc; }
+    button:hover { background: var(--gray-70); }
 
     main {
       flex: 1;
@@ -85,16 +244,16 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      background: white;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background: var(--bg-primary);
+      box-shadow: 0 2px 6px var(--shadow);
     }
     th, td {
       padding: 10px;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid var(--border-primary);
       text-align: left;
       font-size: 0.95rem;
     }
-    th { background: #007bff; color: white; }
+    th { background: var(--bg-table-header); color: var(--text-table-header); }
 
     /* Larghezze personalizzate delle colonne */
     #modules-table th:nth-child(4),
@@ -106,7 +265,7 @@
       width: 100%;
       padding: 4px;
       border-radius: 4px;
-      border: 1px solid #ccc;
+      border: 1px solid var(--border-primary);
       font-size: 0.9rem;
     }
     
@@ -127,12 +286,120 @@
       font-size: 0.9rem;
     }
 
+    /* Module details sidebar */
+    #module-details-sidebar {
+      width: 320px;
+      background: var(--bg-primary);
+      border-left: 1px solid var(--border-primary);
+      padding: 20px;
+      overflow-y: auto;
+      box-shadow: -2px 0 6px var(--shadow);
+    }
 
-    .status-in-progress { color: #ff9800; }
-    .status-completed { color: #28a745; }
-    .status-not-started { color: #6c757d; }
-    .applied-yes { color: #28a745; }
+    #module-details-sidebar.hidden {
+      display: none;
+    }
+
+    .module-details-header {
+      border-bottom: 2px solid var(--accent-primary);
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+
+    .module-details-header h2 {
+      color: var(--accent-primary);
+      margin-bottom: 8px;
+    }
+
+    .module-details-header .module-code {
+      background: var(--bg-secondary);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .module-details-section {
+      margin-bottom: 20px;
+    }
+
+    .module-details-section h3 {
+      color: var(--text-primary);
+      font-size: 1rem;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--border-primary);
+      padding-bottom: 5px;
+    }
+
+    .module-details-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .module-details-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-secondary);
+    }
+
+    .module-details-list li:last-child {
+      border-bottom: none;
+    }
+
+    .module-details-badge {
+      display: inline-block;
+      background: var(--bg-secondary);
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      margin-right: 8px;
+      margin-bottom: 4px;
+    }
+
+    .module-details-badge.primary {
+      background: var(--accent-primary);
+      color: var(--white);
+    }
+
+    .module-details-badge.success {
+      background: var(--status-completed);
+      color: var(--white);
+    }
+
+    .module-details-badge.warning {
+      background: var(--status-in-progress);
+      color: var(--black);
+    }
+
+    .module-details-badge.info {
+      background: var(--accent-primary);
+      color: var(--white);
+    }
+
+    .status-in-progress { color: var(--status-in-progress); }
+    .status-completed { color: var(--status-completed); }
+    .status-not-started { color: var(--status-not-started); }
+    .applied-yes { color: var(--status-completed); }
     .applied-no { color: #dc3545; }
+    
+    /* Link styles */
+    a {
+      color: var(--accent-primary);
+      text-decoration: none;
+    }
+    
+    a:hover {
+      color: var(--accent-secondary);
+      text-decoration: underline;
+    }
+    
+    /* Invert link colors for dark theme */
+    [data-theme="dark"] a {
+      color: var(--accent-secondary);
+    }
+    
+    [data-theme="dark"] a:hover {
+      color: var(--accent-primary);
+    }
 
     /* Modale */
     .modal {
@@ -145,7 +412,7 @@
     }
     .modal.active { display: flex; }
     .modal-content {
-      background: #fff;
+      background: var(--bg-primary);
       padding: 20px;
       border-radius: 8px;
       width: 90%;
@@ -179,8 +446,8 @@
         top: 10px;
         left: 10px;
         z-index: 1000;
-        background: #007bff;
-        color: #fff;
+        background: var(--accent-primary);
+        color: var(--text-table-header);
         border: none;
         border-radius: 4px;
         padding: 10px 12px;
@@ -195,14 +462,15 @@
         left: -260px;
         width: 240px;
         height: 100%;
-        background: #343a40;
-        color: #fff;
+        background: var(--bg-sidebar);
+        color: var(--text-sidebar);
         padding: 20px;
         display: flex;
         flex-direction: column;
         z-index: 999;
         transition: left 0.3s ease;
         overflow-y: auto;
+        min-height: 100vh; /* Ensure full height on mobile */
       }
       
       #sidebar > h2 {
@@ -212,6 +480,22 @@
       #sidebar.open { 
         left: 0; 
         }
+
+      /* Module details sidebar mobile */
+      #module-details-sidebar {
+        position: fixed;
+        top: 0;
+        right: -320px;
+        width: 300px;
+        height: 100%;
+        background: var(--bg-primary);
+        z-index: 998;
+        transition: right 0.3s ease;
+      }
+
+      #module-details-sidebar.open {
+        right: 0;
+      }
 
       /* Filtri e campi ridimensionati ma visibili */
       .filters label,
@@ -245,7 +529,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #f5f5f5;
+      background: var(--bg-graph);
       overflow: hidden;
     }
 
@@ -264,7 +548,8 @@
       }
 
       #sidebar,
-      .mobile-menu-btn {
+      .mobile-menu-btn,
+      #module-details-sidebar {
         display: none !important;      /* nasconde sidebar e pulsante filtri */
       }
 
@@ -292,6 +577,59 @@
         border: 1px solid #777;
       }
       
+    }
+
+    /* Landscape mode with small height - prevent sidebar overflow */
+    @media (max-height: 500px) and (orientation: landscape) {
+      body {
+        min-height: 500px; /* Force minimum height */
+      }
+      
+      aside {
+        min-height: 500px; /* Ensure sidebar has minimum height */
+        overflow-y: auto; /* Allow scrolling if needed */
+      }
+      
+      .filters {
+        flex-shrink: 0; /* Prevent filters from shrinking */
+        min-height: 150px; /* Reduced minimum height for small screens */
+        overflow-y: visible; /* Keep filters fully visible */
+      }
+      
+      .backup-section {
+        margin-top: 10px;
+        padding-top: 10px;
+      }
+      
+      .view-switch,
+      .theme-switch {
+        margin-top: 10px;
+        padding-top: 10px;
+      }
+    }
+
+    /* Extra small height landscape mode */
+    @media (max-height: 400px) and (orientation: landscape) {
+      aside {
+        padding: 15px 20px; /* Reduce padding to save space */
+      }
+      
+      .filters {
+        min-height: 120px;
+        flex-shrink: 0; /* Prevent filters from shrinking */
+      }
+      
+      .backup-section button {
+        padding: 6px;
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+      }
+      
+      .view-switch button,
+      .theme-switch button {
+        padding: 6px;
+        margin-bottom: 6px;
+      }
     }
 
   </style>
@@ -334,6 +672,19 @@
       <button id="table-view-btn" class="active">Tabella</button>
       <button id="graph-view-btn">Grafico</button>
     </div>
+    
+    <div class="theme-switch">
+      <h3>Tema</h3>
+      <button id="light-theme-btn" class="theme-btn active">☀️ Chiaro</button>
+      <button id="dark-theme-btn" class="theme-btn">🌙 Scuro</button>
+    </div>
+    
+    <div class="backup-section">
+      <h3>Backup & Import</h3>
+      <button id="export-backup-btn">📥 Esporta Backup</button>
+      <button id="import-backup-btn">📤 Importa Backup</button>
+      <button id="share-backup-btn">📤 Condividi Backup</button>
+    </div>
   </aside>
 
   <main>
@@ -362,6 +713,56 @@
       </div>
     </div>
   </main>
+
+  <!-- Module Details Sidebar -->
+  <aside id="module-details-sidebar" class="hidden">
+    <div class="module-details-header">
+      <h2 id="module-details-title">Seleziona un modulo</h2>
+      <div class="module-code" id="module-details-code">-</div>
+    </div>
+    
+    <div class="module-details-section">
+      <h3>Descrizione</h3>
+      <p id="module-details-description">Seleziona un modulo per visualizzare i dettagli</p>
+    </div>
+
+    <div class="module-details-section">
+      <h3>Informazioni</h3>
+      <div class="module-details-list">
+        <li><strong>Durata stimata:</strong> <span id="module-details-duration">-</span> minuti</li>
+        <li><strong>Difficoltà:</strong> <span id="module-details-difficulty" class="module-details-badge">-</span></li>
+        <li><strong>Tipo:</strong> <span id="module-details-type" class="module-details-badge">-</span></li>
+        <li><strong>Area di insegnamento:</strong> <span id="module-details-teaching-area">-</span></li>
+      </div>
+    </div>
+
+    <div class="module-details-section">
+      <h3>Strumenti richiesti</h3>
+      <ul class="module-details-list" id="module-details-tools">
+        <li>Seleziona un modulo per visualizzare gli strumenti</li>
+      </ul>
+    </div>
+
+    <div class="module-details-section">
+      <h3>Obiettivi di apprendimento</h3>
+      <ul class="module-details-list" id="module-details-outcomes">
+        <li>Seleziona un modulo per visualizzare gli obiettivi</li>
+      </ul>
+    </div>
+
+    <div class="module-details-section">
+      <h3>Criteri di valutazione</h3>
+      <div id="module-details-criteria">
+        <p>Seleziona un modulo per visualizzare i criteri</p>
+      </div>
+    </div>
+
+    <div class="module-details-section">
+      <h3>Link al modulo</h3>
+      <a id="module-details-link" href="#" target="_blank" style="display: none;">Accedi al modulo</a>
+      <p id="module-details-no-link" style="color: #6c757d;">Nessun link disponibile</p>
+    </div>
+  </aside>
 
   <!-- Modale Valutazione -->
   <div id="assessment-modal" class="modal">
@@ -395,7 +796,6 @@
           </select>
         </label>
 
-
         <label>Note:</label>
         <textarea id="assessment-notes"></textarea>
 
@@ -406,15 +806,46 @@
       </form>
     </div>
   </div>
-
+  
+  <!-- Modale Import Backup -->
+  <div id="import-modal" class="modal">
+    <div class="modal-content">
+      <h3>Importa Backup</h3>
+      <form id="import-form">
+        <label>Seleziona file backup (.json):
+          <input type="file" id="backup-file" accept=".json" required>
+        </label>
+        <div class="actions">
+          <button type="button" id="cancel-import-btn">Annulla</button>
+          <button type="submit" id="confirm-import-btn">Importa</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Modale Condivisione Backup -->
+  <div id="share-modal" class="modal">
+    <div class="modal-content">
+      <h3>Condividi Backup</h3>
+      <p>Copiare il testo sottostante per condividere il backup via WhatsApp o altri messaggeri:</p>
+      <textarea id="backup-text" readonly rows="10" style="width: 100%; font-family: monospace; margin: 10px 0;"></textarea>
+      <div class="actions">
+        <button type="button" id="copy-backup-btn">Copia</button>
+        <button type="button" id="close-share-btn">Chiudi</button>
+      </div>
+    </div>
+  </div>
+  
   <script type="module" src="./js/app.js"></script>
   <script type="module">
   import AssessmentManager from './js/database/assessment-manager.js';
   import ProgressManager from './js/database/progress-manager.js';
   import ModuleManager from './js/database/module-manager.js';
+  import BackupManager from './js/utils/backup-manager.js';
   import db from './js/database/db-config.js';
 
   const tableBody = document.querySelector('#modules-table tbody');
+  const moduleDetailsSidebar = document.getElementById('module-details-sidebar');
 
   // Popola opzioni filtro per categoria e insegnamento
   async function populateFilters() {
@@ -435,6 +866,108 @@
       opt.value = c; opt.textContent = c;
       selectCategory.appendChild(opt);
     });
+  }
+
+  // Mostra dettagli del modulo nella sidebar
+  async function showModuleDetails(moduleId) {
+    const module = await db.modules.get(moduleId);
+    if (!module) return;
+
+    // Aggiorna i contenuti della sidebar
+    document.getElementById('module-details-title').textContent = module.title;
+    document.getElementById('module-details-code').textContent = module.code;
+    document.getElementById('module-details-description').textContent = module.description || 'Nessuna descrizione disponibile';
+    document.getElementById('module-details-duration').textContent = module.estimatedDuration || '-';
+    
+    // Aggiorna difficoltà con badge colorato
+    const difficultyElement = document.getElementById('module-details-difficulty');
+    difficultyElement.textContent = module.difficulty || '-';
+    difficultyElement.className = 'module-details-badge ' +
+      (module.difficulty === 'base' ? 'success' :
+       module.difficulty === 'intermedio' ? 'warning' :
+       module.difficulty === 'avanzato' ? 'primary' : 'info');
+    
+    // Aggiorna tipo
+    const typeElement = document.getElementById('module-details-type');
+    typeElement.textContent = module.type || '-';
+    typeElement.className = 'module-details-badge ' +
+      (module.type === 'presenza' ? 'primary' : 'info');
+    
+    document.getElementById('module-details-teaching-area').textContent = module.teachingArea || '-';
+
+    // Aggiorna strumenti richiesti
+    const toolsList = document.getElementById('module-details-tools');
+    toolsList.innerHTML = '';
+    if (module.toolsRequired && module.toolsRequired.length > 0) {
+      module.toolsRequired.forEach(tool => {
+        const li = document.createElement('li');
+        li.textContent = tool;
+        toolsList.appendChild(li);
+      });
+    } else {
+      const li = document.createElement('li');
+      li.textContent = 'Nessuno strumento specifico richiesto';
+      li.style.color = '#6c757d';
+      toolsList.appendChild(li);
+    }
+
+    // Aggiorna obiettivi di apprendimento
+    const outcomesList = document.getElementById('module-details-outcomes');
+    outcomesList.innerHTML = '';
+    if (module.learningOutcomes && module.learningOutcomes.length > 0) {
+      module.learningOutcomes.forEach(outcome => {
+        const li = document.createElement('li');
+        li.textContent = outcome;
+        outcomesList.appendChild(li);
+      });
+    } else {
+      const li = document.createElement('li');
+      li.textContent = 'Nessun obiettivo specificato';
+      li.style.color = '#6c757d';
+      outcomesList.appendChild(li);
+    }
+
+    // Aggiorna criteri di valutazione
+    const criteriaElement = document.getElementById('module-details-criteria');
+    if (module.practicalCriteria) {
+      criteriaElement.innerHTML = `
+        <p><strong>${module.practicalCriteria.description}</strong></p>
+        <p><strong>Competenze richieste:</strong> ${module.practicalCriteria.requiredSkills?.join(', ') || 'Nessuna specificata'}</p>
+        <p><strong>Metodo di valutazione:</strong> ${module.practicalCriteria.assessmentMethod || 'Non specificato'}</p>
+        <p><strong>Metriche di qualità:</strong></p>
+        <ul>
+          ${module.practicalCriteria.qualityMetrics?.map(metric => `<li>${metric}</li>`).join('') || '<li>Nessuna metrica specificata</li>'}
+        </ul>
+      `;
+    } else {
+      criteriaElement.innerHTML = '<p>Nessun criterio di valutazione specificato</p>';
+    }
+
+    // Aggiorna link
+    const linkElement = document.getElementById('module-details-link');
+    const noLinkElement = document.getElementById('module-details-no-link');
+    if (module.link) {
+      linkElement.href = module.link;
+      linkElement.style.display = 'block';
+      noLinkElement.style.display = 'none';
+    } else {
+      linkElement.style.display = 'none';
+      noLinkElement.style.display = 'block';
+    }
+
+    // Mostra la sidebar
+    moduleDetailsSidebar.classList.remove('hidden');
+    if (window.innerWidth <= 768) {
+      moduleDetailsSidebar.classList.add('open');
+    }
+  }
+
+  // Chiudi sidebar dettagli
+  function closeModuleDetails() {
+    moduleDetailsSidebar.classList.add('hidden');
+    if (window.innerWidth <= 768) {
+      moduleDetailsSidebar.classList.remove('open');
+    }
   }
 
   // Funzione principale di render con editing inline
@@ -499,11 +1032,13 @@
       const status = p?.status ?? 'not-started';
 
       const tr = document.createElement('tr');
+      tr.setAttribute('data-id', m.id);
+      tr.style.cursor = 'pointer';
       tr.innerHTML = `
         <td>${
           m.link
             ? '<a href="' + m.link + '" target="_blank" class="module-link">' + m.title + '</a>'
-            : m.title
+            : '<span class="module-title">' + m.title + '</span>'
         }</td>
         <td>${m.category}</td>
         <td>${m.teachingArea ?? '-'}</td>
@@ -540,6 +1075,41 @@
       `;
       tableBody.appendChild(tr);
     }
+
+    // Listener per click sulle righe della tabella
+    tableBody.querySelectorAll('tr').forEach(row => {
+      row.addEventListener('click', async (e) => {
+        // Previene l'apertura del link quando si clicca sul titolo
+        if (e.target.tagName === 'A' || e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT') {
+          return;
+        }
+        const moduleId = Number(row.dataset.id);
+        await showModuleDetails(moduleId);
+      });
+    });
+
+    // Listener per i link dei moduli (per evitare che il click sulla riga interferisca)
+    tableBody.querySelectorAll('.module-link').forEach(link => {
+      link.addEventListener('click', async (e) => {
+        e.stopPropagation(); // Previene che il click sulla riga venga attivato
+        
+        // Ottieni l'ID del modulo dal link
+        const row = link.closest('tr');
+        const moduleId = Number(row.dataset.id);
+        
+        // Verifica se il modulo è in stato "Da iniziare" e aggiorna automaticamente a "In corso"
+        const statusSelect = row.querySelector('.status-select');
+        if (statusSelect && statusSelect.value === 'not-started') {
+          try {
+            await ProgressManager.updateProgress(moduleId, 'in-progress', {});
+            // Aggiorna l'interfaccia per riflettere il cambiamento
+            await renderModules();
+          } catch (error) {
+            console.error('Errore nell\'aggiornamento automatico dello stato:', error);
+          }
+        }
+      });
+    });
 
     // Listener inline
     tableBody.querySelectorAll('.status-select').forEach(sel => {
@@ -580,180 +1150,354 @@
     renderingInProgress = false; // sblocco sempre a fine
   }
 
-
-
+  // Funzione per renderizzare il grafo delle dipendenze
   async function renderGraph() {
-      // Corretto l'ID dell'SVG
-      const svg = d3.select("#module-graph");
-      svg.selectAll("*").remove();
-      
-      // Definisce il marker freccia visibile
-      const defs = svg.append("defs");
+    try {
+      const svg = d3.select('#module-graph');
+      svg.selectAll('*').remove(); // Pulisce il grafo precedente
 
-      defs.append("marker")
-        .attr("id", "arrowhead")
-        .attr("viewBox", "0 -3 10 6")  // area visibile corretta
-        .attr("refX", 30)              // distanza dal centro del rettangolo, regola in base a width
-        .attr("refY", 0)
-        .attr("markerWidth", 6)
-        .attr("markerHeight", 6)
-        .attr("orient", "auto")
-        .append("path")
-        .attr("d", "M0,-3L10,0L0,3")   // triangolo standard
-        .attr("fill", "#555")
-        .attr("opacity", 0.9);
+    const fCategory = document.getElementById('filter-category').value;
+    const fStatus = document.getElementById('filter-status').value;
+    const fTeaching = document.getElementById('filter-teaching').value;
+    const query = document.getElementById('search-modules').value.toLowerCase().trim();
+    const showOnlyUnlocked = document.getElementById('filter-unlocked').checked;
 
+    const [modules, progress, dependencies] = await Promise.all([
+      db.modules.toArray(),
+      db.progress.toArray(),
+      db.dependencies.toArray()
+    ]);
 
-      // Calcolo dimensioni sicure (fallback numerico nel caso di width="100%")
-      const width = svg.node()?.clientWidth || 900;
-      const height = +svg.attr("height") || 600;
+    const pMap = new Map(progress.map(p => [p.moduleId, p]));
 
-      const showOnlyUnlocked = document.getElementById("filter-unlocked")?.checked;
-      const fCategory = document.getElementById("filter-category")?.value || "all";
-      const fTeaching = document.getElementById("filter-teaching")?.value || "all";
-      const fStatus = document.getElementById("filter-status")?.value || "all";
-      const query = document.getElementById("search-modules")?.value.toLowerCase() ?? "";
+    // Filtra moduli come nella tabella
+    const filteredModules = modules.filter(m => {
+      const p = pMap.get(m.id);
+      const status = p?.status ?? 'not-started';
 
-      const modules = await db.modules.toArray();
-      const progress = await db.progress.toArray();
-      const dependencies = await db.dependencies.toArray();
+      const matchCategory =
+        fCategory === 'all' ||
+        (m.category && m.category.toLowerCase().trim() === fCategory.toLowerCase().trim());
+      const matchTeaching =
+        fTeaching === 'all' ||
+        (m.teachingArea && m.teachingArea.toLowerCase().trim() === fTeaching.toLowerCase().trim());
+      const matchStatus = fStatus === 'all' || status === fStatus;
+      const matchQuery = !query || m.title.toLowerCase().includes(query);
 
-      const pMap = new Map(progress.map(p => [p.moduleId, p]));
-      const completedModules = progress
-          .filter(p => p.status === "completed")
-          .map(p => p.moduleId);
+      if (!matchCategory || !matchTeaching || !matchStatus || !matchQuery) return false;
 
-      // FILTRO coerente con renderModules()
-      const filteredModules = modules.filter(m => {
-          const p = pMap.get(m.id);
-          const status = p?.status ?? "not-started";
-
-          if (fCategory !== "all" && m.category !== fCategory) return false;
-          if (fTeaching !== "all" && m.teachingArea !== fTeaching) return false;
-          if (fStatus !== "all" && status !== fStatus) return false;
-          if (query && !m.title.toLowerCase().includes(query)) return false;
-
-          if (showOnlyUnlocked) {
-              const prereqs = dependencies
-                  .filter(d => d.moduleId === m.id)
-                  .map(d => d.prerequisiteId);
-              if (prereqs.length > 0) {
-                  const allPreDone = prereqs.every(id => completedModules.includes(id));
-                  if (!allPreDone) return false;
-              }
-          }
-          return true;
-      });
-
-      // COSTRUZIONE nodi e link del grafo
-      const nodes = filteredModules.map(m => ({
-          id: m.id,
-          title: m.title,
-          status: pMap.get(m.id)?.status ?? "not-started",
-      }));
-
-      const links = dependencies
-          .filter(d =>
-              filteredModules.some(m => m.id === d.moduleId) &&
-              filteredModules.some(m => m.id === d.prerequisiteId)
-          )
-          .map(d => ({ source: d.prerequisiteId, target: d.moduleId }));
-
-      const colorScale = d3.scaleOrdinal()
-          .domain(["not-started", "in-progress", "completed"])
-          .range(["#cccccc", "#ffe082", "#81c784"]);
-
-      // Usa let o assegna nuovi nomi per evitare conflitti
-      let svgWidth = document.getElementById("graph-view").clientWidth;
-      let svgHeight = document.getElementById("graph-view").clientHeight;
-
-      const simulation = d3.forceSimulation(nodes)
-        .force("link", d3.forceLink(links).id(d => d.id).distance(150))
-        .force("charge", d3.forceManyBody().strength(-300))
-        .force("center", d3.forceCenter(svgWidth / 2, svgHeight / 2));
-
-
-      const link = svg.append("g")
-        .attr("stroke", "#666")
-        .attr("stroke-opacity", 0.7)
-        .attr("stroke-width", 1.4)
-        .lower() // mette le linee sotto i nodi
-        .selectAll("line")
-        .data(links)
-        .join("line")
-        .attr("marker-end", "url(#arrowhead)");
-
-      const node = svg.append("g")
-          .selectAll("circle")
-          .data(nodes)
-          .join("circle")
-          .attr("r", 18)
-          .attr("fill", d => colorScale(d.status))
-          .call(drag(simulation));
-
-      const labels = svg.append("g")
-          .selectAll("text")
-          .data(nodes)
-          .join("text")
-          .attr("text-anchor", "middle")
-          .attr("dy", 4)
-          .attr("font-size", 11)
-          .text(d => d.title);
-
-      simulation.on("tick", () => {
-          link
-              .attr("x1", d => d.source.x)
-              .attr("y1", d => d.source.y)
-              .attr("x2", d => d.target.x)
-              .attr("y2", d => d.target.y);
-          node
-              .attr("cx", d => d.x)
-              .attr("cy", d => d.y);
-          labels
-              .attr("x", d => d.x)
-              .attr("y", d => d.y + 25);
-      });
-
-      function drag(sim) {
-          function dragstarted(event, d) {
-              if (!event.active) sim.alphaTarget(0.3).restart();
-              d.fx = d.x;
-              d.fy = d.y;
-          }
-          function dragged(event, d) {
-              d.fx = event.x;
-              d.fy = event.y;
-          }
-          function dragended(event, d) {
-              if (!event.active) sim.alphaTarget(0);
-              d.fx = null;
-              d.fy = null;
-          }
-          return d3.drag()
-              .on("start", dragstarted)
-              .on("drag", dragged)
-              .on("end", dragended);
-      }
-  }
-
-
-
-  // Collega eventi ai filtri
-  ['filter-category','filter-status','filter-teaching','search-modules','filter-unlocked']
-    .forEach(id => {
-      document.getElementById(id).addEventListener('input', async () => {
-        if (document.getElementById('graph-view').style.display === 'block') {
-          await renderGraph();
-        } else {
-          await renderModules();
+      if (showOnlyUnlocked) {
+        const prereqs = dependencies.filter(d => d.moduleId === m.id).map(d => d.prerequisiteId);
+        if (prereqs.length > 0) {
+          const allDone = prereqs.every(pid => {
+            const pr = progress.find(p => p.moduleId === pid);
+            return pr && pr.status === 'completed';
+          });
+          if (!allDone) return false;
         }
-      });
+      }
+
+      return true;
     });
 
+    if (filteredModules.length === 0) {
+      svg.append('text')
+        .attr('x', '50%')
+        .attr('y', '50%')
+        .attr('text-anchor', 'middle')
+        .attr('dominant-baseline', 'middle')
+        .style('font-size', '16px')
+        .style('fill', '#666')
+        .text('Nessun modulo corrisponde ai filtri selezionati');
+      return;
+    }
+
+    // Crea nodi e collegamenti per il grafo
+    const nodes = filteredModules.map(m => ({
+      id: m.id,
+      title: m.title,
+      code: m.code,
+      status: pMap.get(m.id)?.status || 'not-started',
+      category: m.category
+    }));
+
+    const links = dependencies.filter(d =>
+      filteredModules.some(m => m.id === d.moduleId) &&
+      filteredModules.some(m => m.id === d.prerequisiteId)
+    ).map(d => ({
+      source: d.prerequisiteId,
+      target: d.moduleId,
+      type: d.dependencyType
+    }));
+
+    // Configurazione D3 force layout con zoom
+    const width = svg.node().getBoundingClientRect().width;
+    const height = svg.node().getBoundingClientRect().height;
+
+    // Crea un gruppo per contenere tutti gli elementi del grafo
+    const g = svg.append('g');
+
+    // Configura zoom
+    const zoom = d3.zoom()
+      .scaleExtent([0.1, 4])
+      .on('zoom', (event) => {
+        g.attr('transform', event.transform);
+      });
+
+    svg.call(zoom);
+
+    const simulation = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(links).id(d => d.id).distance(100))
+      .force('charge', d3.forceManyBody().strength(-300))
+      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('collision', d3.forceCollide().radius(45));
+
+    // Crea elementi SVG all'interno del gruppo zoomabile
+    const link = g.append('g')
+      .selectAll('line')
+      .data(links)
+      .enter().append('line')
+      .attr('stroke', d => d.type === 'mandatory' ? '#e74c3c' : '#8000E5')
+      .attr('stroke-width', d => d.type === 'mandatory' ? 2 : 1)
+      .attr('stroke-dasharray', d => d.type === 'mandatory' ? 'none' : '5,5')
+      .attr('marker-end', 'url(#arrowhead)');
+
+    const node = g.append('g')
+      .selectAll('g')
+      .data(nodes)
+      .enter().append('g')
+      .call(d3.drag()
+        .on('start', dragstarted)
+        .on('drag', dragged)
+        .on('end', dragended));
+
+    // Crea cerchi per i nodi - più grandi per contenere testo su più righe
+    node.append('circle')
+      .attr('r', 35)
+      .attr('fill', d => {
+        switch(d.status) {
+          case 'completed': return '#28a745';
+          case 'in-progress': return '#FFDA00';
+          default: return '#666666';
+        }
+      })
+      .attr('stroke', '#FFFFFF')
+      .attr('stroke-width', 2)
+      .style('cursor', 'pointer');
+
+    // Aggiungi testo ai nodi - mostra titolo completo su più righe
+    node.append('text')
+      .selectAll('tspan')
+      .data(d => {
+        // Suddivide il titolo in righe di massimo 3 parole ciascuna
+        const words = d.title.split(' ');
+        const lines = [];
+        let currentLine = [];
+        
+        words.forEach(word => {
+          currentLine.push(word);
+          if (currentLine.length >= 2) {
+            lines.push(currentLine.join(' '));
+            currentLine = [];
+          }
+        });
+        
+        if (currentLine.length > 0) {
+          lines.push(currentLine.join(' '));
+        }
+        
+        return lines;
+      })
+      .enter()
+      .append('tspan')
+      .text(d => d)
+      .attr('x', 0)
+      .attr('dy', (d, i) => i === 0 ? '-0.6em' : '1.2em')
+      .attr('text-anchor', 'middle')
+      .style('font-size', '7px')
+      .style('fill', '#FFFFFF')
+      .style('font-weight', 'bold')
+      .style('pointer-events', 'none');
+
+    // Tooltip per i nodi
+    node.append('title')
+      .text(d => `${d.title}\nCodice: ${d.code}\nStato: ${getStatusText(d.status)}`);
+
+    // Click sui nodi per mostrare dettagli
+    node.on('click', async (event, d) => {
+      await showModuleDetails(d.id);
+    });
+
+    // Definisce il marker per le frecce
+    const defs = svg.append('defs');
+    
+    // Freccia per dipendenze obbligatorie (rosso)
+    defs.append('marker')
+      .attr('id', 'arrowhead')
+      .attr('viewBox', '0 -5 10 10')
+      .attr('refX', 40) // Posizione della freccia lungo la linea
+      .attr('refY', 0)
+      .attr('markerWidth', 6)
+      .attr('markerHeight', 6)
+      .attr('orient', 'auto')
+      .append('path')
+      .attr('d', 'M0,-5L10,0L0,5')
+      .attr('fill', '#e74c3c');
+
+    // Freccia per dipendenze raccomandate (viola)
+    defs.append('marker')
+      .attr('id', 'arrowhead-recommended')
+      .attr('viewBox', '0 -5 10 10')
+      .attr('refX', 40)
+      .attr('refY', 0)
+      .attr('markerWidth', 6)
+      .attr('markerHeight', 6)
+      .attr('orient', 'auto')
+      .append('path')
+      .attr('d', 'M0,-5L10,0L0,5')
+      .attr('fill', '#8000E5');
+
+    // Aggiungi istruzioni per lo zoom
+    svg.append('text')
+      .attr('x', 10)
+      .attr('y', 20)
+      .attr('text-anchor', 'start')
+      .style('font-size', '12px')
+      .style('fill', '#666666')
+      .style('pointer-events', 'none')
+      .text('Zoom: Rotella mouse | Pan: Trascina');
+
+    // Aggiungi legenda per i tipi di dipendenze
+    const legend = svg.append('g')
+      .attr('transform', 'translate(10, 40)');
+
+    // Legenda per dipendenze obbligatorie
+    legend.append('line')
+      .attr('x1', 0)
+      .attr('y1', 0)
+      .attr('x2', 20)
+      .attr('y2', 0)
+      .attr('stroke', '#e74c3c')
+      .attr('stroke-width', 2)
+      .attr('marker-end', 'url(#arrowhead)');
+
+    legend.append('text')
+      .attr('x', 25)
+      .attr('y', 0)
+      .attr('dy', '0.35em')
+      .style('font-size', '12px')
+      .style('fill', '#666666')
+      .style('pointer-events', 'none')
+      .text('Obbligatoria');
+
+    // Legenda per dipendenze raccomandate
+    legend.append('line')
+      .attr('x1', 0)
+      .attr('y1', 20)
+      .attr('x2', 20)
+      .attr('y2', 20)
+      .attr('stroke', '#8000E5')
+      .attr('stroke-width', 1)
+      .attr('stroke-dasharray', '5,5')
+      .attr('marker-end', 'url(#arrowhead-recommended)');
+
+    legend.append('text')
+      .attr('x', 25)
+      .attr('y', 20)
+      .attr('dy', '0.35em')
+      .style('font-size', '12px')
+      .style('fill', '#666666')
+      .style('pointer-events', 'none')
+      .text('Raccomandata');
+
+    // Aggiorna posizioni
+    simulation.on('tick', () => {
+      link
+        .attr('x1', d => d.source.x)
+        .attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x)
+        .attr('y2', d => d.target.y)
+        .attr('marker-end', d => d.type === 'mandatory' ? 'url(#arrowhead)' : 'url(#arrowhead-recommended)');
+
+      node
+        .attr('transform', d => `translate(${d.x},${d.y})`);
+    });
+
+    // Funzioni drag
+    function dragstarted(event, d) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    }
+
+    function dragged(event, d) {
+      d.fx = event.x;
+      d.fy = event.y;
+    }
+
+    function dragended(event, d) {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+
+    function getStatusText(status) {
+      switch(status) {
+        case 'completed': return 'Completato';
+        case 'in-progress': return 'In corso';
+        default: return 'Da iniziare';
+      }
+    }
+    } catch (error) {
+      console.error('❌ Errore nel rendering del grafo:', error);
+      const svg = d3.select('#module-graph');
+      svg.selectAll('*').remove();
+      svg.append('text')
+        .attr('x', '50%')
+        .attr('y', '50%')
+        .attr('text-anchor', 'middle')
+        .attr('dominant-baseline', 'middle')
+        .style('font-size', '14px')
+        .style('fill', '#dc3545')
+        .text('Errore nel caricamento del grafo: ' + error.message);
+    }
+  }
 
   // Inizializzazione
-  await populateFilters();
-  await renderModules();
+ await populateFilters();
+ await renderModules();
+ 
+ // Theme switching functionality
+ const lightThemeBtn = document.getElementById('light-theme-btn');
+ const darkThemeBtn = document.getElementById('dark-theme-btn');
+ 
+ // Load saved theme from localStorage
+ const savedTheme = localStorage.getItem('theme') || 'light';
+ document.documentElement.setAttribute('data-theme', savedTheme);
+ 
+ // Update active theme button
+ if (savedTheme === 'dark') {
+   darkThemeBtn.classList.add('active');
+   lightThemeBtn.classList.remove('active');
+ } else {
+   lightThemeBtn.classList.add('active');
+   darkThemeBtn.classList.remove('active');
+ }
+ 
+ // Theme switching event listeners
+ lightThemeBtn.addEventListener('click', () => {
+   document.documentElement.setAttribute('data-theme', 'light');
+   localStorage.setItem('theme', 'light');
+   lightThemeBtn.classList.add('active');
+   darkThemeBtn.classList.remove('active');
+ });
+ 
+ darkThemeBtn.addEventListener('click', () => {
+   document.documentElement.setAttribute('data-theme', 'dark');
+   localStorage.setItem('theme', 'dark');
+   darkThemeBtn.classList.add('active');
+   lightThemeBtn.classList.remove('active');
+ });
   
   const tableBtn = document.getElementById('table-view-btn');
   const graphBtn = document.getElementById('graph-view-btn');
@@ -776,6 +1520,17 @@
     await renderGraph(); // forza aggiornamento coerente ai filtri
   });
 
+  // Collega eventi ai filtri
+  ['filter-category','filter-status','filter-teaching','search-modules','filter-unlocked']
+    .forEach(id => {
+      document.getElementById(id).addEventListener('input', async () => {
+        if (document.getElementById('graph-view').style.display === 'block') {
+          await renderGraph();
+        } else {
+          await renderModules();
+        }
+      });
+    });
 
   document.getElementById('filter-unlocked').addEventListener('change', renderModules);
 
@@ -794,6 +1549,113 @@
     const clickOnButton = e.target === menuBtn;
     if (!clickInsideSidebar && !clickOnButton && sidebar.classList.contains('open')) {
       sidebar.classList.remove('open');
+    }
+    
+    // Chiudi sidebar dettagli cliccando fuori dalla tabella e dalla sidebar
+    const clickInsideTable = tableBody.contains(e.target);
+    const clickInsideDetailsSidebar = moduleDetailsSidebar.contains(e.target);
+    if (!clickInsideTable && !clickInsideDetailsSidebar && !moduleDetailsSidebar.classList.contains('hidden')) {
+      closeModuleDetails();
+    }
+  });
+
+  // Backup functionality
+  const exportBackupBtn = document.getElementById('export-backup-btn');
+  const importBackupBtn = document.getElementById('import-backup-btn');
+  const shareBackupBtn = document.getElementById('share-backup-btn');
+  const importModal = document.getElementById('import-modal');
+  const shareModal = document.getElementById('share-modal');
+  const importForm = document.getElementById('import-form');
+  const backupFileInput = document.getElementById('backup-file');
+  const backupTextArea = document.getElementById('backup-text');
+  const copyBackupBtn = document.getElementById('copy-backup-btn');
+  const closeShareBtn = document.getElementById('close-share-btn');
+  const cancelImportBtn = document.getElementById('cancel-import-btn');
+
+  // Esporta backup
+  exportBackupBtn.addEventListener('click', async () => {
+    try {
+      await BackupManager.exportBackup();
+      alert('✅ Backup esportato con successo!');
+    } catch (error) {
+      console.error('Errore esportazione backup:', error);
+      alert('❌ Errore durante l\'esportazione del backup');
+    }
+  });
+
+  // Apri modale import
+  importBackupBtn.addEventListener('click', () => {
+    importModal.classList.add('active');
+  });
+
+  // Chiudi modale import
+  cancelImportBtn.addEventListener('click', () => {
+    importModal.classList.remove('active');
+    importForm.reset();
+  });
+
+  // Gestione import backup
+  importForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const file = backupFileInput.files[0];
+    if (!file) {
+      alert('❌ Seleziona un file di backup');
+      return;
+    }
+
+    try {
+      const result = await BackupManager.importBackup(file);
+      
+      if (result.success) {
+        alert(`✅ Backup importato con successo!\nProgressi: ${result.importedProgress}\nValutazioni: ${result.importedAssessments}`);
+        
+        // Ricarica la tabella per mostrare i nuovi dati
+        await renderModules();
+      } else {
+        alert(`⚠️ Backup importato con errori:\n${result.errors.join('\n')}`);
+      }
+      
+      importModal.classList.remove('active');
+      importForm.reset();
+    } catch (error) {
+      console.error('Errore import backup:', error);
+      alert('❌ Errore durante l\'importazione del backup: ' + error.message);
+    }
+  });
+
+  // Condividi backup
+  shareBackupBtn.addEventListener('click', async () => {
+    try {
+      const backupString = await BackupManager.generateBackupString();
+      backupTextArea.value = backupString;
+      shareModal.classList.add('active');
+    } catch (error) {
+      console.error('Errore generazione backup:', error);
+      alert('❌ Errore durante la generazione del backup');
+    }
+  });
+
+  // Copia backup negli appunti
+  copyBackupBtn.addEventListener('click', () => {
+    backupTextArea.select();
+    document.execCommand('copy');
+    alert('✅ Backup copiato negli appunti!');
+  });
+
+  // Chiudi modale condivisione
+  closeShareBtn.addEventListener('click', () => {
+    shareModal.classList.remove('active');
+  });
+
+  // Chiudi modali cliccando fuori
+  document.addEventListener('click', (e) => {
+    if (e.target === importModal) {
+      importModal.classList.remove('active');
+      importForm.reset();
+    }
+    if (e.target === shareModal) {
+      shareModal.classList.remove('active');
     }
   });
   </script>

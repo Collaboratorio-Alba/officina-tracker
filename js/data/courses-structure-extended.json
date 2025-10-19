@@ -1,0 +1,51 @@
+{
+  "version": "1.1.0",
+  "schemaNotes": "Schema aggiornato: aggiunti skillTags, revisionDate, contentPath, struttura per integrazione Typemill; unificato link contenuti per separazione gestione/progressi.",
+  "courses": [
+    {
+      "id": "ciclofficina-basics",
+      "title": "Formazione Base Ciclofficina",
+      "description": "Corso completo di manutenzione e riparazione biciclette",
+      "teachingAreas": [
+        {
+          "name": "Sicurezza e manutenzione di base",
+          "description": "Principi fondamentali di sicurezza e manutenzione preventiva",
+          "color": "#e74c3c",
+          "modules": [
+            "BIKE-001"
+          ]
+        },
+        {
+          "name": "Meccanica di base",
+          "description": "Competenze fondamentali per la manutenzione ordinaria",
+          "color": "#3498db",
+          "modules": [
+            "BIKE-002",
+            "BIKE-003",
+            "BIKE-004"
+          ]
+        },
+        {
+          "name": "Trasmissione e cinematismi",
+          "description": "Gestione e manutenzione del sistema di trasmissione",
+          "color": "#2ecc71",
+          "modules": [
+            "BIKE-005",
+            "BIKE-006",
+            "BIKE-007",
+            "BIKE-008"
+          ]
+        },
+        {
+          "name": "Sistemi frenanti",
+          "description": "Manutenzione e regolazione sistemi frenanti",
+          "color": "#f39c12",
+          "modules": [
+            "BIKE-009",
+            "BIKE-010"
+          ]
+        }
+      ]
+    }
+  ]
+}

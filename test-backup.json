@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+  "timestamp": "2025-10-19T09:00:00.000Z",
+  "app": "Ciclofficina Tracker",
+  "stats": {
+    "totalModules": 5,
+    "totalProgress": 3,
+    "totalAssessments": 2,
+    "completed": 1,
+    "inProgress": 2
+  },
+  "progress": [
+    {
+      "moduleCode": "TRASM-001",
+      "moduleTitle": "Sistema di trasmissione base",
+      "status": "completed",
+      "startDate": "2025-10-18T10:00:00.000Z",
+      "completionDate": "2025-10-18T12:00:00.000Z",
+      "attempts": 1,
+      "assessmentScore": 85,
+      "notes": "Buona comprensione del sistema",
+      "createdAt": "2025-10-18T10:00:00.000Z",
+      "updatedAt": "2025-10-18T12:00:00.000Z"
+    },
+    {
+      "moduleCode": "FRENI-001",
+      "moduleTitle": "Freni a disco",
+      "status": "in-progress",
+      "startDate": "2025-10-19T09:00:00.000Z",
+      "completionDate": null,
+      "attempts": 0,
+      "assessmentScore": null,
+      "notes": "In fase di apprendimento",
+      "createdAt": "2025-10-19T09:00:00.000Z",
+      "updatedAt": "2025-10-19T09:00:00.000Z"
+    }
+  ],
+  "assessments": [
+    {
+      "moduleCode": "TRASM-001",
+      "moduleTitle": "Sistema di trasmissione base",
+      "practicalApplied": true,
+      "resultQuality": 4,
+      "satisfactionLevel": 5,
+      "evaluatorName": "Istruttore",
+      "date": "2025-10-18T12:00:00.000Z",
+      "notes": "Ottima applicazione pratica",
+      "createdAt": "2025-10-18T12:00:00.000Z",
+      "updatedAt": "2025-10-18T12:00:00.000Z"
+    }
+  ]
+}
