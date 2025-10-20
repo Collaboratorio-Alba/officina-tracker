@@ -9,9 +9,9 @@ import Dexie from '../../node_modules/dexie/dist/dexie.mjs';
 const db = new Dexie('CiclofficinaTracker', { autoOpen: true });
 
 // Definizione schema database
-db.version(2).stores({
-  // Tabella moduli formativi
-  modules: '++id, code, title, category, type, difficulty, &slug, teachingArea',
+db.version(3).stores({
+  // Tabella moduli formativi (schema esteso per Typemill)
+  modules: '++id, code, title, category, type, difficulty, &slug, teachingArea, contentPath, revisionDate',
   
   // Tabella dipendenze tra moduli
   dependencies: '++id, [moduleId+prerequisiteId], moduleId, prerequisiteId, dependencyType',

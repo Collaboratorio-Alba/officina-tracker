@@ -1,6 +1,6 @@
 /**
  * Module Manager
- * Gestione CRUD per i moduli formativi
+ * Gestione CRUD per i moduli formativi (schema esteso 1.1.0)
  */
 
 import db from './db-config.js';
@@ -247,7 +247,7 @@ class ModuleManager {
   }
   
   /**
-   * Importa moduli in bulk
+   * Importa moduli in bulk (schema esteso)
    * @param {Array} modules - Array di moduli da importare
    * @returns {Promise<number>} Numero di moduli importati
    */
@@ -256,16 +256,178 @@ class ModuleManager {
       const processedModules = modules.map(m => ({
         ...m,
         slug: m.slug || this.generateSlug(m.title),
+        contentPath: m.contentPath || this.generateContentPath(m),
+        skillTags: m.skillTags || [],
+        revisionDate: m.revisionDate || new Date().toISOString().split('T')[0],
         createdAt: m.createdAt || new Date().toISOString(),
         updatedAt: new Date().toISOString()
       }));
       
       const lastKey = await this.db.modules.bulkAdd(processedModules);
-      console.log(`✅ Importati ${modules.length} moduli`);
+      console.log(`✅ Importati ${modules.length} moduli (schema esteso)`);
       
       return modules.length;
     } catch (error) {
       console.error('❌ Errore import bulk moduli:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Recupera moduli per skill tag
+   * @param {string} skillTag - Tag da cercare
+   * @returns {Promise<Array>}
+   */
+  async getModulesBySkillTag(skillTag) {
+    try {
+      const allModules = await this.db.modules.toArray();
+      return allModules.filter(m =>
+        m.skillTags && m.skillTags.includes(skillTag)
+      );
+    } catch (error) {
+      console.error('❌ Errore ricerca per skill tag:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Recupera tutti gli skill tags unici
+   * @returns {Promise<Array>}
+   */
+  async getAllSkillTags() {
+    try {
+      const modules = await this.db.modules.toArray();
+      const allTags = modules.flatMap(m => m.skillTags || []);
+      return [...new Set(allTags)].sort();
+    } catch (error) {
+      console.error('❌ Errore recupero skill tags:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Recupera moduli per content path
+   * @param {string} contentPath - Path del contenuto
+   * @returns {Promise<Object|undefined>}
+   */
+  async getModuleByContentPath(contentPath) {
+    try {
+      return await this.db.modules
+        .where('contentPath')
+        .equals(contentPath)
+        .first();
+    } catch (error) {
+      console.error('❌ Errore recupero modulo per content path:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Recupera moduli che necessitano revisione
+   * @param {number} daysThreshold - Soglia giorni per revisione
+   * @returns {Promise<Array>}
+   */
+  async getModulesNeedingRevision(daysThreshold = 365) {
+    try {
+      const modules = await this.db.modules.toArray();
+      const thresholdDate = new Date();
+      thresholdDate.setDate(thresholdDate.getDate() - daysThreshold);
+      
+      return modules.filter(m => {
+        if (!m.revisionDate) return true;
+        const revisionDate = new Date(m.revisionDate);
+        return revisionDate < thresholdDate;
+      });
+    } catch (error) {
+      console.error('❌ Errore recupero moduli da revisionare:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Genera content path automatico per Typemill
+   * @param {Object} module - Dati modulo
+   * @returns {string}
+   */
+  generateContentPath(module) {
+    const courseSlug = 'ciclofficina-basics';
+    const areaSlug = module.teachingArea
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+    
+    const moduleSlug = module.slug || this.generateSlug(module.title);
+    
+    return `/${courseSlug}/${areaSlug}/${moduleSlug}`;
+  }
+
+  /**
+   * Aggiorna revision date di un modulo
+   * @param {number} id - ID modulo
+   * @param {string} date - Data revisione (YYYY-MM-DD)
+   * @returns {Promise<number>}
+   */
+  async updateRevisionDate(id, date = null) {
+    try {
+      const revisionDate = date || new Date().toISOString().split('T')[0];
+      return await this.updateModule(id, { revisionDate });
+    } catch (error) {
+      console.error('❌ Errore aggiornamento revision date:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Aggiunge skill tag a un modulo
+   * @param {number} id - ID modulo
+   * @param {string} tag - Tag da aggiungere
+   * @returns {Promise<number>}
+   */
+  async addSkillTag(id, tag) {
+    try {
+      const module = await this.getModule(id);
+      if (!module) {
+        throw new Error('Modulo non trovato');
+      }
+
+      const currentTags = module.skillTags || [];
+      if (!currentTags.includes(tag)) {
+        const updatedTags = [...currentTags, tag];
+        return await this.updateModule(id, { skillTags: updatedTags });
+      }
+
+      return 0; // Tag già presente
+    } catch (error) {
+      console.error('❌ Errore aggiunta skill tag:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Rimuove skill tag da un modulo
+   * @param {number} id - ID modulo
+   * @param {string} tag - Tag da rimuovere
+   * @returns {Promise<number>}
+   */
+  async removeSkillTag(id, tag) {
+    try {
+      const module = await this.getModule(id);
+      if (!module) {
+        throw new Error('Modulo non trovato');
+      }
+
+      const currentTags = module.skillTags || [];
+      const updatedTags = currentTags.filter(t => t !== tag);
+      
+      if (updatedTags.length !== currentTags.length) {
+        return await this.updateModule(id, { skillTags: updatedTags });
+      }
+
+      return 0; // Tag non presente
+    } catch (error) {
+      console.error('❌ Errore rimozione skill tag:', error);
       throw error;
     }
   }

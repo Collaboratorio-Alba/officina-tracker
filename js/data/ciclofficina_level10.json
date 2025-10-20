@@ -1,0 +1,324 @@
+{
+  "teachingArea": {
+    "name": "Recupero e Restauro Telai",
+    "description": "Diagnosi, trattamento e restauro di telai di biciclette economiche e da recupero, con metodi accessibili e sicuri.",
+    "color": "#7f8c8d"
+  },
+  "modules": [
+    {
+      "id": "BIKE-10.1.1",
+      "title": "Identificazione materiali telaio",
+      "description": "Distinguere acciaio, alluminio e altri materiali per decidere il tipo di intervento di recupero.",
+      "difficulty": "base",
+      "estimatedDuration": 12,
+      "contentPath": "/content/bike-10.1.1.md",
+      "toolsRequired": [
+        "magnete",
+        "bilancia",
+        "scheda materiale"
+      ],
+      "learningOutcomes": [
+        "Test magnetico e peso per distinguere acciaio e alluminio",
+        "Riconoscere saldature TIG, brasatura o saldo a stagno",
+        "Conoscere sensibilità alla corrosione per materiale",
+        "Identificare compatibilità con vernici e prodotti chimici"
+      ],
+      "practicalCriteria": [
+        "Identificazione corretta su 3 telai",
+        "Classificazione adesiva con etichette colore",
+        "Registrazione risultati su scheda diagnosi"
+      ],
+      "skillTags": [
+        "telaio",
+        "materiali",
+        "diagnosi"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-1.1.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-2.1.3",
+          "type": "mandatory",
+          "reason": "Structural safety assessment"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-10.1.2",
+      "title": "Rilevamento danni e deformazioni",
+      "description": "Controllare crepe, piegamenti e colpi con metodi semplici e precisi.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-10.1.2.md",
+      "toolsRequired": [
+        "filo a piombo",
+        "luce radente",
+        "riga lunga"
+      ],
+      "learningOutcomes": [
+        "Controllare allineamento carro e forcella",
+        "Diagnosi crepe o rotture vicino saldature",
+        "Verifica diagonali telaio su piano orizzontale",
+        "Determinare se riparabile o da scartare"
+      ],
+      "practicalCriteria": [
+        "Allineamento verificato su 2 telai",
+        "Segnalazione difetti strutturali documentata",
+        "Decisione motivata (riparare o scartare)"
+      ],
+      "skillTags": [
+        "telaio",
+        "diagnosi",
+        "strutturale"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-10.1.1",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-10.2.1",
+      "title": "Rimozione ruggine meccanica e chimica",
+      "description": "Pulizia ruggine con mezzi manuali, chimici e metodi elettrolitici artigianali.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 20,
+      "contentPath": "/content/bike-10.2.1.md",
+      "toolsRequired": [
+        "spazzola metallica",
+        "carta vetrata",
+        "convertitore ruggine",
+        "alimentatore 12V"
+      ],
+      "learningOutcomes": [
+        "Uso corretto di spazzole e abrasivi per ruggine superficiale",
+        "Applicazione convertitori chimici a base tannica",
+        "Esecuzione trattamento elettrolitico in sicurezza",
+        "Pulizia finale e neutralizzazione residui acidi"
+      ],
+      "practicalCriteria": [
+        "Trattamento ruggine su 2 telai o componenti",
+        "Documentazione fotografica passaggi",
+        "Valutazione efficacia del metodo scelto"
+      ],
+      "skillTags": [
+        "ruggine",
+        "chimica",
+        "recupero",
+        "elettrolisi"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-10.1.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.4.3",
+          "type": "mandatory",
+          "reason": "Chemical safety knowledge"
+        },
+        {
+          "moduleId": "BIKE-2.1.1",
+          "type": "mandatory",
+          "reason": "Safety protocols"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-10.2.2",
+      "title": "Trattamento interno e protezione",
+      "description": "Applicare protezione antiruggine all’interno del telaio e sigillare punti critici.",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-10.2.2.md",
+      "toolsRequired": [
+        "spray grasso fluido",
+        "olio cera",
+        "tubi di prolunga"
+      ],
+      "learningOutcomes": [
+        "Spruzzare grasso o cera all’interno tubi aperti",
+        "Sigillare fori drenaggio se non necessari",
+        "Proteggere battute movimento centrale e serie sterzo",
+        "Usare prodotti compatibili con verniciatura futura"
+      ],
+      "practicalCriteria": [
+        "Trattamento completo telaio acciaio",
+        "Ispezione post-protezione (infiltrazioni o colature)",
+        "Etichettatura telaio: data trattamento"
+      ],
+      "skillTags": [
+        "protezione",
+        "ruggine",
+        "manutenzione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-10.2.1",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-10.3.1",
+      "title": "Preparazione superficie per verniciatura",
+      "description": "Levigar, sgrassare e mascherare il telaio prima della verniciatura.",
+      "difficulty": "base",
+      "estimatedDuration": 12,
+      "contentPath": "/content/bike-10.3.1.md",
+      "toolsRequired": [
+        "carta abrasiva",
+        "compressore o bomboletta aria",
+        "alcool"
+      ],
+      "learningOutcomes": [
+        "Carteggiare uniformemente per favorire adesione",
+        "Pulizia finale da oli e polveri",
+        "Mascheratura accurata di filetti e battute",
+        "Test adesione primer su piccola area"
+      ],
+      "practicalCriteria": [
+        "Preparazione completa telaio per verniciatura",
+        "Verifica adesione primer",
+        "Documentazione fotografica prima/dopo"
+      ],
+      "skillTags": [
+        "verniciatura",
+        "preparazione",
+        "finitura"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-10.2.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.1",
+          "type": "mandatory",
+          "reason": "Basic tool handling"
+        },
+        {
+          "moduleId": "BIKE-1.4.4",
+          "type": "mandatory",
+          "reason": "Protection knowledge"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-10.3.2",
+      "title": "Verniciatura e finitura protettiva",
+      "description": "Applicare vernice o trasparente con spray o pennello e protezioni finali.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 18,
+      "contentPath": "/content/bike-10.3.2.md",
+      "toolsRequired": [
+        "vernice spray",
+        "primer",
+        "trasparente",
+        "guanti"
+      ],
+      "learningOutcomes": [
+        "Pulizia tra uno strato e l’altro",
+        "Applicare vernice in più mani sottili",
+        "Evitare colature e accumuli di vernice",
+        "Sigillare con trasparente per durata lunga"
+      ],
+      "practicalCriteria": [
+        "Verniciatura completa telaio con 3 mani",
+        "Essiccazione senza polvere",
+        "Uniformità del colore e finitura lucida/opaca"
+      ],
+      "skillTags": [
+        "verniciatura",
+        "protezione",
+        "recupero"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-10.3.1",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-10.4.1",
+      "title": "Recupero parti saldate e piccole riparazioni",
+      "description": "Riparare elementi minori (forcellini, passacavi, supporti) con metodi accessibili.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-10.4.1.md",
+      "toolsRequired": [
+        "limette",
+        "colla epossidica o stagno",
+        "pinze"
+      ],
+      "learningOutcomes": [
+        "Pulire e livellare piccole crepe non strutturali",
+        "Applicare epossidico o stagno per consolidamento",
+        "Rifinire e carteggiare riparazioni",
+        "Controllare funzionalità dopo intervento"
+      ],
+      "practicalCriteria": [
+        "Riparazione estetica completata su telaio",
+        "Funzionalità confermata",
+        "Finitura visiva discreta e liscia"
+      ],
+      "skillTags": [
+        "riparazione",
+        "telaio",
+        "epossidico"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-10.3.2",
+          "type": "recommended"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-10.4.2",
+      "title": "Documentazione e archiviazione interventi",
+      "description": "Creare schede di restauro con dati foto, materiali usati, e valutazione finale.",
+      "difficulty": "base",
+      "estimatedDuration": 8,
+      "contentPath": "/content/bike-10.4.2.md",
+      "toolsRequired": [
+        "fotocamera",
+        "modulo digitale o cartaceo"
+      ],
+      "learningOutcomes": [
+        "Registrare tipo intervento e materiali usati",
+        "Aggiungere foto prima-durante-dopo",
+        "Archiviazione scheda bici restaurata",
+        "Riferimento per futuri corsi o confronti"
+      ],
+      "practicalCriteria": [
+        "Compilazione modulo restauro completo",
+        "Archivio condiviso aggiornato",
+        "Raccolta fotografica accurata"
+      ],
+      "skillTags": [
+        "documentazione",
+        "restauro",
+        "apprendimento"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-10.4.1",
+          "type": "recommended"
+        }
+      ]
+    }
+  ]
+}

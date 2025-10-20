@@ -1,6 +1,7 @@
 /**
  * Progress Manager
- * Gestione del progresso utente nei moduli formativi
+ * Gestione del progresso utente nei moduli formativi (Schema Esteso 1.1.0)
+ * Separazione netta tra contenuti (contentPath) e progressi
  */
 
 import db from './db-config.js';
@@ -303,6 +304,212 @@ class ProgressManager {
       console.log(`✅ Nota aggiunta al progresso modulo ${moduleId}`);
     } catch (error) {
       console.error('❌ Errore aggiunta nota:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Recupera progresso con informazioni modulo estese (contentPath, skillTags)
+   * @returns {Promise<Array>}
+   */
+  async getProgressWithExtendedModules() {
+    try {
+      const progressRecords = await this.db.progress.toArray();
+      
+      const enriched = await Promise.all(
+        progressRecords.map(async p => {
+          const module = await this.db.modules.get(p.moduleId);
+          return {
+            ...p,
+            module: module ? {
+              ...module,
+              contentPath: module.contentPath,
+              skillTags: module.skillTags || [],
+              revisionDate: module.revisionDate
+            } : null
+          };
+        })
+      );
+      
+      return enriched;
+    } catch (error) {
+      console.error('❌ Errore recupero progressi con moduli estesi:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Recupera moduli completati con content path
+   * @returns {Promise<Array>}
+   */
+  async getCompletedModulesWithContent() {
+    try {
+      const completedProgress = await this.db.progress
+        .where('status').equals('completed')
+        .toArray();
+      
+      const modules = await Promise.all(
+        completedProgress.map(async p => {
+          const module = await this.db.modules.get(p.moduleId);
+          return module ? {
+            ...module,
+            completionDate: p.completionDate,
+            assessmentScore: p.assessmentScore
+          } : null;
+        })
+      );
+      
+      return modules.filter(m => m !== null && m.contentPath);
+    } catch (error) {
+      console.error('❌ Errore recupero moduli completati con content:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Recupera moduli in corso con content path
+   * @returns {Promise<Array>}
+   */
+  async getInProgressModulesWithContent() {
+    try {
+      const inProgress = await this.db.progress
+        .where('status').equals('in-progress')
+        .toArray();
+      
+      const modules = await Promise.all(
+        inProgress.map(async p => {
+          const module = await this.db.modules.get(p.moduleId);
+          return module ? {
+            ...module,
+            startDate: p.startDate,
+            notes: p.notes
+          } : null;
+        })
+      );
+      
+      return modules.filter(m => m !== null && m.contentPath);
+    } catch (error) {
+      console.error('❌ Errore recupero moduli in corso con content:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Recupera moduli disponibili per iniziare (prerequisiti soddisfatti)
+   * @returns {Promise<Array>}
+   */
+  async getAvailableModules() {
+    try {
+      const modules = await this.db.modules.toArray();
+      const progressRecords = await this.db.progress.toArray();
+      
+      const progressMap = new Map(
+        progressRecords.map(p => [p.moduleId, p.status])
+      );
+      
+      const available = [];
+      
+      for (const module of modules) {
+        // Se già iniziato o completato, salta
+        if (progressMap.get(module.id)) {
+          continue;
+        }
+        
+        // Verifica prerequisiti
+        const canStart = await DependencyManager.canStartModule(module.id);
+        
+        if (canStart.canStart) {
+          available.push({
+            ...module,
+            contentPath: module.contentPath,
+            skillTags: module.skillTags || []
+          });
+        }
+      }
+      
+      return available;
+    } catch (error) {
+      console.error('❌ Errore recupero moduli disponibili:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Recupera statistiche avanzate con informazioni schema esteso
+   * @returns {Promise<Object>}
+   */
+  async getExtendedStats() {
+    try {
+      const basicStats = await this.getStats();
+      const modules = await this.db.modules.toArray();
+      
+      // Statistiche per skill tags
+      const skillTagStats = {};
+      modules.forEach(m => {
+        const tags = m.skillTags || [];
+        tags.forEach(tag => {
+          if (!skillTagStats[tag]) {
+            skillTagStats[tag] = { total: 0, completed: 0 };
+          }
+          skillTagStats[tag].total++;
+          
+          // Verifica se completato
+          const progress = basicStats.byCategory[m.category];
+          if (progress && progress.completed > 0) {
+            // Approssimazione: se categoria ha completati, considera tag completato
+            skillTagStats[tag].completed++;
+          }
+        });
+      });
+      
+      // Statistiche per content path
+      const modulesWithContent = modules.filter(m => m.contentPath).length;
+      const contentCoverage = modules.length > 0
+        ? Math.round((modulesWithContent / modules.length) * 100)
+        : 0;
+      
+      return {
+        ...basicStats,
+        skillTagStats,
+        contentCoverage: `${contentCoverage}%`,
+        modulesWithContentPath: modulesWithContent,
+        totalModules: modules.length,
+        modulesNeedingRevision: await ModuleManager.getModulesNeedingRevision(365)
+      };
+    } catch (error) {
+      console.error('❌ Errore calcolo statistiche estese:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Naviga al contenuto del modulo (per integrazione Typemill)
+   * @param {number} moduleId - ID del modulo
+   * @returns {Promise<string>} URL del contenuto
+   */
+  async navigateToModuleContent(moduleId) {
+    try {
+      const module = await this.db.modules.get(moduleId);
+      if (!module) {
+        throw new Error('Modulo non trovato');
+      }
+      
+      if (!module.contentPath) {
+        throw new Error('Modulo senza contentPath definito');
+      }
+      
+      // Per Typemill, il contentPath è relativo alla base URL
+      const baseUrl = 'https://tuo-typemill-instance.com'; // Da configurare
+      const contentUrl = `${baseUrl}${module.contentPath}`;
+      
+      console.log(`🌐 Navigazione a: ${contentUrl}`);
+      
+      // In un'app reale, qui si aprirebbe la pagina
+      // window.open(contentUrl, '_blank');
+      
+      return contentUrl;
+    } catch (error) {
+      console.error('❌ Errore navigazione contenuto:', error);
       throw error;
     }
   }
