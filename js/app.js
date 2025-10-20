@@ -11,6 +11,7 @@ import AssessmentManager from './database/assessment-manager.js';
 import MigrationManager from './database/migration-manager.js';
 import LevelDataLoader from './data/level-data-loader.js';
 import LevelMigrationManager from './database/level-migration-manager.js';
+import DashboardView from './views/dashboard-view.js';
 
 // Inizializzazione applicazione
 async function initApp() {
@@ -34,6 +35,9 @@ async function initApp() {
     
     // Setup event listeners
     setupEventListeners();
+    
+    // Inizializza vista dashboard
+    await initDashboardView();
     
     console.log('✅ Applicazione inizializzata con successo!');
     
@@ -136,11 +140,105 @@ async function displayStats() {
 }
 
 /**
- * Setup event listeners (placeholder per UI futura)
+ * Setup event listeners per view switching
  */
 function setupEventListeners() {
-  // Questo verrà espanso nelle fasi successive
-  console.log('🎯 Event listeners pronti');
+  console.log('🎯 Setup event listeners per view switching...');
+  
+  // View switching buttons
+  const tableBtn = document.getElementById('table-view-btn');
+  const graphBtn = document.getElementById('graph-view-btn');
+  const dashboardBtn = document.getElementById('dashboard-view-btn');
+  
+  if (tableBtn) {
+    tableBtn.addEventListener('click', () => switchView('table'));
+  }
+  
+  if (graphBtn) {
+    graphBtn.addEventListener('click', () => switchView('graph'));
+  }
+  
+  if (dashboardBtn) {
+    dashboardBtn.addEventListener('click', () => switchView('dashboard'));
+  }
+  
+  console.log('✅ Event listeners view switching pronti');
+}
+
+/**
+ * Inizializza vista dashboard
+ */
+async function initDashboardView() {
+  try {
+    console.log('📊 Inizializzazione vista dashboard...');
+    await window.dashboardView.init();
+    console.log('✅ Vista dashboard inizializzata');
+  } catch (error) {
+    console.error('❌ Errore inizializzazione dashboard:', error);
+  }
+}
+
+/**
+ * Switch tra viste
+ */
+function switchView(viewType) {
+  console.log(`🔄 Cambio vista: ${viewType}`);
+  
+  // Nascondi tutte le viste
+  const tableView = document.getElementById('table-view');
+  const graphView = document.getElementById('graph-view');
+  const dashboardView = document.getElementById('dashboard-view');
+  
+  if (tableView) tableView.style.display = 'none';
+  if (graphView) graphView.style.display = 'none';
+  if (dashboardView) dashboardView.style.display = 'none';
+  
+  // Aggiorna stato bottoni
+  const tableBtn = document.getElementById('table-view-btn');
+  const graphBtn = document.getElementById('graph-view-btn');
+  const dashboardBtn = document.getElementById('dashboard-view-btn');
+  
+  if (tableBtn) tableBtn.classList.remove('active');
+  if (graphBtn) graphBtn.classList.remove('active');
+  if (dashboardBtn) dashboardBtn.classList.remove('active');
+  
+  // Mostra vista selezionata
+  switch (viewType) {
+    case 'table':
+      if (tableView) tableView.style.display = 'block';
+      if (tableBtn) tableBtn.classList.add('active');
+      break;
+      
+    case 'graph':
+      if (graphView) graphView.style.display = 'block';
+      if (graphBtn) graphBtn.classList.add('active');
+      break;
+      
+    case 'dashboard':
+      if (dashboardView) dashboardView.style.display = 'block';
+      if (dashboardBtn) dashboardBtn.classList.add('active');
+      // Refresh dashboard data
+      window.dashboardView.init().catch(console.error);
+      break;
+  }
+  
+  // Gestione filtro area didattica se presente
+  handleTeachingAreaFilter(viewType);
+}
+
+/**
+ * Gestione filtro area didattica per navigazione da dashboard
+ */
+function handleTeachingAreaFilter(viewType) {
+  if (viewType === 'table') {
+    const filterArea = sessionStorage.getItem('filterTeachingArea');
+    if (filterArea) {
+      console.log(`🎯 Applicando filtro area: ${filterArea}`);
+      // Qui verrà implementato il filtro nella vista tabella
+      // Per ora rimuoviamo il filtro dalla session storage
+      sessionStorage.removeItem('filterTeachingArea');
+    }
+  }
 }
 
 /**

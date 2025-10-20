@@ -18,7 +18,25 @@ class ProgressManager {
    * @param {Object} additionalData - Dati aggiuntivi (note, score, etc.)
    * @returns {Promise<number>} ID del record di progresso
    */
-  async updateProgress(moduleId, status, additionalData = {}) {
+  async updateProgress(moduleId, statusOrData, additionalData = {}) {
+    // Handle both parameter formats:
+    // 1. updateProgress(moduleId, status, additionalData)
+    // 2. updateProgress(moduleId, {status, completionDate, score, notes})
+    
+    let status;
+    let data = {};
+    
+    if (typeof statusOrData === 'string') {
+      // Format 1: separate parameters
+      status = statusOrData;
+      data = additionalData;
+    } else if (typeof statusOrData === 'object') {
+      // Format 2: object parameter
+      status = statusOrData.status;
+      data = statusOrData;
+    } else {
+      throw new Error('Invalid parameters for updateProgress');
+    }
     try {
       // Verifica che il modulo esista
       const module = await this.db.modules.get(moduleId);
@@ -37,13 +55,13 @@ class ProgressManager {
         // Aggiorna progresso esistente
         const updates = {
           status,
-          ...additionalData,
+          ...data,
           updatedAt: now
         };
         
         // Se completato, aggiungi data completamento
         if (status === 'completed' && !existing.completionDate) {
-          updates.completionDate = now;
+          updates.completionDate = data.completionDate || now;
         }
         
         // Incrementa tentativi se fallito
@@ -61,11 +79,11 @@ class ProgressManager {
           moduleId,
           status,
           startDate: status !== 'not-started' ? now : null,
-          completionDate: status === 'completed' ? now : null,
+          completionDate: status === 'completed' ? (data.completionDate || now) : null,
           attempts: status === 'failed' ? 1 : 0,
           createdAt: now,
           updatedAt: now,
-          ...additionalData
+          ...data
         };
         
         const id = await this.db.progress.add(progressData);
