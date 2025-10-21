@@ -1,0 +1,2505 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <title>Officina Tracker - Formazione</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <style>
+    /* CSS Variables for Theme System */
+    :root {
+      /* Primary Colors */
+      --primary-purple: #8000E5;
+      --primary-yellow: #FFDA00;
+      
+      /* Grayscale */
+      --black: #000000;
+      --gray-90: #1A1A1A;
+      --gray-80: #333333;
+      --gray-70: #4D4D4D;
+      --gray-60: #666666;
+      --gray-50: #808080;
+      --gray-40: #999999;
+      --gray-30: #B3B3B3;
+      --gray-20: #CCCCCC;
+      --gray-10: #E6E6E6;
+      --gray-5: #F2F2F2;
+      --white: #FFFFFF;
+      
+      /* Theme Colors - Light (Default) */
+      --bg-primary: var(--white);
+      --bg-secondary: var(--gray-5);
+      --bg-sidebar: var(--gray-90);
+      --bg-table-header: var(--primary-purple);
+      --bg-graph: var(--gray-5);
+      --text-primary: var(--gray-90);
+      --text-secondary: var(--gray-60);
+      --text-sidebar: var(--white);
+      --text-table-header: var(--white);
+      --border-primary: var(--gray-20);
+      --border-secondary: var(--gray-10);
+      --accent-primary: var(--primary-purple);
+      --accent-secondary: var(--primary-yellow);
+      --status-completed: #28a745;
+      --status-in-progress: var(--primary-yellow);
+      --status-not-started: var(--gray-40);
+      --shadow: rgba(0,0,0,0.1);
+    }
+
+    /* Dark Theme */
+    [data-theme="dark"] {
+      --bg-primary: var(--gray-90);
+      --bg-secondary: var(--gray-80);
+      --bg-sidebar: var(--black);
+      --bg-table-header: var(--primary-purple);
+      --bg-graph: var(--gray-80);
+      --text-primary: var(--white);
+      --text-secondary: var(--gray-30);
+      --text-sidebar: var(--white);
+      --text-table-header: var(--white);
+      --border-primary: var(--gray-70);
+      --border-secondary: var(--gray-60);
+      --accent-primary: var(--primary-purple);
+      --accent-secondary: var(--primary-yellow);
+      --status-completed: #28a745;
+      --status-in-progress: var(--primary-yellow);
+      --status-not-started: var(--gray-50);
+      --shadow: rgba(0,0,0,0.3);
+    }
+
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      display: flex;
+      height: 100vh;
+      min-height: 500px; /* Minimum height to prevent sidebar overflow */
+    }
+    aside {
+      width: 260px;
+      background: var(--bg-sidebar);
+      color: var(--text-sidebar);
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      min-height: 100vh;
+      overflow-y: auto; /* Enable scrolling when content overflows */
+    }
+    
+    .sidebar-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      overflow-y: auto;
+    }
+    aside h2 { margin-bottom: 10px; font-size: 1.1rem; }
+    .filters {
+      flex-shrink: 0; /* Prevent filters from shrinking */
+      overflow-y: visible; /* Keep filters fully visible */
+      min-height: 200px; /* Ensure filters section has minimum height */
+    }
+    select, input {
+      width: 100%;
+      margin: 8px 0 12px;
+      padding: 6px;
+      border: none;
+      border-radius: 4px;
+    }
+    
+    /* Checkbox label styling for inline layout */
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 8px 0 12px;
+      cursor: pointer;
+    }
+    
+    .checkbox-label input[type="checkbox"] {
+      width: auto;
+      margin: 0;
+    }
+        
+    .view-switch {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      flex-shrink: 0; /* Prevent view switch from shrinking */
+    }
+
+    .view-switch h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--text-sidebar);
+    }
+
+    .view-switch button {
+      width: 100%;
+      margin-bottom: 8px;
+      background: var(--accent-primary);
+      color: var(--text-table-header);
+      border: none;
+      border-radius: 4px;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .view-switch button.active {
+      background: var(--accent-secondary);
+      color: var(--black);
+    }
+
+    .view-switch button:hover {
+      background: var(--gray-70);
+      color: var(--white);
+    }
+
+    .theme-switch {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      flex-shrink: 0; /* Prevent theme switch from shrinking */
+    }
+
+    .theme-switch h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--text-sidebar);
+    }
+
+    .theme-switch button {
+      width: 100%;
+      margin-bottom: 8px;
+      background: var(--accent-primary);
+      color: var(--text-table-header);
+      border: none;
+      border-radius: 4px;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .theme-switch button.active {
+      background: var(--accent-secondary);
+      color: var(--black);
+    }
+
+    .theme-switch button:hover {
+      background: var(--gray-70);
+      color: var(--white);
+    }
+
+    .backup-section {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      flex-shrink: 0; /* Prevent backup section from shrinking */
+      overflow-y: auto; /* Allow backup section to scroll if needed */
+    }
+
+    .backup-section h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: var(--text-sidebar);
+    }
+
+    .backup-section button {
+      width: 100%;
+      margin-bottom: 8px;
+      background: var(--status-completed);
+      color: var(--text-table-header);
+      border: none;
+      border-radius: 4px;
+      padding: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .backup-section button:hover {
+      background: var(--gray-70);
+    }
+
+    .backup-section button:nth-child(3) {
+      background: var(--accent-primary);
+    }
+
+    .backup-section button:nth-child(3):hover {
+      background: var(--gray-70);
+    }
+
+    .backup-section button:nth-child(4) {
+      background: var(--gray-60);
+    }
+
+    .backup-section button:nth-child(4):hover {
+      background: var(--gray-70);
+    }
+
+    button {
+      padding: 8px 12px;
+      background: var(--accent-primary);
+      color: var(--text-table-header);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover { background: var(--gray-70); }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-primary);
+      box-shadow: 0 2px 6px var(--shadow);
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-primary);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+    th { background: var(--bg-table-header); color: var(--text-table-header); }
+
+    /* Larghezze personalizzate delle colonne */
+    #modules-table th:nth-child(4),
+    #modules-table td:nth-child(4) {
+      min-width: 180px;     /* spazio per il menu a tendina dello stato */
+    }
+
+    #modules-table select.status-select {
+      width: 100%;
+      padding: 6px;
+      border-radius: 4px;
+      border: 1px solid var(--border-primary);
+      font-size: 0.95rem;
+    }
+    
+    /* Colonna Praticato (checkbox) - larghezza minima */
+    #modules-table th:nth-child(5),
+    #modules-table td:nth-child(5) {
+      width: 80px;          /* spazio fisso per il checkbox */
+      min-width: 80px;
+      text-align: center;
+    }
+
+    #modules-table input.applied-check {
+      width: 20px;
+      height: 20px;
+      margin: 0 auto;
+      display: block;
+    }
+    
+    /* Colonne adattive per qualità e soddisfazione */
+    #modules-table th:nth-child(6),
+    #modules-table td:nth-child(6),
+    #modules-table th:nth-child(7),
+    #modules-table td:nth-child(7) {
+      width: auto;
+      white-space: nowrap;
+    }
+
+    #modules-table select.quality-select,
+    #modules-table select.satisfaction-select {
+      min-width: 85px;
+      width: auto;
+      padding: 3px 5px;
+      font-size: 0.9rem;
+    }
+
+    /* Module details sidebar */
+    #module-details-sidebar {
+      width: 320px;
+      background: var(--bg-primary);
+      color: var(--text-primary); /* Ensure text color uses theme variable */
+      border-left: 1px solid var(--border-primary);
+      padding: 20px;
+      overflow-y: auto;
+      box-shadow: -2px 0 6px var(--shadow);
+    }
+
+    #module-details-sidebar.hidden {
+      display: none;
+    }
+
+    .module-details-header {
+      border-bottom: 2px solid var(--accent-primary);
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+
+    .module-details-header h2 {
+      color: var(--accent-primary);
+      margin-bottom: 8px;
+    }
+
+    .module-details-header .module-code {
+      background: var(--bg-secondary);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .module-details-section {
+      margin-bottom: 20px;
+    }
+
+    .module-details-section h3 {
+      color: var(--text-primary);
+      font-size: 1rem;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--border-primary);
+      padding-bottom: 5px;
+    }
+    
+    .module-details-section p,
+    .module-details-section li {
+      color: var(--text-primary);
+    }
+
+    .module-details-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .module-details-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-secondary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .module-details-list li:last-child {
+      border-bottom: none;
+    }
+
+    .module-details-badge {
+      display: inline-block;
+      background: var(--bg-secondary);
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      margin-right: 8px;
+      margin-bottom: 4px;
+    }
+
+    .module-details-badge.primary {
+      background: var(--accent-primary);
+      color: var(--white);
+    }
+
+    .module-details-badge.success {
+      background: var(--status-completed);
+      color: var(--white);
+    }
+
+    .module-details-badge.warning {
+      background: var(--status-in-progress);
+      color: var(--black);
+    }
+
+    .module-details-badge.info {
+      background: var(--accent-primary);
+      color: var(--white);
+    }
+
+    .status-in-progress { color: var(--status-in-progress); }
+    .status-completed { color: var(--status-completed); }
+    .status-not-started { color: var(--status-not-started); }
+    .applied-yes { color: var(--status-completed); }
+    .applied-no { color: #dc3545; }
+    
+    /* Link styles */
+    a {
+      color: var(--accent-primary);
+      text-decoration: none;
+    }
+    
+    a:hover {
+      color: var(--accent-secondary);
+      text-decoration: underline;
+    }
+    
+    /* Invert link colors for dark theme */
+    [data-theme="dark"] a {
+      color: var(--accent-secondary);
+    }
+    
+    [data-theme="dark"] a:hover {
+      color: var(--accent-primary);
+    }
+
+    /* Modale */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal.active { display: flex; }
+    .modal-content {
+      background: var(--bg-primary);
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+    }
+    .modal-content h3 { margin-bottom: 10px; }
+    .modal-content label { display: block; margin-top: 10px; }
+    .modal-content textarea {
+      width: 100%;
+      height: 80px;
+      resize: vertical;
+    }
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 15px;
+    }
+    
+    /* Pulsante hamburger (solo mobile) */
+    .mobile-menu-btn {
+      display: none;
+    }
+    
+    .mobile-menu-btn.right {
+      left: auto;
+      right: 10px;
+    }
+
+    /* Dashboard Responsive Design */
+    @media (max-width: 1024px) {
+      .dashboard-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .dashboard-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .heatmap-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-details {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .timeline-bars {
+        gap: 0.5rem;
+        height: 150px;
+      }
+
+      .bar-fill {
+        width: 20px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .dashboard-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .dashboard-actions button {
+        width: 100%;
+      }
+    }
+
+    /* Responsive layout: sidebar mobile a scomparsa */
+    @media (max-width: 1024px) {
+
+      /* Pulsante hamburger */
+      .mobile-menu-btn {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+        background: var(--accent-primary);
+        color: var(--text-table-header);
+        border: none;
+        border-radius: 4px;
+        padding: 10px 12px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      /* Sidebar trasformata in menu scorrevole */
+      #sidebar {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 240px;
+        height: 100%;
+        background: var(--bg-sidebar);
+        color: var(--text-sidebar);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        z-index: 999;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+        min-height: 100vh; /* Ensure full height on mobile */
+      }
+      
+      #sidebar > h2 {
+        margin-top: 60px;
+      }
+
+      #sidebar.open { 
+        left: 0; 
+        }
+
+      /* Module details sidebar mobile */
+      #module-details-sidebar {
+        position: fixed;
+        top: 0;
+        right: -320px;
+        width: 300px;
+        height: 100%;
+        background: var(--bg-primary);
+        z-index: 998;
+        transition: right 0.3s ease;
+      }
+
+      #module-details-sidebar.open {
+        right: 0;
+      }
+      
+      /* Show mobile buttons on small screens */
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      /* Filtri e campi ridimensionati ma visibili */
+      .filters label,
+      .filters select,
+      .filters input {
+        font-size: 0.9rem;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      /* Responsive table adjustments for narrow screens */
+      #modules-table th:nth-child(4),
+      #modules-table td:nth-child(4) {
+        min-width: 160px; /* Slightly reduced but still readable */
+      }
+
+      #modules-table select.status-select {
+        font-size: 0.85rem; /* Smaller font for narrow screens */
+        padding: 4px;
+      }
+
+      /* Adatta main content e tabella */
+      main {
+        padding: 10px;
+        margin-top: 55px; /* spazio per pulsante hamburger */
+      }
+
+      table { font-size: 0.9rem; }
+    }
+
+    /* Extra narrow screens (below 600px) */
+    @media (max-width: 600px) {
+      #modules-table th:nth-child(4),
+      #modules-table td:nth-child(4) {
+        min-width: 140px; /* Further reduced but still functional */
+      }
+
+      #modules-table select.status-select {
+        font-size: 0.8rem; /* Even smaller font for very narrow screens */
+        padding: 3px;
+      }
+
+      /* Reduce table padding for extra narrow screens */
+      th, td {
+        padding: 6px 4px;
+      }
+    }
+    
+    #module-graph text {
+      font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      paint-order: fill;
+      stroke: none;
+      shape-rendering: optimizeLegibility;
+    }
+    
+    #graph-view {
+      width: 100%;
+      height: calc(100vh - 40px); /* riempie tutta la finestra meno un margine */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--bg-graph);
+      overflow: hidden;
+    }
+
+    #module-graph {
+      width: 100%;
+      height: 100%;
+    }
+
+
+    /* Modalità stampa */
+    @media print {
+      body {
+        flex-direction: column;
+        background: white;
+        color: black;
+      }
+
+      #sidebar,
+      .mobile-menu-btn,
+      #module-details-sidebar {
+        display: none !important;      /* nasconde sidebar e pulsante filtri */
+      }
+
+      .modal {
+        display: none !important;      /* nasconde eventuale modale aperto */
+      }
+
+      main {
+        width: 100%;
+        padding: 0;
+      }
+
+      table {
+        box-shadow: none;
+        border: 1px solid #777;
+        font-size: 0.9rem;
+      }
+
+      th {
+        background: #ddd !important;
+        color: #000 !important;
+      }
+
+      td, th {
+        border: 1px solid #777;
+      }
+      
+    }
+
+    /* Landscape mode with small height - prevent sidebar overflow */
+    @media (max-height: 500px) and (orientation: landscape) {
+      body {
+        min-height: 500px; /* Force minimum height */
+      }
+      
+      aside {
+        min-height: 500px; /* Ensure sidebar has minimum height */
+        overflow-y: auto; /* Allow scrolling if needed */
+      }
+      
+      .filters {
+        flex-shrink: 0; /* Prevent filters from shrinking */
+        min-height: 150px; /* Reduced minimum height for small screens */
+        overflow-y: visible; /* Keep filters fully visible */
+      }
+      
+      .backup-section {
+        margin-top: 10px;
+        padding-top: 10px;
+      }
+      
+      .view-switch,
+      .theme-switch {
+        margin-top: 10px;
+        padding-top: 10px;
+      }
+    }
+
+    /* Extra small height landscape mode */
+    @media (max-height: 400px) and (orientation: landscape) {
+      aside {
+        padding: 15px 20px; /* Reduce padding to save space */
+      }
+      
+      .filters {
+        min-height: 120px;
+        flex-shrink: 0; /* Prevent filters from shrinking */
+      }
+      
+      .backup-section button {
+        padding: 6px;
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+      }
+      
+      .view-switch button,
+      .theme-switch button {
+        padding: 6px;
+        margin-bottom: 6px;
+      }
+    }
+
+    /* Dashboard Styles */
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border-primary);
+    }
+
+    .dashboard-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .dashboard-actions button {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border-primary);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      border-radius: 0.375rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .dashboard-actions button:hover {
+      background: var(--bg-secondary);
+    }
+
+    .dashboard-actions button.active {
+      background: var(--accent-primary);
+      color: var(--text-table-header);
+      border-color: var(--accent-primary);
+    }
+
+    /* Heatmap Styles */
+    .heatmap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .teaching-area-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-primary);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px var(--shadow);
+    }
+
+    .teaching-area-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px var(--shadow);
+    }
+
+    .area-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .area-header h4 {
+      margin: 0;
+      color: var(--text-primary);
+      font-size: 1.1rem;
+    }
+
+    .area-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-small {
+      padding: 0.25rem 0.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-primary);
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      color: var(--text-primary);
+    }
+
+    .area-progress {
+      margin-bottom: 1rem;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: var(--bg-secondary);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--status-completed);
+      transition: width 0.3s ease;
+    }
+
+    .progress-text {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .area-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    /* Color intensity classes for heatmap */
+    .intensity-0 { border-left: 4px solid var(--gray-20); }
+    .intensity-1 { border-left: 4px solid var(--status-in-progress); }
+    .intensity-2 { border-left: 4px solid #fd7e14; }
+    .intensity-3 { border-left: 4px solid #20c997; }
+    .intensity-4 { border-left: 4px solid var(--accent-primary); }
+    .intensity-5 { border-left: 4px solid var(--status-completed); }
+
+    /* Timeline Styles */
+    .timeline-container {
+      background: var(--bg-primary);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border-primary);
+      margin-bottom: 2rem;
+    }
+
+    .timeline-chart {
+      margin: 2rem 0;
+    }
+
+    .timeline-bars {
+      display: flex;
+      align-items: end;
+      gap: 1rem;
+      height: 200px;
+      padding: 1rem;
+      border: 1px solid var(--border-primary);
+      border-radius: 0.375rem;
+      background: var(--bg-secondary);
+    }
+
+    .timeline-bar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      height: 100%;
+    }
+
+    .bar-fill {
+      width: 30px;
+      background: var(--accent-primary);
+      border-radius: 2px 2px 0 0;
+      transition: height 0.3s ease;
+      min-height: 5px;
+    }
+
+    .bar-label {
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    .bar-value {
+      margin-top: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .timeline-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Stats Styles */
+    .stats-container {
+      background: var(--bg-primary);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border-primary);
+    }
+
+    .stats-overview {
+      margin-bottom: 2rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .stat-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-primary);
+      border-radius: 0.375rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .stat-card.large {
+      padding: 1.5rem;
+    }
+
+    .stat-card h4 {
+      margin: 0 0 0.5rem 0;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    .stat-percentage {
+      font-size: 1rem;
+      color: var(--status-completed);
+      margin: 0.25rem 0 0 0;
+    }
+
+    .stats-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .stats-column h4 {
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .recommendations, .trends {
+      background: var(--bg-secondary);
+      border-radius: 0.375rem;
+      padding: 1rem;
+    }
+
+    .recommendations p, .trends p {
+      margin: 0.5rem 0;
+      color: var(--text-primary);
+    }
+
+    /* Insights Styles */
+    .dashboard-insights {
+      background: var(--bg-primary);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border-primary);
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .insight-card {
+      padding: 1rem;
+      border-radius: 0.375rem;
+      border-left: 4px solid;
+    }
+
+    .insight-card.positive {
+      background: #d1edff;
+      border-left-color: var(--accent-primary);
+    }
+
+    .insight-card.warning {
+      background: #fff3cd;
+      border-left-color: var(--status-in-progress);
+    }
+
+    .insight-card.info {
+      background: #d1f2eb;
+      border-left-color: #20c997;
+    }
+
+    .insight-card h5 {
+      margin: 0 0 0.5rem 0;
+      color: var(--text-primary);
+    }
+
+    .insight-card p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    /* Error and No Data States */
+    .error-message {
+      text-align: center;
+      padding: 3rem;
+      background: var(--bg-primary);
+      border-radius: 0.5rem;
+      border: 1px solid var(--border-primary);
+    }
+
+    .error-message h3 {
+      color: #dc3545;
+      margin-bottom: 1rem;
+    }
+
+    .no-data {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    /* Goal View Styles */
+    .goal-container {
+      background: var(--bg-primary);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border-primary);
+      margin-bottom: 2rem;
+    }
+
+    .goal-selection {
+      margin-bottom: 2rem;
+    }
+
+    .goal-selection h3 {
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .goal-select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border-primary);
+      border-radius: 0.375rem;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .goal-path-content {
+      background: var(--bg-secondary);
+      border-radius: 0.375rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border-primary);
+    }
+
+    .path-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .path-step {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--bg-primary);
+      border-radius: 0.375rem;
+      border: 1px solid var(--border-primary);
+      transition: all 0.2s ease;
+    }
+
+    .path-step:hover {
+      transform: translateX(4px);
+      box-shadow: 0 2px 4px var(--shadow);
+    }
+
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--accent-primary);
+      color: var(--text-table-header);
+      border-radius: 50%;
+      font-weight: 600;
+      font-size: 0.875rem;
+      flex-shrink: 0;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-title {
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .step-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .step-status {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .status-completed {
+      background: var(--status-completed);
+      color: var(--white);
+    }
+
+    .status-pending {
+      background: var(--status-not-started);
+      color: var(--white);
+    }
+
+    .status-current {
+      background: var(--status-in-progress);
+      color: var(--black);
+    }
+
+    .step-teaching-area {
+      background: var(--bg-secondary);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .goal-summary {
+      background: var(--bg-secondary);
+      border-radius: 0.375rem;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border-primary);
+    }
+
+    .goal-summary h4 {
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .goal-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .goal-stat {
+      text-align: center;
+      padding: 0.75rem;
+      background: var(--bg-primary);
+      border-radius: 0.25rem;
+      border: 1px solid var(--border-primary);
+    }
+
+    .goal-stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .goal-stat-label {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .goal-progress {
+      margin-top: 1rem;
+    }
+
+    .goal-progress-bar {
+      width: 100%;
+      height: 8px;
+      background: var(--bg-secondary);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+    }
+
+    .goal-progress-fill {
+      height: 100%;
+      background: var(--status-completed);
+      transition: width 0.3s ease;
+    }
+
+    .goal-progress-text {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    .goal-no-path {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .goal-error {
+      text-align: center;
+      padding: 2rem;
+      color: #dc3545;
+      background: #f8d7da;
+      border-radius: 0.375rem;
+      border: 1px solid #f5c6cb;
+    }
+
+    /* Responsive goal view */
+    @media (max-width: 1024px) {
+      .goal-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .path-step {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+
+      .step-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .step-number {
+        align-self: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .goal-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .goal-container {
+        padding: 1rem;
+      }
+
+      .goal-path-content {
+        padding: 1rem;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <button id="menu-toggle" class="mobile-menu-btn">☰</button>
+  <button id="details-toggle" class="mobile-menu-btn right">☰</button>
+  <aside id="sidebar">
+    <h2>Filtri</h2>
+    <div class="filters">
+      <label>Stato</label>
+      <select id="filter-status">
+        <option value="all">Tutti</option>
+        <option value="completed">Completati</option>
+        <option value="in-progress">In corso</option>
+        <option value="not-started">Da iniziare</option>
+      </select>
+
+      <label>Insegnamento</label>
+      <select id="filter-teaching">
+        <option value="all">Tutti</option>
+      </select>
+
+      <label>Cerca moduli</label>
+      <input type="text" id="search-modules" placeholder="Testo libero...">
+      
+      <label class="checkbox-label">
+        <input type="checkbox" id="filter-unlocked"> Solo moduli sbloccati
+      </label>
+
+    </div>
+    <div class="view-switch">
+      <h3>Vista</h3>
+      <button id="table-view-btn" class="active">Tabella</button>
+      <button id="graph-view-btn">Grafico</button>
+      <button id="dashboard-view-btn">Dashboard</button>
+    </div>
+    
+    <div class="theme-switch">
+      <h3>Tema</h3>
+      <button id="light-theme-btn" class="theme-btn active">☀️ Chiaro</button>
+      <button id="dark-theme-btn" class="theme-btn">🌙 Scuro</button>
+    </div>
+    
+    <div class="backup-section">
+      <h3>Backup & Import</h3>
+      <button id="export-backup-btn">📥 Esporta Backup</button>
+      <button id="import-backup-btn">📤 Importa Backup</button>
+      <button id="share-backup-btn">📤 Condividi Backup</button>
+    </div>
+  </aside>
+
+  <main>
+    <h1>Mappa delle conoscenze</h1>
+    <p>Traccia dei progressi e autovalutazioni pratiche.</p>
+
+    <div id="view-container">
+      <div id="table-view">
+        <table id="modules-table">
+          <thead>
+            <tr>
+              <th>Modulo</th>
+              <th>Insegnamento</th>
+              <th>Stato</th>
+              <th>Praticato</th>
+              <th>Risultato</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="graph-view" style="display:none;">
+        <svg id="module-graph" width="100%"></svg>
+      </div>
+      <div id="dashboard-view" style="display:none;">
+        <!-- Dashboard content will be rendered here -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Module Details Sidebar -->
+  <aside id="module-details-sidebar" class="hidden">
+    <div class="module-details-header">
+      <h2 id="module-details-title">Seleziona un modulo</h2>
+      <div class="module-code" id="module-details-code">-</div>
+    </div>
+    
+    <div class="module-details-section">
+      <h3>Descrizione</h3>
+      <p id="module-details-description">Seleziona un modulo per visualizzare i dettagli</p>
+    </div>
+
+    <div class="module-details-section">
+      <h3>Informazioni</h3>
+      <div class="module-details-list">
+        <li><strong>Durata stimata:</strong> <span id="module-details-duration">-</span> minuti</li>
+        <li><strong>Difficoltà:</strong> <span id="module-details-difficulty" class="module-details-badge">-</span></li>
+        <li><strong>Tipo:</strong> <span id="module-details-type" class="module-details-badge">-</span></li>
+        <li><strong>Area di insegnamento:</strong> <span id="module-details-teaching-area">-</span></li>
+      </div>
+    </div>
+
+    <div class="module-details-section">
+      <h3>Strumenti richiesti</h3>
+      <ul class="module-details-list" id="module-details-tools">
+        <li>Seleziona un modulo per visualizzare gli strumenti</li>
+      </ul>
+    </div>
+
+    <div class="module-details-section">
+      <h3>Obiettivi di apprendimento</h3>
+      <ul class="module-details-list" id="module-details-outcomes">
+        <li>Seleziona un modulo per visualizzare gli obiettivi</li>
+      </ul>
+    </div>
+
+    <div class="module-details-section">
+      <h3>Criteri di valutazione</h3>
+      <div id="module-details-criteria">
+        <p>Seleziona un modulo per visualizzare i criteri</p>
+      </div>
+    </div>
+
+    <div class="module-details-section">
+      <h3>Prerequisiti</h3>
+      <div id="module-details-prerequisites">
+        <p>Seleziona un modulo per visualizzare i prerequisiti</p>
+      </div>
+    </div>
+
+    <div class="module-details-section">
+      <h3>Link al modulo</h3>
+      <a id="module-details-link" href="#" target="_blank" style="display: none;">Accedi al modulo</a>
+      <p id="module-details-no-link" style="color: var(--text-secondary);">Nessun link disponibile</p>
+    </div>
+  </aside>
+
+  <!-- Modale Valutazione -->
+  <div id="assessment-modal" class="modal">
+    <div class="modal-content">
+      <h3>Valutazione pratica</h3>
+      <form id="assessment-form">
+        <input type="hidden" id="module-id">
+        <label>Apprendimento applicato in pratica:
+          <input type="checkbox" id="practical-applied">
+        </label>
+
+        <label>Risultato:
+          <select id="result-quality">
+            <option value="-">-</option>
+            <option value="1">Scarso</option>
+            <option value="2">Basso</option>
+            <option value="3">Medio</option>
+            <option value="4">Buono</option>
+            <option value="5">Ottimo</option>
+          </select>
+        </label>
+
+
+        <label>Note:</label>
+        <textarea id="assessment-notes"></textarea>
+
+        <div class="actions">
+          <button type="button" id="cancel-btn">Annulla</button>
+          <button type="submit" id="save-btn">Salva</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Modale Import Backup -->
+  <div id="import-modal" class="modal">
+    <div class="modal-content">
+      <h3>Importa Backup</h3>
+      <form id="import-form">
+        <label>Seleziona file backup (.json):
+          <input type="file" id="backup-file" accept=".json" required>
+        </label>
+        <div class="actions">
+          <button type="button" id="cancel-import-btn">Annulla</button>
+          <button type="submit" id="confirm-import-btn">Importa</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Modale Condivisione Backup -->
+  <div id="share-modal" class="modal">
+    <div class="modal-content">
+      <h3>Condividi Backup</h3>
+      <p>Copiare il testo sottostante per condividere il backup via WhatsApp o altri messaggeri:</p>
+      <textarea id="backup-text" readonly rows="10" style="width: 100%; font-family: monospace; margin: 10px 0;"></textarea>
+      <div class="actions">
+        <button type="button" id="copy-backup-btn">Copia</button>
+        <button type="button" id="close-share-btn">Chiudi</button>
+      </div>
+    </div>
+  </div>
+  
+  <script type="module" src="./js/app.js"></script>
+  <script type="module">
+  import AssessmentManager from './js/database/assessment-manager.js';
+  import ProgressManager from './js/database/progress-manager.js';
+  import ModuleManager from './js/database/module-manager.js';
+  import BackupManager from './js/utils/backup-manager.js';
+  import LevelDataLoader from './js/data/level-data-loader.js';
+  import LevelMigrationManager from './js/database/level-migration-manager.js';
+  import db from './js/database/db-config.js';
+
+  const tableBody = document.querySelector('#modules-table tbody');
+  const moduleDetailsSidebar = document.getElementById('module-details-sidebar');
+
+  // Popola opzioni filtro per insegnamento
+  async function populateFilters() {
+    const selectTeaching = document.getElementById('filter-teaching');
+    selectTeaching.innerHTML = '<option value="all">Tutti</option>';
+    const modules = await db.modules.toArray();
+    const areas = [...new Set(modules.map(m => m.teachingArea).filter(a => a))];
+    areas.forEach(a => {
+      const opt = document.createElement('option');
+      opt.value = a; opt.textContent = a;
+      selectTeaching.appendChild(opt);
+    });
+  }
+
+  // Mostra dettagli del modulo nella sidebar
+  async function showModuleDetails(moduleId) {
+    const module = await db.modules.get(moduleId);
+    if (!module) return;
+
+    // Aggiorna i contenuti della sidebar
+    document.getElementById('module-details-title').textContent = module.title;
+    document.getElementById('module-details-code').textContent = module.code;
+    document.getElementById('module-details-description').textContent = module.description || 'Nessuna descrizione disponibile';
+    document.getElementById('module-details-duration').textContent = module.estimatedDuration || '-';
+    
+    // Aggiorna difficoltà con badge colorato
+    const difficultyElement = document.getElementById('module-details-difficulty');
+    difficultyElement.textContent = module.difficulty || '-';
+    difficultyElement.className = 'module-details-badge ' +
+      (module.difficulty === 'base' ? 'success' :
+       module.difficulty === 'intermedio' ? 'warning' :
+       module.difficulty === 'avanzato' ? 'primary' : 'info');
+    
+    // Aggiorna tipo
+    const typeElement = document.getElementById('module-details-type');
+    typeElement.textContent = module.type || '-';
+    typeElement.className = 'module-details-badge ' +
+      (module.type === 'presenza' ? 'primary' : 'info');
+    
+    document.getElementById('module-details-teaching-area').textContent = module.teachingArea || '-';
+
+    // Aggiorna strumenti richiesti
+    const toolsList = document.getElementById('module-details-tools');
+    toolsList.innerHTML = '';
+    if (module.toolsRequired && module.toolsRequired.length > 0) {
+      module.toolsRequired.forEach(tool => {
+        const li = document.createElement('li');
+        li.textContent = tool;
+        toolsList.appendChild(li);
+      });
+    } else {
+      const li = document.createElement('li');
+      li.textContent = 'Nessuno strumento specifico richiesto';
+      li.style.color = 'var(--text-secondary)';
+      toolsList.appendChild(li);
+    }
+
+    // Aggiorna obiettivi di apprendimento
+    const outcomesList = document.getElementById('module-details-outcomes');
+    outcomesList.innerHTML = '';
+    if (module.learningOutcomes && module.learningOutcomes.length > 0) {
+      module.learningOutcomes.forEach(outcome => {
+        const li = document.createElement('li');
+        li.textContent = outcome;
+        outcomesList.appendChild(li);
+      });
+    } else {
+      const li = document.createElement('li');
+      li.textContent = 'Nessun obiettivo specificato';
+      li.style.color = 'var(--text-secondary)';
+      outcomesList.appendChild(li);
+    }
+
+    // Aggiorna criteri di valutazione
+    const criteriaElement = document.getElementById('module-details-criteria');
+    if (module.practicalCriteria) {
+      criteriaElement.innerHTML = `
+        <p><strong>${module.practicalCriteria.description}</strong></p>
+        <p><strong>Competenze richieste:</strong> ${module.practicalCriteria.requiredSkills?.join(', ') || 'Nessuna specificata'}</p>
+        <p><strong>Metodo di valutazione:</strong> ${module.practicalCriteria.assessmentMethod || 'Non specificato'}</p>
+        <p><strong>Metriche di qualità:</strong></p>
+        <ul>
+          ${module.practicalCriteria.qualityMetrics?.map(metric => `<li>${metric}</li>`).join('') || '<li>Nessuna metrica specificata</li>'}
+        </ul>
+      `;
+    } else {
+      criteriaElement.innerHTML = '<p>Nessun criterio di valutazione specificato</p>';
+    }
+
+    // Aggiorna prerequisiti
+    const prerequisitesElement = document.getElementById('module-details-prerequisites');
+    const dependencies = await db.dependencies.where('moduleId').equals(moduleId).toArray();
+    
+    if (dependencies.length > 0) {
+      const prerequisiteModules = await Promise.all(
+        dependencies.map(async dep => {
+          const prereqModule = await db.modules.get(dep.prerequisiteId);
+          return {
+            module: prereqModule,
+            type: dep.dependencyType
+          };
+        })
+      );
+      
+      prerequisitesElement.innerHTML = `
+        <p><strong>Questo modulo richiede:</strong></p>
+        <ul class="module-details-list">
+          ${prerequisiteModules.map(prereq => `
+            <li>
+              <strong>${prereq.module?.title || 'Modulo sconosciuto'}</strong>
+              <span class="module-details-badge ${prereq.type === 'mandatory' ? 'primary' : 'info'}">
+                ${prereq.type === 'mandatory' ? 'Obbligatorio' : 'Raccomandato'}
+              </span>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+    } else {
+      prerequisitesElement.innerHTML = '<p>Nessun prerequisito richiesto</p>';
+    }
+
+    // Aggiorna link
+    const linkElement = document.getElementById('module-details-link');
+    const noLinkElement = document.getElementById('module-details-no-link');
+    if (module.link) {
+      linkElement.href = module.link;
+      linkElement.style.display = 'block';
+      noLinkElement.style.display = 'none';
+    } else {
+      linkElement.style.display = 'none';
+      noLinkElement.style.display = 'block';
+    }
+
+    // Mostra la sidebar
+    moduleDetailsSidebar.classList.remove('hidden');
+    if (window.innerWidth <= 1024) {
+      moduleDetailsSidebar.classList.add('open');
+    }
+  }
+
+  // Chiudi sidebar dettagli
+  function closeModuleDetails() {
+    moduleDetailsSidebar.classList.add('hidden');
+    if (window.innerWidth <= 1024) {
+      moduleDetailsSidebar.classList.remove('open');
+    }
+    // Reset evidenziazione quando si chiude la sidebar
+    selectedModuleId = null;
+    if (document.getElementById('graph-view').style.display === 'block') {
+      renderGraph(); // Riricarica il grafo per rimuovere l'evidenziazione
+    }
+  }
+
+  // Funzione principale di render con editing inline
+  let renderingInProgress = false; // blocca doppi render
+
+  async function renderModules() {
+    if (renderingInProgress) return;  // previene doppi richiami sovrapposti
+    renderingInProgress = true;
+
+    // Pulisce la tabella
+    tableBody.innerHTML = '';
+
+    const fStatus = document.getElementById('filter-status').value;
+    const fTeaching = document.getElementById('filter-teaching').value;
+    const query = document.getElementById('search-modules').value.toLowerCase().trim();
+    const showOnlyUnlocked = document.getElementById('filter-unlocked').checked;
+
+    const [modules, progress, assessments, dependencies] = await Promise.all([
+      db.modules.toArray(),
+      db.progress.toArray(),
+      db.assessments.toArray(),
+      db.dependencies.toArray()
+    ]);
+
+    const pMap = new Map(progress.map(p => [p.moduleId, p]));
+    const aMap = new Map(assessments.map(a => [a.moduleId, a]));
+
+    const filteredModules = modules.filter(m => {
+      const p = pMap.get(m.id);
+      const status = p?.status ?? 'not-started';
+
+      const matchTeaching =
+        fTeaching === 'all' ||
+        (m.teachingArea && m.teachingArea.toLowerCase().trim() === fTeaching.toLowerCase().trim());
+      const matchStatus = fStatus === 'all' || status === fStatus;
+      const matchQuery = !query || m.title.toLowerCase().includes(query);
+
+      if (!matchTeaching || !matchStatus || !matchQuery) return false;
+
+      if (showOnlyUnlocked) {
+        const prereqs = dependencies.filter(d => d.moduleId === m.id).map(d => d.prerequisiteId);
+        if (prereqs.length > 0) {
+          const allDone = prereqs.every(pid => {
+            const pr = progress.find(p => p.moduleId === pid);
+            return pr && pr.status === 'completed';
+          });
+          if (!allDone) return false;
+        }
+      }
+
+      return true;
+    });
+
+    // Costruisce righe
+    for (const m of filteredModules) {
+      const p = pMap.get(m.id);
+      const a = aMap.get(m.id);
+      const status = p?.status ?? 'not-started';
+
+      const tr = document.createElement('tr');
+      tr.setAttribute('data-id', m.id);
+      tr.style.cursor = 'pointer';
+      tr.innerHTML = `
+        <td>${
+          m.link
+            ? '<a href="' + m.link + '" target="_blank" class="module-link">' + m.title + '</a>'
+            : '<span class="module-title">' + m.title + '</span>'
+        }</td>
+        <td>${m.teachingArea ?? '-'}</td>
+        <td>
+          <select class="status-select" data-id="${m.id}">
+            <option value="not-started" ${status === 'not-started' ? 'selected' : ''}>⏳ Da iniziare</option>
+            <option value="in-progress" ${status === 'in-progress' ? 'selected' : ''}>🔄 In corso</option>
+            <option value="completed" ${status === 'completed' ? 'selected' : ''}>✅ Completato</option>
+          </select>
+        </td>
+        <td>
+          <input type="checkbox" class="applied-check" data-id="${m.id}" ${a?.practicalApplied ? 'checked' : ''}>
+        </td>
+        <td>
+          <select class="quality-select" data-id="${m.id}">
+            <option value="-">-</option>
+            <option value="1" ${a?.resultQuality == 1 ? 'selected' : ''}>Scarso</option>
+            <option value="2" ${a?.resultQuality == 2 ? 'selected' : ''}>Basso</option>
+            <option value="3" ${a?.resultQuality == 3 ? 'selected' : ''}>Medio</option>
+            <option value="4" ${a?.resultQuality == 4 ? 'selected' : ''}>Buono</option>
+            <option value="5" ${a?.resultQuality == 5 ? 'selected' : ''}>Ottimo</option>
+          </select>
+        </td>
+      `;
+      tableBody.appendChild(tr);
+    }
+
+    // Listener per click sulle righe della tabella
+    tableBody.querySelectorAll('tr').forEach(row => {
+      row.addEventListener('click', async (e) => {
+        // Previene l'apertura del link quando si clicca sul titolo
+        if (e.target.tagName === 'A' || e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT') {
+          return;
+        }
+        const moduleId = Number(row.dataset.id);
+        await showModuleDetails(moduleId);
+      });
+    });
+
+    // Listener per i link dei moduli (per evitare che il click sulla riga interferisca)
+    tableBody.querySelectorAll('.module-link').forEach(link => {
+      link.addEventListener('click', async (e) => {
+        e.stopPropagation(); // Previene che il click sulla riga venga attivato
+        
+        // Ottieni l'ID del modulo dal link
+        const row = link.closest('tr');
+        const moduleId = Number(row.dataset.id);
+        
+        // Verifica se il modulo è in stato "Da iniziare" e aggiorna automaticamente a "In corso"
+        const statusSelect = row.querySelector('.status-select');
+        if (statusSelect && statusSelect.value === 'not-started') {
+          try {
+            await ProgressManager.updateProgress(moduleId, 'in-progress', {});
+            // Aggiorna l'interfaccia per riflettere il cambiamento
+            await renderModules();
+          } catch (error) {
+            console.error('Errore nell\'aggiornamento automatico dello stato:', error);
+          }
+        }
+      });
+    });
+
+    // Listener inline
+    tableBody.querySelectorAll('.status-select').forEach(sel => {
+      sel.addEventListener('change', async e => {
+        const id = Number(e.target.dataset.id);
+        const val = e.target.value;
+        await ProgressManager.updateProgress(id, val, {});
+        await renderModules();
+      });
+    });
+
+    tableBody.querySelectorAll('.applied-check').forEach(chk => {
+      chk.addEventListener('change', async e => {
+        const id = Number(e.target.dataset.id);
+        let a = await db.assessments.where('moduleId').equals(id).first();
+        if (!a) a = { moduleId: id, progressId: id };
+        a.practicalApplied = e.target.checked;
+        await AssessmentManager.upsertAssessment(id, id, a);
+        await renderModules();
+      });
+    });
+
+    // Quality select listener
+    tableBody.querySelectorAll('.quality-select').forEach(sel => {
+      sel.addEventListener('change', async e => {
+        const id = Number(e.target.dataset.id);
+        const val = e.target.value === '-' ? null : Number(e.target.value);
+        let a = await db.assessments.where('moduleId').equals(id).first();
+        if (!a) a = { moduleId: id, progressId: id };
+        a.resultQuality = val;
+        await AssessmentManager.upsertAssessment(id, id, a);
+        
+        // If a quality value is selected (not '-'), automatically check "Praticato" and set status to "completed"
+        if (val !== null) {
+          // Check the "Praticato" checkbox
+          a.practicalApplied = true;
+          await AssessmentManager.upsertAssessment(id, id, a);
+          
+          // Set status to "completed"
+          await ProgressManager.updateProgress(id, 'completed', {});
+        }
+        
+        await renderModules();
+      });
+    });
+
+    renderingInProgress = false; // sblocco sempre a fine
+  }
+
+  // Funzione per trovare ricorsivamente tutte le dipendenze di un modulo
+  function findDependencyChain(moduleId, dependencies, visited = new Set()) {
+    if (visited.has(moduleId)) return new Set();
+    visited.add(moduleId);
+    
+    const chain = new Set([moduleId]);
+    const directDeps = dependencies.filter(d => d.moduleId === moduleId);
+    
+    for (const dep of directDeps) {
+      const subChain = findDependencyChain(dep.prerequisiteId, dependencies, visited);
+      subChain.forEach(id => chain.add(id));
+    }
+    
+    return chain;
+  }
+
+  // Variabile globale per tracciare il modulo selezionato
+  let selectedModuleId = null;
+
+  // Funzione per renderizzare il grafo delle dipendenze
+  async function renderGraph() {
+    try {
+      const svg = d3.select('#module-graph');
+      svg.selectAll('*').remove(); // Pulisce il grafo precedente
+
+    const fStatus = document.getElementById('filter-status').value;
+    const fTeaching = document.getElementById('filter-teaching').value;
+    const query = document.getElementById('search-modules').value.toLowerCase().trim();
+    const showOnlyUnlocked = document.getElementById('filter-unlocked').checked;
+
+    const [modules, progress, dependencies] = await Promise.all([
+      db.modules.toArray(),
+      db.progress.toArray(),
+      db.dependencies.toArray()
+    ]);
+
+    const pMap = new Map(progress.map(p => [p.moduleId, p]));
+
+    // Filtra moduli come nella tabella
+    const filteredModules = modules.filter(m => {
+      const p = pMap.get(m.id);
+      const status = p?.status ?? 'not-started';
+
+      const matchTeaching =
+        fTeaching === 'all' ||
+        (m.teachingArea && m.teachingArea.toLowerCase().trim() === fTeaching.toLowerCase().trim());
+      const matchStatus = fStatus === 'all' || status === fStatus;
+      const matchQuery = !query || m.title.toLowerCase().includes(query);
+
+      if (!matchTeaching || !matchStatus || !matchQuery) return false;
+
+      if (showOnlyUnlocked) {
+        const prereqs = dependencies.filter(d => d.moduleId === m.id).map(d => d.prerequisiteId);
+        if (prereqs.length > 0) {
+          const allDone = prereqs.every(pid => {
+            const pr = progress.find(p => p.moduleId === pid);
+            return pr && pr.status === 'completed';
+          });
+          if (!allDone) return false;
+        }
+      }
+
+      return true;
+    });
+
+    if (filteredModules.length === 0) {
+      svg.append('text')
+        .attr('x', '50%')
+        .attr('y', '50%')
+        .attr('text-anchor', 'middle')
+        .attr('dominant-baseline', 'middle')
+        .style('font-size', '16px')
+        .style('fill', '#666')
+        .text('Nessun modulo corrisponde ai filtri selezionati');
+      return;
+    }
+
+    // Crea nodi e collegamenti per il grafo
+    const nodes = filteredModules.map(m => ({
+      id: m.id,
+      title: m.title,
+      code: m.code,
+      status: pMap.get(m.id)?.status || 'not-started'
+    }));
+
+    const links = dependencies.filter(d =>
+      filteredModules.some(m => m.id === d.moduleId) &&
+      filteredModules.some(m => m.id === d.prerequisiteId)
+    ).map(d => ({
+      source: d.prerequisiteId,
+      target: d.moduleId,
+      type: d.dependencyType
+    }));
+
+    // Configurazione D3 force layout con zoom
+    const width = svg.node().getBoundingClientRect().width;
+    const height = svg.node().getBoundingClientRect().height;
+
+    // Crea un gruppo per contenere tutti gli elementi del grafo
+    const g = svg.append('g');
+
+    // Configura zoom
+    const zoom = d3.zoom()
+      .scaleExtent([0.1, 4])
+      .on('zoom', (event) => {
+        g.attr('transform', event.transform);
+      });
+
+    svg.call(zoom);
+
+    const simulation = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(links).id(d => d.id).distance(250)) // Increased distance for better spacing
+      .force('charge', d3.forceManyBody().strength(-500)) // Reduced repulsion for more relaxed layout
+      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('collision', d3.forceCollide().radius(50)); // Slightly increased collision radius
+
+    // Crea elementi SVG all'interno del gruppo zoomabile
+    const link = g.append('g')
+      .selectAll('line')
+      .data(links)
+      .enter().append('line')
+      .attr('stroke', d => d.type === 'mandatory' ? '#e74c3c' : '#8000E5')
+      .attr('stroke-width', d => d.type === 'mandatory' ? 2 : 1)
+      .attr('stroke-dasharray', d => d.type === 'mandatory' ? 'none' : '5,5')
+      .attr('marker-end', 'url(#arrowhead)');
+
+    const node = g.append('g')
+      .selectAll('g')
+      .data(nodes)
+      .enter().append('g')
+      .call(d3.drag()
+        .on('start', dragstarted)
+        .on('drag', dragged)
+        .on('end', dragended));
+
+    // Crea cerchi per i nodi - più grandi per contenere testo su più righe
+    node.append('circle')
+      .attr('r', 35)
+      .attr('fill', d => {
+        switch(d.status) {
+          case 'completed': return '#28a745';
+          case 'in-progress': return '#FFDA00';
+          default: return '#666666';
+        }
+      })
+      .attr('stroke', d => {
+        // Check if module is unlocked (no dependencies or all dependencies satisfied)
+        const moduleDependencies = dependencies.filter(dep => dep.moduleId === d.id);
+        if (moduleDependencies.length === 0) {
+          return '#FFDA00'; // Yellow border for modules without dependencies
+        } else {
+          const allDependenciesSatisfied = moduleDependencies.every(dep => {
+            const prereqProgress = progress.find(p => p.moduleId === dep.prerequisiteId);
+            return prereqProgress && prereqProgress.status === 'completed';
+          });
+          return allDependenciesSatisfied ? '#FFDA00' : '#FFFFFF'; // Yellow border if all dependencies satisfied
+        }
+      })
+      .attr('stroke-width', d => {
+        // Check if module is unlocked (no dependencies or all dependencies satisfied)
+        const moduleDependencies = dependencies.filter(dep => dep.moduleId === d.id);
+        if (moduleDependencies.length === 0) {
+          return 3; // Thicker border for modules without dependencies
+        } else {
+          const allDependenciesSatisfied = moduleDependencies.every(dep => {
+            const prereqProgress = progress.find(p => p.moduleId === dep.prerequisiteId);
+            return prereqProgress && prereqProgress.status === 'completed';
+          });
+          return allDependenciesSatisfied ? 3 : 2; // Thicker border if all dependencies satisfied
+        }
+      })
+      .style('cursor', 'pointer');
+
+    // Aggiungi testo ai nodi - mostra titolo completo su più righe
+    node.append('text')
+      .selectAll('tspan')
+      .data(d => {
+        // Suddivide il titolo in righe di massimo 3 parole ciascuna
+        const words = d.title.split(' ');
+        const lines = [];
+        let currentLine = [];
+        
+        words.forEach(word => {
+          currentLine.push(word);
+          if (currentLine.length >= 2) {
+            lines.push(currentLine.join(' '));
+            currentLine = [];
+          }
+        });
+        
+        if (currentLine.length > 0) {
+          lines.push(currentLine.join(' '));
+        }
+        
+        return lines;
+      })
+      .enter()
+      .append('tspan')
+      .text(d => d)
+      .attr('x', 0)
+      .attr('dy', (d, i) => i === 0 ? '-0.6em' : '1.2em')
+      .attr('text-anchor', 'middle')
+      .style('font-size', '7px')
+      .style('fill', '#FFFFFF')
+      .style('font-weight', 'bold')
+      .style('pointer-events', 'none');
+
+    // Tooltip per i nodi
+    node.append('title')
+      .text(d => {
+        const moduleDependencies = dependencies.filter(dep => dep.moduleId === d.id);
+        const isUnlocked = moduleDependencies.length === 0 ||
+          moduleDependencies.every(dep => {
+            const prereqProgress = progress.find(p => p.moduleId === dep.prerequisiteId);
+            return prereqProgress && prereqProgress.status === 'completed';
+          });
+        
+        const unlockStatus = isUnlocked ? 'Sbloccato' : 'Bloccato';
+        return `${d.title}\nCodice: ${d.code}\nStato: ${getStatusText(d.status)}\nAccesso: ${unlockStatus}`;
+      });
+
+    // Click sui nodi per mostrare dettagli e evidenziare dipendenze
+    node.on('click', async (event, d) => {
+      await showModuleDetails(d.id);
+      
+      // Evidenzia la catena di dipendenze
+      highlightDependencyChain(d.id, dependencies, node, link);
+    });
+
+    // Definisce il marker per le frecce
+    const defs = svg.append('defs');
+    
+    // Freccia per dipendenze obbligatorie (rosso)
+    defs.append('marker')
+      .attr('id', 'arrowhead')
+      .attr('viewBox', '0 -5 10 10')
+      .attr('refX', 40) // Posizione della freccia lungo la linea
+      .attr('refY', 0)
+      .attr('markerWidth', 6)
+      .attr('markerHeight', 6)
+      .attr('orient', 'auto')
+      .append('path')
+      .attr('d', 'M0,-5L10,0L0,5')
+      .attr('fill', '#e74c3c');
+
+    // Freccia per dipendenze raccomandate (viola)
+    defs.append('marker')
+      .attr('id', 'arrowhead-recommended')
+      .attr('viewBox', '0 -5 10 10')
+      .attr('refX', 40)
+      .attr('refY', 0)
+      .attr('markerWidth', 6)
+      .attr('markerHeight', 6)
+      .attr('orient', 'auto')
+      .append('path')
+      .attr('d', 'M0,-5L10,0L0,5')
+      .attr('fill', '#8000E5');
+
+    // Aggiungi istruzioni per lo zoom
+    svg.append('text')
+      .attr('x', 10)
+      .attr('y', 20)
+      .attr('text-anchor', 'start')
+      .style('font-size', '12px')
+      .style('fill', '#666666')
+      .style('pointer-events', 'none')
+      .text('Zoom: Rotella mouse | Pan: Trascina');
+
+    // Aggiungi legenda per i tipi di dipendenze
+    const legend = svg.append('g')
+      .attr('transform', 'translate(10, 40)');
+
+    // Legenda per dipendenze obbligatorie
+    legend.append('line')
+      .attr('x1', 0)
+      .attr('y1', 0)
+      .attr('x2', 20)
+      .attr('y2', 0)
+      .attr('stroke', '#e74c3c')
+      .attr('stroke-width', 2)
+      .attr('marker-end', 'url(#arrowhead)');
+
+    legend.append('text')
+      .attr('x', 25)
+      .attr('y', 0)
+      .attr('dy', '0.35em')
+      .style('font-size', '12px')
+      .style('fill', '#666666')
+      .style('pointer-events', 'none')
+      .text('Obbligatoria');
+
+    // Legenda per catena di dipendenze evidenziate
+    legend.append('line')
+      .attr('x1', 0)
+      .attr('y1', 20)
+      .attr('x2', 20)
+      .attr('y2', 20)
+      .attr('stroke', '#FFDA00')
+      .attr('stroke-width', 3)
+      .attr('stroke-dasharray', '5,3');
+
+    legend.append('text')
+      .attr('x', 25)
+      .attr('y', 20)
+      .attr('dy', '0.35em')
+      .style('font-size', '12px')
+      .style('fill', '#666666')
+      .style('pointer-events', 'none')
+      .text('Dipendenze evidenziate');
+
+    // Aggiorna posizioni
+    simulation.on('tick', () => {
+      link
+        .attr('x1', d => d.source.x)
+        .attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x)
+        .attr('y2', d => d.target.y)
+        .attr('marker-end', d => d.type === 'mandatory' ? 'url(#arrowhead)' : 'url(#arrowhead-recommended)');
+
+      node
+        .attr('transform', d => `translate(${d.x},${d.y})`);
+    });
+
+    // Funzione per evidenziare la catena di dipendenze
+    function highlightDependencyChain(moduleId, dependencies, nodeElements, linkElements) {
+      // Reset precedente evidenziazione
+      nodeElements.selectAll('circle')
+        .attr('stroke', d => {
+          const moduleDependencies = dependencies.filter(dep => dep.moduleId === d.id);
+          if (moduleDependencies.length === 0) {
+            return '#FFDA00'; // Yellow border for modules without dependencies
+          } else {
+            const allDependenciesSatisfied = moduleDependencies.every(dep => {
+              const prereqProgress = progress.find(p => p.moduleId === dep.prerequisiteId);
+              return prereqProgress && prereqProgress.status === 'completed';
+            });
+            return allDependenciesSatisfied ? '#FFDA00' : '#FFFFFF'; // Yellow border if all dependencies satisfied
+          }
+        })
+        .attr('stroke-width', d => {
+          const moduleDependencies = dependencies.filter(dep => dep.moduleId === d.id);
+          if (moduleDependencies.length === 0) {
+            return 3; // Thicker border for modules without dependencies
+          } else {
+            const allDependenciesSatisfied = moduleDependencies.every(dep => {
+              const prereqProgress = progress.find(p => p.moduleId === dep.prerequisiteId);
+              return prereqProgress && prereqProgress.status === 'completed';
+            });
+            return allDependenciesSatisfied ? 3 : 2; // Thicker border if all dependencies satisfied
+          }
+        })
+        .attr('stroke-dasharray', 'none');
+
+      linkElements
+        .attr('stroke', d => d.type === 'mandatory' ? '#e74c3c' : '#8000E5')
+        .attr('stroke-width', d => d.type === 'mandatory' ? 2 : 1)
+        .attr('stroke-dasharray', d => d.type === 'mandatory' ? 'none' : '5,5');
+
+      // Se è lo stesso modulo, deseleziona
+      if (selectedModuleId === moduleId) {
+        selectedModuleId = null;
+        return;
+      }
+
+      selectedModuleId = moduleId;
+
+      // Trova tutte le dipendenze ricorsive
+      const dependencyChain = findDependencyChain(moduleId, dependencies);
+      
+      // Evidenzia i nodi nella catena
+      nodeElements.selectAll('circle')
+        .filter(d => dependencyChain.has(d.id))
+        .attr('stroke', '#FFDA00') // Primary yellow
+        .attr('stroke-width', 4)
+        .attr('stroke-dasharray', '5,3'); // Dotted line
+
+      // Evidenzia i link nella catena
+      linkElements
+        .filter(d => dependencyChain.has(d.source.id) && dependencyChain.has(d.target.id))
+        .attr('stroke', '#FFDA00') // Primary yellow
+        .attr('stroke-width', 3)
+        .attr('stroke-dasharray', '5,3'); // Dotted line
+    }
+
+    // Funzioni drag
+    function dragstarted(event, d) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    }
+
+    function dragged(event, d) {
+      d.fx = event.x;
+      d.fy = event.y;
+    }
+
+    function dragended(event, d) {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+
+    function getStatusText(status) {
+      switch(status) {
+        case 'completed': return 'Completato';
+        case 'in-progress': return 'In corso';
+        default: return 'Da iniziare';
+      }
+    }
+    } catch (error) {
+      console.error('❌ Errore nel rendering del grafo:', error);
+      const svg = d3.select('#module-graph');
+      svg.selectAll('*').remove();
+      svg.append('text')
+        .attr('x', '50%')
+        .attr('y', '50%')
+        .attr('text-anchor', 'middle')
+        .attr('dominant-baseline', 'middle')
+        .style('font-size', '14px')
+        .style('fill', '#dc3545')
+        .text('Errore nel caricamento del grafo: ' + error.message);
+    }
+  }
+
+  // Inizializzazione
+ await populateFilters();
+ await renderModules();
+ 
+ // Theme switching functionality
+ const lightThemeBtn = document.getElementById('light-theme-btn');
+ const darkThemeBtn = document.getElementById('dark-theme-btn');
+ 
+ // Load saved theme from localStorage
+ const savedTheme = localStorage.getItem('theme') || 'light';
+ document.documentElement.setAttribute('data-theme', savedTheme);
+ 
+ // Update active theme button
+ if (savedTheme === 'dark') {
+   darkThemeBtn.classList.add('active');
+   lightThemeBtn.classList.remove('active');
+ } else {
+   lightThemeBtn.classList.add('active');
+   darkThemeBtn.classList.remove('active');
+ }
+ 
+ // Theme switching event listeners
+ lightThemeBtn.addEventListener('click', () => {
+   document.documentElement.setAttribute('data-theme', 'light');
+   localStorage.setItem('theme', 'light');
+   lightThemeBtn.classList.add('active');
+   darkThemeBtn.classList.remove('active');
+ });
+ 
+ darkThemeBtn.addEventListener('click', () => {
+   document.documentElement.setAttribute('data-theme', 'dark');
+   localStorage.setItem('theme', 'dark');
+   darkThemeBtn.classList.add('active');
+   lightThemeBtn.classList.remove('active');
+ });
+  
+  const tableBtn = document.getElementById('table-view-btn');
+  const graphBtn = document.getElementById('graph-view-btn');
+  const graphView = document.getElementById('graph-view');
+  const tableView = document.getElementById('table-view');
+
+  tableBtn.addEventListener('click', async () => {
+    graphView.style.display = 'none';
+    tableView.style.display = 'block';
+    tableBtn.classList.add('active');
+    graphBtn.classList.remove('active');
+    await renderModules(); // forza aggiornamento coerente ai filtri
+  });
+
+  graphBtn.addEventListener('click', async () => {
+    graphView.style.display = 'block';
+    tableView.style.display = 'none';
+    graphBtn.classList.add('active');
+    tableBtn.classList.remove('active');
+    await renderGraph(); // forza aggiornamento coerente ai filtri
+  });
+
+  // Collega eventi ai filtri
+  ['filter-status','filter-teaching','search-modules','filter-unlocked']
+    .forEach(id => {
+      document.getElementById(id).addEventListener('input', async () => {
+        if (document.getElementById('graph-view').style.display === 'block') {
+          await renderGraph();
+        } else {
+          await renderModules();
+        }
+      });
+    });
+
+  document.getElementById('filter-unlocked').addEventListener('change', renderModules);
+
+  // Gestione apertura/chiusura menu mobile
+  const sidebar = document.getElementById('sidebar');
+  const menuBtn = document.getElementById('menu-toggle');
+  const detailsBtn = document.getElementById('details-toggle');
+
+  menuBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    sidebar.classList.toggle('open');
+  });
+
+  detailsBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    moduleDetailsSidebar.classList.toggle('open');
+  });
+
+  // Chiudi sidebar cliccando fuori
+  document.addEventListener('click', e => {
+    const clickInsideSidebar = sidebar.contains(e.target);
+    const clickOnButton = e.target === menuBtn;
+    if (!clickInsideSidebar && !clickOnButton && sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+    }
+    
+    // Chiudi sidebar dettagli cliccando fuori
+    const clickInsideDetailsSidebar = moduleDetailsSidebar.contains(e.target);
+    const clickOnDetailsButton = e.target === detailsBtn;
+    if (!clickInsideDetailsSidebar && !clickOnDetailsButton && moduleDetailsSidebar.classList.contains('open')) {
+      moduleDetailsSidebar.classList.remove('open');
+    }
+    
+    // Chiudi sidebar dettagli cliccando fuori dalla tabella e dalla sidebar
+    const clickInsideTable = tableBody.contains(e.target);
+    const clickInsideGraph = document.getElementById('graph-view').contains(e.target);
+    if (!clickInsideTable && !clickInsideDetailsSidebar && !clickInsideGraph && !moduleDetailsSidebar.classList.contains('hidden')) {
+      closeModuleDetails();
+    }
+  });
+
+  // Backup functionality
+  const exportBackupBtn = document.getElementById('export-backup-btn');
+  const importBackupBtn = document.getElementById('import-backup-btn');
+  const shareBackupBtn = document.getElementById('share-backup-btn');
+  const importModal = document.getElementById('import-modal');
+  const shareModal = document.getElementById('share-modal');
+  const importForm = document.getElementById('import-form');
+  const backupFileInput = document.getElementById('backup-file');
+  const backupTextArea = document.getElementById('backup-text');
+  const copyBackupBtn = document.getElementById('copy-backup-btn');
+  const closeShareBtn = document.getElementById('close-share-btn');
+  const cancelImportBtn = document.getElementById('cancel-import-btn');
+
+  // Esporta backup
+  exportBackupBtn.addEventListener('click', async () => {
+    try {
+      await BackupManager.exportBackup();
+      alert('✅ Backup esportato con successo!');
+    } catch (error) {
+      console.error('Errore esportazione backup:', error);
+      alert('❌ Errore durante l\'esportazione del backup');
+    }
+  });
+
+  // Apri modale import
+  importBackupBtn.addEventListener('click', () => {
+    importModal.classList.add('active');
+  });
+
+  // Chiudi modale import
+  cancelImportBtn.addEventListener('click', () => {
+    importModal.classList.remove('active');
+    importForm.reset();
+  });
+
+  // Gestione import backup
+  importForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const file = backupFileInput.files[0];
+    if (!file) {
+      alert('❌ Seleziona un file di backup');
+      return;
+    }
+
+    try {
+      const result = await BackupManager.importBackup(file);
+      
+      if (result.success) {
+        alert(`✅ Backup importato con successo!\nProgressi: ${result.importedProgress}\nValutazioni: ${result.importedAssessments}`);
+        
+        // Ricarica la tabella per mostrare i nuovi dati
+        await renderModules();
+      } else {
+        alert(`⚠️ Backup importato con errori:\n${result.errors.join('\n')}`);
+      }
+      
+      importModal.classList.remove('active');
+      importForm.reset();
+    } catch (error) {
+      console.error('Errore import backup:', error);
+      alert('❌ Errore durante l\'importazione del backup: ' + error.message);
+    }
+  });
+
+  // Condividi backup
+  shareBackupBtn.addEventListener('click', async () => {
+    try {
+      const backupString = await BackupManager.generateBackupString();
+      backupTextArea.value = backupString;
+      shareModal.classList.add('active');
+    } catch (error) {
+      console.error('Errore generazione backup:', error);
+      alert('❌ Errore durante la generazione del backup');
+    }
+  });
+
+  // Copia backup negli appunti
+  copyBackupBtn.addEventListener('click', () => {
+    backupTextArea.select();
+    document.execCommand('copy');
+    alert('✅ Backup copiato negli appunti!');
+  });
+
+  // Chiudi modale condivisione
+  closeShareBtn.addEventListener('click', () => {
+    shareModal.classList.remove('active');
+  });
+
+  // Chiudi modali cliccando fuori
+  document.addEventListener('click', (e) => {
+    if (e.target === importModal) {
+      importModal.classList.remove('active');
+      importForm.reset();
+    }
+    if (e.target === shareModal) {
+      shareModal.classList.remove('active');
+    }
+  });
+  </script>
+
+</body>
+</html>

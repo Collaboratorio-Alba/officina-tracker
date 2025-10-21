@@ -1,0 +1,319 @@
+{
+  "teachingArea": {
+    "name": "Assemblaggio Bicicletta da Zero",
+    "description": "Dalla scelta pezzi alla messa su strada: costruzione integrale e collaudo collaborativo di una bici rigenerata POP.",
+    "color": "#e67e22"
+  },
+  "modules": [
+    {
+      "id": "BIKE-11.1.1",
+      "title": "Compatibilità e scelta componenti",
+      "description": "Verifica compatibilità telaio/forcella/ruote/cinsterzo e pianificazione ricambi necessari.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 12,
+      "contentPath": "/content/bike-11.1.1.md",
+      "toolsRequired": [
+        "metro",
+        "calibro",
+        "scheda compatibilità",
+        "banco lavoro"
+      ],
+      "learningOutcomes": [
+        "Conoscere standard principali di attacco freni, movimento centrale, sterzo, ruote",
+        "Riconoscere possibili adattamenti e accoppiamenti di fortuna",
+        "Redigere lista materiali compatibili economicamente",
+        "Valutare rischio di incompatibilità a posteriori"
+      ],
+      "practicalCriteria": [
+        "Redazione elenco compatibilità telaio-ruote-gruppo",
+        "Valutazione componenti recuperati",
+        "Compilazione scheda progetto POP"
+      ],
+      "skillTags": [
+        "organizzazione",
+        "recupero",
+        "compatibilità"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-10.4.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.1.4",
+          "type": "mandatory",
+          "reason": "Measurement and standards knowledge"
+        },
+        {
+          "moduleId": "BIKE-2.1.4",
+          "type": "mandatory",
+          "reason": "General assessment skills"
+        },
+        {
+          "moduleId": "BIKE-1.2.3",
+          "type": "mandatory",
+          "reason": "Modern standards compatibility"
+        },
+        {
+          "moduleId": "BIKE-9.3.2",
+          "type": "mandatory",
+          "reason": "Saddle condition assessment for complete bike evaluation"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-11.2.1",
+      "title": "Installazione movimento centrale e guarnitura",
+      "description": "Montaggio del movimento centrale scelto dopo verifica filettatura e allineamento.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-11.2.1.md",
+      "toolsRequired": [
+        "chiave movimento centrale",
+        "grasso",
+        "spessimetro"
+      ],
+      "learningOutcomes": [
+        "Inserire movimento senza spanare filetti",
+        "Controllo allineamento e profondità inserimento",
+        "Installare guarnitura con giusta coppia",
+        "Usare grasso antigrippaggio"
+      ],
+      "practicalCriteria": [
+        "Movimento centrale installato senza danneggiamenti",
+        "Verifica scorrevolezza finale",
+        "Allineamento asse-pedali testato"
+      ],
+      "skillTags": [
+        "movimento-centrale",
+        "montaggio",
+        "allineamento"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-11.1.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-5.3.2",
+          "type": "mandatory",
+          "reason": "Bottom bracket maintenance skills"
+        },
+        {
+          "moduleId": "BIKE-1.2.5",
+          "type": "mandatory",
+          "reason": "Torque safety"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-11.2.2",
+      "title": "Montaggio serie sterzo, forcella e manubrio",
+      "description": "Montare correttamente la serie sterzo, la forcella e centrare il manubrio.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-11.2.2.md",
+      "toolsRequired": [
+        "chiavi fisse/Allen",
+        "grasso",
+        "marcatore",
+        "livella"
+      ],
+      "learningOutcomes": [
+        "Montare cuscinetti, calotte e tubo forcella in sicurezza",
+        "Allineare manubrio su asse ruota",
+        "Serraggio con precarico adeguato senza giochi",
+        "Verificare libertà di movimento e assenza impuntamenti"
+      ],
+      "practicalCriteria": [
+        "Serie sterzo montata e regolata su bici assemblata",
+        "Forcella e manubrio centrati senza errori",
+        "Movimento fluido e nessun rumore/gioco"
+      ],
+      "skillTags": [
+        "sterzo",
+        "forcella",
+        "montaggio"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-11.2.1",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-11.3.1",
+      "title": "Assemblaggio gruppo trasmissione",
+      "description": "Installazione catena, cambio, pedali, pignoni e regolazione preliminare.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 18,
+      "contentPath": "/content/bike-11.3.1.md",
+      "toolsRequired": [
+        "smagliacatena",
+        "chiavi",
+        "grasso",
+        "marcatore"
+      ],
+      "learningOutcomes": [
+        "Montare pignoni, deragliatore e catena senza errori",
+        "Regolare viti limite e tensione cavo",
+        "Installare pedali in sicurezza con grasso su filetti",
+        "Primo test funzionamento trasmissione"
+      ],
+      "practicalCriteria": [
+        "Assemblaggio completo senza salti/difetti evidenti",
+        "Prima cambiata e regolazione funzionante",
+        "Test pedalata su cavalletto"
+      ],
+      "skillTags": [
+        "trasmissione",
+        "montaggio",
+        "cambio"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-11.2.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-7.1.2",
+          "type": "mandatory",
+          "reason": "Derailleur adjustment skills"
+        },
+        {
+          "moduleId": "BIKE-5.2.2",
+          "type": "mandatory",
+          "reason": "Chain and transmission knowledge"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-11.3.2",
+      "title": "Montaggio ruote e freni",
+      "description": "Installazione ruote con controllo sede, pattini/freni centrati, e prima centratura veloce.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-11.3.2.md",
+      "toolsRequired": [
+        "chiavi 15mm/Allen",
+        "chiave freni",
+        "filo a piombo"
+      ],
+      "learningOutcomes": [
+        "Inserimento ruote e serraggio corretti",
+        "Controllo centraggio dei freni/ruota",
+        "Regolazione pattini/disco in sicurezza",
+        "Test rotazione e assenza attriti/frizioni"
+      ],
+      "practicalCriteria": [
+        "Ruote montate e freni funzionanti",
+        "Test rotazione libera e frenata corretta",
+        "Centraggio visivo buono"
+      ],
+      "skillTags": [
+        "ruote",
+        "freni",
+        "montaggio"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-11.3.1",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-11.4.1",
+      "title": "Collaudo statico e dinamico",
+      "description": "Verifiche fondamentali di sicurezza e funzionalità su bici completamente assemblata.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-11.4.1.md",
+      "toolsRequired": [
+        "cavalletto",
+        "strada sicura",
+        "scheda collaudo POP"
+      ],
+      "learningOutcomes": [
+        "Test sicurezza bulloni, movimenti e giochi",
+        "Frenata dinamica, cambiata sotto carico, sterzo su strada",
+        "Check comfort generale e assenza rumorosità",
+        "Compilare scheda collaudo con domande guida"
+      ],
+      "practicalCriteria": [
+        "Test statico su cavalletto",
+        "Prova dinamica in area sicura",
+        "Scheda collaudo compilata senza errori gravi trovati"
+      ],
+      "skillTags": [
+        "collaudo",
+        "verifica-finale",
+        "sicurezza"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-11.3.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-2.1.1",
+          "type": "mandatory",
+          "reason": "Systematic diagnostic approach"
+        },
+        {
+          "moduleId": "BIKE-4.4.1",
+          "type": "mandatory",
+          "reason": "Brake safety testing"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-11.5.1",
+      "title": "Rinata alla POP: attestazione di bici completata",
+      "description": "Ultima verifica con checklist popolare e consegna di nome e targa alla bici rigenerata.",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-11.5.1.md",
+      "toolsRequired": [
+        "scheda checklist POP",
+        "etichetta nome bici",
+        "timbro La POP"
+      ],
+      "learningOutcomes": [
+        "Riconoscere responsabilità solidale nella consegna bici",
+        "Compilare checklist finale POP condivisa",
+        "Assegnare nome simbolico e targa artigianale alla bici",
+        "Firma e timbro di tutti i partecipanti"
+      ],
+      "practicalCriteria": [
+        "Checklist completata, nome assegnato, bici pronta all’uso",
+        "Foto di gruppo e archivio su registro POP",
+        "Riutilizzo della bici pubblicizzato e condiviso"
+      ],
+      "skillTags": [
+        "comunità",
+        "certificazione",
+        "riuso"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-11.4.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-10.4.2",
+          "type": "mandatory",
+          "reason": "Documentation and archiving skills for final certification"
+        }
+      ]
+    }
+  ]
+}

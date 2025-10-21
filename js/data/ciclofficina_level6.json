@@ -1,0 +1,377 @@
+{
+  "teachingArea": {
+    "name": "Ruote e Mozzi",
+    "description": "Smontaggio, centratura e manutenzione delle ruote e dei mozzi tradizionali a coni e sfere.",
+    "color": "#1abc9c"
+  },
+  "modules": [
+    {
+      "id": "BIKE-6.1.1",
+      "title": "Smontaggio mozzo tradizionale",
+      "description": "Rimuovere asse, coni e sfere da un mozzo per manutenzione completa.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-6.1.1.md",
+      "toolsRequired": [
+        "chiavi coniche 13-15mm",
+        "grasso",
+        "stracci",
+        "recipiente sfere"
+      ],
+      "learningOutcomes": [
+        "Identificare lato destro/sinistro e differenti filettature",
+        "Smontare con attenzione senza perdere le sfere",
+        "Pulire perno, coni e calotte con sgrassante",
+        "Controllare presenza rigature sul cono o corrosione"
+      ],
+      "practicalCriteria": [
+        "Smontaggio completo di mozzo anteriore e posteriore",
+        "Ispezione visiva e classificazione condizioni",
+        "Stoccaggio correttamente delle sfere e componenti"
+      ],
+      "skillTags": [
+        "mozzi",
+        "smontaggio",
+        "precisione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-2.2.3",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.4.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.4.3",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-6.1.2",
+      "title": "Lubrificazione e rimontaggio mozzo",
+      "description": "Rimontare un mozzo tradizionale applicando grasso e regolando gioco conico.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 18,
+      "contentPath": "/content/bike-6.1.2.md",
+      "toolsRequired": [
+        "chiavi coniche",
+        "siringa grasso",
+        "cavalletto",
+        "guanti"
+      ],
+      "learningOutcomes": [
+        "Applicare grasso nelle calotte e posizionare sfere uniformemente",
+        "Regolare gioco assiale con chiavi coniche in opposizione",
+        "Controllare scorrevolezza e assenza gioco",
+        "Trucco: segnare posizione con un pennarello per regolazioni future"
+      ],
+      "practicalCriteria": [
+        "Rimontaggio completo mozzo con regolazione corretta",
+        "Test scorrevolezza su cavalletto",
+        "Verifica assenza gioco dopo 10 min di rotazione"
+      ],
+      "skillTags": [
+        "mozzi",
+        "lubrificazione",
+        "regolazione-fine"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-6.1.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.4.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.5",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-6.2.1",
+      "title": "Controllo tensione raggi",
+      "description": "Controllare e misurare la tensione dei raggi per capire la stabilità della ruota.",
+      "difficulty": "base",
+      "estimatedDuration": 12,
+      "contentPath": "/content/bike-6.2.1.md",
+      "toolsRequired": [
+        "chiave raggi",
+        "fonometro (alternativo)",
+        "dito indice"
+      ],
+      "learningOutcomes": [
+        "Controllare tensione battendo i raggi e ascoltando il suono",
+        "Riconoscere differenze di tono tra raggi troppo lenti o tesi",
+        "Uso chiave raggi per piccoli aggiustamenti",
+        "Prevenire rotture mantenendo tensione uniforme"
+      ],
+      "practicalCriteria": [
+        "Controllo tensione su 3 cerchi diversi",
+        "Correzione differenze con piccoli aggiustamenti",
+        "Test sonora e verifica stabilità"
+      ],
+      "skillTags": [
+        "ruote",
+        "raggi",
+        "diagnosi-sonora"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-2.2.4",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.2",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-6.2.2",
+      "title": "Centratura laterale ruota",
+      "description": "Centratura della ruota in senso laterale (ondeggiamento destra-sinistra).",
+      "difficulty": "intermedio",
+      "estimatedDuration": 18,
+      "contentPath": "/content/bike-6.2.2.md",
+      "toolsRequired": [
+        "centraruote o forcella",
+        "chiave raggi",
+        "marcatore"
+      ],
+      "learningOutcomes": [
+        "Rotazione lenta per individuare deviazioni laterali",
+        "Uso chiave raggi: stringere da lato opposto alla deviazione",
+        "Procedere con piccoli incrementi e controlli frequenti",
+        "Trucco: usare penna o fascetta come riferimento fisso"
+      ],
+      "practicalCriteria": [
+        "Centratura completa entro 1mm di tolleranza",
+        "Ruota testata libera da oscillazioni laterali evidenti",
+        "Annotazione correzioni su foglio lavoro"
+      ],
+      "skillTags": [
+        "ruote",
+        "centratura",
+        "precisione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-6.2.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.2",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-6.3.1",
+      "title": "Valutazione stato cerchio",
+      "description": "Distinguere cerchi recuperabili da quelli deformati o crepati.",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-6.3.1.md",
+      "toolsRequired": [
+        "righello",
+        "filo a piombo",
+        "luce radente"
+      ],
+      "learningOutcomes": [
+        "Identificare deformazioni radiali e crepe nelle piste frenanti",
+        "Determinare se centratura vale la pena del tempo richiesto",
+        "Controllare rivetti interni e sede nipples",
+        "Trucco: appoggiare su vetro piano per individuare ondulazioni"
+      ],
+      "practicalCriteria": [
+        "Ispezione completa di 3 cerchi diversi",
+        "Classificazione: recuperabile, marginale, scarto",
+        "Documentazione fotografica dei danni"
+      ],
+      "skillTags": [
+        "cerchi",
+        "diagnosi",
+        "recupero"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-6.2.2",
+          "type": "recommended"
+        },
+        {
+          "moduleId": "BIKE-1.1.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.1.4",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.1",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-6.4.1",
+      "title": "Rimozione ruota con sgancio rapido e dadi",
+      "description": "Rimuovere e reinstallare correttamente ruote anteriori e posteriori.",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-6.4.1.md",
+      "toolsRequired": [
+        "chiavi 15mm",
+        "grasso leggero"
+      ],
+      "learningOutcomes": [
+        "Uso corretto dello sgancio rapido: serraggio e posizionamento leva",
+        "Rimozione ruote con dadi e reinstallazione senza disallineamenti",
+        "Applicazione grasso sottile per prevenire bloccaggi",
+        "Controllo visivo sede ruota e pattini"
+      ],
+      "practicalCriteria": [
+        "Rimozione e rimontaggio sicuro su 2 bici diverse",
+        "Allineamento corretto telaio-ruota",
+        "Serraggio adeguato (senza eccesso)"
+      ],
+      "skillTags": [
+        "ruote",
+        "sgancio-rapido",
+        "montaggio"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-3.3.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.4.2",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-6.5.1",
+      "title": "Sostituzione di raggi rotti",
+      "description": "Rimuovere e sostituire raggi rotti senza smontare tutta la ruota, con tecniche di emergenza e riparazione definitiva",
+      "difficulty": "intermedio",
+      "estimatedDuration": 20,
+      "contentPath": "/content/bike-6.5.1.md",
+      "toolsRequired": [
+        "chiave raggi",
+        "raggi di ricambio",
+        "nipples",
+        "tronchese",
+        "pinza"
+      ],
+      "learningOutcomes": [
+        "Identificare tipo e lunghezza raggi da sostituire",
+        "Rimuovere raggio rotto senza danneggiare cerchio o mozzo",
+        "Inserire nuovo raggio seguendo schema originale",
+        "Ritensionare e centrare ruota dopo sostituzione",
+        "Trucchi per emergenze: piegare raggio rotto temporaneamente"
+      ],
+      "practicalCriteria": [
+        "Sostituzione corretta di 2 raggi rotti su ruota anteriore e posteriore",
+        "Ritensionamento uniforme dopo riparazione",
+        "Centratura ruota entro 2mm di tolleranza",
+        "Test rotazione libera senza attriti"
+      ],
+      "skillTags": [
+        "raggi",
+        "riparazione-urgente",
+        "centratura",
+        "emergenze"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-6.2.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-6.2.1",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-6.5.2",
+      "title": "Costruzione ruote da zero",
+      "description": "Costruire una ruota completa partendo da cerchio, mozzo e raggi, con schema a 3 o 4 incroci",
+      "difficulty": "avanzato",
+      "estimatedDuration": 45,
+      "contentPath": "/content/bike-6.5.2.md",
+      "toolsRequired": [
+        "centraruote professionale",
+        "chiave raggi",
+        "metro",
+        "calcolatrice",
+        "tavolo lavoro"
+      ],
+      "learningOutcomes": [
+        "Calcolare lunghezza raggi in base a cerchio e mozzo",
+        "Applicare schema a 3 incroci per ruote standard",
+        "Tensionare progressivamente con controllo uniformità",
+        "Centrare ruota con precisione sub-millimetrica",
+        "Testare resistenza e planarità ruota finita"
+      ],
+      "practicalCriteria": [
+        "Costruzione completa ruota anteriore con schema 3 incroci",
+        "Centratura laterale entro 1mm",
+        "Centratura radiale entro 1mm",
+        "Tensione uniforme su tutti i raggi",
+        "Test resistenza su banco prova"
+      ],
+      "skillTags": [
+        "costruzione-ruote",
+        "precisione",
+        "calcolo-raggi",
+        "artigianato"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-6.5.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-6.1.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-6.3.1",
+          "type": "mandatory"
+        }
+      ]
+    }
+  ]
+}

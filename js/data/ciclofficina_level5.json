@@ -1,0 +1,293 @@
+{
+  "teachingArea": {
+    "name": "Trasmissione Base",
+    "description": "Manutenzione e regolazione dei componenti base della trasmissione: catena, pignoni, corone, pedali e movimento centrale",
+    "color": "#f1c40f"
+  },
+  "modules": [
+    {
+      "id": "BIKE-5.1.1",
+      "title": "Controllo e usura catena",
+      "description": "Misurare e valutare l'usura della catena con o senza attrezzo specifico",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-5.1.1.md",
+      "toolsRequired": [
+        "calibro catena",
+        "righello 30cm"
+      ],
+      "learningOutcomes": [
+        "Uso calibro catena per rilevare allungamento",
+        "Metodo alternativo: misura 12 maglie = 304.8mm",
+        "Riconoscere catena troppo allungata (saltano le marce)",
+        "Conseguenze su pignoni e corone se trascurata"
+      ],
+      "practicalCriteria": [
+        "Misurazione corrette su 3 catene diverse",
+        "Identificazione corretta soglia sostituzione",
+        "Scelta catena compatibile (velocità, passo)"
+      ],
+      "skillTags": [
+        "catena",
+        "usura",
+        "diagnosi"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-2.2.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.1.4",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.1",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-5.1.2",
+      "title": "Pulizia e lubrificazione catena",
+      "description": "Pulire catene sporche con sistemi artigianali e lubrificare correttamente",
+      "difficulty": "base",
+      "estimatedDuration": 12,
+      "contentPath": "/content/bike-5.1.2.md",
+      "toolsRequired": [
+        "sgrassatore",
+        "spazzole",
+        "paraffina solida",
+        "olio secco/umido"
+      ],
+      "learningOutcomes": [
+        "Rimuovere incrostazioni di grasso e fango",
+        "Eseguire bagno paraffina per catene da recupero",
+        "Applicare lubrificante adeguato (stagione, uso)",
+        "Evitare eccessi che attirano sporco"
+      ],
+      "practicalCriteria": [
+        "Pulizia catena con 2 metodi diversi",
+        "Applicazione corretta lubrificante senza sprechi",
+        "Valutazione scorrevolezza post-intervento"
+      ],
+      "skillTags": [
+        "catena",
+        "lubrificazione",
+        "manutenzione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-5.1.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.4.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.4.3",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.2",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-5.2.1",
+      "title": "Identificazione e usura pignoni",
+      "description": "Controllare stato corona e pacco pignoni e riconoscere usura irregolare",
+      "difficulty": "base",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-5.2.1.md",
+      "toolsRequired": [
+        "spazzola metallica",
+        "pignone campione",
+        "luce radente"
+      ],
+      "learningOutcomes": [
+        "Riconoscere denti a forma di squalo = usura avanzata",
+        "Distinguere sporco da deformazione metallica",
+        "Verificare allineamento cassette/pignoni",
+        "Quando sostituire: se catena nuova salta sulle corone"
+      ],
+      "practicalCriteria": [
+        "Confronto visivo pignoni usurati vs nuovi",
+        "Pulizia accurata con spazzola metallica",
+        "Decisione sostituzione motivata"
+      ],
+      "skillTags": [
+        "trasmissione",
+        "usura",
+        "diagnosi"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-5.1.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.4.3",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.3",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-5.2.2",
+      "title": "Sostituzione catena e compatibilità trasmissione",
+      "description": "Scegliere e sostituire catena in base al numero di velocità",
+      "difficulty": "intermedio",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-5.2.2.md",
+      "toolsRequired": [
+        "smagliacatena",
+        "quick link",
+        "pinza catena"
+      ],
+      "learningOutcomes": [
+        "Contare maglie e verificare lunghezza corretta",
+        "Montaggio con falsamaglia e verifica scorrevolezza",
+        "Test compatibilità con pignoni e corone",
+        "Trucchi per aprire catene bloccate (falsamaglia rigida)"
+      ],
+      "practicalCriteria": [
+        "Sostituzione completa catena su due trasmissioni diverse",
+        "Verifica lunghezza ottimale e scorrevolezza",
+        "Test funzionamento in pedalata su cavalletto"
+      ],
+      "skillTags": [
+        "catena",
+        "compatibilità",
+        "manutenzione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-5.1.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.4",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-5.3.1",
+      "title": "Smontaggio pedali",
+      "description": "Rimuovere pedali incrostati e comprendere differenze filettature destra/sinistra",
+      "difficulty": "base",
+      "estimatedDuration": 12,
+      "contentPath": "/content/bike-5.3.1.md",
+      "toolsRequired": [
+        "chiave 15mm",
+        "spray sbloccante",
+        "martello gomma"
+      ],
+      "learningOutcomes": [
+        "Pedale destro filettatura normale, sinistro inversa",
+        "Lubrificare filetti prima del rimontaggio",
+        "Recuperare pedali bloccati senza rovinare le pedivelle",
+        "Riconoscere segni di usura su cuscinetti interni"
+      ],
+      "practicalCriteria": [
+        "Rimozione e rimontaggio pedali su 3 bici diverse",
+        "Applicazione grasso e coppia serraggio corretta",
+        "Test scorrevolezza e gioco assiale"
+      ],
+      "skillTags": [
+        "pedali",
+        "filettature",
+        "recupero"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-1.2.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.4.2",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-5.3.2",
+      "title": "Ispezione e manutenzione movimento centrale",
+      "description": "Verifica gioco, smontaggio e ingrassaggio movimento centrale a calotte",
+      "difficulty": "intermedio",
+      "estimatedDuration": 20,
+      "contentPath": "/content/bike-5.3.2.md",
+      "toolsRequired": [
+        "chiave movimento centrale",
+        "grasso",
+        "panno pulito"
+      ],
+      "learningOutcomes": [
+        "Identificare tipo movimento: BSA, ITA, cuscinetti conici",
+        "Smontare calotte senza danneggiare filetti",
+        "Pulire, lubrificare e rimontare con giusto precarico",
+        "Quando sostituire: gioco impossibile da eliminare"
+      ],
+      "practicalCriteria": [
+        "Smontaggio completo e ingrassaggio corretto",
+        "Test rotazione fluida e assenza gioco",
+        "Valutazione stato filetti e suggerimento intervento"
+      ],
+      "skillTags": [
+        "movimento-centrale",
+        "manutenzione",
+        "standard"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-1.2.3",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.4.2",
+          "type": "mandatory"
+        }
+      ]
+    }
+  ]
+}

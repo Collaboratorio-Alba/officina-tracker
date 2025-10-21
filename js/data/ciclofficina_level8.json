@@ -1,0 +1,292 @@
+{
+  "teachingArea": {
+    "name": "Serie Sterzo e Forcella",
+    "description": "Smontaggio, pulizia, regolazione e diagnostica di serie sterzo e forcelle rigide, tipiche delle bici da recupero.",
+    "color": "#16a085"
+  },
+  "modules": [
+    {
+      "id": "BIKE-8.1.1",
+      "title": "Identificazione serie sterzo filettata",
+      "description": "Riconoscere componenti e funzionamento delle vecchie serie sterzo a calotte filettate.",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-8.1.1.md",
+      "toolsRequired": [
+        "chiavi fisse sottili",
+        "sgrassatore",
+        "stracci"
+      ],
+      "learningOutcomes": [
+        "Riconoscere calotta, controdado, cono e cuscinetti",
+        "Differenze tra cup-and-cone e cuscinetti sigillati",
+        "Identificare filettature compatibili e standard principali",
+        "Capire regolazione del precarico manuale"
+      ],
+      "practicalCriteria": [
+        "Identificazione corretta componenti su 3 sistemi diversi",
+        "Pulizia completa e sgrassaggio parti metalliche",
+        "Rilevamento presenza gioco o attrito"
+      ],
+      "skillTags": [
+        "serie-sterzo",
+        "identificazione",
+        "diagnosi"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-6.1.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.1",
+          "type": "mandatory",
+          "reason": "Basic tool handling for headset work"
+        },
+        {
+          "moduleId": "BIKE-1.2.5",
+          "type": "mandatory",
+          "reason": "Torque knowledge for steering safety"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-8.1.2",
+      "title": "Regolazione e lubrificazione serie sterzo filettata",
+      "description": "Smontare, pulire e rimontare la serie sterzo regolando correttamente il precarico.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-8.1.2.md",
+      "toolsRequired": [
+        "chiavi sterzo",
+        "grasso",
+        "panno"
+      ],
+      "learningOutcomes": [
+        "Smontare calotta superiore e rimuovere cuscinetti",
+        "Pulire, ingrassare e rimontare nella posizione corretta",
+        "Regolare precarico eliminando il gioco senza attriti",
+        "Controllare scorrevolezza con test basculante"
+      ],
+      "practicalCriteria": [
+        "Rimontaggio completo serie sterzo con regolazione corretta",
+        "Verifica scorrevolezza e assenza gioco",
+        "Pulizia finale e protezione filetti"
+      ],
+      "skillTags": [
+        "serie-sterzo",
+        "manutenzione",
+        "lubrificazione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-8.1.1",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-8.2.1",
+      "title": "Caratteristiche serie sterzo A-Head",
+      "description": "Comprendere i componenti e la logica di serraggio delle serie sterzo moderne A-head (non filettate).",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-8.2.1.md",
+      "toolsRequired": [
+        "chiavi Allen 5-6mm",
+        "spessimetro",
+        "lubrificante leggero"
+      ],
+      "learningOutcomes": [
+        "Identificare componenti A-head: calotte, cuscinetti, ragnetto, expander cap",
+        "Capire il principio del precarico tramite expander e vite di testa",
+        "Distinguere centraggio tramite attacco manubrio",
+        "Verificare quando sostituire cuscinetti usurati"
+      ],
+      "practicalCriteria": [
+        "Smontaggio parziale A-head su forcella",
+        "Lubrificazione leggera e rimontaggio corretto",
+        "Verifica assenza gioco verticale"
+      ],
+      "skillTags": [
+        "sterzo",
+        "identificazione",
+        "manutenzione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-8.1.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.2.3",
+          "type": "mandatory",
+          "reason": "Modern standards knowledge"
+        },
+        {
+          "moduleId": "BIKE-2.1.1",
+          "type": "mandatory",
+          "reason": "Systematic diagnostic approach"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-8.2.2",
+      "title": "Regolazione e precarico sterzo moderno",
+      "description": "Serraggio corretto senza danneggiare cuscinetti e verifiche visive di allineamento.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 12,
+      "contentPath": "/content/bike-8.2.2.md",
+      "toolsRequired": [
+        "chiave dinamometrica economica",
+        "righello",
+        "luce radente"
+      ],
+      "learningOutcomes": [
+        "Applicare precarico dalla vite superiore fino a blocco iniziale",
+        "Serraggio attacco manubrio con coppia adeguata",
+        "Verifica allineamento ruota-manubrio",
+        "Test finale: caduta libera manubrio senza impuntamenti"
+      ],
+      "practicalCriteria": [
+        "Regolazione completa su 2 bici diverse",
+        "Allineamento preciso sterzo-ruota",
+        "Verifica ergonomia finale manubrio"
+      ],
+      "skillTags": [
+        "sterzo",
+        "regolazione",
+        "ergonomia"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-8.2.1",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-8.3.1",
+      "title": "Identificazione e controllo forcelle rigide",
+      "description": "Verificare dimensioni sterzo, offset e compatibilità ruote per bici da recupero.",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-8.3.1.md",
+      "toolsRequired": [
+        "metro",
+        "filo a piombo",
+        "forcella smontata"
+      ],
+      "learningOutcomes": [
+        "Misurare diametro tubo sterzo e lunghezza filettatura",
+        "Controllare offset forcella per geometria di sterzo corretta",
+        "Valutare pieghe o danni visivi",
+        "Compatibilità ruote (26'', 28'', 700C)"
+      ],
+      "practicalCriteria": [
+        "Identificazione e misurazione su 3 forcelle diverse",
+        "Valutazione danni e decisione recupero",
+        "Registrazione misure in tabella"
+      ],
+      "skillTags": [
+        "forcella",
+        "diagnosi",
+        "compatibilità"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-6.4.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-3.3.1",
+          "type": "mandatory",
+          "reason": "Wheel removal prerequisite"
+        },
+        {
+          "moduleId": "BIKE-2.1.3",
+          "type": "mandatory",
+          "reason": "Structural safety assessment"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-8.3.2",
+      "title": "Sostituzione forcella e verifica allineamenti",
+      "description": "Rimuovere forcelle rigide danneggiate e installare forcelle compatibili.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-8.3.2.md",
+      "toolsRequired": [
+        "chiavi Allen",
+        "lime",
+        "grasso anti-seizing",
+        "righello"
+      ],
+      "learningOutcomes": [
+        "Smontaggio forcella da serie sterzo con attenzione",
+        "Applicazione grasso anti-seizing su tubo sterzo",
+        "Rimontaggio nuova forcella e verifica campanatura",
+        "Allineamento ruota e manubrio con riferimenti visivi"
+      ],
+      "practicalCriteria": [
+        "Sostituzione completa su bici da recupero",
+        "Ispezione corretta e test post-intervento",
+        "Centraggio visivo perfetto ruota-forcella"
+      ],
+      "skillTags": [
+        "forcella",
+        "montaggio",
+        "sicurezza"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-8.3.1",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-8.4.1",
+      "title": "Diagnosi giochi sterzo",
+      "description": "Riconoscere sintomi di serie sterzo troppo lasca o troppo serrata.",
+      "difficulty": "base",
+      "estimatedDuration": 8,
+      "contentPath": "/content/bike-8.4.1.md",
+      "toolsRequired": [
+        "mani",
+        "freno anteriore",
+        "supporto cavalletto"
+      ],
+      "learningOutcomes": [
+        "Test freno anteriore: avanti/indietro = gioco",
+        "Impuntamenti in movimento = precarico eccessivo",
+        "Distinguere gioco superiore (cuscinetti) vs inferiore (forcella)",
+        "Uniformare regolazione tra precarico e bloccaggio"
+      ],
+      "practicalCriteria": [
+        "Diagnosi corretta su 3 casi reali",
+        "Intervento di regolazione riuscito",
+        "Verifica stabilità post test"
+      ],
+      "skillTags": [
+        "diagnosi",
+        "sterzo",
+        "sicurezza"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-8.1.2",
+          "type": "mandatory"
+        }
+      ]
+    }
+  ]
+}
