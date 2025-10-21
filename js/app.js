@@ -12,6 +12,7 @@ import MigrationManager from './database/migration-manager.js';
 import LevelDataLoader from './data/level-data-loader.js';
 import LevelMigrationManager from './database/level-migration-manager.js';
 import DashboardView from './views/dashboard-view.js';
+import AddNewModules from './utils/add-new-modules.js';
 
 // Inizializzazione applicazione
 async function initApp() {
@@ -28,6 +29,18 @@ async function initApp() {
     if (moduleCount === 0) {
       console.log('📦 Caricamento dati di esempio...');
       await loadSampleData();
+    } else {
+      // Automatically add any missing modules from JSON files
+      console.log('🔍 Controllo moduli mancanti...');
+      const addResult = await AddNewModules.addMissingModules();
+      if (addResult.success && addResult.added > 0) {
+        console.log(`✅ Aggiunti ${addResult.added} nuovi moduli e ${addResult.dependencies || 0} dipendenze`);
+        console.log('🔄 Ricarico applicazione per mostrare i nuovi moduli...');
+        location.reload();
+        return; // Stop execution since page will reload
+      } else {
+        console.log('ℹ️ Tutti i moduli sono aggiornati');
+      }
     }
     
     // Mostra statistiche iniziali
@@ -259,6 +272,7 @@ window.CiclofficinaTracker = {
   MigrationManager,
   LevelDataLoader,
   LevelMigrationManager,
+  AddNewModules,
   displayStats,
   
   // Utility per test schema esteso
@@ -454,6 +468,72 @@ window.CiclofficinaTracker = {
     } catch (error) {
       console.error('❌ Errore verifica stato:', error);
       throw error;
+    }
+  },
+
+  // Utility per aggiungere nuovi moduli senza cancellare progressi
+  async addNewModules() {
+    console.log('🔄 Aggiunta nuovi moduli...');
+    
+    try {
+      const result = await AddNewModules.addMissingModules();
+      
+      if (result.success) {
+        console.log(`✅ ${result.message}`);
+        if (result.added > 0) {
+          console.log(`📦 Moduli aggiunti: ${result.added}`);
+          result.modules.forEach(m => {
+            console.log(`   - ${m.code}: ${m.title}`);
+          });
+          
+          // Ricarica l'applicazione per mostrare i nuovi moduli
+          console.log('🔄 Ricarico applicazione...');
+          location.reload();
+        } else {
+          console.log('ℹ️ Nessun nuovo modulo da aggiungere');
+        }
+      } else {
+        console.error(`❌ ${result.message}`);
+      }
+      
+      return result;
+    } catch (error) {
+      console.error('❌ Errore aggiunta nuovi moduli:', error);
+      return {
+        success: false,
+        message: error.message
+      };
+    }
+  },
+
+  // Utility per verificare moduli mancanti
+  async checkMissingModules() {
+    console.log('🔍 Verifica moduli mancanti...');
+    
+    try {
+      const result = await AddNewModules.addMissingModules();
+      
+      if (result.success) {
+        console.log(`📊 ${result.message}`);
+        console.log(`📦 Moduli da aggiungere: ${result.added}`);
+        
+        if (result.added > 0) {
+          console.log('\n📋 Moduli mancanti:');
+          result.modules.forEach(m => {
+            console.log(`   - ${m.code}: ${m.title}`);
+          });
+        } else {
+          console.log('✅ Tutti i moduli sono presenti nel database');
+        }
+      }
+      
+      return result;
+    } catch (error) {
+      console.error('❌ Errore verifica moduli mancanti:', error);
+      return {
+        success: false,
+        message: error.message
+      };
     }
   }
 };

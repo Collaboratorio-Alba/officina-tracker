@@ -277,6 +277,101 @@
           "type": "mandatory"
         }
       ]
+    },
+    {
+      "id": "BIKE-6.5.1",
+      "title": "Sostituzione di raggi rotti",
+      "description": "Rimuovere e sostituire raggi rotti senza smontare tutta la ruota, con tecniche di emergenza e riparazione definitiva",
+      "difficulty": "intermedio",
+      "estimatedDuration": 20,
+      "contentPath": "/content/bike-6.5.1.md",
+      "toolsRequired": [
+        "chiave raggi",
+        "raggi di ricambio",
+        "nipples",
+        "tronchese",
+        "pinza"
+      ],
+      "learningOutcomes": [
+        "Identificare tipo e lunghezza raggi da sostituire",
+        "Rimuovere raggio rotto senza danneggiare cerchio o mozzo",
+        "Inserire nuovo raggio seguendo schema originale",
+        "Ritensionare e centrare ruota dopo sostituzione",
+        "Trucchi per emergenze: piegare raggio rotto temporaneamente"
+      ],
+      "practicalCriteria": [
+        "Sostituzione corretta di 2 raggi rotti su ruota anteriore e posteriore",
+        "Ritensionamento uniforme dopo riparazione",
+        "Centratura ruota entro 2mm di tolleranza",
+        "Test rotazione libera senza attriti"
+      ],
+      "skillTags": [
+        "raggi",
+        "riparazione-urgente",
+        "centratura",
+        "emergenze"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-6.2.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-6.2.1",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-6.5.2",
+      "title": "Costruzione ruote da zero",
+      "description": "Costruire una ruota completa partendo da cerchio, mozzo e raggi, con schema a 3 o 4 incroci",
+      "difficulty": "avanzato",
+      "estimatedDuration": 45,
+      "contentPath": "/content/bike-6.5.2.md",
+      "toolsRequired": [
+        "centraruote professionale",
+        "chiave raggi",
+        "metro",
+        "calcolatrice",
+        "tavolo lavoro"
+      ],
+      "learningOutcomes": [
+        "Calcolare lunghezza raggi in base a cerchio e mozzo",
+        "Applicare schema a 3 incroci per ruote standard",
+        "Tensionare progressivamente con controllo uniformità",
+        "Centrare ruota con precisione sub-millimetrica",
+        "Testare resistenza e planarità ruota finita"
+      ],
+      "practicalCriteria": [
+        "Costruzione completa ruota anteriore con schema 3 incroci",
+        "Centratura laterale entro 1mm",
+        "Centratura radiale entro 1mm",
+        "Tensione uniforme su tutti i raggi",
+        "Test resistenza su banco prova"
+      ],
+      "skillTags": [
+        "costruzione-ruote",
+        "precisione",
+        "calcolo-raggi",
+        "artigianato"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-6.5.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-6.1.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-6.3.1",
+          "type": "mandatory"
+        }
+      ]
     }
   ]
 }
