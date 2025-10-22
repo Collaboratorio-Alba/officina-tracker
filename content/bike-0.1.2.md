@@ -2,7 +2,7 @@
 
 ## Obiettivo del Modulo
 
-Imparare tecniche di ascolto attivo, sviluppare la capacità di spiegare problemi tecnici in linguaggio semplice e gestire efficacemente le aspettative dei clienti in contesti di officina popolare e comunitaria.
+Imparare tecniche di ascolto attivo, sviluppare la capacità di spiegare problemi tecnici in linguaggio semplice e gestire efficacemente le aspettative dei frequentatori in contesti di officina popolare e comunitaria.
 
 ## Introduzione
 
