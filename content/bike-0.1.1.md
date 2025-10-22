@@ -80,7 +80,7 @@ La sicurezza in officina è la competenza fondamentale su cui si basano tutte le
 - **Area pulita**: assemblaggi delicati
 - **Area sporca**: sgrassatura e preparazione
 - **Area prodotti chimici**: conservazione sicura
-- **Area attesa clienti**: separata dalle aree di lavoro
+- **Area attesa frequentatori**: separata dalle aree di lavoro
 
 ### Segnaletica di Sicurezza
 
@@ -231,6 +231,6 @@ Organizza uno spazio di lavoro secondo i principi di sicurezza:
 
 ## Conclusione
 
-La sicurezza in officina non è un optional ma una competenza fondamentale che protegge te, i tuoi colleghi e i clienti. Applicare sistematicamente i principi appresi in questo modulo ti permetterà di lavorare con maggiore serenità ed efficienza, prevenendo incidenti e creando un ambiente di lavoro piacevole e professionale.
+La sicurezza in officina non è un optional ma una competenza fondamentale che protegge te, i tuoi colleghi e i frequentatori. Applicare sistematicamente i principi appresi in questo modulo ti permetterà di lavorare con maggiore serenità ed efficienza, prevenendo incidenti e creando un ambiente di lavoro piacevole e professionale.
 
 Ricorda: la sicurezza è responsabilità di tutti e ogni giorno rappresenta un'opportunità per migliorare le tue pratiche e quelle della tua comunità.

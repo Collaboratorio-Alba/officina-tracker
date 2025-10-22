@@ -2,7 +2,7 @@
 
 ## Obiettivo del Modulo
 
-Imparare a pianificare, organizzare e gestire progetti complessi di restauro e personalizzazione di biciclette, sviluppando competenze nella stima di tempi e costi realistici, nella gestione delle aspettative dei clienti e nella documentazione professionale dei progressi.
+Imparare a pianificare, organizzare e gestire progetti complessi di restauro e personalizzazione di biciclette, sviluppando competenze nella stima di tempi e costi realistici, nella gestione delle aspettative dei frequentatori e nella documentazione professionale dei progressi.
 
 ## Introduzione
 
@@ -181,7 +181,7 @@ I progetti di restauro e personalizzazione rappresentano la massima espressione 
 
 - **Selezione progetti** più significativi
 - **Descrizione competenze** dimostrate
-- **Testimonianze clienti** soddisfatti
+- **Testimonianze frequentatori** soddisfatti
 - **Dati tecnici** e specifiche progetti
 
 ## Gestione delle Relazioni con il Cliente

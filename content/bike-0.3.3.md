@@ -14,7 +14,7 @@ Nell'era digitale, la documentazione efficace non è più un optional ma una com
 
 - **Tracciabilità** dei lavori svolti e delle decisioni tecniche
 - **Apprendimento continuo** dall'esperienza accumulata
-- **Comunicazione efficace** con clienti e colleghi
+- **Comunicazione efficace** con frequentatori e colleghi
 - **Valorizzazione del lavoro** attraverso evidenze concrete
 
 ### Principi della Documentazione Efficace
@@ -128,7 +128,7 @@ Nell'era digitale, la documentazione efficace non è più un optional ma una com
 
 - **Collegamento con inventario** per tracciamento componenti
 - **Sincronizzazione con calendario** per pianificazione
-- **Integrazione con comunicazione** clienti
+- **Integrazione con comunicazione** frequentatori
 - **Collegamento con backup** e archiviazione
 
 ## Implementazione Sistemi di Archiviazione
@@ -147,7 +147,7 @@ Nell'era digitale, la documentazione efficace non è più un optional ma una com
 - **Permessi appropriati** per diversi utenti
 - **Interfacce semplici** per facilità d'uso
 - **Ricerca avanzata** per trovare rapidamente
-- **Condivisione controllata** con clienti e colleghi
+- **Condivisione controllata** con frequentatori e colleghi
 
 ### Soluzioni di Archiviazione Digitali
 
@@ -171,11 +171,11 @@ Nell'era digitale, la documentazione efficace non è più un optional ma una com
 
 ```
 Officina_Digitale/
-├── Clienti/
-│   ├── Cliente_A/
+├── frequentatori/
+│   ├── frequentatori_A/
 │   │   ├── Bici_1/
 │   │   └── Bici_2/
-│   └── Cliente_B/
+│   └── frequentatori_B/
 ├── Progetti/
 │   ├── Restauro_Vintage/
 │   └── Personalizzazione_MTB/
@@ -361,7 +361,7 @@ Condividi efficacemente conoscenza attraverso documentazione:
 
 ### Comunicazione Efficace
 
-- **Utilizzo documentazione** per comunicazione chiara con clienti
+- **Utilizzo documentazione** per comunicazione chiara con frequentatori
 - **Condivisione visiva** di problemi e soluzioni
 - **Documentazione come supporto** per spiegazioni tecniche
 - **Archiviazione di comunicazioni** importanti

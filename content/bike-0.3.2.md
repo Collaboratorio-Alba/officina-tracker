@@ -220,7 +220,7 @@ La sostenibilità non è solo una tendenza, ma una necessità fondamentale per i
 
 #### Metriche Qualitative
 
-- **Soddisfazione clienti** per riparazioni sostenibili
+- **Soddisfazione frequentatori** per riparazioni sostenibili
 - **Partecipazione comunità** a iniziative circolari
 - **Diffusione conoscenze** su riparazione e riuso
 - **Impatto sociale** delle attività sostenibili
@@ -231,7 +231,7 @@ La sostenibilità non è solo una tendenza, ma una necessità fondamentale per i
 
 - **Report periodici** sui progressi di sostenibilità
 - **Case study** di riparazioni particolarmente innovative
-- **Testimonianze** di clienti e partecipanti
+- **Testimonianze** di frequentatori e partecipanti
 - **Dati aggregati** sull'impatto collettivo
 
 #### Comunicazione Trasparente
@@ -274,7 +274,7 @@ Prepara una proposta di progetto economia circolare per la comunità:
 
 ### Problemi Comuni
 
-- **Resistenza al cambiamento** da parte di clienti o colleghi
+- **Resistenza al cambiamento** da parte di frequentatori o colleghi
 - **Costi iniziali** per implementazione pratiche sostenibili
 - **Disponibilità limitata** di componenti ricondizionati
 - **Complessità normative** per smaltimento rifiuti
@@ -321,7 +321,7 @@ Prepara una proposta di progetto economia circolare per la comunità:
 ### Comunicazione Efficace
 
 - **Spiegazione benefici** delle pratiche sostenibili
-- **Educazione clienti** su manutenzione preventiva
+- **Educazione frequentatori** su manutenzione preventiva
 - **Condivisione successi** per ispirare altri
 - **Advocacy** per politiche di supporto all'economia circolare
 
