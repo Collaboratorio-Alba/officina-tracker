@@ -268,6 +268,16 @@
       font-size: 0.95rem;
     }
     th { background: var(--bg-table-header); color: var(--text-table-header); }
+    
+    /* Stile per righe selezionate nella tabella */
+    tr.selected {
+      background-color: var(--accent-secondary);
+      color: var(--black);
+    }
+    
+    tr.selected td {
+      border-color: var(--accent-primary);
+    }
 
     /* Larghezze personalizzate delle colonne */
     #modules-table th:nth-child(4),
@@ -1686,10 +1696,12 @@
     if (window.innerWidth <= 1024) {
       moduleDetailsSidebar.classList.remove('open');
     }
-    // Reset evidenziazione quando si chiude la sidebar
-    selectedModuleId = null;
+    // NON rimuovere dalla session storage per mantenere la persistenza tra viste
+    // NON resettare selectedModuleId per mantenere la persistenza tra viste
     if (document.getElementById('graph-view').style.display === 'block') {
       renderGraph(); // Riricarica il grafo per rimuovere l'evidenziazione
+    } else {
+      renderModules(); // Riricarica la tabella per rimuovere l'evidenziazione
     }
   }
 
@@ -1793,8 +1805,20 @@
         }
         const moduleId = Number(row.dataset.id);
         await showModuleDetails(moduleId);
+        
+        // Salva il modulo selezionato per persistenza tra viste
+        saveSelectedModule(moduleId);
+        
+        // Evidenzia la riga selezionata
+        highlightSelectedTableRow(moduleId);
       });
     });
+    
+    // Evidenzia il modulo selezionato se presente
+    const savedModuleId = loadSelectedModule();
+    if (savedModuleId) {
+      highlightSelectedTableRow(savedModuleId);
+    }
 
     // Listener per i link dei moduli (per evitare che il click sulla riga interferisca)
     tableBody.querySelectorAll('.module-link').forEach(link => {
@@ -1866,6 +1890,20 @@
 
     renderingInProgress = false; // sblocco sempre a fine
   }
+  
+  // Funzione per evidenziare la riga selezionata nella tabella
+  function highlightSelectedTableRow(moduleId) {
+    // Rimuovi evidenziazione precedente
+    tableBody.querySelectorAll('tr').forEach(row => {
+      row.classList.remove('selected');
+    });
+    
+    // Evidenzia la riga corrente
+    const selectedRow = tableBody.querySelector(`tr[data-id="${moduleId}"]`);
+    if (selectedRow) {
+      selectedRow.classList.add('selected');
+    }
+  }
 
   // Funzione per trovare ricorsivamente tutte le dipendenze di un modulo
   function findDependencyChain(moduleId, dependencies, visited = new Set()) {
@@ -1885,12 +1923,71 @@
 
   // Variabile globale per tracciare il modulo selezionato
   let selectedModuleId = null;
+  
+  // Funzione per salvare il modulo selezionato nella session storage
+  function saveSelectedModule(moduleId) {
+    try {
+      sessionStorage.setItem('selectedModuleId', moduleId);
+      console.log(`💾 Saved module ${moduleId} to sessionStorage`);
+    } catch (error) {
+      console.warn('⚠️ Impossibile salvare modulo selezionato in sessionStorage:', error);
+    }
+  }
+  
+  // Funzione per caricare il modulo selezionato dalla session storage
+  function loadSelectedModule() {
+    try {
+      const savedModuleId = sessionStorage.getItem('selectedModuleId');
+      if (savedModuleId) {
+        selectedModuleId = Number(savedModuleId);
+        console.log(`📂 Loaded module ${selectedModuleId} from sessionStorage`);
+        return selectedModuleId;
+      } else {
+        console.log('📂 No saved module found in sessionStorage');
+      }
+    } catch (error) {
+      console.warn('⚠️ Impossibile caricare modulo selezionato da sessionStorage:', error);
+    }
+    return null;
+  }
+  
+  // Funzione per rimuovere il modulo selezionato dalla session storage
+  function clearSelectedModule() {
+    try {
+      sessionStorage.removeItem('selectedModuleId');
+    } catch (error) {
+      console.warn('⚠️ Impossibile rimuovere modulo selezionato da sessionStorage:', error);
+    }
+  }
 
   // Funzione per renderizzare il grafo delle dipendenze
-  async function renderGraph() {
+  let graphRenderingInProgress = false;
+  async function renderGraph(forceRender = false) {
+    // Skip if already rendering and not forced
+    if (graphRenderingInProgress && !forceRender) {
+      return;
+    }
+    
+    // Set rendering flag
+    graphRenderingInProgress = true;
+    
     try {
+      
       const svg = d3.select('#module-graph');
-      svg.selectAll('*').remove(); // Pulisce il grafo precedente
+      
+      // Clear everything more thoroughly
+      svg.selectAll('*').remove();
+      
+      // Reset della simulazione precedente se esiste
+      if (window.currentSimulation) {
+        window.currentSimulation.stop();
+        window.currentSimulation = null;
+      }
+      
+      // Ensure the graph view is actually visible before rendering
+      if (document.getElementById('graph-view').style.display === 'none') {
+        return;
+      }
 
     const fStatus = document.getElementById('filter-status').value;
     const fTeaching = document.getElementById('filter-teaching').value;
@@ -1978,10 +2075,13 @@
     svg.call(zoom);
 
     const simulation = d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id(d => d.id).distance(250)) // Increased distance for better spacing
-      .force('charge', d3.forceManyBody().strength(-500)) // Reduced repulsion for more relaxed layout
+      .force('link', d3.forceLink(links).id(d => d.id).distance(100)) // Increased distance for better spacing
+      .force('charge', d3.forceManyBody().strength(-50)) // Reduced repulsion for more relaxed layout
       .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collision', d3.forceCollide().radius(50)); // Slightly increased collision radius
+      .force('collision', d3.forceCollide().radius(150)); // Slightly increased collision radius
+    
+    // Store the simulation reference for cleanup
+    window.currentSimulation = simulation;
 
     // Crea elementi SVG all'interno del gruppo zoomabile
     const link = g.append('g')
@@ -2092,6 +2192,10 @@
     node.on('click', async (event, d) => {
       await showModuleDetails(d.id);
       
+      // Salva il modulo selezionato per persistenza tra viste
+      saveSelectedModule(d.id);
+      console.log(`📊 Graph: Module ${d.id} selected and saved`);
+      
       // Evidenzia la catena di dipendenze
       highlightDependencyChain(d.id, dependencies, node, link);
     });
@@ -2190,6 +2294,27 @@
         .attr('transform', d => `translate(${d.x},${d.y})`);
     });
 
+    // Evidenzia automaticamente il modulo selezionato se presente
+    const savedModuleId = loadSelectedModule();
+    
+    if (savedModuleId) {
+      // Check if the saved module exists in the current filtered nodes
+      const savedModuleExists = filteredModules.some(m => m.id === savedModuleId);
+      
+      if (savedModuleExists) {
+        // Show module details and highlight dependency chain
+        await showModuleDetails(savedModuleId);
+        
+        // Highlight immediately and also after simulation stabilizes
+        highlightDependencyChain(savedModuleId, dependencies, node, link);
+        
+        // Also highlight after a delay to ensure simulation has stabilized
+        setTimeout(() => {
+          highlightDependencyChain(savedModuleId, dependencies, node, link);
+        }, 1500);
+      }
+    }
+
     // Funzione per evidenziare la catena di dipendenze
     function highlightDependencyChain(moduleId, dependencies, nodeElements, linkElements) {
       // Reset precedente evidenziazione
@@ -2233,22 +2358,40 @@
 
       selectedModuleId = moduleId;
 
-      // Trova tutte le dipendenze ricorsive
-      const dependencyChain = findDependencyChain(moduleId, dependencies);
-      
-      // Evidenzia i nodi nella catena
-      nodeElements.selectAll('circle')
-        .filter(d => dependencyChain.has(d.id))
-        .attr('stroke', '#FFDA00') // Primary yellow
-        .attr('stroke-width', 4)
-        .attr('stroke-dasharray', '5,3'); // Dotted line
+      try {
+        if (typeof findDependencyChain !== 'function') {
+          console.warn('findDependencyChain function not found');
+          return;
+        }
+        
+        // Trova tutte le dipendenze ricorsive
+        const dependencyChain = findDependencyChain(moduleId, dependencies);
+        console.log(`🔗 Dependency chain for module ${moduleId}:`, Array.from(dependencyChain));
+        
+        // Evidenzia i nodi nella catena
+        const highlightedNodes = nodeElements.selectAll('circle')
+          .filter(d => dependencyChain.has(d.id));
+        
+        console.log(`🎯 Highlighting ${highlightedNodes.size()} nodes in dependency chain`);
+        
+        highlightedNodes
+          .attr('stroke', '#FFDA00') // Primary yellow
+          .attr('stroke-width', 4)
+          .attr('stroke-dasharray', '5,3'); // Dotted line
 
-      // Evidenzia i link nella catena
-      linkElements
-        .filter(d => dependencyChain.has(d.source.id) && dependencyChain.has(d.target.id))
-        .attr('stroke', '#FFDA00') // Primary yellow
-        .attr('stroke-width', 3)
-        .attr('stroke-dasharray', '5,3'); // Dotted line
+        // Evidenzia i link nella catena
+        const highlightedLinks = linkElements
+          .filter(d => dependencyChain.has(d.source.id) && dependencyChain.has(d.target.id));
+        
+        console.log(`🔗 Highlighting ${highlightedLinks.size()} links in dependency chain`);
+        
+        highlightedLinks
+          .attr('stroke', '#FFDA00') // Primary yellow
+          .attr('stroke-width', 3)
+          .attr('stroke-dasharray', '5,3'); // Dotted line
+      } catch (error) {
+        console.error('❌ Error in highlightDependencyChain:', error);
+      }
     }
 
     // Funzioni drag
@@ -2288,6 +2431,8 @@
         .style('font-size', '14px')
         .style('fill', '#dc3545')
         .text('Errore nel caricamento del grafo: ' + error.message);
+    } finally {
+      graphRenderingInProgress = false;
     }
   }
 
@@ -2338,6 +2483,12 @@
     tableBtn.classList.add('active');
     graphBtn.classList.remove('active');
     await renderModules(); // forza aggiornamento coerente ai filtri
+    
+    // Evidenzia il modulo selezionato dopo il rendering
+    const savedModuleId = loadSelectedModule();
+    if (savedModuleId) {
+      highlightSelectedTableRow(savedModuleId);
+    }
   });
 
   graphBtn.addEventListener('click', async () => {
@@ -2345,7 +2496,9 @@
     tableView.style.display = 'none';
     graphBtn.classList.add('active');
     tableBtn.classList.remove('active');
-    await renderGraph(); // forza aggiornamento coerente ai filtri
+    
+    // Force graph rendering when switching views - ensure it always renders
+    await renderGraph(true); // forza aggiornamento coerente ai filtri
   });
 
   // Collega eventi ai filtri

@@ -22,8 +22,9 @@ class LevelDataLoader {
       
       // Lista dei file di livello disponibili
       const levelFiles = [
+        'ciclofficina_level0.json',
         'ciclofficina_level1.json',
-        'ciclofficina_level2.json', 
+        'ciclofficina_level2.json',
         'ciclofficina_level3.json',
         'ciclofficina_level4.json',
         'ciclofficina_level5.json',

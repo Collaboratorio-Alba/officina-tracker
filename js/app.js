@@ -535,6 +535,41 @@ window.CiclofficinaTracker = {
         message: error.message
       };
     }
+  },
+
+  // Utility per fissare dipendenze mancanti
+  async fixMissingDependencies() {
+    console.log('🔧 Fissaggio dipendenze mancanti...');
+    
+    try {
+      const result = await AddNewModules.fixMissingDependencies();
+      
+      if (result.success) {
+        console.log(`✅ ${result.message}`);
+        if (result.fixed > 0) {
+          console.log(`🔗 Dipendenze fissate: ${result.fixed}`);
+          if (result.errors > 0) {
+            console.log(`⚠️ Errori durante il fissaggio: ${result.errors}`);
+          }
+          
+          // Ricarica l'applicazione per mostrare le nuove dipendenze nel grafo
+          console.log('🔄 Ricarico applicazione per mostrare le dipendenze...');
+          location.reload();
+        } else {
+          console.log('ℹ️ Nessuna dipendenza mancante da fissare');
+        }
+      } else {
+        console.error(`❌ ${result.message}`);
+      }
+      
+      return result;
+    } catch (error) {
+      console.error('❌ Errore fissaggio dipendenze:', error);
+      return {
+        success: false,
+        message: error.message
+      };
+    }
   }
 };
 
