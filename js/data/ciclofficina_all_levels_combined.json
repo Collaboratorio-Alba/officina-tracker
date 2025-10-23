@@ -1,0 +1,4696 @@
+{
+  "version": "1.1.0",
+  "schemaNotes": "Combined dataset of all 12 levels for analysis purposes",
+  "metadata": {
+    "totalLevels": 12,
+    "totalModules": 113,
+    "teachingAreas": [
+      "Competenze Trasversali e Fondamentali",
+      "Fondamenti Teorici Base",
+      "Diagnostica e Verifica",
+      "Pneumatici e Camere d’Aria",
+      "Sistema Frenante",
+      "Trasmissione Base",
+      "Ruote e Mozzi",
+      "Cambio Meccanico",
+      "Serie Sterzo e Forcella",
+      "Ergonomia e posizione del ciclista",
+      "Recupero e Restauro Telai",
+      "Assemblaggio Bicicletta da Zero"
+    ],
+    "generatedAt": "2025-10-23T22:02:49.654Z",
+    "sourceFiles": [
+      "ciclofficina_level0.json",
+      "ciclofficina_level1.json",
+      "ciclofficina_level2.json",
+      "ciclofficina_level3.json",
+      "ciclofficina_level4.json",
+      "ciclofficina_level5.json",
+      "ciclofficina_level6.json",
+      "ciclofficina_level7.json",
+      "ciclofficina_level8.json",
+      "ciclofficina_level9.json",
+      "ciclofficina_level10.json",
+      "ciclofficina_level11.json"
+    ]
+  },
+  "levels": [
+    {
+      "level": 0,
+      "filename": "ciclofficina_level0.json",
+      "teachingArea": {
+        "name": "Competenze Trasversali e Fondamentali",
+        "description": "Soft skills, organizzazione, sicurezza e competenze di base essenziali per lavorare efficacemente in ciclofficina popolare",
+        "color": "#8e44ad"
+      },
+      "modules": [
+        {
+          "id": "BIKE-0.1.1",
+          "title": "Sicurezza base in officina e uso DPI",
+          "description": "Principi fondamentali di sicurezza, dispositivi di protezione individuale, organizzazione spazi di lavoro sicuri",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-0.1.1.md",
+          "toolsRequired": [
+            "guanti protettivi",
+            "occhiali di sicurezza",
+            "cassetta pronto soccorso"
+          ],
+          "learningOutcomes": [
+            "Riconoscere i principali rischi in officina (meccanici, chimici, ergonomici)",
+            "Scegliere e usare correttamente i DPI appropriati per ogni attività",
+            "Organizzare lo spazio di lavoro per minimizzare rischi",
+            "Conoscere procedure base di primo soccorso per incidenti comuni"
+          ],
+          "practicalCriteria": [
+            "Identificazione corretta rischi in 3 scenari officina diversi",
+            "Dimostrazione uso corretto DPI per 4 attività specifiche",
+            "Organizzazione spazio di lavoro secondo principi sicurezza"
+          ],
+          "skillTags": [
+            "sicurezza",
+            "prevenzione",
+            "organizzazione"
+          ],
+          "revisionDate": null,
+          "dependencies": []
+        },
+        {
+          "id": "BIKE-0.1.2",
+          "title": "Comunicazione efficace in officina popolare",
+          "description": "Tecniche di ascolto attivo, spiegazione problemi tecnici in linguaggio semplice, gestione aspettative clienti",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-0.1.2.md",
+          "toolsRequired": [
+            "schede comunicazione",
+            "esempi casi reali"
+          ],
+          "learningOutcomes": [
+            "Applicare tecniche di ascolto attivo con clienti e colleghi",
+            "Spiegare problemi tecnici complessi in linguaggio accessibile",
+            "Gestire aspettative realistiche sui tempi e costi riparazioni",
+            "Comunicare chiaramente limitazioni e possibilità di recupero"
+          ],
+          "practicalCriteria": [
+            "Simulazione 3 conversazioni con clienti con problemi diversi",
+            "Spiegazione corretta problema tecnico a persona non esperta",
+            "Gestione efficace di situazione con aspettative irrealistiche"
+          ],
+          "skillTags": [
+            "comunicazione",
+            "relazioni",
+            "didattica"
+          ],
+          "revisionDate": null,
+          "dependencies": []
+        },
+        {
+          "id": "BIKE-0.1.3",
+          "title": "Organizzazione spazi e gestione magazzino",
+          "description": "Sistemi semplici per organizzare attrezzi, tracciare ricambi, gestire inventario in officine autogestite",
+          "difficulty": "base",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-0.1.3.md",
+          "toolsRequired": [
+            "cassetti organizzatori",
+            "etichette",
+            "registro inventario"
+          ],
+          "learningOutcomes": [
+            "Organizzare spazi di lavoro per efficienza e sicurezza",
+            "Implementare sistema semplice tracciamento ricambi",
+            "Gestire scorte minime per parti comuni",
+            "Creare sistema di prestito attrezzi per comunità"
+          ],
+          "practicalCriteria": [
+            "Riorganizzazione completa area attrezzi secondo principi 5S",
+            "Creazione sistema inventario funzionale per 50 ricambi",
+            "Gestione corretta prestito/restituzione 5 attrezzi"
+          ],
+          "skillTags": [
+            "organizzazione",
+            "gestione",
+            "logistica"
+          ],
+          "revisionDate": null,
+          "dependencies": []
+        },
+        {
+          "id": "BIKE-0.2.1",
+          "title": "Metodologia problem solving sistematico",
+          "description": "Approccio strutturato per diagnosi guasti complessi, analisi cause radice, pianificazione interventi",
+          "difficulty": "base",
+          "estimatedDuration": 18,
+          "contentPath": "/content/bike-0.2.1.md",
+          "toolsRequired": [
+            "schede diagnostiche",
+            "diagrammi causa-effetto"
+          ],
+          "learningOutcomes": [
+            "Applicare metodo sistematico per diagnosi problemi complessi",
+            "Distinguere sintomi da cause radice",
+            "Pianificare interventi in ordine logico di priorità",
+            "Documentare processo diagnostico per apprendimento futuro"
+          ],
+          "practicalCriteria": [
+            "Risoluzione 3 casi diagnostici complessi con metodo strutturato",
+            "Creazione diagramma causa-effetto per problema reale",
+            "Documentazione completa processo diagnostico"
+          ],
+          "skillTags": [
+            "diagnosi",
+            "problem-solving",
+            "metodologia"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-0.1.2",
+              "type": "recommended"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-0.2.2",
+          "title": "Gestione progetti restauro e personalizzazione",
+          "description": "Pianificazione fasi lavoro, stima tempi/costi realistici, gestione aspettative, documentazione progressi",
+          "difficulty": "intermedio",
+          "estimatedDuration": 20,
+          "contentPath": "/content/bike-0.2.2.md",
+          "toolsRequired": [
+            "template progetto",
+            "cronoprogramma",
+            "registro fotografico"
+          ],
+          "learningOutcomes": [
+            "Pianificare progetto restauro in fasi logiche e sequenziali",
+            "Stimare tempi e costi realistici per progetti complessi",
+            "Gestire aspettative cliente durante progetto lungo",
+            "Documentare progressi con foto e note per portfolio"
+          ],
+          "practicalCriteria": [
+            "Pianificazione completa progetto restauro bici vintage",
+            "Stima realistica tempi/costi per progetto medio",
+            "Documentazione fotografica progressi progetto"
+          ],
+          "skillTags": [
+            "progettazione",
+            "pianificazione",
+            "documentazione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-0.1.3",
+              "type": "recommended"
+            },
+            {
+              "moduleId": "BIKE-0.2.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-0.3.1",
+          "title": "Didattica e mentoring in ciclofficina popolare",
+          "description": "Tecniche insegnamento pratico, creazione materiali didattici semplici, gestione gruppi apprendimento",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-0.3.1.md",
+          "toolsRequired": [
+            "schede didattiche",
+            "materiali dimostrativi"
+          ],
+          "learningOutcomes": [
+            "Applicare tecniche insegnamento pratico per diverse abilità",
+            "Creare materiali didattici semplici e accessibili",
+            "Gestire dinamiche gruppo in sessioni apprendimento collettivo",
+            "Valutare progressi apprendimento in modo costruttivo"
+          ],
+          "practicalCriteria": [
+            "Preparazione e conduzione lezione pratica su argomento base",
+            "Creazione 3 schede didattiche per attività diverse",
+            "Gestione efficace sessione apprendimento con 3 partecipanti"
+          ],
+          "skillTags": [
+            "didattica",
+            "mentoring",
+            "comunità"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-0.1.2",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-0.3.2",
+          "title": "Sostenibilità ed economia circolare in officina",
+          "description": "Principi riparazione vs sostituzione, riciclo componenti, scelta materiali sostenibili, riduzione sprechi",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-0.3.2.md",
+          "toolsRequired": [
+            "componenti riciclabili",
+            "schede valutazione sostenibilità"
+          ],
+          "learningOutcomes": [
+            "Applicare principi economia circolare nelle decisioni riparazione",
+            "Valutare sostenibilità componenti e materiali",
+            "Implementare pratiche riduzione sprechi in officina",
+            "Promuovere cultura riparazione vs sostituzione in comunità"
+          ],
+          "practicalCriteria": [
+            "Valutazione sostenibilità 5 decisioni riparazione diverse",
+            "Implementazione 3 pratiche riduzione sprechi in officina",
+            "Preparazione proposta progetto economia circolare per comunità"
+          ],
+          "skillTags": [
+            "sostenibilità",
+            "economia-circolare",
+            "ambiente"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-0.1.3",
+              "type": "recommended"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-0.3.3",
+          "title": "Documentazione digitale e archiviazione lavori",
+          "description": "Uso smartphone per foto prima/dopo, creazione schede digitali, archiviazione organizzata interventi",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-0.3.3.md",
+          "toolsRequired": [
+            "smartphone/fotocamera",
+            "app note/schede digitali"
+          ],
+          "learningOutcomes": [
+            "Creare documentazione fotografica efficace prima/dopo interventi",
+            "Organizzare schede digitali per tracciabilità lavori",
+            "Implementare sistema archiviazione semplice e accessibile",
+            "Condividere conoscenze attraverso documentazione digitale"
+          ],
+          "practicalCriteria": [
+            "Creazione documentazione completa 3 interventi diversi",
+            "Organizzazione archivio digitale con 10 schede lavori",
+            "Condivisione efficace conoscenza attraverso documentazione"
+          ],
+          "skillTags": [
+            "digitale",
+            "documentazione",
+            "archiviazione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-0.1.3",
+              "type": "recommended"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-0.3.4",
+          "title": "Ricerca documentazione online parti bicicletta",
+          "description": "Localizzare e interpretare la documentazione tecnica online dei principali marchi per identificare, installare e configurare correttamente i componenti",
+          "difficulty": "base",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-0.3.4.md",
+          "toolsRequired": [
+            "computer o smartphone",
+            "connessione internet",
+            "blocco note digitale"
+          ],
+          "learningOutcomes": [
+            "Identificare i siti ufficiali dei principali marchi (Shimano, SRAM, Campagnolo, Tektro, etc.)",
+            "Navigare cataloghi tecnici e schede prodotto online",
+            "Interpretare diagrammi esplosi e tabelle di compatibilità",
+            "Trovare manuali di installazione e specifiche tecniche",
+            "Utilizzare motori di ricerca per documentazione specifica",
+            "Salvare e organizzare documenti per futuri riferimenti"
+          ],
+          "practicalCriteria": [
+            "Ricerca e download manuale installazione per 3 componenti diversi",
+            "Identificazione compatibilità tra 2 componenti di marchi diversi",
+            "Creazione archivio digitale con 5 documenti tecnici organizzati",
+            "Interpretazione corretta di diagramma esploso per smontaggio"
+          ],
+          "skillTags": [
+            "ricerca-informazioni",
+            "documentazione-tecnica",
+            "compatibilità",
+            "organizzazione",
+            "marchi"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-0.3.3",
+              "type": "recommended",
+              "reason": "Digital documentation skills helpful for organizing technical resources"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-0.4.1",
+          "title": "Etica e valori officine popolari",
+          "description": "Principi cooperazione, accessibilità, inclusione, autogestione nelle officine di comunità",
+          "difficulty": "base",
+          "estimatedDuration": 8,
+          "contentPath": "/content/bike-0.4.1.md",
+          "toolsRequired": [
+            "carta valori",
+            "casi studio"
+          ],
+          "learningOutcomes": [
+            "Comprendere e applicare principi etici officine popolari",
+            "Promuovere inclusione e accessibilità in comunità",
+            "Gestire conflitti secondo principi cooperativi",
+            "Contribuire a cultura autogestione e mutualismo"
+          ],
+          "practicalCriteria": [
+            "Applicazione principi etici in 3 scenari reali",
+            "Proposta progetto inclusivo per comunità locale",
+            "Gestione costruttiva situazione conflittuale"
+          ],
+          "skillTags": [
+            "etica",
+            "comunità",
+            "valori"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-0.1.2",
+              "type": "mandatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "filename": "ciclofficina_level1.json",
+      "teachingArea": {
+        "name": "Fondamenti Teorici Base",
+        "description": "Principi teorici essenziali e trucchi pratici per comprendere i meccanismi della bicicletta",
+        "color": "#e67e22"
+      },
+      "modules": [
+        {
+          "id": "BIKE-1.1.1",
+          "title": "Riconoscimento telaio e materiali",
+          "description": "Identificare materiali comuni nei telai di bici economiche e capire cosa si può riparare",
+          "difficulty": "base",
+          "estimatedDuration": 8,
+          "contentPath": "/content/bike-1.1.1.md",
+          "toolsRequired": [
+            "magnete",
+            "lima piccola"
+          ],
+          "learningOutcomes": [
+            "Distinguere acciaio da alluminio con test magnetico",
+            "Riconoscere segni di ruggine recuperabile vs irreparabile",
+            "Identificare saldature difettose o crepe strutturali"
+          ],
+          "practicalCriteria": [
+            "Test magnetico corretto su 5 telai diversi",
+            "Classificazione stato conservazione: riparabile/non riparabile"
+          ],
+          "skillTags": [
+            "diagnosi",
+            "materiali",
+            "recupero"
+          ],
+          "revisionDate": null,
+          "dependencies": []
+        },
+        {
+          "id": "BIKE-1.1.2",
+          "title": "Nomenclatura componenti principali",
+          "description": "Imparare i nomi giusti per comunicare in officina e riconoscere i pezzi intercambiabili",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-1.1.2.md",
+          "toolsRequired": [],
+          "learningOutcomes": [
+            "Usare terminologia corretta per ogni componente",
+            "Riconoscere quali parti sono universali e quali specifiche",
+            "Distinguere componenti originali da sostituzioni improvvisate"
+          ],
+          "practicalCriteria": [
+            "Denominazione corretta di 20 componenti principali",
+            "Identificazione parti intercambiabili tra 3 bici diverse"
+          ],
+          "skillTags": [
+            "terminologia",
+            "identificazione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.1.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.1.3",
+          "title": "Classificazione tipologie di biciclette",
+          "description": "Riconoscere city bike, MTB da discount, bici da bambino e capire le differenze pratiche",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-1.1.3.md",
+          "toolsRequired": [
+            "metro a nastro"
+          ],
+          "learningOutcomes": [
+            "Distinguere bici economiche da quelle di qualità",
+            "Riconoscere misure ruote e compatibilità ricambi",
+            "Identificare modifiche fai-da-te precedenti"
+          ],
+          "practicalCriteria": [
+            "Classificazione corretta di 10 biciclette diverse",
+            "Stima valore di recuperabilità per ogni tipologia"
+          ],
+          "skillTags": [
+            "classificazione",
+            "valutazione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.1.2",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.1.4",
+          "title": "Sistemi di misure e standard",
+          "description": "Misure essenziali per trovare ricambi compatibili senza sbagliare",
+          "difficulty": "base",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-1.1.4.md",
+          "toolsRequired": [
+            "calibro",
+            "metro",
+            "righello"
+          ],
+          "learningOutcomes": [
+            "Misurare diametri ruote, tubi sterzo, movimento centrale",
+            "Riconoscere standard europei vs americani",
+            "Trucchi per misurare senza attrezzi professionali"
+          ],
+          "practicalCriteria": [
+            "Misurazione corretta di 8 dimensioni critiche",
+            "Identificazione standard su bici sconosciuta"
+          ],
+          "skillTags": [
+            "misurazione",
+            "standard",
+            "trucchi"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.1.3",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.2.1",
+          "title": "Principi base delle filettature",
+          "description": "Capire come funzionano le viti senza rovinarle durante lo smontaggio",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-1.2.1.md",
+          "toolsRequired": [
+            "viti di scarto",
+            "penetrante WD40"
+          ],
+          "learningOutcomes": [
+            "Riconoscere filettature metriche da pollici",
+            "Applicare la regola del senso di rotazione",
+            "Liberare viti bloccate senza danneggiare filetti"
+          ],
+          "practicalCriteria": [
+            "Identificazione corretta tipo filettatura su 10 viti",
+            "Sblocco vite arrugginita senza danni"
+          ],
+          "skillTags": [
+            "meccanica-base",
+            "filettature",
+            "recupero"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.1.4",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.2.2",
+          "title": "Senso di rotazione (destro/sinistro)",
+          "description": "La regola d'oro per non fare danni: righty-tighty, lefty-loosey e le eccezioni",
+          "difficulty": "base",
+          "estimatedDuration": 8,
+          "contentPath": "/content/bike-1.2.2.md",
+          "toolsRequired": [
+            "chiavi Allen varie"
+          ],
+          "learningOutcomes": [
+            "Applicare la regola base del senso orario",
+            "Riconoscere filettature sinistre (pedale sx, mozzo)",
+            "Trucco mnemonico per non sbagliare mai"
+          ],
+          "practicalCriteria": [
+            "Smontaggio/rimontaggio 5 viti senza errori",
+            "Identificazione filettature sinistre su bici completa"
+          ],
+          "skillTags": [
+            "meccanica-base",
+            "mnemotecniche"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.2.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.2.3",
+          "title": "Standard BSA, ITA, FRA, GER",
+          "description": "I principali standard del movimento centrale nelle bici economiche europee",
+          "difficulty": "intermedio",
+          "estimatedDuration": 18,
+          "contentPath": "/content/bike-1.2.3.md",
+          "toolsRequired": [
+            "calibro",
+            "esempi di calotte"
+          ],
+          "learningOutcomes": [
+            "Riconoscere visivamente i 4 standard principali",
+            "Sapere quali attrezzi servono per ogni tipo",
+            "Trucchi per adattare ricambi non perfetti"
+          ],
+          "practicalCriteria": [
+            "Identificazione standard su 6 telai diversi",
+            "Scelta attrezzo corretto per ogni standard"
+          ],
+          "skillTags": [
+            "standard",
+            "movimento-centrale",
+            "identificazione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.2.2",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.2.4",
+          "title": "Passo e diametro filettature",
+          "description": "Misurare il passo delle viti per trovare i ricambi giusti nei negozi generici",
+          "difficulty": "intermedio",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-1.2.4.md",
+          "toolsRequired": [
+            "calibro",
+            "pettine filettature",
+            "viti campione"
+          ],
+          "learningOutcomes": [
+            "Misurare passo e diametro con precisione",
+            "Usare il pettine filettature per identificazione rapida",
+            "Trovare viti compatibili in ferramenta normale"
+          ],
+          "practicalCriteria": [
+            "Misurazione corretta passo di 8 viti diverse",
+            "Acquisto vite sostitutiva in ferramenta generica"
+          ],
+          "skillTags": [
+            "misurazione",
+            "ricambi",
+            "autonomia"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.2.3",
+              "type": "recommended"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.2.5",
+          "title": "Coppia di serraggio e precauzioni",
+          "description": "Imparare a stringere le viti abbastanza ma non troppo, senza attrezzi costosi",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-1.2.5.md",
+          "toolsRequired": [
+            "chiave dinamometrica economica",
+            "marcatore permanente",
+            "frenafiletti"
+          ],
+          "learningOutcomes": [
+            "Capire il concetto di coppia di serraggio e perché è importante",
+            "Riconoscere i segnali di vite troppo stretta o troppo allentata",
+            "Tecniche empiriche per serrare correttamente senza dinamometrica",
+            "Trucchi per prevenire svitamenti spontanei (Loctite, rondelle elastiche)"
+          ],
+          "practicalCriteria": [
+            "Serraggio corretto di 5 viti critiche con verifica pratica",
+            "Identificazione viti allentate o troppo strette su bici completa",
+            "Applicazione corretta di frenafiletti o rondella elastica"
+          ],
+          "skillTags": [
+            "meccanica-base",
+            "sicurezza",
+            "prevenzione-danni"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.2.4",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.3.1",
+          "title": "Riconoscimento e uso chiavi Allen",
+          "description": "Imparare a usare correttamente le chiavi a brugola senza rovinare le viti",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-1.3.1.md",
+          "toolsRequired": [
+            "set chiavi Allen metriche",
+            "viti di scarto",
+            "olio penetrante"
+          ],
+          "learningOutcomes": [
+            "Riconoscere le misure più comuni (4, 5, 6, 8mm)",
+            "Inserire correttamente la chiave per evitare di spanare",
+            "Trucco per recuperare viti spanate con elastico o pasta abrasiva",
+            "Differenza tra chiavi a L e chiavi a T (quando usarle)"
+          ],
+          "practicalCriteria": [
+            "Identificazione misura corretta su 10 viti diverse",
+            "Smontaggio/montaggio senza spanature",
+            "Recupero di almeno una vite parzialmente spanata"
+          ],
+          "skillTags": [
+            "strumenti-base",
+            "prevenzione-danni",
+            "trucchi"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.2.5",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.3.2",
+          "title": "Chiavi inglesi e fisse specifiche",
+          "description": "Quando serve una chiave fissa e quando basta l'inglese regolabile",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-1.3.2.md",
+          "toolsRequired": [
+            "chiave inglese 250mm",
+            "set chiavi fisse 8-17mm"
+          ],
+          "learningOutcomes": [
+            "Misure chiavi fisse più utili per bici (10, 13, 15mm)",
+            "Usare la chiave inglese senza rovinare i dadi",
+            "Riconoscere quando la chiave inglese non basta",
+            "Trucchi per dadi arrotondati (chiavi a tubo, pinze autoserranti)"
+          ],
+          "practicalCriteria": [
+            "Selezione chiave corretta per 8 tipologie di dadi",
+            "Smontaggio dado arrotondato con tecnica alternativa",
+            "Uso corretto chiave inglese senza slittamenti"
+          ],
+          "skillTags": [
+            "strumenti-base",
+            "recupero",
+            "adattamento"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.3.3",
+          "title": "Cacciaviti e inserti",
+          "description": "Riconoscere taglio, croce (Phillips/Pozidriv) e altri standard",
+          "difficulty": "base",
+          "estimatedDuration": 8,
+          "contentPath": "/content/bike-1.3.3.md",
+          "toolsRequired": [
+            "cacciaviti vari",
+            "inserti per avvitatore"
+          ],
+          "learningOutcomes": [
+            "Differenza tra Phillips (croce) e Pozidriv",
+            "Scegliere la misura giusta per non spanare",
+            "Trucco per viti spanate: elastico, pasta abrasiva, estrattori",
+            "Quando usare l'avvitatore elettrico e quando no"
+          ],
+          "practicalCriteria": [
+            "Identificazione tipo e misura su 10 viti",
+            "Smontaggio vite spanata con tecnica di recupero",
+            "Uso avvitatore con controllo coppia"
+          ],
+          "skillTags": [
+            "strumenti-base",
+            "identificazione",
+            "recupero"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.3.2",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.3.4",
+          "title": "Pinze e tronchesi",
+          "description": "Strumenti multiuso per emergenze e recupero parti danneggiate",
+          "difficulty": "base",
+          "estimatedDuration": 8,
+          "contentPath": "/content/bike-1.3.4.md",
+          "toolsRequired": [
+            "pinza universale",
+            "tronchese",
+            "pinza a becco"
+          ],
+          "learningOutcomes": [
+            "Quando usare pinza invece della chiave (emergenza, dado arrotondato)",
+            "Tronchese per tagliare cavi, raggi rotti, fascette",
+            "Pinza a becco per anelli elastici e molle",
+            "Trucchi: pinze autoserranti come morsa portatile"
+          ],
+          "practicalCriteria": [
+            "Rimozione dado arrotondato con pinza autoserrante",
+            "Taglio cavo freno/cambio senza sfilacciamenti",
+            "Rimozione anello elastico con pinza a becco"
+          ],
+          "skillTags": [
+            "strumenti-base",
+            "emergenze",
+            "versatilità"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.3.3",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.3.5",
+          "title": "Cavalletto e supporti di lavoro",
+          "description": "Come tenere ferma la bici per lavorare comodamente anche senza stand professionale",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-1.3.5.md",
+          "toolsRequired": [
+            "cavalletto da officina o autocostruito",
+            "corde/cinghie"
+          ],
+          "learningOutcomes": [
+            "Vantaggi del cavalletto vs bici capovolta",
+            "Costruire supporto improvvisato con corde e ganci",
+            "Proteggere telaio e componenti durante il fissaggio",
+            "Altezza e posizione corretta per lavorare senza mal di schiena"
+          ],
+          "practicalCriteria": [
+            "Installazione bici su cavalletto in sicurezza",
+            "Creazione supporto alternativo funzionale",
+            "Lavoro su bici sospesa per 30min senza incidenti"
+          ],
+          "skillTags": [
+            "organizzazione-officina",
+            "ergonomia",
+            "autocostruzione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.3.4",
+              "type": "recommended"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.4.1",
+          "title": "Tipologie olio catena e paraffina",
+          "description": "Scegliere il lubrificante giusto: oli tradizionali vs paraffina per catene ultra-pulite",
+          "difficulty": "base",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-1.4.1.md",
+          "toolsRequired": [
+            "campioni olio catena",
+            "paraffina candele/cera",
+            "pentolino vecchio",
+            "fornelletto",
+            "stracci"
+          ],
+          "learningOutcomes": [
+            "Differenza tra olio secco (clima asciutto/polvere) e umido (pioggia)",
+            "Paraffina/cera a caldo: vantaggi per ambienti polverosi e sterrati",
+            "Metodo bagno di paraffina: scioglimento, immersione catena, asciugatura",
+            "Quando NON usare WD40 come lubrificante permanente (evapora velocemente)",
+            "Frequenza lubrificazione in base a uso e condizioni ambientali"
+          ],
+          "practicalCriteria": [
+            "Scelta lubrificante corretto per 4 scenari d'uso (città/pioggia/sterrato/misto)",
+            "Applicazione olio tradizionale senza eccessi né gocciolamenti",
+            "Riconoscimento catena sotto-lubrificata (rumore) o sovra-lubrificata (sporco appiccicato)",
+            "Preparazione bagno paraffina e trattamento catena completo (opzionale avanzato)"
+          ],
+          "skillTags": [
+            "manutenzione",
+            "materiali-consumo",
+            "economia",
+            "soluzioni-alternative",
+            "paraffina"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.3.5",
+              "type": "recommended"
+            },
+            {
+              "moduleId": "BIKE-1.2.5",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.4.2",
+          "title": "Grassi per cuscinetti",
+          "description": "Quando serve il grasso e quale tipo usare nel recupero bici vecchie",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-1.4.2.md",
+          "toolsRequired": [
+            "grasso al litio",
+            "grasso marino",
+            "spatola"
+          ],
+          "learningOutcomes": [
+            "Differenza tra grasso e olio (quando usare quale)",
+            "Grasso al litio multiuso: il jolly dell'officina popolare",
+            "Grasso marino per componenti esposti a pioggia",
+            "Trucco: miscelare grasso vecchio con nuovo per recupero"
+          ],
+          "practicalCriteria": [
+            "Scelta grasso corretto per 4 applicazioni diverse",
+            "Applicazione quantità corretta su cuscinetto",
+            "Pulizia e re-ingrassaggio mozzo ruota"
+          ],
+          "skillTags": [
+            "manutenzione",
+            "cuscinetti",
+            "materiali-consumo"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.4.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.4.3",
+          "title": "Sgrassatori e detergenti",
+          "description": "Pulire la trasmissione e i componenti sporchi senza prodotti costosi",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-1.4.3.md",
+          "toolsRequired": [
+            "sgrassatore",
+            "spazzole",
+            "contenitore",
+            "guanti"
+          ],
+          "learningOutcomes": [
+            "Sgrassatori specifici vs alternative economiche (benzina, gasolio, soda caustica)",
+            "Sicurezza: ventilazione, guanti, protezione pelle",
+            "Tecniche di pulizia: immersione, spazzolatura, risciacquo",
+            "Cosa NON sgrassare mai (cuscinetti sigillati, guarnizioni gomma)"
+          ],
+          "practicalCriteria": [
+            "Pulizia completa catena e pignoni",
+            "Uso sicuro sgrassatore con DPI adeguati",
+            "Riconoscimento parti da non sgrassare"
+          ],
+          "skillTags": [
+            "pulizia",
+            "sicurezza",
+            "economia"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.4.2",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-1.4.4",
+          "title": "Prodotti anti-corrosione",
+          "description": "Proteggere le bici recuperate dalla ruggine futura",
+          "difficulty": "base",
+          "estimatedDuration": 8,
+          "contentPath": "/content/bike-1.4.4.md",
+          "toolsRequired": [
+            "WD40 o equivalente",
+            "grasso protettivo",
+            "spray anti-ruggine"
+          ],
+          "learningOutcomes": [
+            "WD40 come sbloccante e protettivo temporaneo",
+            "Convertitori di ruggine per telai recuperati",
+            "Protezione interna tubi con grasso fluido o olio",
+            "Cera o vernice spray per protezione esterna economica"
+          ],
+          "practicalCriteria": [
+            "Trattamento telaio rugginoso con convertitore",
+            "Protezione interna tubi con grasso fluido",
+            "Applicazione protettivo su catena e cavi per stoccaggio"
+          ],
+          "skillTags": [
+            "protezione",
+            "prevenzione",
+            "conservazione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.4.3",
+              "type": "mandatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "filename": "ciclofficina_level2.json",
+      "teachingArea": {
+        "name": "Diagnostica e Verifica",
+        "description": "Metodologia sistematica per ispezionare, testare e documentare i problemi prima di intervenire",
+        "color": "#3498db"
+      },
+      "modules": [
+        {
+          "id": "BIKE-2.1.1",
+          "title": "Check-list pre-riparazione",
+          "description": "Ispezione sistematica: guardare prima di smontare, metodo per non dimenticare nulla",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-2.1.1.md",
+          "toolsRequired": [
+            "checklist cartacea",
+            "torcia",
+            "specchietto ispezione"
+          ],
+          "learningOutcomes": [
+            "Seguire una sequenza logica di ispezione (dall'alto in basso, da sinistra a destra)",
+            "Usare checklist per non dimenticare componenti nascosti",
+            "Identificare problemi evidenti vs quelli che richiedono test dinamici",
+            "Annotare tutto prima di smontare (foto col telefono, appunti)"
+          ],
+          "practicalCriteria": [
+            "Ispezione completa di una bici in 10 minuti senza dimenticanze",
+            "Compilazione checklist con almeno 15 voci di controllo",
+            "Identificazione 3+ problemi evidenti su bici non funzionante"
+          ],
+          "skillTags": [
+            "diagnosi",
+            "metodologia",
+            "organizzazione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.1.2",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-2.1.2",
+          "title": "Identificazione usura componenti",
+          "description": "Riconoscere quando un pezzo è da sostituire o solo da pulire/regolare",
+          "difficulty": "base",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-2.1.2.md",
+          "toolsRequired": [
+            "calibro usura catena",
+            "luce radente",
+            "comparatori visivi"
+          ],
+          "learningOutcomes": [
+            "Usura pattini freno: meno di 2mm = sostituire",
+            "Denti corone/pignoni: forma a squalo = cambio obbligatorio",
+            "Cavi sfilacciati, arrugginiti o con nodi = sostituzione",
+            "Cuscinetti ruvidi al tatto = smontaggio e pulizia o sostituzione sfere"
+          ],
+          "practicalCriteria": [
+            "Valutazione corretta usura su 10 componenti diversi",
+            "Decisione sostituire/recuperare giustificata",
+            "Uso calibro catena e interpretazione risultato"
+          ],
+          "skillTags": [
+            "diagnosi",
+            "usura",
+            "valutazione-economica"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.1.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-2.1.3",
+          "title": "Rilevamento danni strutturali",
+          "description": "Distinguere bici riparabili da quelle pericolose: crepe, piegamenti, rotture",
+          "difficulty": "intermedio",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-2.1.3.md",
+          "toolsRequired": [
+            "lente d'ingrandimento",
+            "liquido penetrante colorato",
+            "righello"
+          ],
+          "learningOutcomes": [
+            "Identificare crepe su telaio alluminio (punti di saldatura, giunzioni)",
+            "Riconoscere forcella piegata o telaio storto (test con filo a piombo)",
+            "Valutare quando una riparazione è pericolosa (zone strutturali critiche)",
+            "Decidere: recuperabile con cautela vs da rottamare per sicurezza"
+          ],
+          "practicalCriteria": [
+            "Ispezione completa telaio e forcella con lente",
+            "Test allineamento con filo e squadra",
+            "Decisione motivata su 3 casi limite (riparabile/non riparabile)"
+          ],
+          "skillTags": [
+            "diagnosi",
+            "sicurezza",
+            "strutturale"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.1.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.1.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-2.1.4",
+          "title": "Valutazione stato generale",
+          "description": "Assegnare un punteggio: bici perfetta, buona, recuperabile, da ricambi, da rottamare",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-2.1.4.md",
+          "toolsRequired": [
+            "scheda valutazione",
+            "etichette colorate"
+          ],
+          "learningOutcomes": [
+            "Sistema di punteggio 1-5 per ogni sottosistema (freni, trasmissione, ruote, sterzo)",
+            "Calcolare costo stimato riparazione vs valore bici finita",
+            "Decidere destinazione: vendita, prestito, donazione, smontaggio parti",
+            "Etichettatura bici in officina per gestione magazzino"
+          ],
+          "practicalCriteria": [
+            "Valutazione completa e punteggio su 5 bici diverse",
+            "Stima costo/tempo di recupero realistica",
+            "Classificazione corretta destinazione d'uso"
+          ],
+          "skillTags": [
+            "valutazione-economica",
+            "gestione-magazzino",
+            "diagnosi"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.1.3",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-2.2.1",
+          "title": "Prova freni (teoria e metodo)",
+          "description": "Test statico e dinamico dei freni: morsa, corsa leva, bilanciamento",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-2.2.1.md",
+          "toolsRequired": [
+            "cavalletto o supporto",
+            "spazio sicuro per test"
+          ],
+          "learningOutcomes": [
+            "Test morsa: freno deve bloccare ruota su cavalletto",
+            "Corsa leva: max 2/3 prima di mordere, altrimenti cavo da tendere",
+            "Bilanciamento: pattini devono toccare contemporaneamente",
+            "Test dinamico: frenata controllata in spazio sicuro"
+          ],
+          "practicalCriteria": [
+            "Esecuzione test completo freni anteriore e posteriore",
+            "Identificazione problema specifico (pattini, cavo, registro)",
+            "Decisione: funzionante/da regolare/da sostituire parti"
+          ],
+          "skillTags": [
+            "test-funzionali",
+            "freni",
+            "sicurezza"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.1.4",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-2.2.2",
+          "title": "Test cambio e trasmissione",
+          "description": "Verificare scorrevolezza cambiata, rumori anomali, salti di catena",
+          "difficulty": "base",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-2.2.2.md",
+          "toolsRequired": [
+            "cavalletto",
+            "orecchio attento"
+          ],
+          "learningOutcomes": [
+            "Test cambio su cavalletto: tutte le marce devono inserirsi senza esitazioni",
+            "Rumori: catena secca (cigolio), catena usurata (scatto metallico), deragliatore storto (sfregamento)",
+            "Salti di catena: catena usurata, pignoni consumati o deragliatore male regolato",
+            "Metodo diagnostico: isolare il problema (catena/cavi/deragliatore/pignoni)"
+          ],
+          "practicalCriteria": [
+            "Test completo tutte le combinazioni di marce",
+            "Identificazione causa problema specifico (3 casi diversi)",
+            "Diagnosi differenziale: cambio vs catena vs pignoni"
+          ],
+          "skillTags": [
+            "test-funzionali",
+            "trasmissione",
+            "diagnosi-differenziale"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.2.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-2.2.3",
+          "title": "Verifica giochi cuscinetti",
+          "description": "Test manuale giochi: sterzo, movimento centrale, mozzi, pedali",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-2.2.3.md",
+          "toolsRequired": [
+            "mani sensibili",
+            "orecchio"
+          ],
+          "learningOutcomes": [
+            "Test sterzo: tenere freno anteriore, muovere bici avanti/indietro (clac = gioco)",
+            "Test movimento centrale: muovere pedivelle lateralmente (gioco = coni allentati)",
+            "Test mozzi: sollevare ruota, muovere lateralmente (gioco = coni da stringere)",
+            "Distinguere gioco (pericoloso) da scorrevolezza (normale)"
+          ],
+          "practicalCriteria": [
+            "Test sistematico tutti i cuscinetti su una bici",
+            "Identificazione gioco e quantificazione (poco/molto)",
+            "Diagnosi: cuscinetti da regolare vs da sostituire"
+          ],
+          "skillTags": [
+            "test-funzionali",
+            "cuscinetti",
+            "sensibilità-tattile"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.2.2",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-2.2.4",
+          "title": "Controllo allineamenti ruote",
+          "description": "Verificare centratura, campanatura, allineamento telaio-ruota",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-2.2.4.md",
+          "toolsRequired": [
+            "cavalletto",
+            "filo o riferimento fisso"
+          ],
+          "learningOutcomes": [
+            "Test centratura: ruota su cavalletto, guardare luce tra pattino e cerchio",
+            "Campanatura: ruota vista di lato, verificare se 'a ombrello'",
+            "Allineamento ruota posteriore con anteriore (filo lungo telaio)",
+            "Decidere: centrare vs sostituire ruota"
+          ],
+          "practicalCriteria": [
+            "Controllo centratura e campanatura su 3 ruote",
+            "Identificazione sbandamento e quantificazione (lieve/grave)",
+            "Test allineamento ruote con filo"
+          ],
+          "skillTags": [
+            "test-funzionali",
+            "ruote",
+            "allineamento"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.2.3",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-2.3.1",
+          "title": "Classificazione tipologie guasti",
+          "description": "Categorizzare i problemi: sicurezza critica, funzionalità, comfort, estetica",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-2.3.1.md",
+          "toolsRequired": [
+            "schema classificazione",
+            "colori/etichette"
+          ],
+          "learningOutcomes": [
+            "Priorità 1 (rosso): sicurezza - freni, sterzo, telaio, forcella",
+            "Priorità 2 (arancio): funzionalità - cambio, trasmissione, luci",
+            "Priorità 3 (giallo): comfort - sella, manopole, ammortizzatori",
+            "Priorità 4 (verde): estetica - vernice, adesivi, accessori"
+          ],
+          "practicalCriteria": [
+            "Classificazione corretta 10 problemi diversi",
+            "Creazione lista priorità su bici complessa",
+            "Giustificazione scelte di priorità"
+          ],
+          "skillTags": [
+            "organizzazione",
+            "sicurezza",
+            "prioritizzazione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.2.4",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-2.3.2",
+          "title": "Priorità interventi",
+          "description": "Decidere ordine riparazioni: cosa fare prima, cosa può aspettare, cosa delegare",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-2.3.2.md",
+          "toolsRequired": [
+            "scheda interventi",
+            "planning settimanale"
+          ],
+          "learningOutcomes": [
+            "Metodo ABC: A=urgente e importante, B=importante non urgente, C=né urgente né importante",
+            "Considerare tempo disponibile, competenze, disponibilità pezzi",
+            "Quando delegare a meccanico più esperto (saldature, ruote storte gravi)",
+            "Pianificare sessioni officina per efficienza"
+          ],
+          "practicalCriteria": [
+            "Pianificazione ordine interventi su 3 bici diverse",
+            "Stima tempo realistica per ogni intervento",
+            "Identificazione interventi da delegare"
+          ],
+          "skillTags": [
+            "pianificazione",
+            "gestione-tempo",
+            "delega"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.3.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-2.3.3",
+          "title": "Stima costi riparazione",
+          "description": "Calcolare ricambi + tempo: capire se vale la pena riparare",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-2.3.3.md",
+          "toolsRequired": [
+            "listino ricambi",
+            "calcolatrice",
+            "scheda costi"
+          ],
+          "learningOutcomes": [
+            "Costo ricambi: cercare online prezzi realistici (no componenti di lusso)",
+            "Costo tempo: stimare ore lavoro anche se officina è gratuita (risorsa scarsa)",
+            "Confronto: costo riparazione vs valore bici finita vs bici usata equivalente",
+            "Decidere: riparare, usare per ricambi, donare ad altra officina"
+          ],
+          "practicalCriteria": [
+            "Preventivo dettagliato su 3 bici con problemi diversi",
+            "Ricerca prezzi ricambi online e documentazione fonti",
+            "Decisione motivata economicamente (riparare si/no)"
+          ],
+          "skillTags": [
+            "valutazione-economica",
+            "ricerca-ricambi",
+            "sostenibilità"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.3.2",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-2.3.4",
+          "title": "Registro manutenzioni",
+          "description": "Documentare ogni intervento: chi, quando, cosa, per tracciabilità e apprendimento",
+          "difficulty": "base",
+          "estimatedDuration": 8,
+          "contentPath": "/content/bike-2.3.4.md",
+          "toolsRequired": [
+            "registro cartaceo o digitale",
+            "fotocamera smartphone"
+          ],
+          "learningOutcomes": [
+            "Creare scheda bici: numero identificativo, stato iniziale, problemi rilevati",
+            "Registro interventi: data, operatore, azione, ricambi usati, esito",
+            "Foto prima/durante/dopo per documentazione e didattica",
+            "Utilità: garanzia lavoro, tracciabilità, statistica ricambi, portfolio personale"
+          ],
+          "practicalCriteria": [
+            "Compilazione scheda completa su una riparazione reale",
+            "Serie fotografica documentativa (min 5 foto)",
+            "Archiviazione e recupero informazioni dal registro"
+          ],
+          "skillTags": [
+            "documentazione",
+            "tracciabilità",
+            "apprendimento-continuo"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.3.3",
+              "type": "mandatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "filename": "ciclofficina_level3.json",
+      "teachingArea": {
+        "name": "Pneumatici e Camere d’Aria",
+        "description": "Diagnosi, riparazione e sostituzione di pneumatici e camere d’aria, per bici da recupero con ruote di tipo economico",
+        "color": "#2ecc71"
+      },
+      "modules": [
+        {
+          "id": "BIKE-3.1.1",
+          "title": "Tipologie di pneumatici",
+          "description": "Distinguere clincher, tubeless e tubolare e sapere cosa si trova nelle bici di recupero",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-3.1.1.md",
+          "toolsRequired": [
+            "vari tipi di pneumatici",
+            "tagli di sezione campione"
+          ],
+          "learningOutcomes": [
+            "Riconoscere il tipo di pneumatico in base alla struttura",
+            "Distinguere copertone, camera e nastro paranipple",
+            "Capire quale sistema è adatto alle bici di recupero",
+            "Conoscere i vantaggi di ciascun tipo in termini di costo e manutenzione"
+          ],
+          "practicalCriteria": [
+            "Identificazione corretta su 5 ruote diverse",
+            "Classificazione tipo pneumatico e compatibilità cerchio"
+          ],
+          "skillTags": [
+            "pneumatici",
+            "riconoscimento",
+            "economia"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.2.4",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.1.4",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-3.1.2",
+          "title": "Misure e compatibilità cerchi",
+          "description": "Interpretare sigle e numeri (ETRTO, pollici, mm) per evitare errori di misura",
+          "difficulty": "base",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-3.1.2.md",
+          "toolsRequired": [
+            "metro",
+            "calibro",
+            "ruote campione"
+          ],
+          "learningOutcomes": [
+            "Leggere codici ETRTO su copertoni e cerchi",
+            "Capire compatibilità tra larghezza pneumatico e cerchio",
+            "Evitare montaggi errati che causano stallonamenti",
+            "Trucchi per misurare a occhio diametro e larghezza"
+          ],
+          "practicalCriteria": [
+            "Lettura codici su 5 pneumatici diversi",
+            "Determinazione compatibilità corretta",
+            "Montaggio prova con verifica visiva"
+          ],
+          "skillTags": [
+            "pneumatici",
+            "misurazione",
+            "sicurezza"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-3.1.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.2",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-3.2.1",
+          "title": "Individuazione del foro",
+          "description": "Scoprire rapidamente dove perde aria, anche senza secchio d’acqua",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-3.2.1.md",
+          "toolsRequired": [
+            "camera forata",
+            "pompa",
+            "secchio o spruzzino acqua"
+          ],
+          "learningOutcomes": [
+            "Metodo immersione tradizionale (bolla)",
+            "Metodo a secco con spruzzino o ascolto",
+            "Segnare posizione foro per riparazione",
+            "Diagnosi causa: pizzicatura, chiodo, valvola, abrasione"
+          ],
+          "practicalCriteria": [
+            "Identificazione foro su 3 camere diverse",
+            "Riconoscimento causa tipica su almeno 2 campioni"
+          ],
+          "skillTags": [
+            "riparazione",
+            "diagnosi",
+            "camera-aria"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-3.1.2",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-3.2.2",
+          "title": "Preparazione e applicazione toppa",
+          "description": "Eseguire una riparazione durevole, anche con materiali di recupero",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-3.2.2.md",
+          "toolsRequired": [
+            "colla vulcanizzante",
+            "pezze",
+            "carta vetrata fine",
+            "gessetto"
+          ],
+          "learningOutcomes": [
+            "Pulire e carteggiare zona foro",
+            "Applicare toppa centrata e pressare correttamente",
+            "Usare pezze commerciali o ricavate da vecchie camere",
+            "Testare tenuta con gonfiaggio successivo"
+          ],
+          "practicalCriteria": [
+            "Riparazione 3 camere con pezze commerciali e 1 con materiale riciclato",
+            "Verifica tenuta dopo 12h di gonfiaggio"
+          ],
+          "skillTags": [
+            "riparazione",
+            "riciclo",
+            "manualità"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-3.2.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-3.3.1",
+          "title": "Rimozione ruota",
+          "description": "Smontare la ruota in sicurezza, con o senza sgancio rapido",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-3.3.1.md",
+          "toolsRequired": [
+            "chiavi 15mm",
+            "chiavi esagonali",
+            "cavalletto"
+          ],
+          "learningOutcomes": [
+            "Allentare dadi o sgancio rapido con bici in sicurezza",
+            "Evitare danneggiamento catena o telaio nel processo",
+            "Trucco: appendere catena al fodero per evitare sporco",
+            "Riposizionare ruota assicurando centraggio corretto"
+          ],
+          "practicalCriteria": [
+            "Smontaggio e rimontaggio completo ruota",
+            "Posizionamento corretto catena e pattini"
+          ],
+          "skillTags": [
+            "smontaggio",
+            "sicurezza",
+            "ruote"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-3.2.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.5",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-3.3.2",
+          "title": "Smontaggio e installazione pneumatico",
+          "description": "Usare leve con criterio per non danneggiare cerchio o camera",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-3.3.2.md",
+          "toolsRequired": [
+            "leve smontacopertoni",
+            "lubrificante neutro o acqua saponata"
+          ],
+          "learningOutcomes": [
+            "Uso corretto delle leve (posizione, forza, angolo)",
+            "Lubrificare bordo per facilitare reinstallazione",
+            "Controllare che camera non resti pizzicata",
+            "Test pressurizzazione iniziale per verifica montaggio"
+          ],
+          "practicalCriteria": [
+            "Montaggio e smontaggio su 3 ruote diverse",
+            "Assenza pizzicature o forature post-rimontaggio"
+          ],
+          "skillTags": [
+            "ruote",
+            "manualità",
+            "attenzione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-3.3.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-3.4.1",
+          "title": "Tipologie di valvole",
+          "description": "Riconoscere Presta, Schrader, Woods e le compatibilità con le pompe",
+          "difficulty": "base",
+          "estimatedDuration": 8,
+          "contentPath": "/content/bike-3.4.1.md",
+          "toolsRequired": [
+            "camere campione",
+            "pompe di vari tipi"
+          ],
+          "learningOutcomes": [
+            "Differenze fisiche e funzionali delle valvole principali",
+            "Adattatori universali e conversioni possibili",
+            "Prendersi cura della filettatura e del tappino",
+            "Verifica perdita valvola e sostituzione anima"
+          ],
+          "practicalCriteria": [
+            "Identificazione valvola su 5 camere diverse",
+            "Uso corretto dell’adattatore universale",
+            "Sostituzione anima con attrezzo dedicato"
+          ],
+          "skillTags": [
+            "valvole",
+            "riconoscimento",
+            "riparazione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-3.3.2",
+              "type": "mandatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "filename": "ciclofficina_level4.json",
+      "teachingArea": {
+        "name": "Sistema Frenante",
+        "description": "Manutenzione, regolazione e riparazione freni a pattino e disco meccanici nelle bici di recupero",
+        "color": "#e74c3c"
+      },
+      "modules": [
+        {
+          "id": "BIKE-4.1.1",
+          "title": "Meccanica freni cantilever",
+          "description": "Capire geometria, tiraggio cavo e regolazione freni cantilever tipici delle MTB economiche",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-4.1.1.md",
+          "toolsRequired": [
+            "chiavi Allen 5mm",
+            "pinze",
+            "cavo di recupero"
+          ],
+          "learningOutcomes": [
+            "Comprendere triangolazione forze e tiraggio centrale",
+            "Regolare altezza pattini e convergenza (toe-in)",
+            "Bilanciare simmetria molla ritorno",
+            "Trucco: piegare leggermente braccetti con pinze per regolazioni fini"
+          ],
+          "practicalCriteria": [
+            "Smontaggio completo, pulizia e rimontaggio cantilever",
+            "Regolazione simmetrica su 2 bici diverse",
+            "Test frenata efficace e bilanciata"
+          ],
+          "skillTags": [
+            "freni-pattino",
+            "cantilever",
+            "regolazione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.2.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-4.1.2",
+          "title": "Freni a bacchetta",
+          "description": "Manutenzione freni contropedale e a bacchetta tipici di city bike e bici vintage",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-4.1.2.md",
+          "toolsRequired": [
+            "chiavi 13-15mm",
+            "grasso",
+            "stracci"
+          ],
+          "learningOutcomes": [
+            "Riconoscere meccanismo mozzo freno interno",
+            "Regolare tensione bacchetta e braccio reazione",
+            "Lubrificare articolazioni e snodi",
+            "Diagnosi problemi: freno bloccato, inefficace, rumoroso"
+          ],
+          "practicalCriteria": [
+            "Regolazione corretta tensione bacchetta su 2 bici",
+            "Lubrificazione completa meccanismo",
+            "Verifica efficacia frenata"
+          ],
+          "skillTags": [
+            "freni-pattino",
+            "bacchetta",
+            "city-bike"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-4.1.1",
+              "type": "recommended"
+            },
+            {
+              "moduleId": "BIKE-1.3.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.2",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-4.1.3",
+          "title": "Freni caliper",
+          "description": "Regolazione freni a singolo perno (side-pull) e doppio perno (center-pull) da bici da corsa economiche",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-4.1.3.md",
+          "toolsRequired": [
+            "chiavi Allen 5mm",
+            "cacciavite piccolo"
+          ],
+          "learningOutcomes": [
+            "Differenza single-pivot vs dual-pivot",
+            "Centratura pattini rispetto al cerchio",
+            "Regolazione vite centraggio (quando presente)",
+            "Sostituzione pattini usurati"
+          ],
+          "practicalCriteria": [
+            "Centratura perfetta su 2 freni caliper",
+            "Sostituzione pattini e verifica allineamento",
+            "Test frenata senza sfregamenti"
+          ],
+          "skillTags": [
+            "freni-pattino",
+            "caliper",
+            "city-corsa"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-4.1.2",
+              "type": "recommended"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.3",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-4.1.4",
+          "title": "Regolazione altezza e convergenza pattini",
+          "description": "Tecniche universali per posizionare correttamente i pattini su qualsiasi freno a pattino",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-4.1.4.md",
+          "toolsRequired": [
+            "chiavi Allen",
+            "spessore cartoncino",
+            "righello"
+          ],
+          "learningOutcomes": [
+            "Posizione verticale: 1-2mm sotto bordo cerchio",
+            "Convergenza (toe-in): punta anteriore pattino più vicina di 0.5-1mm",
+            "Evitare contatto con gomma pneumatico",
+            "Trucco: cartoncino tra pattino e cerchio per distanza uniforme"
+          ],
+          "practicalCriteria": [
+            "Regolazione corretta su 3 tipi di freno diversi",
+            "Misurazione convergenza con spessimetro improvvisato",
+            "Verifica assenza rumori e usura anomala"
+          ],
+          "skillTags": [
+            "freni-pattino",
+            "regolazione-fine",
+            "prevenzione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-4.1.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-4.2.1",
+          "title": "Componenti sistema disco meccanico",
+          "description": "Anatomia freno a disco: pinza, pastiglie, rotore, adattatore, cavo",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-4.2.1.md",
+          "toolsRequired": [
+            "freno disco smontato",
+            "manuale identificazione"
+          ],
+          "learningOutcomes": [
+            "Riconoscere componenti e loro funzione",
+            "Differenza tra standard IS, PM, Flat Mount",
+            "Capire tiraggio cavo e movimento pistoncini",
+            "Ispezione visiva: usura pastiglie, deformazione rotore"
+          ],
+          "practicalCriteria": [
+            "Identificazione corretta componenti su 2 freni diversi",
+            "Riconoscimento standard montaggio",
+            "Valutazione stato usura pastiglie e rotore"
+          ],
+          "skillTags": [
+            "freni-disco",
+            "riconoscimento",
+            "diagnosi"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-4.1.4",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-4.2.2",
+          "title": "Sostituzione pastiglie freno disco",
+          "description": "Rimuovere pastiglie usurate e installare nuove senza contaminare superficie frenante",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-4.2.2.md",
+          "toolsRequired": [
+            "chiavi Allen 3-5mm",
+            "cacciavite piatto",
+            "alcool isopropilico",
+            "stracci puliti"
+          ],
+          "learningOutcomes": [
+            "Rimuovere perno o clip trattenimento pastiglie",
+            "Pulire sede con alcool (mai toccare pastiglie con dita unte)",
+            "Installare pastiglie nuove orientate correttamente",
+            "Rodaggio: 20-30 frenate moderate prima del test intenso"
+          ],
+          "practicalCriteria": [
+            "Sostituzione pastiglie su 2 freni disco diversi",
+            "Pulizia corretta senza contaminazione",
+            "Rodaggio e test efficacia frenata"
+          ],
+          "skillTags": [
+            "freni-disco",
+            "manutenzione",
+            "pulizia"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-4.2.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.3",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-4.2.3",
+          "title": "Regolazione e centratura pinza disco",
+          "description": "Centrare pinza rispetto al rotore per evitare sfregamenti continui",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-4.2.3.md",
+          "toolsRequired": [
+            "chiavi Allen",
+            "luce radente",
+            "spessori carta"
+          ],
+          "learningOutcomes": [
+            "Allentare viti fissaggio pinza",
+            "Tirare leva freno e serrare viti con pinza autocentrata",
+            "Verifica gioco uniforme con luce o spessimetro carta",
+            "Trucco: distanziali carta tra pastiglia e rotore per centratura fine"
+          ],
+          "practicalCriteria": [
+            "Centratura corretta su 3 freni disco",
+            "Assenza sfregamenti a ruota libera",
+            "Test frenata simmetrica"
+          ],
+          "skillTags": [
+            "freni-disco",
+            "regolazione-fine",
+            "troubleshooting"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-4.2.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-4.2.4",
+          "title": "Verifica e raddrizzatura rotore",
+          "description": "Controllare planarità disco e raddrizzare deformazioni lievi",
+          "difficulty": "intermedio",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-4.2.4.md",
+          "toolsRequired": [
+            "chiave raddrizza rotori o pinza regolabile",
+            "riferimento fisso"
+          ],
+          "learningOutcomes": [
+            "Test planarità: rotazione ruota lenta osservando oscillazione",
+            "Identificare zona piegata con riferimento fisso (pinza, dito)",
+            "Piegare delicatamente con strumento dedicato o pinza a mano",
+            "Attenzione: rotori danneggiati gravemente vanno sostituiti"
+          ],
+          "practicalCriteria": [
+            "Controllo planarità su 3 rotori",
+            "Raddrizzatura deformazione lieve con successo",
+            "Decisione sostituire vs raddrizzare motivata"
+          ],
+          "skillTags": [
+            "freni-disco",
+            "raddrizzatura",
+            "precisione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-4.2.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-4.3.1",
+          "title": "Sostituzione cavo freno",
+          "description": "Rimuovere cavo vecchio e installare nuovo rispettando percorso e tensione",
+          "difficulty": "base",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-4.3.1.md",
+          "toolsRequired": [
+            "tronchese",
+            "chiavi Allen",
+            "cavo nuovo",
+            "terminali"
+          ],
+          "learningOutcomes": [
+            "Allentare dado fissaggio e rimuovere cavo vecchio",
+            "Infilare cavo nuovo seguendo percorso guaine",
+            "Fissare con tensione corretta e tagliare eccesso",
+            "Applicare terminale per evitare sfilacciamento"
+          ],
+          "practicalCriteria": [
+            "Sostituzione completa cavo freno anteriore e posteriore",
+            "Tensione corretta con corsa leva 2/3",
+            "Terminale applicato correttamente"
+          ],
+          "skillTags": [
+            "cavi-freni",
+            "sostituzione",
+            "manutenzione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-4.2.4",
+              "type": "recommended"
+            },
+            {
+              "moduleId": "BIKE-4.1.4",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-4.3.2",
+          "title": "Regolazione tensione con registri",
+          "description": "Uso dei registri micrometrici su leva e telaio per regolazioni fini senza scollegare cavo",
+          "difficulty": "base",
+          "estimatedDuration": 8,
+          "contentPath": "/content/bike-4.3.2.md",
+          "toolsRequired": [
+            "solo mani"
+          ],
+          "learningOutcomes": [
+            "Individuare registro su leva freno o telaio",
+            "Regola: svitare = aumenta tensione, avvitare = riduce",
+            "Fare regolazioni piccole (1/4 giro) e testare",
+            "Quando registro è al limite, reimpostare tensione al dado"
+          ],
+          "practicalCriteria": [
+            "Regolazione fine su 3 freni usando solo registri",
+            "Correzione progressiva con test intermedi",
+            "Reset e reimpostazione quando registro esaurito"
+          ],
+          "skillTags": [
+            "cavi-freni",
+            "regolazione-veloce",
+            "troubleshooting"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-4.3.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-4.3.3",
+          "title": "Lubrificazione cavi e guaine",
+          "description": "Mantenere scorrevolezza sistema con lubrificanti adeguati senza contaminare freni",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-4.3.3.md",
+          "toolsRequired": [
+            "olio leggero o spray PTFE",
+            "stracci",
+            "guanti"
+          ],
+          "learningOutcomes": [
+            "Scollegare cavo e lubrificare interno guaina con spray",
+            "Evitare lubrificanti troppo densi che attraggono sporco",
+            "Non contaminare pattini o rotori (pulizia immediata se succede)",
+            "Frecuenza: ogni 6-12 mesi o a sensazione attriti"
+          ],
+          "practicalCriteria": [
+            "Lubrificazione completa sistema freni anteriore e posteriore",
+            "Test scorrevolezza migliorata",
+            "Nessuna contaminazione freni"
+          ],
+          "skillTags": [
+            "cavi-freni",
+            "lubrificazione",
+            "prevenzione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-4.3.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.3",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-4.4.1",
+          "title": "Freni che non mordono",
+          "description": "Diagnosticare cause: pattini usurati, olio su superficie, cavo allentato, aria nel sistema",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-4.4.1.md",
+          "toolsRequired": [
+            "alcool",
+            "stracci",
+            "chiavi base"
+          ],
+          "learningOutcomes": [
+            "Check-list sistematica: spessore pattini, tensione cavo, pulizia cerchio/disco",
+            "Test: corsa leva eccessiva = cavo allentato",
+            "Pulizia superfici con alcool (mai benzina su disco)",
+            "Sostituzione immediata se pattini <2mm"
+          ],
+          "practicalCriteria": [
+            "Diagnosi su 3 casi diversi di freni inefficaci",
+            "Risoluzione problema con intervento mirato",
+            "Verifica efficacia dopo riparazione"
+          ],
+          "skillTags": [
+            "diagnosi",
+            "freni-inefficaci",
+            "sicurezza"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-4.3.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.3",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-4.4.2",
+          "title": "Rumori durante frenata",
+          "description": "Identificare cigolii, stridii, colpi: cause e soluzioni",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-4.4.2.md",
+          "toolsRequired": [
+            "carta vetrata fine",
+            "alcool",
+            "lima"
+          ],
+          "learningOutcomes": [
+            "Cigolio pattini: superfici vetrificate, carteggiare e pulire",
+            "Stridio disco: pastiglie contaminate o rotore sporco",
+            "Colpo secco: pattino male allineato o vite allentata",
+            "Prevenzione: convergenza corretta, pulizia regolare"
+          ],
+          "practicalCriteria": [
+            "Identificazione rumore su 3 freni problematici",
+            "Risoluzione con carteggiatura, pulizia o riallineamento",
+            "Test silenziosità dopo intervento"
+          ],
+          "skillTags": [
+            "diagnosi",
+            "rumori",
+            "troubleshooting"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-4.4.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.3",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-4.4.3",
+          "title": "Attrito continuo e sfregamenti",
+          "description": "Risolvere pattini o disco che sfregano costantemente senza frenare intenzionalmente",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-4.4.3.md",
+          "toolsRequired": [
+            "chiavi regolazione",
+            "spessimetro carta"
+          ],
+          "learningOutcomes": [
+            "Cause: centratura errata, ruota male installata, rotore storto",
+            "Controllo: ruota ben serrata e centrata nel telaio",
+            "Ricentratura pattini o pinza disco",
+            "Verifica: ruota gira liberamente per almeno 5 secondi"
+          ],
+          "practicalCriteria": [
+            "Risoluzione sfregamenti su 3 bici diverse",
+            "Test rotazione libera soddisfacente",
+            "Assenza perdita efficienza per attriti parassiti"
+          ],
+          "skillTags": [
+            "diagnosi",
+            "centratura",
+            "efficienza"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-4.4.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.2",
+              "type": "mandatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "filename": "ciclofficina_level5.json",
+      "teachingArea": {
+        "name": "Trasmissione Base",
+        "description": "Manutenzione e regolazione dei componenti base della trasmissione: catena, pignoni, corone, pedali e movimento centrale",
+        "color": "#f1c40f"
+      },
+      "modules": [
+        {
+          "id": "BIKE-5.1.1",
+          "title": "Controllo e usura catena",
+          "description": "Misurare e valutare l'usura della catena con o senza attrezzo specifico",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-5.1.1.md",
+          "toolsRequired": [
+            "calibro catena",
+            "righello 30cm"
+          ],
+          "learningOutcomes": [
+            "Uso calibro catena per rilevare allungamento",
+            "Metodo alternativo: misura 12 maglie = 304.8mm",
+            "Riconoscere catena troppo allungata (saltano le marce)",
+            "Conseguenze su pignoni e corone se trascurata"
+          ],
+          "practicalCriteria": [
+            "Misurazione corrette su 3 catene diverse",
+            "Identificazione corretta soglia sostituzione",
+            "Scelta catena compatibile (velocità, passo)"
+          ],
+          "skillTags": [
+            "catena",
+            "usura",
+            "diagnosi"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.2.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.1.4",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-5.1.2",
+          "title": "Pulizia e lubrificazione catena",
+          "description": "Pulire catene sporche con sistemi artigianali e lubrificare correttamente",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-5.1.2.md",
+          "toolsRequired": [
+            "sgrassatore",
+            "spazzole",
+            "paraffina solida",
+            "olio secco/umido"
+          ],
+          "learningOutcomes": [
+            "Rimuovere incrostazioni di grasso e fango",
+            "Eseguire bagno paraffina per catene da recupero",
+            "Applicare lubrificante adeguato (stagione, uso)",
+            "Evitare eccessi che attirano sporco"
+          ],
+          "practicalCriteria": [
+            "Pulizia catena con 2 metodi diversi",
+            "Applicazione corretta lubrificante senza sprechi",
+            "Valutazione scorrevolezza post-intervento"
+          ],
+          "skillTags": [
+            "catena",
+            "lubrificazione",
+            "manutenzione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-5.1.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.2",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-5.2.1",
+          "title": "Identificazione e usura pignoni",
+          "description": "Controllare stato corona e pacco pignoni e riconoscere usura irregolare",
+          "difficulty": "base",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-5.2.1.md",
+          "toolsRequired": [
+            "spazzola metallica",
+            "pignone campione",
+            "luce radente"
+          ],
+          "learningOutcomes": [
+            "Riconoscere denti a forma di squalo = usura avanzata",
+            "Distinguere sporco da deformazione metallica",
+            "Verificare allineamento cassette/pignoni",
+            "Quando sostituire: se catena nuova salta sulle corone"
+          ],
+          "practicalCriteria": [
+            "Confronto visivo pignoni usurati vs nuovi",
+            "Pulizia accurata con spazzola metallica",
+            "Decisione sostituzione motivata"
+          ],
+          "skillTags": [
+            "trasmissione",
+            "usura",
+            "diagnosi"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-5.1.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.3",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-5.2.2",
+          "title": "Sostituzione catena e compatibilità trasmissione",
+          "description": "Scegliere e sostituire catena in base al numero di velocità",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-5.2.2.md",
+          "toolsRequired": [
+            "smagliacatena",
+            "quick link",
+            "pinza catena"
+          ],
+          "learningOutcomes": [
+            "Contare maglie e verificare lunghezza corretta",
+            "Montaggio con falsamaglia e verifica scorrevolezza",
+            "Test compatibilità con pignoni e corone",
+            "Trucchi per aprire catene bloccate (falsamaglia rigida)"
+          ],
+          "practicalCriteria": [
+            "Sostituzione completa catena su due trasmissioni diverse",
+            "Verifica lunghezza ottimale e scorrevolezza",
+            "Test funzionamento in pedalata su cavalletto"
+          ],
+          "skillTags": [
+            "catena",
+            "compatibilità",
+            "manutenzione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-5.1.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.4",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-5.3.1",
+          "title": "Smontaggio pedali",
+          "description": "Rimuovere pedali incrostati e comprendere differenze filettature destra/sinistra",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-5.3.1.md",
+          "toolsRequired": [
+            "chiave 15mm",
+            "spray sbloccante",
+            "martello gomma"
+          ],
+          "learningOutcomes": [
+            "Pedale destro filettatura normale, sinistro inversa",
+            "Lubrificare filetti prima del rimontaggio",
+            "Recuperare pedali bloccati senza rovinare le pedivelle",
+            "Riconoscere segni di usura su cuscinetti interni"
+          ],
+          "practicalCriteria": [
+            "Rimozione e rimontaggio pedali su 3 bici diverse",
+            "Applicazione grasso e coppia serraggio corretta",
+            "Test scorrevolezza e gioco assiale"
+          ],
+          "skillTags": [
+            "pedali",
+            "filettature",
+            "recupero"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.2.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.2",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-5.3.2",
+          "title": "Ispezione e manutenzione movimento centrale",
+          "description": "Verifica gioco, smontaggio e ingrassaggio movimento centrale a calotte",
+          "difficulty": "intermedio",
+          "estimatedDuration": 20,
+          "contentPath": "/content/bike-5.3.2.md",
+          "toolsRequired": [
+            "chiave movimento centrale",
+            "grasso",
+            "panno pulito"
+          ],
+          "learningOutcomes": [
+            "Identificare tipo movimento: BSA, ITA, cuscinetti conici",
+            "Smontare calotte senza danneggiare filetti",
+            "Pulire, lubrificare e rimontare con giusto precarico",
+            "Quando sostituire: gioco impossibile da eliminare"
+          ],
+          "practicalCriteria": [
+            "Smontaggio completo e ingrassaggio corretto",
+            "Test rotazione fluida e assenza gioco",
+            "Valutazione stato filetti e suggerimento intervento"
+          ],
+          "skillTags": [
+            "movimento-centrale",
+            "manutenzione",
+            "standard"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.2.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.2",
+              "type": "mandatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "filename": "ciclofficina_level6.json",
+      "teachingArea": {
+        "name": "Ruote e Mozzi",
+        "description": "Smontaggio, centratura e manutenzione delle ruote e dei mozzi tradizionali a coni e sfere.",
+        "color": "#1abc9c"
+      },
+      "modules": [
+        {
+          "id": "BIKE-6.1.1",
+          "title": "Smontaggio mozzo tradizionale",
+          "description": "Rimuovere asse, coni e sfere da un mozzo per manutenzione completa.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-6.1.1.md",
+          "toolsRequired": [
+            "chiavi coniche 13-15mm",
+            "grasso",
+            "stracci",
+            "recipiente sfere"
+          ],
+          "learningOutcomes": [
+            "Identificare lato destro/sinistro e differenti filettature",
+            "Smontare con attenzione senza perdere le sfere",
+            "Pulire perno, coni e calotte con sgrassante",
+            "Controllare presenza rigature sul cono o corrosione"
+          ],
+          "practicalCriteria": [
+            "Smontaggio completo di mozzo anteriore e posteriore",
+            "Ispezione visiva e classificazione condizioni",
+            "Stoccaggio correttamente delle sfere e componenti"
+          ],
+          "skillTags": [
+            "mozzi",
+            "smontaggio",
+            "precisione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.2.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.3",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-6.1.2",
+          "title": "Lubrificazione e rimontaggio mozzo",
+          "description": "Rimontare un mozzo tradizionale applicando grasso e regolando gioco conico.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 18,
+          "contentPath": "/content/bike-6.1.2.md",
+          "toolsRequired": [
+            "chiavi coniche",
+            "siringa grasso",
+            "cavalletto",
+            "guanti"
+          ],
+          "learningOutcomes": [
+            "Applicare grasso nelle calotte e posizionare sfere uniformemente",
+            "Regolare gioco assiale con chiavi coniche in opposizione",
+            "Controllare scorrevolezza e assenza gioco",
+            "Trucco: segnare posizione con un pennarello per regolazioni future"
+          ],
+          "practicalCriteria": [
+            "Rimontaggio completo mozzo con regolazione corretta",
+            "Test scorrevolezza su cavalletto",
+            "Verifica assenza gioco dopo 10 min di rotazione"
+          ],
+          "skillTags": [
+            "mozzi",
+            "lubrificazione",
+            "regolazione-fine"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-6.1.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.5",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-6.2.1",
+          "title": "Controllo tensione raggi",
+          "description": "Controllare e misurare la tensione dei raggi per capire la stabilità della ruota.",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-6.2.1.md",
+          "toolsRequired": [
+            "chiave raggi",
+            "fonometro (alternativo)",
+            "dito indice"
+          ],
+          "learningOutcomes": [
+            "Controllare tensione battendo i raggi e ascoltando il suono",
+            "Riconoscere differenze di tono tra raggi troppo lenti o tesi",
+            "Uso chiave raggi per piccoli aggiustamenti",
+            "Prevenire rotture mantenendo tensione uniforme"
+          ],
+          "practicalCriteria": [
+            "Controllo tensione su 3 cerchi diversi",
+            "Correzione differenze con piccoli aggiustamenti",
+            "Test sonora e verifica stabilità"
+          ],
+          "skillTags": [
+            "ruote",
+            "raggi",
+            "diagnosi-sonora"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-2.2.4",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.2",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-6.2.2",
+          "title": "Centratura laterale ruota",
+          "description": "Centratura della ruota in senso laterale (ondeggiamento destra-sinistra).",
+          "difficulty": "intermedio",
+          "estimatedDuration": 18,
+          "contentPath": "/content/bike-6.2.2.md",
+          "toolsRequired": [
+            "centraruote o forcella",
+            "chiave raggi",
+            "marcatore"
+          ],
+          "learningOutcomes": [
+            "Rotazione lenta per individuare deviazioni laterali",
+            "Uso chiave raggi: stringere da lato opposto alla deviazione",
+            "Procedere con piccoli incrementi e controlli frequenti",
+            "Trucco: usare penna o fascetta come riferimento fisso"
+          ],
+          "practicalCriteria": [
+            "Centratura completa entro 1mm di tolleranza",
+            "Ruota testata libera da oscillazioni laterali evidenti",
+            "Annotazione correzioni su foglio lavoro"
+          ],
+          "skillTags": [
+            "ruote",
+            "centratura",
+            "precisione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-6.2.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.2",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-6.3.1",
+          "title": "Valutazione stato cerchio",
+          "description": "Distinguere cerchi recuperabili da quelli deformati o crepati.",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-6.3.1.md",
+          "toolsRequired": [
+            "righello",
+            "filo a piombo",
+            "luce radente"
+          ],
+          "learningOutcomes": [
+            "Identificare deformazioni radiali e crepe nelle piste frenanti",
+            "Determinare se centratura vale la pena del tempo richiesto",
+            "Controllare rivetti interni e sede nipples",
+            "Trucco: appoggiare su vetro piano per individuare ondulazioni"
+          ],
+          "practicalCriteria": [
+            "Ispezione completa di 3 cerchi diversi",
+            "Classificazione: recuperabile, marginale, scarto",
+            "Documentazione fotografica dei danni"
+          ],
+          "skillTags": [
+            "cerchi",
+            "diagnosi",
+            "recupero"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-6.2.2",
+              "type": "recommended"
+            },
+            {
+              "moduleId": "BIKE-1.1.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.1.4",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-6.4.1",
+          "title": "Rimozione ruota con sgancio rapido e dadi",
+          "description": "Rimuovere e reinstallare correttamente ruote anteriori e posteriori.",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-6.4.1.md",
+          "toolsRequired": [
+            "chiavi 15mm",
+            "grasso leggero"
+          ],
+          "learningOutcomes": [
+            "Uso corretto dello sgancio rapido: serraggio e posizionamento leva",
+            "Rimozione ruote con dadi e reinstallazione senza disallineamenti",
+            "Applicazione grasso sottile per prevenire bloccaggi",
+            "Controllo visivo sede ruota e pattini"
+          ],
+          "practicalCriteria": [
+            "Rimozione e rimontaggio sicuro su 2 bici diverse",
+            "Allineamento corretto telaio-ruota",
+            "Serraggio adeguato (senza eccesso)"
+          ],
+          "skillTags": [
+            "ruote",
+            "sgancio-rapido",
+            "montaggio"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-3.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.2",
+              "type": "mandatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "filename": "ciclofficina_level7.json",
+      "teachingArea": {
+        "name": "Cambio Meccanico",
+        "description": "Smontaggio, pulizia, regolazione e diagnosi del sistema di cambio, deragliatori e comandi meccanici.",
+        "color": "#9b59b6"
+      },
+      "modules": [
+        {
+          "id": "BIKE-7.1.1",
+          "title": "Identificazione componenti del cambio posteriore",
+          "description": "Riconoscere le parti principali del deragliatore e il loro funzionamento.",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-7.1.1.md",
+          "toolsRequired": [
+            "deragliatore smontato",
+            "spazzola",
+            "sgrassatore"
+          ],
+          "learningOutcomes": [
+            "Componenti base: gabbia, pulegge, vite B-tension, viti H/L, molla di richiamo",
+            "Funzione delle viti limite e del registro micrometrico",
+            "Riconoscere deragliatori moderni vs modelli economici",
+            "Valutare condizioni: molla, pulegge, flessione gabbia"
+          ],
+          "practicalCriteria": [
+            "Corretta identificazione componenti su 3 modelli diversi",
+            "Pulizia completa senza smontaggio totale",
+            "Controllo tensione molla base"
+          ],
+          "skillTags": [
+            "deragliatore",
+            "identificazione",
+            "diagnosi"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-5.2.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.3",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-7.1.2",
+          "title": "Regolazione viti limite H e L",
+          "description": "Impostare i limiti del deragliatore per evitare uscita catena dalle corone estreme.",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-7.1.2.md",
+          "toolsRequired": [
+            "cacciavite a croce",
+            "cavalletto di lavoro",
+            "marcatore"
+          ],
+          "learningOutcomes": [
+            "Vite H (High) regola fine corsa pignone piccolo",
+            "Vite L (Low) regola fine corsa pignone grande",
+            "Diagnosi: catena esce = vite troppo lenta",
+            "Trucchi segni di riferimento per viti corrette"
+          ],
+          "practicalCriteria": [
+            "Regolazione viti su 2 bici differenti",
+            "Verifica corsa massima e nessun uscita catena",
+            "Etichettatura viti e direzione regolazione"
+          ],
+          "skillTags": [
+            "regolazione-fine",
+            "deragliatore",
+            "sicurezza"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-7.1.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.5",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-7.1.3",
+          "title": "Regolazione tensione cavo e registro",
+          "description": "Regolare la tensione del cavo cambio con precisione senza strumenti elettronici.",
+          "difficulty": "base",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-7.1.3.md",
+          "toolsRequired": [
+            "registro micrometrico",
+            "cacciavite",
+            "mano esperta"
+          ],
+          "learningOutcomes": [
+            "Tendere il cavo fino a eliminare gioco rispetto alla prima marcia",
+            "Uso del registro micrometrico per microregolazioni (1/4 giro)",
+            "Diagnosi rumori cambio: catena tra due pignoni",
+            "Trucco base: due scatti su leva = due pignoni effettivi"
+          ],
+          "practicalCriteria": [
+            "Regolazione tensione perfetta in tutte le marce",
+            "Eliminazione rumori da sfregamento",
+            "Centratura perfetta sequenza cambi marcia"
+          ],
+          "skillTags": [
+            "cavo-cambio",
+            "regolazione",
+            "fine-tuning"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-7.1.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.5",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-7.2.1",
+          "title": "Montaggio e allineamento deragliatore anteriore",
+          "description": "Installare e regolare la distanza tra la gabbia e la corona grande.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-7.2.1.md",
+          "toolsRequired": [
+            "chiavi Allen",
+            "metro rigido",
+            "marcatore"
+          ],
+          "learningOutcomes": [
+            "Altezza gabbia = 2mm sopra la corona grande",
+            "Allineamento parallelo alla corona",
+            "Regolazione vite L per limitare corsa interna",
+            "Controllo escursione catena senza deragliamento"
+          ],
+          "practicalCriteria": [
+            "Montaggio corretto e allineamento visivo",
+            "Test passaggio marce tra corone",
+            "Assenza sfregamenti a gabbia"
+          ],
+          "skillTags": [
+            "deragliatore-anteriore",
+            "montaggio",
+            "precisione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-7.1.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.1.4",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.5",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-7.2.2",
+          "title": "Regolazione completa anteriore",
+          "description": "Calibrare corsa leva e tensione cavo per cambiata anteriore fluida.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 18,
+          "contentPath": "/content/bike-7.2.2.md",
+          "toolsRequired": [
+            "cacciavite",
+            "registro",
+            "cavalletto"
+          ],
+          "learningOutcomes": [
+            "Uso corretto delle viti H/L mentre si cambia marcia",
+            "Tensione cavo calibrata per salita e discesa catena",
+            "Prova dinamica su cavalletto per sincronizzazione",
+            "Correzione fine corsa per evitare drop catene"
+          ],
+          "practicalCriteria": [
+            "Regolazione perfetta corsa leva",
+            "Assenza drop chain in 10 cambi marcia consecutivi",
+            "Documentazione dei parametri ottimali (foto o note)"
+          ],
+          "skillTags": [
+            "regolazione",
+            "deragliatore-ante",
+            "test-dinamico"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-7.2.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.5",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-7.3.1",
+          "title": "Smontaggio e pulizia comandi",
+          "description": "Smontare leve o gripshift per pulizia interna e lubrificazione molla di ritorno.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 20,
+          "contentPath": "/content/bike-7.3.1.md",
+          "toolsRequired": [
+            "cacciaviti piccoli",
+            "sgrassatore",
+            "olio fine o PTFE"
+          ],
+          "learningOutcomes": [
+            "Accesso interno alle leve rotanti o a manettino",
+            "Pulizia dei meccanismi interni senza danneggiare molle",
+            "Lubrificazione corretta punti di attrito",
+            "Rimontaggio rispettando orientamento scatti marce"
+          ],
+          "practicalCriteria": [
+            "Smontaggio completo comando gripshift e rimontaggio",
+            "Lubrificazione efficace senza blocchi",
+            "Funzionamento fluido e ritorno molla prevedibile"
+          ],
+          "skillTags": [
+            "comandi-cambio",
+            "riparazione-fine",
+            "lubrificazione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-7.2.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.3",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-7.3.2",
+          "title": "Diagnosi problemi cambio",
+          "description": "Trovare e correggere cause di cambiata imprecisa o rumorosa.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 18,
+          "contentPath": "/content/bike-7.3.2.md",
+          "toolsRequired": [
+            "cavalletto",
+            "occhio allenato",
+            "registro"
+          ],
+          "learningOutcomes": [
+            "Identificare problemi frequenti: ruota non centrata, cavo lento, gabbia piegata",
+            "Uso di metodo a esclusione per individuare il componente difettoso",
+            "Riconoscere sintomi comuni (salta marcia, catena incerta, sfregamento)",
+            "Decisione intervento prioritario senza sostituzioni inutili"
+          ],
+          "practicalCriteria": [
+            "Simulazione diagnosi su bici con difetto reale",
+            "Correzione completa regolazione",
+            "Test dinamico con cliente simulato"
+          ],
+          "skillTags": [
+            "diagnosi",
+            "cambio",
+            "ottimizzazione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-7.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.3",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.3",
+              "type": "mandatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "filename": "ciclofficina_level8.json",
+      "teachingArea": {
+        "name": "Serie Sterzo e Forcella",
+        "description": "Smontaggio, pulizia, regolazione e diagnostica di serie sterzo e forcelle rigide, tipiche delle bici da recupero.",
+        "color": "#16a085"
+      },
+      "modules": [
+        {
+          "id": "BIKE-8.1.1",
+          "title": "Identificazione serie sterzo filettata",
+          "description": "Riconoscere componenti e funzionamento delle vecchie serie sterzo a calotte filettate.",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-8.1.1.md",
+          "toolsRequired": [
+            "chiavi fisse sottili",
+            "sgrassatore",
+            "stracci"
+          ],
+          "learningOutcomes": [
+            "Riconoscere calotta, controdado, cono e cuscinetti",
+            "Differenze tra cup-and-cone e cuscinetti sigillati",
+            "Identificare filettature compatibili e standard principali",
+            "Capire regolazione del precarico manuale"
+          ],
+          "practicalCriteria": [
+            "Identificazione corretta componenti su 3 sistemi diversi",
+            "Pulizia completa e sgrassaggio parti metalliche",
+            "Rilevamento presenza gioco o attrito"
+          ],
+          "skillTags": [
+            "serie-sterzo",
+            "identificazione",
+            "diagnosi"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-6.1.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory",
+              "reason": "Basic tool handling for headset work"
+            },
+            {
+              "moduleId": "BIKE-1.2.5",
+              "type": "mandatory",
+              "reason": "Torque knowledge for steering safety"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-8.1.2",
+          "title": "Regolazione e lubrificazione serie sterzo filettata",
+          "description": "Smontare, pulire e rimontare la serie sterzo regolando correttamente il precarico.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-8.1.2.md",
+          "toolsRequired": [
+            "chiavi sterzo",
+            "grasso",
+            "panno"
+          ],
+          "learningOutcomes": [
+            "Smontare calotta superiore e rimuovere cuscinetti",
+            "Pulire, ingrassare e rimontare nella posizione corretta",
+            "Regolare precarico eliminando il gioco senza attriti",
+            "Controllare scorrevolezza con test basculante"
+          ],
+          "practicalCriteria": [
+            "Rimontaggio completo serie sterzo con regolazione corretta",
+            "Verifica scorrevolezza e assenza gioco",
+            "Pulizia finale e protezione filetti"
+          ],
+          "skillTags": [
+            "serie-sterzo",
+            "manutenzione",
+            "lubrificazione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-8.1.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-8.2.1",
+          "title": "Caratteristiche serie sterzo A-Head",
+          "description": "Comprendere i componenti e la logica di serraggio delle serie sterzo moderne A-head (non filettate).",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-8.2.1.md",
+          "toolsRequired": [
+            "chiavi Allen 5-6mm",
+            "spessimetro",
+            "lubrificante leggero"
+          ],
+          "learningOutcomes": [
+            "Identificare componenti A-head: calotte, cuscinetti, ragnetto, expander cap",
+            "Capire il principio del precarico tramite expander e vite di testa",
+            "Distinguere centraggio tramite attacco manubrio",
+            "Verificare quando sostituire cuscinetti usurati"
+          ],
+          "practicalCriteria": [
+            "Smontaggio parziale A-head su forcella",
+            "Lubrificazione leggera e rimontaggio corretto",
+            "Verifica assenza gioco verticale"
+          ],
+          "skillTags": [
+            "sterzo",
+            "identificazione",
+            "manutenzione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-8.1.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.2.3",
+              "type": "mandatory",
+              "reason": "Modern standards knowledge"
+            },
+            {
+              "moduleId": "BIKE-2.1.1",
+              "type": "mandatory",
+              "reason": "Systematic diagnostic approach"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-8.2.2",
+          "title": "Regolazione e precarico sterzo moderno",
+          "description": "Serraggio corretto senza danneggiare cuscinetti e verifiche visive di allineamento.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-8.2.2.md",
+          "toolsRequired": [
+            "chiave dinamometrica economica",
+            "righello",
+            "luce radente"
+          ],
+          "learningOutcomes": [
+            "Applicare precarico dalla vite superiore fino a blocco iniziale",
+            "Serraggio attacco manubrio con coppia adeguata",
+            "Verifica allineamento ruota-manubrio",
+            "Test finale: caduta libera manubrio senza impuntamenti"
+          ],
+          "practicalCriteria": [
+            "Regolazione completa su 2 bici diverse",
+            "Allineamento preciso sterzo-ruota",
+            "Verifica ergonomia finale manubrio"
+          ],
+          "skillTags": [
+            "sterzo",
+            "regolazione",
+            "ergonomia"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-8.2.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-8.3.1",
+          "title": "Identificazione e controllo forcelle rigide",
+          "description": "Verificare dimensioni sterzo, offset e compatibilità ruote per bici da recupero.",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-8.3.1.md",
+          "toolsRequired": [
+            "metro",
+            "filo a piombo",
+            "forcella smontata"
+          ],
+          "learningOutcomes": [
+            "Misurare diametro tubo sterzo e lunghezza filettatura",
+            "Controllare offset forcella per geometria di sterzo corretta",
+            "Valutare pieghe o danni visivi",
+            "Compatibilità ruote (26'', 28'', 700C)"
+          ],
+          "practicalCriteria": [
+            "Identificazione e misurazione su 3 forcelle diverse",
+            "Valutazione danni e decisione recupero",
+            "Registrazione misure in tabella"
+          ],
+          "skillTags": [
+            "forcella",
+            "diagnosi",
+            "compatibilità"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-6.4.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-3.3.1",
+              "type": "mandatory",
+              "reason": "Wheel removal prerequisite"
+            },
+            {
+              "moduleId": "BIKE-2.1.3",
+              "type": "mandatory",
+              "reason": "Structural safety assessment"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-8.3.2",
+          "title": "Sostituzione forcella e verifica allineamenti",
+          "description": "Rimuovere forcelle rigide danneggiate e installare forcelle compatibili.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-8.3.2.md",
+          "toolsRequired": [
+            "chiavi Allen",
+            "lime",
+            "grasso anti-seizing",
+            "righello"
+          ],
+          "learningOutcomes": [
+            "Smontaggio forcella da serie sterzo con attenzione",
+            "Applicazione grasso anti-seizing su tubo sterzo",
+            "Rimontaggio nuova forcella e verifica campanatura",
+            "Allineamento ruota e manubrio con riferimenti visivi"
+          ],
+          "practicalCriteria": [
+            "Sostituzione completa su bici da recupero",
+            "Ispezione corretta e test post-intervento",
+            "Centraggio visivo perfetto ruota-forcella"
+          ],
+          "skillTags": [
+            "forcella",
+            "montaggio",
+            "sicurezza"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-8.3.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-8.4.1",
+          "title": "Diagnosi giochi sterzo",
+          "description": "Riconoscere sintomi di serie sterzo troppo lasca o troppo serrata.",
+          "difficulty": "base",
+          "estimatedDuration": 8,
+          "contentPath": "/content/bike-8.4.1.md",
+          "toolsRequired": [
+            "mani",
+            "freno anteriore",
+            "supporto cavalletto"
+          ],
+          "learningOutcomes": [
+            "Test freno anteriore: avanti/indietro = gioco",
+            "Impuntamenti in movimento = precarico eccessivo",
+            "Distinguere gioco superiore (cuscinetti) vs inferiore (forcella)",
+            "Uniformare regolazione tra precarico e bloccaggio"
+          ],
+          "practicalCriteria": [
+            "Diagnosi corretta su 3 casi reali",
+            "Intervento di regolazione riuscito",
+            "Verifica stabilità post test"
+          ],
+          "skillTags": [
+            "diagnosi",
+            "sterzo",
+            "sicurezza"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-8.1.2",
+              "type": "mandatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "filename": "ciclofficina_level9.json",
+      "teachingArea": {
+        "name": "Ergonomia e posizione del ciclista",
+        "description": "Principi di biomeccanica, regolazione posizionale e comfort per ottimizzare l'esperienza di guida e prevenire infortuni",
+        "color": "#d35400"
+      },
+      "modules": [
+        {
+          "id": "BIKE-9.1.1",
+          "title": "Principi base di ergonomia ciclistica",
+          "description": "Fondamentali di biomeccanica e postura per ottimizzare comfort e prevenire infortuni",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-9.1.1.md",
+          "toolsRequired": [
+            "metro",
+            "livella",
+            "scheda valutazione posturale"
+          ],
+          "learningOutcomes": [
+            "Comprendere principi base di biomeccanica applicata al ciclismo",
+            "Valutare importanza del fit per comfort e prevenzione infortuni",
+            "Applicare metodi di valutazione base (altezza, reach, angolazioni)",
+            "Riconoscere segnali di posizionamento errato"
+          ],
+          "practicalCriteria": [
+            "Valutazione posturale su 2 biciclette diverse",
+            "Identificazione 3 problemi di posizionamento comuni",
+            "Applicazione metodi di misurazione base"
+          ],
+          "skillTags": [
+            "ergonomia",
+            "biomeccanica",
+            "postura",
+            "prevenzione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.1.3",
+              "type": "mandatory",
+              "reason": "Bike classification knowledge for proper fit assessment"
+            },
+            {
+              "moduleId": "BIKE-2.1.1",
+              "type": "mandatory",
+              "reason": "Systematic diagnostic approach for ergonomic assessment"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-9.1.2",
+          "title": "Standard e compatibilità reggisella",
+          "description": "Riconoscere diametri, materiali e sistemi di serraggio dei reggisella comuni",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-9.1.1.md",
+          "toolsRequired": [
+            "calibro",
+            "metro",
+            "grasso leggero"
+          ],
+          "learningOutcomes": [
+            "Identificare diametro corretto (da 25,4 a 31,8 mm)",
+            "Capire differenza tra reggisella lisci e zigrinati",
+            "Distinguere materiali: acciaio, alluminio, carbonio",
+            "Controllare coppia serraggio e fatica materiale"
+          ],
+          "practicalCriteria": [
+            "Misurazione corretta diametro su 3 esempi diversi",
+            "Identificazione meccanismo serraggio corretto",
+            "Applicazione grasso e reinserimento reggisella"
+          ],
+          "skillTags": [
+            "reggisella",
+            "misurazione",
+            "materiali",
+            "compatibilità"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-9.1.1",
+              "type": "mandatory",
+              "reason": "Ergonomic principles for proper seatpost selection"
+            },
+            {
+              "moduleId": "BIKE-1.1.4",
+              "type": "mandatory",
+              "reason": "Measurement skills for seatpost sizing"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-9.1.3",
+          "title": "Recupero e manutenzione reggisella",
+          "description": "Tecniche economiche e graduali per liberare un reggisella incastrato senza danneggiare il telaio",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-9.1.2.md",
+          "toolsRequired": [
+            "olio penetrante",
+            "morsa imbottita",
+            "mazzetta di gomma"
+          ],
+          "learningOutcomes": [
+            "Applicazione progressiva di calore o sbloccante",
+            "Tecniche di rotazione controllata senza ovalizzare tubo sella",
+            "Uso corretto della morsa e protezioni telaio",
+            "Quando fermarsi per non compromettere la bici"
+          ],
+          "practicalCriteria": [
+            "Liberazione riuscita su reggisella ossidato",
+            "Assenza danni a tubo sella",
+            "Pulizia e reingrassaggio post-operazione"
+          ],
+          "skillTags": [
+            "recupero",
+            "manutenzione",
+            "sicurezza",
+            "problem-solving"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-9.1.2",
+              "type": "mandatory",
+              "reason": "Seatpost standards knowledge for proper recovery approach"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-9.2.1",
+          "title": "Regolazione altezza e inclinazione sella",
+          "description": "Determinare la corretta altezza e inclinazione per comfort e prevenzione dolori",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-9.2.1.md",
+          "toolsRequired": [
+            "chiave Allen 5mm",
+            "livella",
+            "metro"
+          ],
+          "learningOutcomes": [
+            "Altezza: gamba quasi estesa al punto morto inferiore",
+            "Inclinazione neutra: seduta parallela al terreno",
+            "Correzione arretramento tramite slitta sella",
+            "Controllo coppia di serraggio per sicurezza"
+          ],
+          "practicalCriteria": [
+            "Regolazione ergonomica su 2 biciclette diverse",
+            "Test comfort in pedalata simulata",
+            "Coppia serraggio verificata e segnata"
+          ],
+          "skillTags": [
+            "ergonomia",
+            "regolazione",
+            "comfort",
+            "biomeccanica"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-9.1.2",
+              "type": "mandatory",
+              "reason": "Seatpost standards knowledge for proper adjustment"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-9.2.2",
+          "title": "Arretramento e centraggio sella",
+          "description": "Impostare la corretta posizione longitudinale rispetto al movimento centrale",
+          "difficulty": "intermedio",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-9.2.2.md",
+          "toolsRequired": [
+            "filo a piombo",
+            "metro"
+          ],
+          "learningOutcomes": [
+            "Verifica posizione ginocchio-pedale (regola KOPS)",
+            "Ruolo della lunghezza pedivelle e postura",
+            "Arretramento per comfort e potenza",
+            "Bloccare serraggio senza scivolamenti"
+          ],
+          "practicalCriteria": [
+            "Misura e regolazione assetto con filo a piombo",
+            "Verifica stabilità sella post-regolazione",
+            "Annotazione posizione ideale su scheda bici"
+          ],
+          "skillTags": [
+            "ergonomia",
+            "posizionamento",
+            "biomeccanica",
+            "ottimizzazione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-9.2.1",
+              "type": "mandatory",
+              "reason": "Saddle height knowledge for proper fore-aft positioning"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-9.3.1",
+          "title": "Posizionamento manubrio e attacco",
+          "description": "Regolare altezza, reach e angolazione manubrio per comfort e controllo ottimali",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-9.3.1.md",
+          "toolsRequired": [
+            "chiavi Allen",
+            "metro",
+            "livella"
+          ],
+          "learningOutcomes": [
+            "Determinare altezza ottimale manubrio in base a disciplina",
+            "Regolare reach per comfort spalle e schiena",
+            "Scegliere angolazione manubrio per controllo e comfort polsi",
+            "Adattare setup per diverse discipline (city, corsa, MTB)"
+          ],
+          "practicalCriteria": [
+            "Regolazione completa manubrio su 2 bici diverse",
+            "Test comfort in posizione di guida",
+            "Verifica controllo e stabilità post-regolazione"
+          ],
+          "skillTags": [
+            "ergonomia",
+            "manubrio",
+            "controllo",
+            "comfort"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-8.2.2",
+              "type": "mandatory",
+              "reason": "Handlebar and stem basics for proper positioning"
+            },
+            {
+              "moduleId": "BIKE-9.1.1",
+              "type": "mandatory",
+              "reason": "Ergonomic principles for handlebar positioning"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-9.3.2",
+          "title": "Setup pedali e posizione piede",
+          "description": "Ottimizzare allineamento pedali e posizione piede per efficienza e comfort",
+          "difficulty": "intermedio",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-9.3.2.md",
+          "toolsRequired": [
+            "chiave pedali",
+            "metro",
+            "livella"
+          ],
+          "learningOutcomes": [
+            "Allineare pedali per simmetria e efficienza pedalata",
+            "Configurare cleats per pedali automatici (base)",
+            "Scegliere scarpe e solette per comfort e supporto",
+            "Prevenire problemi di ginocchio e caviglia"
+          ],
+          "practicalCriteria": [
+            "Setup completo pedali su 2 bici diverse",
+            "Test simmetria e comfort pedalata",
+            "Verifica allineamento cleats (se applicabile)"
+          ],
+          "skillTags": [
+            "ergonomia",
+            "pedali",
+            "biomeccanica",
+            "efficienza"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-5.3.1",
+              "type": "mandatory",
+              "reason": "Pedal basics for proper setup"
+            },
+            {
+              "moduleId": "BIKE-9.1.1",
+              "type": "mandatory",
+              "reason": "Ergonomic principles for foot positioning"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-9.3.3",
+          "title": "Diagnosi e risoluzione problemi comfort",
+          "description": "Individuare e risolvere rumorosità e problemi di comfort legati alla posizione",
+          "difficulty": "base",
+          "estimatedDuration": 8,
+          "contentPath": "/content/bike-9.3.1.md",
+          "toolsRequired": [
+            "grasso",
+            "stracci",
+            "chiavi Allen"
+          ],
+          "learningOutcomes": [
+            "Isolare fonte rumore (sella, morsetto, tubo sella)",
+            "Pulire e lubrificare giunzioni per comfort",
+            "Verificare coppie di serraggio insufficienti o eccessive",
+            "Prevenire ritorno scricchiolii con grasso al litio"
+          ],
+          "practicalCriteria": [
+            "Eliminazione rumore su bici con sella rumorosa",
+            "Verifica fissaggio corretto",
+            "Pulizia e reinstallazione reggisella"
+          ],
+          "skillTags": [
+            "diagnosi",
+            "comfort",
+            "manutenzione",
+            "problem-solving"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-9.3.1",
+              "type": "mandatory",
+              "reason": "Handlebar positioning knowledge for comfort troubleshooting"
+            },
+            {
+              "moduleId": "BIKE-9.3.2",
+              "type": "mandatory",
+              "reason": "Pedal setup knowledge for complete comfort assessment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "filename": "ciclofficina_level10.json",
+      "teachingArea": {
+        "name": "Recupero e Restauro Telai",
+        "description": "Diagnosi, trattamento e restauro di telai di biciclette economiche e da recupero, con metodi accessibili e sicuri.",
+        "color": "#7f8c8d"
+      },
+      "modules": [
+        {
+          "id": "BIKE-10.1.1",
+          "title": "Identificazione materiali telaio",
+          "description": "Distinguere acciaio, alluminio e altri materiali per decidere il tipo di intervento di recupero.",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-10.1.1.md",
+          "toolsRequired": [
+            "magnete",
+            "bilancia",
+            "scheda materiale"
+          ],
+          "learningOutcomes": [
+            "Test magnetico e peso per distinguere acciaio e alluminio",
+            "Riconoscere saldature TIG, brasatura o saldo a stagno",
+            "Conoscere sensibilità alla corrosione per materiale",
+            "Identificare compatibilità con vernici e prodotti chimici"
+          ],
+          "practicalCriteria": [
+            "Identificazione corretta su 3 telai",
+            "Classificazione adesiva con etichette colore",
+            "Registrazione risultati su scheda diagnosi"
+          ],
+          "skillTags": [
+            "telaio",
+            "materiali",
+            "diagnosi"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-1.1.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-2.1.3",
+              "type": "mandatory",
+              "reason": "Structural safety assessment"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-10.1.2",
+          "title": "Rilevamento danni e deformazioni",
+          "description": "Controllare crepe, piegamenti e colpi con metodi semplici e precisi.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-10.1.2.md",
+          "toolsRequired": [
+            "filo a piombo",
+            "luce radente",
+            "riga lunga"
+          ],
+          "learningOutcomes": [
+            "Controllare allineamento carro e forcella",
+            "Diagnosi crepe o rotture vicino saldature",
+            "Verifica diagonali telaio su piano orizzontale",
+            "Determinare se riparabile o da scartare"
+          ],
+          "practicalCriteria": [
+            "Allineamento verificato su 2 telai",
+            "Segnalazione difetti strutturali documentata",
+            "Decisione motivata (riparare o scartare)"
+          ],
+          "skillTags": [
+            "telaio",
+            "diagnosi",
+            "strutturale"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-10.1.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-10.2.1",
+          "title": "Rimozione ruggine meccanica e chimica",
+          "description": "Pulizia ruggine con mezzi manuales, chimici e metodi elettrolitici artigianali.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 20,
+          "contentPath": "/content/bike-10.2.1.md",
+          "toolsRequired": [
+            "spazzola metallica",
+            "carta vetrata",
+            "convertitore ruggine",
+            "alimentatore 12V"
+          ],
+          "learningOutcomes": [
+            "Uso corretto di spazzole e abrasivi per ruggine superficiale",
+            "Applicazione convertitori chimici a base tannica",
+            "Esecuzione trattamento elettrolitico in sicurezza",
+            "Pulizia finale e neutralizzazione residui acidi"
+          ],
+          "practicalCriteria": [
+            "Trattamento ruggine su 2 telai o componenti",
+            "Documentazione fotografica passaggi",
+            "Valutazione efficacia del metodo scelto"
+          ],
+          "skillTags": [
+            "ruggine",
+            "chimica",
+            "recupero",
+            "elettrolisi"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-10.1.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.4.3",
+              "type": "mandatory",
+              "reason": "Chemical safety knowledge"
+            },
+            {
+              "moduleId": "BIKE-2.1.1",
+              "type": "mandatory",
+              "reason": "Safety protocols"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-10.2.2",
+          "title": "Trattamento interno e protezione",
+          "description": "Applicare protezione antiruggine all'interno del telaio e sigillare punti critici.",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-10.2.2.md",
+          "toolsRequired": [
+            "spray grasso fluido",
+            "olio cera",
+            "tubi di prolunga"
+          ],
+          "learningOutcomes": [
+            "Spruzzare grasso o cera all'interno tubi aperti",
+            "Sigillare fori drenaggio se non necessari",
+            "Proteggere battute movimento centrale e serie sterzo",
+            "Usare prodotti compatibili con verniciatura futura"
+          ],
+          "practicalCriteria": [
+            "Trattamento completo telaio acciaio",
+            "Ispezione post-protezione (infiltrazioni o colature)",
+            "Etichettatura telaio: data trattamento"
+          ],
+          "skillTags": [
+            "protezione",
+            "ruggine",
+            "manutenzione"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-10.2.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-10.2.3",
+          "title": "Recupero e adattamento selle",
+          "description": "Valutare stato selle usate e ripristinarne l'utilizzabilità in modo economico.",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-10.2.3.md",
+          "toolsRequired": [
+            "nastro americano",
+            "spugne",
+            "fodere di recupero",
+            "spray pulente"
+          ],
+          "learningOutcomes": [
+            "Determinare se una sella è strutturalmente integra",
+            "Ripristinare imbottitura e rivestimento danneggiati",
+            "Applicare coprisella economici o soluzioni fai-da-te",
+            "Disinfezione per riutilizzo in ciclofficina condivisa"
+          ],
+          "practicalCriteria": [
+            "Recupero estetico e funzionale di 2 selle usate",
+            "Applicazione coprisella artigianale",
+            "Valutazione comfort post-restauro"
+          ],
+          "skillTags": [
+            "recupero",
+            "sella",
+            "economia-circolare",
+            "restauro"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-10.1.1",
+              "type": "mandatory",
+              "reason": "Material identification for saddle restoration"
+            },
+            {
+              "moduleId": "BIKE-10.2.1",
+              "type": "mandatory",
+              "reason": "Rust treatment knowledge for saddle recovery"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-10.3.1",
+          "title": "Preparazione superficie per verniciatura",
+          "description": "Levigar, sgrassare e mascherare il telaio prima della verniciatura.",
+          "difficulty": "base",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-10.3.1.md",
+          "toolsRequired": [
+            "carta abrasiva",
+            "compressore o bomboletta aria",
+            "alcool"
+          ],
+          "learningOutcomes": [
+            "Carteggiare uniformemente per favorire adesione",
+            "Pulizia finale da oli e polveri",
+            "Mascheratura accurata di filetti e battute",
+            "Test adesione primer su piccola area"
+          ],
+          "practicalCriteria": [
+            "Preparazione completa telaio per verniciatura",
+            "Verifica adesione primer",
+            "Documentazione fotografica prima/dopo"
+          ],
+          "skillTags": [
+            "verniciatura",
+            "preparazione",
+            "finitura"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-10.2.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.3.1",
+              "type": "mandatory",
+              "reason": "Basic tool handling"
+            },
+            {
+              "moduleId": "BIKE-1.4.4",
+              "type": "mandatory",
+              "reason": "Protection knowledge"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-10.3.2",
+          "title": "Verniciatura e finitura protettiva",
+          "description": "Applicare vernice o trasparente con spray o pennello e protezioni finali.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 18,
+          "contentPath": "/content/bike-10.3.2.md",
+          "toolsRequired": [
+            "vernice spray",
+            "primer",
+            "trasparente",
+            "guanti"
+          ],
+          "learningOutcomes": [
+            "Pulizia tra uno strato e l'altro",
+            "Applicare vernice in più mani sottili",
+            "Evitare colature e accumuli di vernice",
+            "Sigillare con trasparente per durata lunga"
+          ],
+          "practicalCriteria": [
+            "Verniciatura completa telaio con 3 mani",
+            "Essiccazione senza polvere",
+            "Uniformità del colore e finitura lucida/opaca"
+          ],
+          "skillTags": [
+            "verniciatura",
+            "protezione",
+            "recupero"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-10.3.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-10.4.1",
+          "title": "Sostituzione raggi rotti e riparazione ruote",
+          "description": "Rimuovere e sostituire raggi rotti senza smontare tutta la ruota, con tecniche di emergenza e riparazione definitiva",
+          "difficulty": "intermedio",
+          "estimatedDuration": 20,
+          "contentPath": "/content/bike-10.4.1.md",
+          "toolsRequired": [
+            "chiave raggi",
+            "raggi di ricambio",
+            "nipples",
+            "tronchese",
+            "pinza"
+          ],
+          "learningOutcomes": [
+            "Identificare tipo e lunghezza raggi da sostituire",
+            "Rimuovere raggio rotto senza danneggiare cerchio o mozzo",
+            "Inserire nuovo raggio seguendo schema originale",
+            "Ritensionare e centrare ruota dopo sostituzione",
+            "Trucchi per emergenze: piegare raggio rotto temporaneamente"
+          ],
+          "practicalCriteria": [
+            "Sostituzione corretta di 2 raggi rotti su ruota anteriore e posteriore",
+            "Ritensionamento uniforme dopo riparazione",
+            "Centratura ruota entro 2mm di tolleranza",
+            "Test rotazione libera senza attriti"
+          ],
+          "skillTags": [
+            "raggi",
+            "riparazione-urgente",
+            "centratura",
+            "emergenze",
+            "restauro"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-6.2.2",
+              "type": "mandatory",
+              "reason": "Wheel truing knowledge for spoke replacement"
+            },
+            {
+              "moduleId": "BIKE-10.1.2",
+              "type": "mandatory",
+              "reason": "Damage assessment for wheel restoration"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-10.4.2",
+          "title": "Costruzione ruote da zero",
+          "description": "Costruire una ruota completa partendo da cerchio, mozzo e raggi, con schema a 3 o 4 incroci",
+          "difficulty": "avanzato",
+          "estimatedDuration": 45,
+          "contentPath": "/content/bike-10.4.2.md",
+          "toolsRequired": [
+            "centraruote professionale",
+            "chiave raggi",
+            "metro",
+            "calcolatrice",
+            "tavolo lavoro"
+          ],
+          "learningOutcomes": [
+            "Calcolare lunghezza raggi in base a cerchio e mozzo",
+            "Applicare schema a 3 incroci per ruote standard",
+            "Tensionare progressivamente con controllo uniformità",
+            "Centrare ruota con precisione sub-millimetrica",
+            "Testare resistenza e planarità ruota finita"
+          ],
+          "practicalCriteria": [
+            "Costruzione completa ruota anteriore con schema 3 incroci",
+            "Centratura laterale entro 1mm",
+            "Centratura radiale entro 1mm",
+            "Tensione uniforme su tutti i raggi",
+            "Test resistenza su banco prova"
+          ],
+          "skillTags": [
+            "costruzione-ruote",
+            "precisione",
+            "calcolo-raggi",
+            "artigianato",
+            "restauro"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-10.4.1",
+              "type": "mandatory",
+              "reason": "Spoke replacement knowledge for wheel building"
+            },
+            {
+              "moduleId": "BIKE-6.1.2",
+              "type": "mandatory",
+              "reason": "Hub maintenance for wheel construction"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-10.5.1",
+          "title": "Recupero parti saldate e piccole riparazioni",
+          "description": "Riparare elementi minori (forcellini, passacavi, supporti) con metodi accessibili.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-10.5.1.md",
+          "toolsRequired": [
+            "limette",
+            "colla epossidica o stagno",
+            "pinze"
+          ],
+          "learningOutcomes": [
+            "Pulire e livellare piccole crepe non strutturali",
+            "Applicare epossidico o stagno per consolidamento",
+            "Rifinire e carteggiare riparazioni",
+            "Controllare funzionalità dopo intervento"
+          ],
+          "practicalCriteria": [
+            "Riparazione estetica completata su telaio",
+            "Funzionalità confermata",
+            "Finitura visiva discreta e liscia"
+          ],
+          "skillTags": [
+            "riparazione",
+            "telaio",
+            "epossidico"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-10.3.2",
+              "type": "recommended"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-10.5.2",
+          "title": "Documentazione e archiviazione interventi",
+          "description": "Creare schede di restauro con dati foto, materiali usati, e valutazione finale.",
+          "difficulty": "base",
+          "estimatedDuration": 8,
+          "contentPath": "/content/bike-10.5.2.md",
+          "toolsRequired": [
+            "fotocamera",
+            "modulo digitale o cartaceo"
+          ],
+          "learningOutcomes": [
+            "Registrare tipo intervento e materiali usati",
+            "Aggiungere foto prima-durante-dopo",
+            "Archiviazione scheda bici restaurata",
+            "Riferimento per futuri corsi o confrontos"
+          ],
+          "practicalCriteria": [
+            "Compilazione modulo restauro completo",
+            "Archivio condiviso aggiornato",
+            "Raccolta fotografica accurata"
+          ],
+          "skillTags": [
+            "documentazione",
+            "restauro",
+            "apprendimento"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-10.5.1",
+              "type": "recommended"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 11,
+      "filename": "ciclofficina_level11.json",
+      "teachingArea": {
+        "name": "Assemblaggio Bicicletta da Zero",
+        "description": "Dalla scelta pezzi alla messa su strada: costruzione integrale e collaudo collaborativo di una bici rigenerata POP.",
+        "color": "#e67e22"
+      },
+      "modules": [
+        {
+          "id": "BIKE-11.1.1",
+          "title": "Compatibilità e scelta componenti",
+          "description": "Verifica compatibilità telaio/forcella/ruote/cinsterzo e pianificazione ricambi necessari.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 12,
+          "contentPath": "/content/bike-11.1.1.md",
+          "toolsRequired": [
+            "metro",
+            "calibro",
+            "scheda compatibilità",
+            "banco lavoro"
+          ],
+          "learningOutcomes": [
+            "Conoscere standard principali di attacco freni, movimento centrale, sterzo, ruote",
+            "Riconoscere possibili adattamenti e accoppiamenti di fortuna",
+            "Redigere lista materiali compatibili economicamente",
+            "Valutare rischio di incompatibilità a posteriori"
+          ],
+          "practicalCriteria": [
+            "Redazione elenco compatibilità telaio-ruote-gruppo",
+            "Valutazione componenti recuperati",
+            "Compilazione scheda progetto POP"
+          ],
+          "skillTags": [
+            "organizzazione",
+            "recupero",
+            "compatibilità"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-10.4.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-1.1.4",
+              "type": "mandatory",
+              "reason": "Measurement and standards knowledge"
+            },
+            {
+              "moduleId": "BIKE-2.1.4",
+              "type": "mandatory",
+              "reason": "General assessment skills"
+            },
+            {
+              "moduleId": "BIKE-1.2.3",
+              "type": "mandatory",
+              "reason": "Modern standards compatibility"
+            },
+            {
+              "moduleId": "BIKE-9.3.2",
+              "type": "mandatory",
+              "reason": "Saddle condition assessment for complete bike evaluation"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-11.2.1",
+          "title": "Installazione movimento centrale e guarnitura",
+          "description": "Montaggio del movimento centrale scelto dopo verifica filettatura e allineamento.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-11.2.1.md",
+          "toolsRequired": [
+            "chiave movimento centrale",
+            "grasso",
+            "spessimetro"
+          ],
+          "learningOutcomes": [
+            "Inserire movimento senza spanare filetti",
+            "Controllo allineamento e profondità inserimento",
+            "Installare guarnitura con giusta coppia",
+            "Usare grasso antigrippaggio"
+          ],
+          "practicalCriteria": [
+            "Movimento centrale installato senza danneggiamenti",
+            "Verifica scorrevolezza finale",
+            "Allineamento asse-pedali testato"
+          ],
+          "skillTags": [
+            "movimento-centrale",
+            "montaggio",
+            "allineamento"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-11.1.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-5.3.2",
+              "type": "mandatory",
+              "reason": "Bottom bracket maintenance skills"
+            },
+            {
+              "moduleId": "BIKE-1.2.5",
+              "type": "mandatory",
+              "reason": "Torque safety"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-11.2.2",
+          "title": "Montaggio serie sterzo, forcella e manubrio",
+          "description": "Montare correttamente la serie sterzo, la forcella e centrare il manubrio.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-11.2.2.md",
+          "toolsRequired": [
+            "chiavi fisse/Allen",
+            "grasso",
+            "marcatore",
+            "livella"
+          ],
+          "learningOutcomes": [
+            "Montare cuscinetti, calotte e tubo forcella in sicurezza",
+            "Allineare manubrio su asse ruota",
+            "Serraggio con precarico adeguato senza giochi",
+            "Verificare libertà di movimento e assenza impuntamenti"
+          ],
+          "practicalCriteria": [
+            "Serie sterzo montata e regolata su bici assemblata",
+            "Forcella e manubrio centrati senza errori",
+            "Movimento fluido e nessun rumore/gioco"
+          ],
+          "skillTags": [
+            "sterzo",
+            "forcella",
+            "montaggio"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-11.2.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-11.3.1",
+          "title": "Assemblaggio gruppo trasmissione",
+          "description": "Installazione catena, cambio, pedali, pignoni e regolazione preliminare.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 18,
+          "contentPath": "/content/bike-11.3.1.md",
+          "toolsRequired": [
+            "smagliacatena",
+            "chiavi",
+            "grasso",
+            "marcatore"
+          ],
+          "learningOutcomes": [
+            "Montare pignoni, deragliatore e catena senza errori",
+            "Regolare viti limite e tensione cavo",
+            "Installare pedali in sicurezza con grasso su filetti",
+            "Primo test funzionamento trasmissione"
+          ],
+          "practicalCriteria": [
+            "Assemblaggio completo senza salti/difetti evidenti",
+            "Prima cambiata e regolazione funzionante",
+            "Test pedalata su cavalletto"
+          ],
+          "skillTags": [
+            "trasmissione",
+            "montaggio",
+            "cambio"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-11.2.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-7.1.2",
+              "type": "mandatory",
+              "reason": "Derailleur adjustment skills"
+            },
+            {
+              "moduleId": "BIKE-5.2.2",
+              "type": "mandatory",
+              "reason": "Chain and transmission knowledge"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-11.3.2",
+          "title": "Montaggio ruote e freni",
+          "description": "Installazione ruote con controllo sede, pattini/freni centrati, e prima centratura veloce.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-11.3.2.md",
+          "toolsRequired": [
+            "chiavi 15mm/Allen",
+            "chiave freni",
+            "filo a piombo"
+          ],
+          "learningOutcomes": [
+            "Inserimento ruote e serraggio corretti",
+            "Controllo centraggio dei freni/ruota",
+            "Regolazione pattini/disco in sicurezza",
+            "Test rotazione e assenza attriti/frizioni"
+          ],
+          "practicalCriteria": [
+            "Ruote montate e freni funzionanti",
+            "Test rotazione libera e frenata corretta",
+            "Centraggio visivo buono"
+          ],
+          "skillTags": [
+            "ruote",
+            "freni",
+            "montaggio"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-11.3.1",
+              "type": "mandatory"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-11.4.1",
+          "title": "Collaudo statico e dinamico",
+          "description": "Verifiche fondamentali di sicurezza e funzionalità su bici completamente assemblata.",
+          "difficulty": "intermedio",
+          "estimatedDuration": 15,
+          "contentPath": "/content/bike-11.4.1.md",
+          "toolsRequired": [
+            "cavalletto",
+            "strada sicura",
+            "scheda collaudo POP"
+          ],
+          "learningOutcomes": [
+            "Test sicurezza bulloni, movimenti e giochi",
+            "Frenata dinamica, cambiata sotto carico, sterzo su strada",
+            "Check comfort generale e assenza rumorosità",
+            "Compilare scheda collaudo con domande guida"
+          ],
+          "practicalCriteria": [
+            "Test statico su cavalletto",
+            "Prova dinamica in area sicura",
+            "Scheda collaudo compilata senza errori gravi trovati"
+          ],
+          "skillTags": [
+            "collaudo",
+            "verifica-finale",
+            "sicurezza"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-11.3.2",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-2.1.1",
+              "type": "mandatory",
+              "reason": "Systematic diagnostic approach"
+            },
+            {
+              "moduleId": "BIKE-4.4.1",
+              "type": "mandatory",
+              "reason": "Brake safety testing"
+            }
+          ]
+        },
+        {
+          "id": "BIKE-11.5.1",
+          "title": "Rinata alla POP: attestazione di bici completata",
+          "description": "Ultima verifica con checklist popolare e consegna di nome e targa alla bici rigenerata.",
+          "difficulty": "base",
+          "estimatedDuration": 10,
+          "contentPath": "/content/bike-11.5.1.md",
+          "toolsRequired": [
+            "scheda checklist POP",
+            "etichetta nome bici",
+            "timbro La POP"
+          ],
+          "learningOutcomes": [
+            "Riconoscere responsabilità solidale nella consegna bici",
+            "Compilare checklist finale POP condivisa",
+            "Assegnare nome simbolico e targa artigianale alla bici",
+            "Firma e timbro di tutti i partecipanti"
+          ],
+          "practicalCriteria": [
+            "Checklist completata, nome assegnato, bici pronta all’uso",
+            "Foto di gruppo e archivio su registro POP",
+            "Riutilizzo della bici pubblicizzato e condiviso"
+          ],
+          "skillTags": [
+            "comunità",
+            "certificazione",
+            "riuso"
+          ],
+          "revisionDate": null,
+          "dependencies": [
+            {
+              "moduleId": "BIKE-11.4.1",
+              "type": "mandatory"
+            },
+            {
+              "moduleId": "BIKE-10.4.2",
+              "type": "mandatory",
+              "reason": "Documentation and archiving skills for final certification"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

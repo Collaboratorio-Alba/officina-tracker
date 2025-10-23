@@ -1,3 +1,4 @@
+
 {
   "teachingArea": {
     "name": "Recupero e Restauro Telai",
@@ -85,7 +86,7 @@
     {
       "id": "BIKE-10.2.1",
       "title": "Rimozione ruggine meccanica e chimica",
-      "description": "Pulizia ruggine con mezzi manuali, chimici e metodi elettrolitici artigianali.",
+      "description": "Pulizia ruggine con mezzi manuales, chimici e metodi elettrolitici artigianali.",
       "difficulty": "intermedio",
       "estimatedDuration": 20,
       "contentPath": "/content/bike-10.2.1.md",
@@ -133,7 +134,7 @@
     {
       "id": "BIKE-10.2.2",
       "title": "Trattamento interno e protezione",
-      "description": "Applicare protezione antiruggine all’interno del telaio e sigillare punti critici.",
+      "description": "Applicare protezione antiruggine all'interno del telaio e sigillare punti critici.",
       "difficulty": "base",
       "estimatedDuration": 10,
       "contentPath": "/content/bike-10.2.2.md",
@@ -143,7 +144,7 @@
         "tubi di prolunga"
       ],
       "learningOutcomes": [
-        "Spruzzare grasso o cera all’interno tubi aperti",
+        "Spruzzare grasso o cera all'interno tubi aperti",
         "Sigillare fori drenaggio se non necessari",
         "Proteggere battute movimento centrale e serie sterzo",
         "Usare prodotti compatibili con verniciatura futura"
@@ -163,6 +164,50 @@
         {
           "moduleId": "BIKE-10.2.1",
           "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-10.2.3",
+      "title": "Recupero e adattamento selle",
+      "description": "Valutare stato selle usate e ripristinarne l'utilizzabilità in modo economico.",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-10.2.3.md",
+      "toolsRequired": [
+        "nastro americano",
+        "spugne",
+        "fodere di recupero",
+        "spray pulente"
+      ],
+      "learningOutcomes": [
+        "Determinare se una sella è strutturalmente integra",
+        "Ripristinare imbottitura e rivestimento danneggiati",
+        "Applicare coprisella economici o soluzioni fai-da-te",
+        "Disinfezione per riutilizzo in ciclofficina condivisa"
+      ],
+      "practicalCriteria": [
+        "Recupero estetico e funzionale di 2 selle usate",
+        "Applicazione coprisella artigianale",
+        "Valutazione comfort post-restauro"
+      ],
+      "skillTags": [
+        "recupero",
+        "sella",
+        "economia-circolare",
+        "restauro"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-10.1.1",
+          "type": "mandatory",
+          "reason": "Material identification for saddle restoration"
+        },
+        {
+          "moduleId": "BIKE-10.2.1",
+          "type": "mandatory",
+          "reason": "Rust treatment knowledge for saddle recovery"
         }
       ]
     },
@@ -226,7 +271,7 @@
         "guanti"
       ],
       "learningOutcomes": [
-        "Pulizia tra uno strato e l’altro",
+        "Pulizia tra uno strato e l'altro",
         "Applicare vernice in più mani sottili",
         "Evitare colature e accumuli di vernice",
         "Sigillare con trasparente per durata lunga"
@@ -251,11 +296,108 @@
     },
     {
       "id": "BIKE-10.4.1",
+      "title": "Sostituzione raggi rotti e riparazione ruote",
+      "description": "Rimuovere e sostituire raggi rotti senza smontare tutta la ruota, con tecniche di emergenza e riparazione definitiva",
+      "difficulty": "intermedio",
+      "estimatedDuration": 20,
+      "contentPath": "/content/bike-10.4.1.md",
+      "toolsRequired": [
+        "chiave raggi",
+        "raggi di ricambio",
+        "nipples",
+        "tronchese",
+        "pinza"
+      ],
+      "learningOutcomes": [
+        "Identificare tipo e lunghezza raggi da sostituire",
+        "Rimuovere raggio rotto senza danneggiare cerchio o mozzo",
+        "Inserire nuovo raggio seguendo schema originale",
+        "Ritensionare e centrare ruota dopo sostituzione",
+        "Trucchi per emergenze: piegare raggio rotto temporaneamente"
+      ],
+      "practicalCriteria": [
+        "Sostituzione corretta di 2 raggi rotti su ruota anteriore e posteriore",
+        "Ritensionamento uniforme dopo riparazione",
+        "Centratura ruota entro 2mm di tolleranza",
+        "Test rotazione libera senza attriti"
+      ],
+      "skillTags": [
+        "raggi",
+        "riparazione-urgente",
+        "centratura",
+        "emergenze",
+        "restauro"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-6.2.2",
+          "type": "mandatory",
+          "reason": "Wheel truing knowledge for spoke replacement"
+        },
+        {
+          "moduleId": "BIKE-10.1.2",
+          "type": "mandatory",
+          "reason": "Damage assessment for wheel restoration"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-10.4.2",
+      "title": "Costruzione ruote da zero",
+      "description": "Costruire una ruota completa partendo da cerchio, mozzo e raggi, con schema a 3 o 4 incroci",
+      "difficulty": "avanzato",
+      "estimatedDuration": 45,
+      "contentPath": "/content/bike-10.4.2.md",
+      "toolsRequired": [
+        "centraruote professionale",
+        "chiave raggi",
+        "metro",
+        "calcolatrice",
+        "tavolo lavoro"
+      ],
+      "learningOutcomes": [
+        "Calcolare lunghezza raggi in base a cerchio e mozzo",
+        "Applicare schema a 3 incroci per ruote standard",
+        "Tensionare progressivamente con controllo uniformità",
+        "Centrare ruota con precisione sub-millimetrica",
+        "Testare resistenza e planarità ruota finita"
+      ],
+      "practicalCriteria": [
+        "Costruzione completa ruota anteriore con schema 3 incroci",
+        "Centratura laterale entro 1mm",
+        "Centratura radiale entro 1mm",
+        "Tensione uniforme su tutti i raggi",
+        "Test resistenza su banco prova"
+      ],
+      "skillTags": [
+        "costruzione-ruote",
+        "precisione",
+        "calcolo-raggi",
+        "artigianato",
+        "restauro"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-10.4.1",
+          "type": "mandatory",
+          "reason": "Spoke replacement knowledge for wheel building"
+        },
+        {
+          "moduleId": "BIKE-6.1.2",
+          "type": "mandatory",
+          "reason": "Hub maintenance for wheel construction"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-10.5.1",
       "title": "Recupero parti saldate e piccole riparazioni",
       "description": "Riparare elementi minori (forcellini, passacavi, supporti) con metodi accessibili.",
       "difficulty": "intermedio",
       "estimatedDuration": 15,
-      "contentPath": "/content/bike-10.4.1.md",
+      "contentPath": "/content/bike-10.5.1.md",
       "toolsRequired": [
         "limette",
         "colla epossidica o stagno",
@@ -286,12 +428,12 @@
       ]
     },
     {
-      "id": "BIKE-10.4.2",
+      "id": "BIKE-10.5.2",
       "title": "Documentazione e archiviazione interventi",
       "description": "Creare schede di restauro con dati foto, materiali usati, e valutazione finale.",
       "difficulty": "base",
       "estimatedDuration": 8,
-      "contentPath": "/content/bike-10.4.2.md",
+      "contentPath": "/content/bike-10.5.2.md",
       "toolsRequired": [
         "fotocamera",
         "modulo digitale o cartaceo"
@@ -300,7 +442,7 @@
         "Registrare tipo intervento e materiali usati",
         "Aggiungere foto prima-durante-dopo",
         "Archiviazione scheda bici restaurata",
-        "Riferimento per futuri corsi o confronti"
+        "Riferimento per futuri corsi o confrontos"
       ],
       "practicalCriteria": [
         "Compilazione modulo restauro completo",
@@ -315,7 +457,7 @@
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-10.4.1",
+          "moduleId": "BIKE-10.5.1",
           "type": "recommended"
         }
       ]
