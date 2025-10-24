@@ -1,0 +1,341 @@
+{
+  "teachingArea": {
+    "name": "Cambio Meccanico",
+    "description": "Smontaggio, pulizia, regolazione e diagnosi del sistema di cambio, deragliatori e comandi meccanici.",
+    "color": "#9b59b6"
+  },
+  "modules": [
+    {
+      "id": "BIKE-7.1.1",
+      "title": "Identificazione componenti del cambio posteriore",
+      "description": "Riconoscere le parti principali del deragliatore e il loro funzionamento.",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-7.1.1.md",
+      "toolsRequired": [
+        "deragliatore smontato",
+        "spazzola",
+        "sgrassatore"
+      ],
+      "learningOutcomes": [
+        "Componenti base: gabbia, pulegge, vite B-tension, viti H/L, molla di richiamo",
+        "Funzione delle viti limite e del registro micrometrico",
+        "Riconoscere deragliatori moderni vs modelli economici",
+        "Valutare condizioni: molla, pulegge, flessione gabbia"
+      ],
+      "practicalCriteria": [
+        "Corretta identificazione componenti su 3 modelli diversi",
+        "Pulizia completa senza smontaggio totale",
+        "Controllo tensione molla base"
+      ],
+      "skillTags": [
+        "deragliatore",
+        "identificazione",
+        "diagnosi"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-5.2.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.4.3",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.3",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-7.1.2",
+      "title": "Regolazione viti limite H e L",
+      "description": "Impostare i limiti del deragliatore per evitare uscita catena dalle corone estreme.",
+      "difficulty": "base",
+      "estimatedDuration": 12,
+      "contentPath": "/content/bike-7.1.2.md",
+      "toolsRequired": [
+        "cacciavite a croce",
+        "cavalletto di lavoro",
+        "marcatore"
+      ],
+      "learningOutcomes": [
+        "Vite H (High) regola fine corsa pignone piccolo",
+        "Vite L (Low) regola fine corsa pignone grande",
+        "Diagnosi: catena esce = vite troppo lenta",
+        "Trucchi segni di riferimento per viti corrette"
+      ],
+      "practicalCriteria": [
+        "Regolazione viti su 2 bici differenti",
+        "Verifica corsa massima e nessun uscita catena",
+        "Etichettatura viti e direzione regolazione"
+      ],
+      "skillTags": [
+        "regolazione-fine",
+        "deragliatore",
+        "sicurezza"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-7.1.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.3",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.5",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-7.1.3",
+      "title": "Regolazione tensione cavo e registro",
+      "description": "Regolare la tensione del cavo cambio con precisione senza strumenti elettronici.",
+      "difficulty": "base",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-7.1.3.md",
+      "toolsRequired": [
+        "registro micrometrico",
+        "cacciavite",
+        "mano esperta"
+      ],
+      "learningOutcomes": [
+        "Tendere il cavo fino a eliminare gioco rispetto alla prima marcia",
+        "Uso del registro micrometrico per microregolazioni (1/4 giro)",
+        "Diagnosi rumori cambio: catena tra due pignoni",
+        "Trucco base: due scatti su leva = due pignoni effettivi"
+      ],
+      "practicalCriteria": [
+        "Regolazione tensione perfetta in tutte le marce",
+        "Eliminazione rumori da sfregamento",
+        "Centratura perfetta sequenza cambi marcia"
+      ],
+      "skillTags": [
+        "cavo-cambio",
+        "regolazione",
+        "fine-tuning"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-7.1.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.3",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.5",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-7.2.1",
+      "title": "Montaggio e allineamento deragliatore anteriore",
+      "description": "Installare e regolare la distanza tra la gabbia e la corona grande.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-7.2.1.md",
+      "toolsRequired": [
+        "chiavi Allen",
+        "metro rigido",
+        "marcatore"
+      ],
+      "learningOutcomes": [
+        "Altezza gabbia = 2mm sopra la corona grande",
+        "Allineamento parallelo alla corona",
+        "Regolazione vite L per limitare corsa interna",
+        "Controllo escursione catena senza deragliamento"
+      ],
+      "practicalCriteria": [
+        "Montaggio corretto e allineamento visivo",
+        "Test passaggio marce tra corone",
+        "Assenza sfregamenti a gabbia"
+      ],
+      "skillTags": [
+        "deragliatore-anteriore",
+        "montaggio",
+        "precisione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-7.1.3",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.1.4",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.5",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-7.2.2",
+      "title": "Regolazione completa anteriore",
+      "description": "Calibrare corsa leva e tensione cavo per cambiata anteriore fluida.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 18,
+      "contentPath": "/content/bike-7.2.2.md",
+      "toolsRequired": [
+        "cacciavite",
+        "registro",
+        "cavalletto"
+      ],
+      "learningOutcomes": [
+        "Uso corretto delle viti H/L mentre si cambia marcia",
+        "Tensione cavo calibrata per salita e discesa catena",
+        "Prova dinamica su cavalletto per sincronizzazione",
+        "Correzione fine corsa per evitare drop catene"
+      ],
+      "practicalCriteria": [
+        "Regolazione perfetta corsa leva",
+        "Assenza drop chain in 10 cambi marcia consecutivi",
+        "Documentazione dei parametri ottimali (foto o note)"
+      ],
+      "skillTags": [
+        "regolazione",
+        "deragliatore-ante",
+        "test-dinamico"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-7.2.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.3",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.5",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-7.3.1",
+      "title": "Smontaggio e pulizia comandi",
+      "description": "Smontare leve o gripshift per pulizia interna e lubrificazione molla di ritorno.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 20,
+      "contentPath": "/content/bike-7.3.1.md",
+      "toolsRequired": [
+        "cacciaviti piccoli",
+        "sgrassatore",
+        "olio fine o PTFE"
+      ],
+      "learningOutcomes": [
+        "Accesso interno alle leve rotanti o a manettino",
+        "Pulizia dei meccanismi interni senza danneggiare molle",
+        "Lubrificazione corretta punti di attrito",
+        "Rimontaggio rispettando orientamento scatti marce"
+      ],
+      "practicalCriteria": [
+        "Smontaggio completo comando gripshift e rimontaggio",
+        "Lubrificazione efficace senza blocchi",
+        "Funzionamento fluido e ritorno molla prevedibile"
+      ],
+      "skillTags": [
+        "comandi-cambio",
+        "riparazione-fine",
+        "lubrificazione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-7.2.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.4.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.4.3",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.3",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-7.3.2",
+      "title": "Diagnosi problemi cambio",
+      "description": "Trovare e correggere cause di cambiata imprecisa o rumorosa.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 18,
+      "contentPath": "/content/bike-7.3.2.md",
+      "toolsRequired": [
+        "cavalletto",
+        "occhio allenato",
+        "registro"
+      ],
+      "learningOutcomes": [
+        "Identificare problemi frequenti: ruota non centrata, cavo lento, gabbia piegata",
+        "Uso di metodo a esclusione per individuare il componente difettoso",
+        "Riconoscere sintomi comuni (salta marcia, catena incerta, sfregamento)",
+        "Decisione intervento prioritario senza sostituzioni inutili"
+      ],
+      "practicalCriteria": [
+        "Simulazione diagnosi su bici con difetto reale",
+        "Correzione completa regolazione",
+        "Test dinamico con cliente simulato"
+      ],
+      "skillTags": [
+        "diagnosi",
+        "cambio",
+        "ottimizzazione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-7.3.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.4.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.4.3",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.3.3",
+          "type": "mandatory"
+        }
+      ]
+    }
+  ]
+}

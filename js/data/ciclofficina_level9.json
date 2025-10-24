@@ -1,335 +1,297 @@
 {
   "teachingArea": {
-    "name": "Ergonomia e posizione del ciclista",
-    "description": "Principi di biomeccanica, regolazione posizionale e comfort per ottimizzare l'esperienza di guida e prevenire infortuni",
-    "color": "#d35400"
+    "name": "Progetti Avanzati e Comunità",
+    "description": "Gestione di progetti complessi, didattica avanzata e promozione dei valori della ciclofficina popolare",
+    "color": "#27ae60"
   },
   "modules": [
     {
       "id": "BIKE-9.1.1",
-      "title": "Principi base di ergonomia ciclistica",
-      "description": "Fondamentali di biomeccanica e postura per ottimizzare comfort e prevenire infortuni",
-      "difficulty": "base",
-      "estimatedDuration": 12,
+      "title": "Selezione componenti per progetto completo",
+      "description": "Metodologia per selezionare componenti compatibili e appropriati per progetti di costruzione o restauro complessi",
+      "difficulty": "avanzato",
+      "estimatedDuration": 30,
       "contentPath": "/content/bike-9.1.1.md",
       "toolsRequired": [
-        "metro",
-        "livella",
-        "scheda valutazione posturale"
+        "tabelle compatibilità",
+        "cataloghi componenti",
+        "software selezione (opzionale)",
+        "budget calculator"
       ],
       "learningOutcomes": [
-        "Comprendere principi base di biomeccanica applicata al ciclismo",
-        "Valutare importanza del fit per comfort e prevenzione infortuni",
-        "Applicare metodi di valutazione base (altezza, reach, angolazioni)",
-        "Riconoscere segnali di posizionamento errato"
+        "Valutare compatibilità tra componenti di diversi produttori",
+        "Ottimizzare selezione in base a budget e prestazioni",
+        "Bilanciare componenti per uso specifico",
+        "Prevenire errori di incompatibilità in progetti complessi"
       ],
       "practicalCriteria": [
-        "Valutazione posturale su 2 biciclette diverse",
-        "Identificazione 3 problemi di posizionamento comuni",
-        "Applicazione metodi di misurazione base"
+        "Selezione componenti per 3 progetti diversi (corsa, MTB, city)",
+        "Ottimizzazione budget per progetto medio",
+        "Verifica compatibilità completa tra tutti i componenti",
+        "Prevenzione errori di incompatibilità"
       ],
       "skillTags": [
-        "ergonomia",
-        "biomeccanica",
-        "postura",
-        "prevenzione"
+        "selezione",
+        "compatibilità",
+        "progettazione"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-1.1.3",
-          "type": "mandatory",
-          "reason": "Bike classification knowledge for proper fit assessment"
+          "moduleId": "BIKE-8.1.1",
+          "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-2.1.1",
-          "type": "mandatory",
-          "reason": "Systematic diagnostic approach for ergonomic assessment"
+          "moduleId": "BIKE-2.1.6",
+          "type": "mandatory"
         }
       ]
     },
     {
       "id": "BIKE-9.1.2",
-      "title": "Standard e compatibilità reggisella",
-      "description": "Riconoscere diametri, materiali e sistemi di serraggio dei reggisella comuni",
-      "difficulty": "base",
-      "estimatedDuration": 10,
-      "contentPath": "/content/bike-9.1.1.md",
+      "title": "Assemblaggio bici da zero: telaio e gruppi",
+      "description": "Procedura completa per assemblare una bicicletta partendo dal telaio nudo e dai gruppi componenti",
+      "difficulty": "avanzato",
+      "estimatedDuration": 45,
+      "contentPath": "/content/bike-9.1.2.md",
       "toolsRequired": [
-        "calibro",
-        "metro",
-        "grasso leggero"
+        "attrezzi assemblaggio completi",
+        "chiavi dinamometriche",
+        "lubrificanti e grassi",
+        "strumenti regolazione fine"
       ],
       "learningOutcomes": [
-        "Identificare diametro corretto (da 25,4 a 31,8 mm)",
-        "Capire differenza tra reggisella lisci e zigrinati",
-        "Distinguere materiali: acciaio, alluminio, carbonio",
-        "Controllare coppia serraggio e fatica materiale"
+        "Assemblare completamente bici partendo da telaio nudo",
+        "Installare e regolare tutti i gruppi componenti",
+        "Applicare coppie di serraggio corrette per ogni componente",
+        "Eseguire regolazioni fini per prestazioni ottimali"
       ],
       "practicalCriteria": [
-        "Misurazione corretta diametro su 3 esempi diversi",
-        "Identificazione meccanismo serraggio corretto",
-        "Applicazione grasso e reinserimento reggisella"
+        "Assemblaggio completo bici da telaio nudo",
+        "Installazione e regolazione di 5 gruppi componenti",
+        "Applicazione coppie di serraggio su 20+ componenti",
+        "Regolazione fine per prestazioni ottimali"
       ],
       "skillTags": [
-        "reggisella",
-        "misurazione",
-        "materiali",
-        "compatibilità"
+        "assemblaggio",
+        "precisione",
+        "progetto-completo"
       ],
       "revisionDate": null,
       "dependencies": [
         {
           "moduleId": "BIKE-9.1.1",
-          "type": "mandatory",
-          "reason": "Ergonomic principles for proper seatpost selection"
+          "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.1.4",
-          "type": "mandatory",
-          "reason": "Measurement skills for seatpost sizing"
+          "moduleId": "BIKE-8.1.6",
+          "type": "mandatory"
         }
       ]
     },
     {
       "id": "BIKE-9.1.3",
-      "title": "Recupero e manutenzione reggisella",
-      "description": "Tecniche economiche e graduali per liberare un reggisella incastrato senza danneggiare il telaio",
-      "difficulty": "intermedio",
-      "estimatedDuration": 15,
-      "contentPath": "/content/bike-9.1.2.md",
+      "title": "Personalizzazione estetica e funzionale",
+      "description": "Tecniche avanzate per personalizzare biciclette sia esteticamente che funzionalmente",
+      "difficulty": "avanzato",
+      "estimatedDuration": 35,
+      "contentPath": "/content/bike-9.1.3.md",
       "toolsRequired": [
-        "olio penetrante",
-        "morsa imbottita",
-        "mazzetta di gomma"
+        "attrezzatura verniciatura",
+        "strumenti personalizzazione",
+        "componenti custom",
+        "materiali decorativi"
       ],
       "learningOutcomes": [
-        "Applicazione progressiva di calore o sbloccante",
-        "Tecniche di rotazione controllata senza ovalizzare tubo sella",
-        "Uso corretto della morsa e protezioni telaio",
-        "Quando fermarsi per non compromettere la bici"
+        "Progettare personalizzazioni estetiche creative",
+        "Implementare modifiche funzionali personalizzate",
+        "Applicare finiture decorative e protettive",
+        "Integrare accessori e componenti custom"
       ],
       "practicalCriteria": [
-        "Liberazione riuscita su reggisella ossidato",
-        "Assenza danni a tubo sella",
-        "Pulizia e reingrassaggio post-operazione"
+        "Progettazione personalizzazione completa bici",
+        "Implementazione 3 modifiche funzionali personalizzate",
+        "Applicazione finiture decorative professionali",
+        "Integrazione accessori custom funzionali"
       ],
       "skillTags": [
-        "recupero",
-        "manutenzione",
-        "sicurezza",
-        "problem-solving"
+        "personalizzazione",
+        "creatività",
+        "artigianato"
       ],
       "revisionDate": null,
       "dependencies": [
         {
           "moduleId": "BIKE-9.1.2",
-          "type": "mandatory",
-          "reason": "Seatpost standards knowledge for proper recovery approach"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-9.2.1",
-      "title": "Regolazione altezza e inclinazione sella",
-      "description": "Determinare la corretta altezza e inclinazione per comfort e prevenzione dolori",
-      "difficulty": "base",
-      "estimatedDuration": 10,
-      "contentPath": "/content/bike-9.2.1.md",
-      "toolsRequired": [
-        "chiave Allen 5mm",
-        "livella",
-        "metro"
-      ],
-      "learningOutcomes": [
-        "Altezza: gamba quasi estesa al punto morto inferiore",
-        "Inclinazione neutra: seduta parallela al terreno",
-        "Correzione arretramento tramite slitta sella",
-        "Controllo coppia di serraggio per sicurezza"
-      ],
-      "practicalCriteria": [
-        "Regolazione ergonomica su 2 biciclette diverse",
-        "Test comfort in pedalata simulata",
-        "Coppia serraggio verificata e segnata"
-      ],
-      "skillTags": [
-        "ergonomia",
-        "regolazione",
-        "comfort",
-        "biomeccanica"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-9.1.2",
-          "type": "mandatory",
-          "reason": "Seatpost standards knowledge for proper adjustment"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-9.2.2",
-      "title": "Arretramento e centraggio sella",
-      "description": "Impostare la corretta posizione longitudinale rispetto al movimento centrale",
-      "difficulty": "intermedio",
-      "estimatedDuration": 12,
-      "contentPath": "/content/bike-9.2.2.md",
-      "toolsRequired": [
-        "filo a piombo",
-        "metro"
-      ],
-      "learningOutcomes": [
-        "Verifica posizione ginocchio-pedale (regola KOPS)",
-        "Ruolo della lunghezza pedivelle e postura",
-        "Arretramento per comfort e potenza",
-        "Bloccare serraggio senza scivolamenti"
-      ],
-      "practicalCriteria": [
-        "Misura e regolazione assetto con filo a piombo",
-        "Verifica stabilità sella post-regolazione",
-        "Annotazione posizione ideale su scheda bici"
-      ],
-      "skillTags": [
-        "ergonomia",
-        "posizionamento",
-        "biomeccanica",
-        "ottimizzazione"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-9.2.1",
-          "type": "mandatory",
-          "reason": "Saddle height knowledge for proper fore-aft positioning"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-9.3.1",
-      "title": "Posizionamento manubrio e attacco",
-      "description": "Regolare altezza, reach e angolazione manubrio per comfort e controllo ottimali",
-      "difficulty": "intermedio",
-      "estimatedDuration": 15,
-      "contentPath": "/content/bike-9.3.1.md",
-      "toolsRequired": [
-        "chiavi Allen",
-        "metro",
-        "livella"
-      ],
-      "learningOutcomes": [
-        "Determinare altezza ottimale manubrio in base a disciplina",
-        "Regolare reach per comfort spalle e schiena",
-        "Scegliere angolazione manubrio per controllo e comfort polsi",
-        "Adattare setup per diverse discipline (city, corsa, MTB)"
-      ],
-      "practicalCriteria": [
-        "Regolazione completa manubrio su 2 bici diverse",
-        "Test comfort in posizione di guida",
-        "Verifica controllo e stabilità post-regolazione"
-      ],
-      "skillTags": [
-        "ergonomia",
-        "manubrio",
-        "controllo",
-        "comfort"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-8.2.2",
-          "type": "mandatory",
-          "reason": "Handlebar and stem basics for proper positioning"
+          "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-9.1.1",
-          "type": "mandatory",
-          "reason": "Ergonomic principles for handlebar positioning"
+          "moduleId": "BIKE-8.1.4",
+          "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-9.3.2",
-      "title": "Setup pedali e posizione piede",
-      "description": "Ottimizzare allineamento pedali e posizione piede per efficienza e comfort",
+      "id": "BIKE-9.1.4",
+      "title": "Gestione progetti di restauro in ciclofficina",
+      "description": "Gestione avanzata di progetti di restauro in contesto di ciclofficina popolare con risorse limitate",
+      "difficulty": "avanzato",
+      "estimatedDuration": 40,
+      "contentPath": "/content/bike-9.1.4.md",
+      "toolsRequired": [
+        "software gestione progetti (opzionale)",
+        "schede progetto",
+        "strumenti monitoraggio",
+        "materiali comunicazione"
+      ],
+      "learningOutcomes": [
+        "Pianificare progetti di restauro complessi",
+        "Gestire risorse umane e materiali in ciclofficina",
+        "Monitorare avanzamento progetti multipli",
+        "Risolvere problemi organizzativi e logistici"
+      ],
+      "practicalCriteria": [
+        "Pianificazione progetto restauro complesso",
+        "Gestione risorse per 3 progetti simultanei",
+        "Monitoraggio avanzamento con indicatori chiari",
+        "Risoluzione 3 problemi organizzativi complessi"
+      ],
+      "skillTags": [
+        "gestione-progetti",
+        "organizzazione",
+        "leadership"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-9.1.3",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-8.1.7",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-9.1.5",
+      "title": "Didattica: tutoraggio e mentoring volontari",
+      "description": "Tecniche avanzate di insegnamento e mentoring per formare nuovi volontari in ciclofficina",
+      "difficulty": "avanzato",
+      "estimatedDuration": 32,
+      "contentPath": "/content/bike-9.1.5.md",
+      "toolsRequired": [
+        "materiali didattici",
+        "schede apprendimento",
+        "strumenti valutazione",
+        "esempi pratici"
+      ],
+      "learningOutcomes": [
+        "Applicare tecniche di insegnamento per diversi livelli",
+        "Sviluppare materiali didattici efficaci",
+        "Valutare progressi apprendimento volontari",
+        "Gestire dinamiche di gruppo in sessioni formative"
+      ],
+      "practicalCriteria": [
+        "Conduzione sessione formativa per 5 volontari",
+        "Sviluppo 3 materiali didattici specifici",
+        "Valutazione progressi apprendimento",
+        "Gestione efficace dinamiche gruppo formativo"
+      ],
+      "skillTags": [
+        "didattica",
+        "mentoring",
+        "formazione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-9.1.4",
+          "type": "recommended"
+        },
+        {
+          "moduleId": "BIKE-1.1.7",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-9.1.6",
+      "title": "Sostenibilità ed economia circolare in officina",
+      "description": "Implementazione di pratiche di sostenibilità e economia circolare nella gestione della ciclofficina",
       "difficulty": "intermedio",
-      "estimatedDuration": 12,
-      "contentPath": "/content/bike-9.3.2.md",
+      "estimatedDuration": 28,
+      "contentPath": "/content/bike-9.1.6.md",
       "toolsRequired": [
-        "chiave pedali",
-        "metro",
-        "livella"
+        "schede valutazione sostenibilità",
+        "sistemi riciclo",
+        "materiali documentazione",
+        "strumenti analisi impatto"
       ],
       "learningOutcomes": [
-        "Allineare pedali per simmetria e efficienza pedalata",
-        "Configurare cleats per pedali automatici (base)",
-        "Scegliere scarpe e solette per comfort e supporto",
-        "Prevenire problemi di ginocchio e caviglia"
+        "Implementare pratiche di economia circolare",
+        "Valutare sostenibilità di materiali e processi",
+        "Ridurre sprechi e ottimizzare risorse",
+        "Promuovere cultura sostenibilità in comunità"
       ],
       "practicalCriteria": [
-        "Setup completo pedali su 2 bici diverse",
-        "Test simmetria e comfort pedalata",
-        "Verifica allineamento cleats (se applicabile)"
+        "Implementazione 5 pratiche economia circolare",
+        "Valutazione sostenibilità 10 materiali/processi",
+        "Riduzione sprechi misurabile in officina",
+        "Progettazione iniziativa sostenibilità per comunità"
       ],
       "skillTags": [
-        "ergonomia",
-        "pedali",
-        "biomeccanica",
-        "efficienza"
+        "sostenibilità",
+        "economia-circolare",
+        "comunità"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-5.3.1",
-          "type": "mandatory",
-          "reason": "Pedal basics for proper setup"
+          "moduleId": "BIKE-9.1.5",
+          "type": "recommended"
         },
         {
-          "moduleId": "BIKE-9.1.1",
-          "type": "mandatory",
-          "reason": "Ergonomic principles for foot positioning"
+          "moduleId": "BIKE-8.1.7",
+          "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-9.3.3",
-      "title": "Diagnosi e risoluzione problemi comfort",
-      "description": "Individuare e risolvere rumorosità e problemi di comfort legati alla posizione",
-      "difficulty": "base",
-      "estimatedDuration": 8,
-      "contentPath": "/content/bike-9.3.1.md",
+      "id": "BIKE-9.1.7",
+      "title": "Etica, comunità e valori dell'autoreparazione",
+      "description": "Promozione e applicazione dei valori etici e comunitari nelle officine popolari di autoriparazione",
+      "difficulty": "avanzato",
+      "estimatedDuration": 25,
+      "contentPath": "/content/bike-9.1.7.md",
       "toolsRequired": [
-        "grasso",
-        "stracci",
-        "chiavi Allen"
+        "carta valori ciclofficina",
+        "casi studio",
+        "materiali discussione",
+        "strumenti facilitazione"
       ],
       "learningOutcomes": [
-        "Isolare fonte rumore (sella, morsetto, tubo sella)",
-        "Pulire e lubrificare giunzioni per comfort",
-        "Verificare coppie di serraggio insufficienti o eccessive",
-        "Prevenire ritorno scricchiolii con grasso al litio"
+        "Applicare principi etici in situazioni complesse",
+        "Promuovere inclusione e accessibilità in comunità",
+        "Gestire conflitti secondo principi cooperativi",
+        "Contribuire a cultura mutualismo e autogestione"
       ],
       "practicalCriteria": [
-        "Eliminazione rumore su bici con sella rumorosa",
-        "Verifica fissaggio corretto",
-        "Pulizia e reinstallazione reggisella"
+        "Applicazione principi etici in 3 scenari complessi",
+        "Progettazione iniziativa inclusiva per comunità",
+        "Gestione costruttiva situazione conflittuale",
+        "Contributo a cultura mutualismo attraverso azioni concrete"
       ],
       "skillTags": [
-        "diagnosi",
-        "comfort",
-        "manutenzione",
-        "problem-solving"
+        "etica",
+        "comunità",
+        "valori"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-9.3.1",
-          "type": "mandatory",
-          "reason": "Handlebar positioning knowledge for comfort troubleshooting"
-        },
-        {
-          "moduleId": "BIKE-9.3.2",
-          "type": "mandatory",
-          "reason": "Pedal setup knowledge for complete comfort assessment"
+          "moduleId": "BIKE-9.1.6",
+          "type": "mandatory"
         }
       ]
     }

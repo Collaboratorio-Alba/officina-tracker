@@ -1,76 +1,71 @@
 {
   "teachingArea": {
-    "name": "Trasmissione Base",
-    "description": "Manutenzione e regolazione dei componenti base della trasmissione: catena, pignoni, corone, pedali e movimento centrale",
-    "color": "#f1c40f"
+    "name": "Trasmissione e Catena",
+    "description": "Manutenzione, riparazione e regolazione del sistema di trasmissione della bicicletta",
+    "color": "#f39c12"
   },
   "modules": [
     {
       "id": "BIKE-5.1.1",
-      "title": "Controllo e usura catena",
-      "description": "Misurare e valutare l'usura della catena con o senza attrezzo specifico",
+      "title": "Componenti trasmissione: catena, guarnitura, pignoni, pedali",
+      "description": "Conoscenza dei componenti del sistema di trasmissione e loro funzionamento",
       "difficulty": "base",
-      "estimatedDuration": 10,
+      "estimatedDuration": 16,
       "contentPath": "/content/bike-5.1.1.md",
       "toolsRequired": [
-        "calibro catena",
-        "righello 30cm"
+        "catena campione",
+        "guarnitura e pacco pignoni",
+        "pedali diversi",
+        "calibro"
       ],
       "learningOutcomes": [
-        "Uso calibro catena per rilevare allungamento",
-        "Metodo alternativo: misura 12 maglie = 304.8mm",
-        "Riconoscere catena troppo allungata (saltano le marce)",
-        "Conseguenze su pignoni e corone se trascurata"
+        "Identificare tutti i componenti della trasmissione",
+        "Comprendere il funzionamento di ogni componente",
+        "Riconoscere usura e danni sui componenti",
+        "Valutare compatibilità tra componenti"
       ],
       "practicalCriteria": [
-        "Misurazione corrette su 3 catene diverse",
-        "Identificazione corretta soglia sostituzione",
-        "Scelta catena compatibile (velocità, passo)"
+        "Identificazione corretta 8 componenti trasmissione",
+        "Analisi stato usura su catena e pignoni",
+        "Valutazione compatibilità tra guarnitura e pacco pignoni"
       ],
       "skillTags": [
-        "catena",
-        "usura",
-        "diagnosi"
+        "trasmissione",
+        "componenti",
+        "identificazione"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-2.2.2",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.1.4",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.1",
+          "moduleId": "BIKE-2.1.7",
           "type": "mandatory"
         }
       ]
     },
     {
       "id": "BIKE-5.1.2",
-      "title": "Pulizia e lubrificazione catena",
-      "description": "Pulire catene sporche con sistemi artigianali e lubrificare correttamente",
+      "title": "Controllo e lubrificazione catena",
+      "description": "Tecniche per controllo usura catena e corretta lubrificazione per massimizzare durata e prestazioni",
       "difficulty": "base",
-      "estimatedDuration": 12,
+      "estimatedDuration": 18,
       "contentPath": "/content/bike-5.1.2.md",
       "toolsRequired": [
-        "sgrassatore",
-        "spazzole",
-        "paraffina solida",
-        "olio secco/umido"
+        "calibro usura catena",
+        "lubrificanti diversi",
+        "stracci puliti",
+        "spazzole catena"
       ],
       "learningOutcomes": [
-        "Rimuovere incrostazioni di grasso e fango",
-        "Eseguire bagno paraffina per catene da recupero",
-        "Applicare lubrificante adeguato (stagione, uso)",
-        "Evitare eccessi che attirano sporco"
+        "Misurare correttamente l'usura della catena",
+        "Scegliere il lubrificante appropriato per le condizioni",
+        "Applicare lubrificante correttamente",
+        "Riconoscere quando sostituire la catena"
       ],
       "practicalCriteria": [
-        "Pulizia catena con 2 metodi diversi",
-        "Applicazione corretta lubrificante senza sprechi",
-        "Valutazione scorrevolezza post-intervento"
+        "Misurazione usura catena con calibro",
+        "Applicazione lubrificante senza eccessi",
+        "Identificazione catena da sostituire",
+        "Pulizia pre-lubrificazione"
       ],
       "skillTags": [
         "catena",
@@ -84,50 +79,39 @@
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.4.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.4.3",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.2",
+          "moduleId": "BIKE-1.1.6",
           "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-5.2.1",
-      "title": "Identificazione e usura pignoni",
-      "description": "Controllare stato corona e pacco pignoni e riconoscere usura irregolare",
-      "difficulty": "base",
-      "estimatedDuration": 15,
-      "contentPath": "/content/bike-5.2.1.md",
+      "id": "BIKE-5.1.3",
+      "title": "Compatibilità tra trasmissioni (velocità, passo, standard)",
+      "description": "Valutazione della compatibilità tra componenti di trasmissione di diversi produttori e standard",
+      "difficulty": "intermedio",
+      "estimatedDuration": 20,
+      "contentPath": "/content/bike-5.1.3.md",
       "toolsRequired": [
-        "spazzola metallica",
-        "pignone campione",
-        "luce radente"
+        "tabelle compatibilità",
+        "componenti diversi",
+        "calibro",
+        "software compatibilità (opzionale)"
       ],
       "learningOutcomes": [
-        "Riconoscere denti a forma di squalo = usura avanzata",
-        "Distinguere sporco da deformazione metallica",
-        "Verificare allineamento cassette/pignoni",
-        "Quando sostituire: se catena nuova salta sulle corone"
+        "Identificare standard di catena (8, 9, 10, 11, 12 velocità)",
+        "Valutare compatibilità tra guarniture e pacco pignoni",
+        "Riconoscere standard movimento centrale",
+        "Risolvere problemi di compatibilità con adattatori"
       ],
       "practicalCriteria": [
-        "Confronto visivo pignoni usurati vs nuovi",
-        "Pulizia accurata con spazzola metallica",
-        "Decisione sostituzione motivata"
+        "Valutazione compatibilità 3 combinazioni componenti",
+        "Identificazione standard catena e pignoni",
+        "Soluzione problema incompatibilità con adattatore"
       ],
       "skillTags": [
-        "trasmissione",
-        "usura",
-        "diagnosi"
+        "compatibilità",
+        "standard",
+        "risoluzione-problemi"
       ],
       "revisionDate": null,
       "dependencies": [
@@ -136,155 +120,183 @@
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.4.3",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.3",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-5.2.2",
-      "title": "Sostituzione catena e compatibilità trasmissione",
-      "description": "Scegliere e sostituire catena in base al numero di velocità",
-      "difficulty": "intermedio",
-      "estimatedDuration": 15,
-      "contentPath": "/content/bike-5.2.2.md",
-      "toolsRequired": [
-        "smagliacatena",
-        "quick link",
-        "pinza catena"
-      ],
-      "learningOutcomes": [
-        "Contare maglie e verificare lunghezza corretta",
-        "Montaggio con falsamaglia e verifica scorrevolezza",
-        "Test compatibilità con pignoni e corone",
-        "Trucchi per aprire catene bloccate (falsamaglia rigida)"
-      ],
-      "practicalCriteria": [
-        "Sostituzione completa catena su due trasmissioni diverse",
-        "Verifica lunghezza ottimale e scorrevolezza",
-        "Test funzionamento in pedalata su cavalletto"
-      ],
-      "skillTags": [
-        "catena",
-        "compatibilità",
-        "manutenzione"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
           "moduleId": "BIKE-5.1.1",
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.3.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.2",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.4",
+          "moduleId": "BIKE-2.1.6",
           "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-5.3.1",
-      "title": "Smontaggio pedali",
-      "description": "Rimuovere pedali incrostati e comprendere differenze filettature destra/sinistra",
-      "difficulty": "base",
-      "estimatedDuration": 12,
-      "contentPath": "/content/bike-5.3.1.md",
+      "id": "BIKE-5.1.4",
+      "title": "Rimozione e montaggio pacco pignoni",
+      "description": "Tecniche per smontare e montare il pacco pignoni utilizzando gli attrezzi appropriati",
+      "difficulty": "intermedio",
+      "estimatedDuration": 22,
+      "contentPath": "/content/bike-5.1.4.md",
       "toolsRequired": [
-        "chiave 15mm",
-        "spray sbloccante",
-        "martello gomma"
+        "estrattore pacco pignoni",
+        "chiave a frusta",
+        "chiavi specifiche",
+        "grasso"
       ],
       "learningOutcomes": [
-        "Pedale destro filettatura normale, sinistro inversa",
-        "Lubrificare filetti prima del rimontaggio",
-        "Recuperare pedali bloccati senza rovinare le pedivelle",
-        "Riconoscere segni di usura su cuscinetti interni"
+        "Identificare tipo di pacco pignoni (cassetta o freewheel)",
+        "Utilizzare estrattore e chiave a frusta correttamente",
+        "Smontare e montare pacco pignoni senza danni",
+        "Lubrificare mozzo durante il montaggio"
       ],
       "practicalCriteria": [
-        "Rimozione e rimontaggio pedali su 3 bici diverse",
-        "Applicazione grasso e coppia serraggio corretta",
-        "Test scorrevolezza e gioco assiale"
+        "Smontaggio/montaggio pacco pignoni su 2 tipi diversi",
+        "Utilizzo corretto estrattore e chiave a frusta",
+        "Lubrificazione mozzo e filetti",
+        "Verifica funzionamento post-montaggio"
       ],
       "skillTags": [
-        "pedali",
-        "filettature",
-        "recupero"
+        "pacco-pignoni",
+        "smontaggio",
+        "montaggio"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-1.2.2",
+          "moduleId": "BIKE-5.1.3",
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.3.2",
+          "moduleId": "BIKE-1.1.3",
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.4.2",
+          "moduleId": "BIKE-2.1.3",
           "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-5.3.2",
-      "title": "Ispezione e manutenzione movimento centrale",
-      "description": "Verifica gioco, smontaggio e ingrassaggio movimento centrale a calotte",
+      "id": "BIKE-5.1.5",
+      "title": "Ispezione movimento centrale e filetti pedivelle",
+      "description": "Controllo e manutenzione del movimento centrale e ispezione dei filetti delle pedivelle",
       "difficulty": "intermedio",
-      "estimatedDuration": 20,
-      "contentPath": "/content/bike-5.3.2.md",
+      "estimatedDuration": 25,
+      "contentPath": "/content/bike-5.1.5.md",
       "toolsRequired": [
-        "chiave movimento centrale",
-        "grasso",
-        "panno pulito"
+        "attrezzi movimento centrale",
+        "estrattore pedivelle",
+        "calibro",
+        "grasso"
       ],
       "learningOutcomes": [
-        "Identificare tipo movimento: BSA, ITA, cuscinetti conici",
-        "Smontare calotte senza danneggiare filetti",
-        "Pulire, lubrificare e rimontare con giusto precarico",
-        "Quando sostituire: gioco impossibile da eliminare"
+        "Identificare tipo di movimento centrale",
+        "Ispezionare filetti pedivelle e movimento centrale",
+        "Riconoscere usure e danni",
+        "Applicare tecniche per filetti danneggiati"
       ],
       "practicalCriteria": [
-        "Smontaggio completo e ingrassaggio corretto",
-        "Test rotazione fluida e assenza gioco",
-        "Valutazione stato filetti e suggerimento intervento"
+        "Ispezione completa movimento centrale",
+        "Controllo filetti pedivelle",
+        "Identificazione usure e danni",
+        "Applicazione tecniche recupero filetti"
       ],
       "skillTags": [
         "movimento-centrale",
-        "manutenzione",
-        "standard"
+        "ispezione",
+        "pedivelle"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-1.2.3",
+          "moduleId": "BIKE-5.1.4",
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.3.1",
+          "moduleId": "BIKE-2.1.2",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-5.1.6",
+      "title": "Diagnosi giochi e usure trasmissione",
+      "description": "Identificazione e risoluzione di giochi, usure e problemi di funzionamento della trasmissione",
+      "difficulty": "intermedio",
+      "estimatedDuration": 20,
+      "contentPath": "/content/bike-5.1.6.md",
+      "toolsRequired": [
+        "calibro usura catena",
+        "indicatore giochi",
+        "strumenti diagnostici",
+        "lubrificanti"
+      ],
+      "learningOutcomes": [
+        "Diagnosticare giochi nel movimento centrale e pedivelle",
+        "Identificare usure catena, pignoni e guarnitura",
+        "Risolvere problemi di scatto o slittamento catena",
+        "Applicare soluzioni per usure avanzate"
+      ],
+      "practicalCriteria": [
+        "Diagnosi completa trasmissione con problemi",
+        "Identificazione cause giochi e usure",
+        "Risoluzione 3 problemi trasmissione comuni",
+        "Applicazione soluzioni per usure avanzate"
+      ],
+      "skillTags": [
+        "diagnosi",
+        "usure",
+        "risoluzione-problemi"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-5.1.5",
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.3.2",
+          "moduleId": "BIKE-4.1.2",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-5.1.7",
+      "title": "Serraggio coppie e regolazione fine",
+      "description": "Applicazione delle corrette coppie di serraggio e regolazioni fini per ottimizzare le prestazioni della trasmissione",
+      "difficulty": "intermedio",
+      "estimatedDuration": 18,
+      "contentPath": "/content/bike-5.1.7.md",
+      "toolsRequired": [
+        "chiave dinamometrica",
+        "set chiavi specifiche",
+        "lubrificante filetti",
+        "tabelle coppie"
+      ],
+      "learningOutcomes": [
+        "Applicare coppie di serraggio corrette per tutti i componenti trasmissione",
+        "Regolare fine della tensione catena",
+        "Ottimizzare prestazioni con regolazioni precise",
+        "Prevenire danni da serraggio eccessivo o insufficiente"
+      ],
+      "practicalCriteria": [
+        "Applicazione coppie corrette su 5 componenti trasmissione",
+        "Regolazione fine tensione catena",
+        "Ottimizzazione prestazioni trasmissione",
+        "Verifica assenza giochi e tensioni"
+      ],
+      "skillTags": [
+        "coppie",
+        "regolazione",
+        "precisione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-5.1.6",
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.4.2",
+          "moduleId": "BIKE-2.1.3",
           "type": "mandatory"
         }
       ]

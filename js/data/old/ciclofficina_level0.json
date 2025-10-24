@@ -1,0 +1,358 @@
+{
+  "teachingArea": {
+    "name": "Competenze Trasversali e Fondamentali",
+    "description": "Soft skills, organizzazione, sicurezza e competenze di base essenziali per lavorare efficacemente in ciclofficina popolare",
+    "color": "#8e44ad"
+  },
+  "modules": [
+    {
+      "id": "BIKE-0.1.1",
+      "title": "Sicurezza base in officina e uso DPI",
+      "description": "Principi fondamentali di sicurezza, dispositivi di protezione individuale, organizzazione spazi di lavoro sicuri",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-0.1.1.md",
+      "toolsRequired": [
+        "guanti protettivi",
+        "occhiali di sicurezza",
+        "cassetta pronto soccorso"
+      ],
+      "learningOutcomes": [
+        "Riconoscere i principali rischi in officina (meccanici, chimici, ergonomici)",
+        "Scegliere e usare correttamente i DPI appropriati per ogni attività",
+        "Organizzare lo spazio di lavoro per minimizzare rischi",
+        "Conoscere procedure base di primo soccorso per incidenti comuni"
+      ],
+      "practicalCriteria": [
+        "Identificazione corretta rischi in 3 scenari officina diversi",
+        "Dimostrazione uso corretto DPI per 4 attività specifiche",
+        "Organizzazione spazio di lavoro secondo principi sicurezza"
+      ],
+      "skillTags": [
+        "sicurezza",
+        "prevenzione",
+        "organizzazione"
+      ],
+      "revisionDate": null,
+      "dependencies": []
+    },
+    {
+      "id": "BIKE-0.1.2",
+      "title": "Comunicazione efficace in officina popolare",
+      "description": "Tecniche di ascolto attivo, spiegazione problemi tecnici in linguaggio semplice, gestione aspettative clienti",
+      "difficulty": "base",
+      "estimatedDuration": 12,
+      "contentPath": "/content/bike-0.1.2.md",
+      "toolsRequired": [
+        "schede comunicazione",
+        "esempi casi reali"
+      ],
+      "learningOutcomes": [
+        "Applicare tecniche di ascolto attivo con clienti e colleghi",
+        "Spiegare problemi tecnici complessi in linguaggio accessibile",
+        "Gestire aspettative realistiche sui tempi e costi riparazioni",
+        "Comunicare chiaramente limitazioni e possibilità di recupero"
+      ],
+      "practicalCriteria": [
+        "Simulazione 3 conversazioni con clienti con problemi diversi",
+        "Spiegazione corretta problema tecnico a persona non esperta",
+        "Gestione efficace di situazione con aspettative irrealistiche"
+      ],
+      "skillTags": [
+        "comunicazione",
+        "relazioni",
+        "didattica"
+      ],
+      "revisionDate": null,
+      "dependencies": []
+    },
+    {
+      "id": "BIKE-0.1.3",
+      "title": "Organizzazione spazi e gestione magazzino",
+      "description": "Sistemi semplici per organizzare attrezzi, tracciare ricambi, gestire inventario in officine autogestite",
+      "difficulty": "base",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-0.1.3.md",
+      "toolsRequired": [
+        "cassetti organizzatori",
+        "etichette",
+        "registro inventario"
+      ],
+      "learningOutcomes": [
+        "Organizzare spazi di lavoro per efficienza e sicurezza",
+        "Implementare sistema semplice tracciamento ricambi",
+        "Gestire scorte minime per parti comuni",
+        "Creare sistema di prestito attrezzi per comunità"
+      ],
+      "practicalCriteria": [
+        "Riorganizzazione completa area attrezzi secondo principi 5S",
+        "Creazione sistema inventario funzionale per 50 ricambi",
+        "Gestione corretta prestito/restituzione 5 attrezzi"
+      ],
+      "skillTags": [
+        "organizzazione",
+        "gestione",
+        "logistica"
+      ],
+      "revisionDate": null,
+      "dependencies": []
+    },
+    {
+      "id": "BIKE-0.2.1",
+      "title": "Metodologia problem solving sistematico",
+      "description": "Approccio strutturato per diagnosi guasti complessi, analisi cause radice, pianificazione interventi",
+      "difficulty": "base",
+      "estimatedDuration": 18,
+      "contentPath": "/content/bike-0.2.1.md",
+      "toolsRequired": [
+        "schede diagnostiche",
+        "diagrammi causa-effetto"
+      ],
+      "learningOutcomes": [
+        "Applicare metodo sistematico per diagnosi problemi complessi",
+        "Distinguere sintomi da cause radice",
+        "Pianificare interventi in ordine logico di priorità",
+        "Documentare processo diagnostico per apprendimento futuro"
+      ],
+      "practicalCriteria": [
+        "Risoluzione 3 casi diagnostici complessi con metodo strutturato",
+        "Creazione diagramma causa-effetto per problema reale",
+        "Documentazione completa processo diagnostico"
+      ],
+      "skillTags": [
+        "diagnosi",
+        "problem-solving",
+        "metodologia"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-0.1.2",
+          "type": "recommended"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-0.2.2",
+      "title": "Gestione progetti restauro e personalizzazione",
+      "description": "Pianificazione fasi lavoro, stima tempi/costi realistici, gestione aspettative, documentazione progressi",
+      "difficulty": "intermedio",
+      "estimatedDuration": 20,
+      "contentPath": "/content/bike-0.2.2.md",
+      "toolsRequired": [
+        "template progetto",
+        "cronoprogramma",
+        "registro fotografico"
+      ],
+      "learningOutcomes": [
+        "Pianificare progetto restauro in fasi logiche e sequenziali",
+        "Stimare tempi e costi realistici per progetti complessi",
+        "Gestire aspettative cliente durante progetto lungo",
+        "Documentare progressi con foto e note per portfolio"
+      ],
+      "practicalCriteria": [
+        "Pianificazione completa progetto restauro bici vintage",
+        "Stima realistica tempi/costi per progetto medio",
+        "Documentazione fotografica progressi progetto"
+      ],
+      "skillTags": [
+        "progettazione",
+        "pianificazione",
+        "documentazione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-0.1.3",
+          "type": "recommended"
+        },
+        {
+          "moduleId": "BIKE-0.2.1",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-0.3.1",
+      "title": "Didattica e mentoring in ciclofficina popolare",
+      "description": "Tecniche insegnamento pratico, creazione materiali didattici semplici, gestione gruppi apprendimento",
+      "difficulty": "intermedio",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-0.3.1.md",
+      "toolsRequired": [
+        "schede didattiche",
+        "materiali dimostrativi"
+      ],
+      "learningOutcomes": [
+        "Applicare tecniche insegnamento pratico per diverse abilità",
+        "Creare materiali didattici semplici e accessibili",
+        "Gestire dinamiche gruppo in sessioni apprendimento collettivo",
+        "Valutare progressi apprendimento in modo costruttivo"
+      ],
+      "practicalCriteria": [
+        "Preparazione e conduzione lezione pratica su argomento base",
+        "Creazione 3 schede didattiche per attività diverse",
+        "Gestione efficace sessione apprendimento con 3 partecipanti"
+      ],
+      "skillTags": [
+        "didattica",
+        "mentoring",
+        "comunità"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-0.1.2",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-0.3.2",
+      "title": "Sostenibilità ed economia circolare in officina",
+      "description": "Principi riparazione vs sostituzione, riciclo componenti, scelta materiali sostenibili, riduzione sprechi",
+      "difficulty": "base",
+      "estimatedDuration": 12,
+      "contentPath": "/content/bike-0.3.2.md",
+      "toolsRequired": [
+        "componenti riciclabili",
+        "schede valutazione sostenibilità"
+      ],
+      "learningOutcomes": [
+        "Applicare principi economia circolare nelle decisioni riparazione",
+        "Valutare sostenibilità componenti e materiali",
+        "Implementare pratiche riduzione sprechi in officina",
+        "Promuovere cultura riparazione vs sostituzione in comunità"
+      ],
+      "practicalCriteria": [
+        "Valutazione sostenibilità 5 decisioni riparazione diverse",
+        "Implementazione 3 pratiche riduzione sprechi in officina",
+        "Preparazione proposta progetto economia circolare per comunità"
+      ],
+      "skillTags": [
+        "sostenibilità",
+        "economia-circolare",
+        "ambiente"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-0.1.3",
+          "type": "recommended"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-0.3.3",
+      "title": "Documentazione digitale e archiviazione lavori",
+      "description": "Uso smartphone per foto prima/dopo, creazione schede digitali, archiviazione organizzata interventi",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-0.3.3.md",
+      "toolsRequired": [
+        "smartphone/fotocamera",
+        "app note/schede digitali"
+      ],
+      "learningOutcomes": [
+        "Creare documentazione fotografica efficace prima/dopo interventi",
+        "Organizzare schede digitali per tracciabilità lavori",
+        "Implementare sistema archiviazione semplice e accessibile",
+        "Condividere conoscenze attraverso documentazione digitale"
+      ],
+      "practicalCriteria": [
+        "Creazione documentazione completa 3 interventi diversi",
+        "Organizzazione archivio digitale con 10 schede lavori",
+        "Condivisione efficace conoscenza attraverso documentazione"
+      ],
+      "skillTags": [
+        "digitale",
+        "documentazione",
+        "archiviazione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-0.1.3",
+          "type": "recommended"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-0.3.4",
+      "title": "Ricerca documentazione online parti bicicletta",
+      "description": "Localizzare e interpretare la documentazione tecnica online dei principali marchi per identificare, installare e configurare correttamente i componenti",
+      "difficulty": "base",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-0.3.4.md",
+      "toolsRequired": [
+        "computer o smartphone",
+        "connessione internet",
+        "blocco note digitale"
+      ],
+      "learningOutcomes": [
+        "Identificare i siti ufficiali dei principali marchi (Shimano, SRAM, Campagnolo, Tektro, etc.)",
+        "Navigare cataloghi tecnici e schede prodotto online",
+        "Interpretare diagrammi esplosi e tabelle di compatibilità",
+        "Trovare manuali di installazione e specifiche tecniche",
+        "Utilizzare motori di ricerca per documentazione specifica",
+        "Salvare e organizzare documenti per futuri riferimenti"
+      ],
+      "practicalCriteria": [
+        "Ricerca e download manuale installazione per 3 componenti diversi",
+        "Identificazione compatibilità tra 2 componenti di marchi diversi",
+        "Creazione archivio digitale con 5 documenti tecnici organizzati",
+        "Interpretazione corretta di diagramma esploso per smontaggio"
+      ],
+      "skillTags": [
+        "ricerca-informazioni",
+        "documentazione-tecnica",
+        "compatibilità",
+        "organizzazione",
+        "marchi"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-0.3.3",
+          "type": "recommended",
+          "reason": "Digital documentation skills helpful for organizing technical resources"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-0.4.1",
+      "title": "Etica e valori officine popolari",
+      "description": "Principi cooperazione, accessibilità, inclusione, autogestione nelle officine di comunità",
+      "difficulty": "base",
+      "estimatedDuration": 8,
+      "contentPath": "/content/bike-0.4.1.md",
+      "toolsRequired": [
+        "carta valori",
+        "casi studio"
+      ],
+      "learningOutcomes": [
+        "Comprendere e applicare principi etici officine popolari",
+        "Promuovere inclusione e accessibilità in comunità",
+        "Gestire conflitti secondo principi cooperativi",
+        "Contribuire a cultura autogestione e mutualismo"
+      ],
+      "practicalCriteria": [
+        "Applicazione principi etici in 3 scenari reali",
+        "Proposta progetto inclusivo per comunità locale",
+        "Gestione costruttiva situazione conflittuale"
+      ],
+      "skillTags": [
+        "etica",
+        "comunità",
+        "valori"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-0.1.2",
+          "type": "mandatory"
+        }
+      ]
+    }
+  ]
+}

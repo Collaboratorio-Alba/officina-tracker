@@ -1,267 +1,287 @@
 {
   "teachingArea": {
-    "name": "Pneumatici e Camere d’Aria",
-    "description": "Diagnosi, riparazione e sostituzione di pneumatici e camere d’aria, per bici da recupero con ruote di tipo economico",
+    "name": "Ruote e Pneumatici",
+    "description": "Conoscenza, manutenzione e riparazione di ruote, pneumatici e sistemi di gonfiaggio",
     "color": "#2ecc71"
   },
   "modules": [
     {
       "id": "BIKE-3.1.1",
-      "title": "Tipologie di pneumatici",
-      "description": "Distinguere clincher, tubeless e tubolare e sapere cosa si trova nelle bici di recupero",
+      "title": "Tipologie di ruote e dimensioni",
+      "description": "Riconoscimento dei diversi tipi di ruote, standard dimensionali e loro applicazioni specifiche",
       "difficulty": "base",
-      "estimatedDuration": 12,
+      "estimatedDuration": 16,
       "contentPath": "/content/bike-3.1.1.md",
       "toolsRequired": [
-        "vari tipi di pneumatici",
-        "tagli di sezione campione"
+        "metro a nastro",
+        "calibro",
+        "esempi ruote diverse",
+        "tabelle dimensioni"
       ],
       "learningOutcomes": [
-        "Riconoscere il tipo di pneumatico in base alla struttura",
-        "Distinguere copertone, camera e nastro paranipple",
-        "Capire quale sistema è adatto alle bici di recupero",
-        "Conoscere i vantaggi di ciascun tipo in termini di costo e manutenzione"
+        "Identificare i principali standard di ruote (700C, 26\", 27.5\", 29\")",
+        "Riconoscere differenze tra ruote per strada, MTB e city bike",
+        "Misurare correttamente diametro e larghezza ruote",
+        "Comprendere compatibilità tra ruote e telai"
       ],
       "practicalCriteria": [
-        "Identificazione corretta su 5 ruote diverse",
-        "Classificazione tipo pneumatico e compatibilità cerchio"
+        "Identificazione corretta 5 tipi di ruote diverse",
+        "Misurazione precisa dimensioni ruote",
+        "Valutazione compatibilità ruota-telaio"
       ],
       "skillTags": [
-        "pneumatici",
-        "riconoscimento",
-        "economia"
+        "ruote",
+        "dimensioni",
+        "standard"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-2.2.4",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.1.4",
+          "moduleId": "BIKE-2.1.7",
           "type": "mandatory"
         }
       ]
     },
     {
       "id": "BIKE-3.1.2",
-      "title": "Misure e compatibilità cerchi",
-      "description": "Interpretare sigle e numeri (ETRTO, pollici, mm) per evitare errori di misura",
+      "title": "Camere d'aria, valvole e compatibilità",
+      "description": "Conoscenza delle camere d'aria, tipologie di valvole e loro compatibilità con ruote e pneumatici",
       "difficulty": "base",
-      "estimatedDuration": 15,
+      "estimatedDuration": 14,
       "contentPath": "/content/bike-3.1.2.md",
       "toolsRequired": [
-        "metro",
-        "calibro",
-        "ruote campione"
+        "camere d'aria diverse",
+        "pompe con diversi attacchi",
+        "adattatori valvole",
+        "calibro"
       ],
       "learningOutcomes": [
-        "Leggere codici ETRTO su copertoni e cerchi",
-        "Capire compatibilità tra larghezza pneumatico e cerchio",
-        "Evitare montaggi errati che causano stallonamenti",
-        "Trucchi per misurare a occhio diametro e larghezza"
+        "Riconoscere tipologie di valvole (Presta, Schrader, Dunlop)",
+        "Identificare dimensioni e compatibilità camere d'aria",
+        "Utilizzare adattatori per pompe diverse",
+        "Scegliere camera d'aria appropriata per ogni ruota"
       ],
       "practicalCriteria": [
-        "Lettura codici su 5 pneumatici diversi",
-        "Determinazione compatibilità corretta",
-        "Montaggio prova con verifica visiva"
+        "Identificazione 3 tipi di valvole",
+        "Scelta camera d'aria corretta per ruota specifica",
+        "Utilizzo adattatori pompa"
       ],
       "skillTags": [
-        "pneumatici",
-        "misurazione",
-        "sicurezza"
+        "camere-aria",
+        "valvole",
+        "compatibilità"
       ],
       "revisionDate": null,
       "dependencies": [
         {
           "moduleId": "BIKE-3.1.1",
           "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.2",
-          "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-3.2.1",
-      "title": "Individuazione del foro",
-      "description": "Scoprire rapidamente dove perde aria, anche senza secchio d’acqua",
+      "id": "BIKE-3.1.3",
+      "title": "Smontaggio e montaggio copertoni",
+      "description": "Tecniche per smontare e montare pneumatici senza danneggiare ruote o camere d'aria",
       "difficulty": "base",
-      "estimatedDuration": 10,
-      "contentPath": "/content/bike-3.2.1.md",
+      "estimatedDuration": 18,
+      "contentPath": "/content/bike-3.1.3.md",
       "toolsRequired": [
-        "camera forata",
-        "pompa",
-        "secchio o spruzzino acqua"
+        "levette copertone",
+        "pompa aria",
+        "guanti protettivi",
+        "sapone liquido (lubrificante)"
       ],
       "learningOutcomes": [
-        "Metodo immersione tradizionale (bolla)",
-        "Metodo a secco con spruzzino o ascolto",
-        "Segnare posizione foro per riparazione",
-        "Diagnosi causa: pizzicatura, chiodo, valvola, abrasione"
+        "Applicare tecniche di smontaggio senza danni",
+        "Montare pneumatici senza pizzicare la camera d'aria",
+        "Utilizzare levette correttamente",
+        "Riconoscere quando servono tecniche speciali"
       ],
       "practicalCriteria": [
-        "Identificazione foro su 3 camere diverse",
-        "Riconoscimento causa tipica su almeno 2 campioni"
+        "Smontaggio/montaggio pneumatico su 3 tipi di ruote",
+        "Utilizzo levette senza danneggiare cerchi",
+        "Montaggio senza pizzicamenti camera d'aria"
       ],
       "skillTags": [
-        "riparazione",
-        "diagnosi",
-        "camera-aria"
+        "pneumatici",
+        "tecnica",
+        "manutenzione"
       ],
       "revisionDate": null,
       "dependencies": [
         {
           "moduleId": "BIKE-3.1.2",
           "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.1.3",
+          "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-3.2.2",
-      "title": "Preparazione e applicazione toppa",
-      "description": "Eseguire una riparazione durevole, anche con materiali di recupero",
+      "id": "BIKE-3.1.4",
+      "title": "Riparazione forature e sostituzione camera",
+      "description": "Diagnosi e riparazione di forature, sostituzione camere d'aria e prevenzione problemi ricorrenti",
       "difficulty": "base",
-      "estimatedDuration": 12,
-      "contentPath": "/content/bike-3.2.2.md",
+      "estimatedDuration": 20,
+      "contentPath": "/content/bike-3.1.4.md",
       "toolsRequired": [
-        "colla vulcanizzante",
-        "pezze",
-        "carta vetrata fine",
-        "gessetto"
+        "kit riparazione forature",
+        "acqua per test perdite",
+        "pompa aria",
+        "stracci"
       ],
       "learningOutcomes": [
-        "Pulire e carteggiare zona foro",
-        "Applicare toppa centrata e pressare correttamente",
-        "Usare pezze commerciali o ricavate da vecchie camere",
-        "Testare tenuta con gonfiaggio successivo"
+        "Localizzare forature con metodi diversi",
+        "Applicare toppe correttamente",
+        "Sostituire camera d'aria rapidamente",
+        "Identificare cause forature ricorrenti"
       ],
       "practicalCriteria": [
-        "Riparazione 3 camere con pezze commerciali e 1 con materiale riciclato",
-        "Verifica tenuta dopo 12h di gonfiaggio"
+        "Riparazione 3 forature diverse",
+        "Sostituzione camera d'aria in meno di 5 minuti",
+        "Identificazione causa foratura ricorrente"
       ],
       "skillTags": [
         "riparazione",
-        "riciclo",
-        "manualità"
+        "forature",
+        "emergenza"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-3.2.1",
+          "moduleId": "BIKE-3.1.3",
           "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-3.3.1",
-      "title": "Rimozione ruota",
-      "description": "Smontare la ruota in sicurezza, con o senza sgancio rapido",
-      "difficulty": "base",
-      "estimatedDuration": 10,
-      "contentPath": "/content/bike-3.3.1.md",
+      "id": "BIKE-3.1.5",
+      "title": "Sostituzione raggio e bilanciamento tensione",
+      "description": "Tecniche per sostituire raggi rotti e bilanciare la tensione della ruota",
+      "difficulty": "intermedio",
+      "estimatedDuration": 22,
+      "contentPath": "/content/bike-3.1.5.md",
       "toolsRequired": [
-        "chiavi 15mm",
-        "chiavi esagonali",
-        "cavalletto"
+        "raggi di ricambio",
+        "chiave per nipples",
+        "tensimetro (opzionale)",
+        "truciolo per segnatura"
       ],
       "learningOutcomes": [
-        "Allentare dadi o sgancio rapido con bici in sicurezza",
-        "Evitare danneggiamento catena o telaio nel processo",
-        "Trucco: appendere catena al fodero per evitare sporco",
-        "Riposizionare ruota assicurando centraggio corretto"
+        "Identificare tipo e lunghezza raggi",
+        "Sostituire raggio rotto senza smontare ruota",
+        "Bilanciare tensione raggi intorno al mozzo",
+        "Riconoscere tensioni eccessive o insufficienti"
       ],
       "practicalCriteria": [
-        "Smontaggio e rimontaggio completo ruota",
-        "Posizionamento corretto catena e pattini"
+        "Sostituzione raggio su ruota anteriore e posteriore",
+        "Bilanciamento tensione dopo sostituzione",
+        "Identificazione tensioni anomale"
       ],
       "skillTags": [
-        "smontaggio",
-        "sicurezza",
-        "ruote"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-3.2.2",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.5",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-3.3.2",
-      "title": "Smontaggio e installazione pneumatico",
-      "description": "Usare leve con criterio per non danneggiare cerchio o camera",
-      "difficulty": "base",
-      "estimatedDuration": 12,
-      "contentPath": "/content/bike-3.3.2.md",
-      "toolsRequired": [
-        "leve smontacopertoni",
-        "lubrificante neutro o acqua saponata"
-      ],
-      "learningOutcomes": [
-        "Uso corretto delle leve (posizione, forza, angolo)",
-        "Lubrificare bordo per facilitare reinstallazione",
-        "Controllare che camera non resti pizzicata",
-        "Test pressurizzazione iniziale per verifica montaggio"
-      ],
-      "practicalCriteria": [
-        "Montaggio e smontaggio su 3 ruote diverse",
-        "Assenza pizzicature o forature post-rimontaggio"
-      ],
-      "skillTags": [
-        "ruote",
-        "manualità",
-        "attenzione"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-3.3.1",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-3.4.1",
-      "title": "Tipologie di valvole",
-      "description": "Riconoscere Presta, Schrader, Woods e le compatibilità con le pompe",
-      "difficulty": "base",
-      "estimatedDuration": 8,
-      "contentPath": "/content/bike-3.4.1.md",
-      "toolsRequired": [
-        "camere campione",
-        "pompe di vari tipi"
-      ],
-      "learningOutcomes": [
-        "Differenze fisiche e funzionali delle valvole principali",
-        "Adattatori universali e conversioni possibili",
-        "Prendersi cura della filettatura e del tappino",
-        "Verifica perdita valvola e sostituzione anima"
-      ],
-      "practicalCriteria": [
-        "Identificazione valvola su 5 camere diverse",
-        "Uso corretto dell’adattatore universale",
-        "Sostituzione anima con attrezzo dedicato"
-      ],
-      "skillTags": [
-        "valvole",
-        "riconoscimento",
+        "raggi",
+        "tensione",
         "riparazione"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-3.3.2",
+          "moduleId": "BIKE-3.1.4",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-3.1.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-2.1.3",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-3.1.6",
+      "title": "Centratura ruota su cavalletto",
+      "description": "Utilizzo del cavalletto per centratura per correggere ovalizzazioni e disallineamenti delle ruote",
+      "difficulty": "intermedio",
+      "estimatedDuration": 25,
+      "contentPath": "/content/bike-3.1.6.md",
+      "toolsRequired": [
+        "cavalletto centratura",
+        "chiave per nipples",
+        "indicatore di centratura",
+        "truciolo per segnatura"
+      ],
+      "learningOutcomes": [
+        "Montare ruota correttamente sul cavalletto",
+        "Identificare ovalizzazioni e disallineamenti",
+        "Applicare correzioni progressive",
+        "Verificare centratura finale"
+      ],
+      "practicalCriteria": [
+        "Centratura completa ruota disallineata",
+        "Correzione ovalizzazione lieve",
+        "Verifica centratura con tolleranze accettabili"
+      ],
+      "skillTags": [
+        "centratura",
+        "precisione",
+        "cavalletto"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-3.1.5",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.1.2",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-3.1.7",
+      "title": "Costruzione completa ruota: mozzo, raggi, nipples, cerchio",
+      "description": "Procedura completa per costruire una ruota da zero, dalla scelta componenti alla centratura finale",
+      "difficulty": "avanzato",
+      "estimatedDuration": 35,
+      "contentPath": "/content/bike-3.1.7.md",
+      "toolsRequired": [
+        "mozzo, raggi, nipples, cerchio",
+        "cavalletto centratura",
+        "chiave per nipples",
+        "tensimetro",
+        "lubrificante nipples"
+      ],
+      "learningOutcomes": [
+        "Calcolare lunghezza raggi per configurazione specifica",
+        "Montare raggi secondo schema appropriato",
+        "Eseguire centratura completa della ruota",
+        "Verificare qualità costruzione finale"
+      ],
+      "practicalCriteria": [
+        "Costruzione ruota completa funzionale",
+        "Applicazione schema raggi corretto",
+        "Centratura entro tolleranze standard",
+        "Verifica resistenza e funzionalità"
+      ],
+      "skillTags": [
+        "costruzione",
+        "progettazione",
+        "artigianato"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-3.1.6",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-2.1.3",
           "type": "mandatory"
         }
       ]

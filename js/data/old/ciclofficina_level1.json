@@ -1,0 +1,641 @@
+{
+  "version": "1.1.0",
+  "schemaNotes": "Schema ciclofficina popolare - Livello 1 COMPLETO: Fondamenti Teorici Base",
+  "courses": [
+    {
+      "id": "ciclofficina-basics",
+      "title": "Manutenzione e Riparazione Biciclette",
+      "description": "Percorso didattico completo di formazione in ciclofficina popolare per il recupero di biciclette economiche e abbandonate",
+      "teachingAreas": [
+        {
+          "name": "Fondamenti Teorici Base",
+          "description": "Principi teorici essenziali e trucchi pratici per comprendere i meccanismi della bicicletta",
+          "color": "#e67e22",
+          "modules": [
+            {
+              "id": "BIKE-1.1.1",
+              "title": "Riconoscimento telaio e materiali",
+              "description": "Identificare materiali comuni nei telai di bici economiche e capire cosa si può riparare",
+              "difficulty": "base",
+              "estimatedDuration": 8,
+              "contentPath": "/content/bike-1.1.1.md",
+              "toolsRequired": [
+                "magnete",
+                "lima piccola"
+              ],
+              "learningOutcomes": [
+                "Distinguere acciaio da alluminio con test magnetico",
+                "Riconoscere segni di ruggine recuperabile vs irreparabile",
+                "Identificare saldature difettose o crepe strutturali"
+              ],
+              "practicalCriteria": [
+                "Test magnetico corretto su 5 telai diversi",
+                "Classificazione stato conservazione: riparabile/non riparabile"
+              ],
+              "skillTags": [
+                "diagnosi",
+                "materiali",
+                "recupero"
+              ],
+              "revisionDate": null,
+              "dependencies": []
+            },
+            {
+              "id": "BIKE-1.1.2",
+              "title": "Nomenclatura componenti principali",
+              "description": "Imparare i nomi giusti per comunicare in officina e riconoscere i pezzi intercambiabili",
+              "difficulty": "base",
+              "estimatedDuration": 10,
+              "contentPath": "/content/bike-1.1.2.md",
+              "toolsRequired": [],
+              "learningOutcomes": [
+                "Usare terminologia corretta per ogni componente",
+                "Riconoscere quali parti sono universali e quali specifiche",
+                "Distinguere componenti originali da sostituzioni improvvisate"
+              ],
+              "practicalCriteria": [
+                "Denominazione corretta di 20 componenti principali",
+                "Identificazione parti intercambiabili tra 3 bici diverse"
+              ],
+              "skillTags": [
+                "terminologia",
+                "identificazione"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.1.1",
+                  "type": "mandatory"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.1.3",
+              "title": "Classificazione tipologie di biciclette",
+              "description": "Riconoscere city bike, MTB da discount, bici da bambino e capire le differenze pratiche",
+              "difficulty": "base",
+              "estimatedDuration": 12,
+              "contentPath": "/content/bike-1.1.3.md",
+              "toolsRequired": [
+                "metro a nastro"
+              ],
+              "learningOutcomes": [
+                "Distinguere bici economiche da quelle di qualità",
+                "Riconoscere misure ruote e compatibilità ricambi",
+                "Identificare modifiche fai-da-te precedenti"
+              ],
+              "practicalCriteria": [
+                "Classificazione corretta di 10 biciclette diverse",
+                "Stima valore di recuperabilità per ogni tipologia"
+              ],
+              "skillTags": [
+                "classificazione",
+                "valutazione"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.1.2",
+                  "type": "mandatory"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.1.4",
+              "title": "Sistemi di misure e standard",
+              "description": "Misure essenziali per trovare ricambi compatibili senza sbagliare",
+              "difficulty": "base",
+              "estimatedDuration": 15,
+              "contentPath": "/content/bike-1.1.4.md",
+              "toolsRequired": [
+                "calibro",
+                "metro",
+                "righello"
+              ],
+              "learningOutcomes": [
+                "Misurare diametri ruote, tubi sterzo, movimento centrale",
+                "Riconoscere standard europei vs americani",
+                "Trucchi per misurare senza attrezzi professionali"
+              ],
+              "practicalCriteria": [
+                "Misurazione corretta di 8 dimensioni critiche",
+                "Identificazione standard su bici sconosciuta"
+              ],
+              "skillTags": [
+                "misurazione",
+                "standard",
+                "trucchi"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.1.3",
+                  "type": "mandatory"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.2.1",
+              "title": "Principi base delle filettature",
+              "description": "Capire come funzionano le viti senza rovinarle durante lo smontaggio",
+              "difficulty": "base",
+              "estimatedDuration": 10,
+              "contentPath": "/content/bike-1.2.1.md",
+              "toolsRequired": [
+                "viti di scarto",
+                "penetrante WD40"
+              ],
+              "learningOutcomes": [
+                "Riconoscere filettature metriche da pollici",
+                "Applicare la regola del senso di rotazione",
+                "Liberare viti bloccate senza danneggiare filetti"
+              ],
+              "practicalCriteria": [
+                "Identificazione corretta tipo filettatura su 10 viti",
+                "Sblocco vite arrugginita senza danni"
+              ],
+              "skillTags": [
+                "meccanica-base",
+                "filettature",
+                "recupero"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.1.4",
+                  "type": "mandatory"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.2.2",
+              "title": "Senso di rotazione (destro/sinistro)",
+              "description": "La regola d'oro per non fare danni: righty-tighty, lefty-loosey e le eccezioni",
+              "difficulty": "base",
+              "estimatedDuration": 8,
+              "contentPath": "/content/bike-1.2.2.md",
+              "toolsRequired": [
+                "chiavi Allen varie"
+              ],
+              "learningOutcomes": [
+                "Applicare la regola base del senso orario",
+                "Riconoscere filettature sinistre (pedale sx, mozzo)",
+                "Trucco mnemonico per non sbagliare mai"
+              ],
+              "practicalCriteria": [
+                "Smontaggio/rimontaggio 5 viti senza errori",
+                "Identificazione filettature sinistre su bici completa"
+              ],
+              "skillTags": [
+                "meccanica-base",
+                "mnemotecniche"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.2.1",
+                  "type": "mandatory"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.2.3",
+              "title": "Standard BSA, ITA, FRA, GER",
+              "description": "I principali standard del movimento centrale nelle bici economiche europee",
+              "difficulty": "intermedio",
+              "estimatedDuration": 18,
+              "contentPath": "/content/bike-1.2.3.md",
+              "toolsRequired": [
+                "calibro",
+                "esempi di calotte"
+              ],
+              "learningOutcomes": [
+                "Riconoscere visivamente i 4 standard principali",
+                "Sapere quali attrezzi servono per ogni tipo",
+                "Trucchi per adattare ricambi non perfetti"
+              ],
+              "practicalCriteria": [
+                "Identificazione standard su 6 telai diversi",
+                "Scelta attrezzo corretto per ogni standard"
+              ],
+              "skillTags": [
+                "standard",
+                "movimento-centrale",
+                "identificazione"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.2.2",
+                  "type": "mandatory"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.2.4",
+              "title": "Passo e diametro filettature",
+              "description": "Misurare il passo delle viti per trovare i ricambi giusti nei negozi generici",
+              "difficulty": "intermedio",
+              "estimatedDuration": 12,
+              "contentPath": "/content/bike-1.2.4.md",
+              "toolsRequired": [
+                "calibro",
+                "pettine filettature",
+                "viti campione"
+              ],
+              "learningOutcomes": [
+                "Misurare passo e diametro con precisione",
+                "Usare il pettine filettature per identificazione rapida",
+                "Trovare viti compatibili in ferramenta normale"
+              ],
+              "practicalCriteria": [
+                "Misurazione corretta passo di 8 viti diverse",
+                "Acquisto vite sostitutiva in ferramenta generica"
+              ],
+              "skillTags": [
+                "misurazione",
+                "ricambi",
+                "autonomia"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.2.3",
+                  "type": "recommended"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.2.5",
+              "title": "Coppia di serraggio e precauzioni",
+              "description": "Imparare a stringere le viti abbastanza ma non troppo, senza attrezzi costosi",
+              "difficulty": "intermedio",
+              "estimatedDuration": 15,
+              "contentPath": "/content/bike-1.2.5.md",
+              "toolsRequired": [
+                "chiave dinamometrica economica",
+                "marcatore permanente",
+                "frenafiletti"
+              ],
+              "learningOutcomes": [
+                "Capire il concetto di coppia di serraggio e perché è importante",
+                "Riconoscere i segnali di vite troppo stretta o troppo allentata",
+                "Tecniche empiriche per serrare correttamente senza dinamometrica",
+                "Trucchi per prevenire svitamenti spontanei (Loctite, rondelle elastiche)"
+              ],
+              "practicalCriteria": [
+                "Serraggio corretto di 5 viti critiche con verifica pratica",
+                "Identificazione viti allentate o troppo strette su bici completa",
+                "Applicazione corretta di frenafiletti o rondella elastica"
+              ],
+              "skillTags": [
+                "meccanica-base",
+                "sicurezza",
+                "prevenzione-danni"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.2.4",
+                  "type": "mandatory"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.3.1",
+              "title": "Riconoscimento e uso chiavi Allen",
+              "description": "Imparare a usare correttamente le chiavi a brugola senza rovinare le viti",
+              "difficulty": "base",
+              "estimatedDuration": 10,
+              "contentPath": "/content/bike-1.3.1.md",
+              "toolsRequired": [
+                "set chiavi Allen metriche",
+                "viti di scarto",
+                "olio penetrante"
+              ],
+              "learningOutcomes": [
+                "Riconoscere le misure più comuni (4, 5, 6, 8mm)",
+                "Inserire correttamente la chiave per evitare di spanare",
+                "Trucco per recuperare viti spanate con elastico o pasta abrasiva",
+                "Differenza tra chiavi a L e chiavi a T (quando usarle)"
+              ],
+              "practicalCriteria": [
+                "Identificazione misura corretta su 10 viti diverse",
+                "Smontaggio/montaggio senza spanature",
+                "Recupero di almeno una vite parzialmente spanata"
+              ],
+              "skillTags": [
+                "strumenti-base",
+                "prevenzione-danni",
+                "trucchi"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.2.5",
+                  "type": "mandatory"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.3.2",
+              "title": "Chiavi inglesi e fisse specifiche",
+              "description": "Quando serve una chiave fissa e quando basta l'inglese regolabile",
+              "difficulty": "base",
+              "estimatedDuration": 12,
+              "contentPath": "/content/bike-1.3.2.md",
+              "toolsRequired": [
+                "chiave inglese 250mm",
+                "set chiavi fisse 8-17mm"
+              ],
+              "learningOutcomes": [
+                "Misure chiavi fisse più utili per bici (10, 13, 15mm)",
+                "Usare la chiave inglese senza rovinare i dadi",
+                "Riconoscere quando la chiave inglese non basta",
+                "Trucchi per dadi arrotondati (chiavi a tubo, pinze autoserranti)"
+              ],
+              "practicalCriteria": [
+                "Selezione chiave corretta per 8 tipologie di dadi",
+                "Smontaggio dado arrotondato con tecnica alternativa",
+                "Uso corretto chiave inglese senza slittamenti"
+              ],
+              "skillTags": [
+                "strumenti-base",
+                "recupero",
+                "adattamento"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.3.1",
+                  "type": "mandatory"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.3.3",
+              "title": "Cacciaviti e inserti",
+              "description": "Riconoscere taglio, croce (Phillips/Pozidriv) e altri standard",
+              "difficulty": "base",
+              "estimatedDuration": 8,
+              "contentPath": "/content/bike-1.3.3.md",
+              "toolsRequired": [
+                "cacciaviti vari",
+                "inserti per avvitatore"
+              ],
+              "learningOutcomes": [
+                "Differenza tra Phillips (croce) e Pozidriv",
+                "Scegliere la misura giusta per non spanare",
+                "Trucco per viti spanate: elastico, pasta abrasiva, estrattori",
+                "Quando usare l'avvitatore elettrico e quando no"
+              ],
+              "practicalCriteria": [
+                "Identificazione tipo e misura su 10 viti",
+                "Smontaggio vite spanata con tecnica di recupero",
+                "Uso avvitatore con controllo coppia"
+              ],
+              "skillTags": [
+                "strumenti-base",
+                "identificazione",
+                "recupero"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.3.2",
+                  "type": "mandatory"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.3.4",
+              "title": "Pinze e tronchesi",
+              "description": "Strumenti multiuso per emergenze e recupero parti danneggiate",
+              "difficulty": "base",
+              "estimatedDuration": 8,
+              "contentPath": "/content/bike-1.3.4.md",
+              "toolsRequired": [
+                "pinza universale",
+                "tronchese",
+                "pinza a becco"
+              ],
+              "learningOutcomes": [
+                "Quando usare pinza invece della chiave (emergenza, dado arrotondato)",
+                "Tronchese per tagliare cavi, raggi rotti, fascette",
+                "Pinza a becco per anelli elastici e molle",
+                "Trucchi: pinze autoserranti come morsa portatile"
+              ],
+              "practicalCriteria": [
+                "Rimozione dado arrotondato con pinza autoserrante",
+                "Taglio cavo freno/cambio senza sfilacciamenti",
+                "Rimozione anello elastico con pinza a becco"
+              ],
+              "skillTags": [
+                "strumenti-base",
+                "emergenze",
+                "versatilità"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.3.3",
+                  "type": "mandatory"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.3.5",
+              "title": "Cavalletto e supporti di lavoro",
+              "description": "Come tenere ferma la bici per lavorare comodamente anche senza stand professionale",
+              "difficulty": "base",
+              "estimatedDuration": 10,
+              "contentPath": "/content/bike-1.3.5.md",
+              "toolsRequired": [
+                "cavalletto da officina o autocostruito",
+                "corde/cinghie"
+              ],
+              "learningOutcomes": [
+                "Vantaggi del cavalletto vs bici capovolta",
+                "Costruire supporto improvvisato con corde e ganci",
+                "Proteggere telaio e componenti durante il fissaggio",
+                "Altezza e posizione corretta per lavorare senza mal di schiena"
+              ],
+              "practicalCriteria": [
+                "Installazione bici su cavalletto in sicurezza",
+                "Creazione supporto alternativo funzionale",
+                "Lavoro su bici sospesa per 30min senza incidenti"
+              ],
+              "skillTags": [
+                "organizzazione-officina",
+                "ergonomia",
+                "autocostruzione"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.3.4",
+                  "type": "recommended"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.4.1",
+              "title": "Tipologie olio catena e paraffina",
+              "description": "Scegliere il lubrificante giusto: oli tradizionali vs paraffina per catene ultra-pulite",
+              "difficulty": "base",
+              "estimatedDuration": 15,
+              "contentPath": "/content/bike-1.4.1.md",
+              "toolsRequired": [
+                "campioni olio catena",
+                "paraffina candele/cera",
+                "pentolino vecchio",
+                "fornelletto",
+                "stracci"
+              ],
+              "learningOutcomes": [
+                "Differenza tra olio secco (clima asciutto/polvere) e umido (pioggia)",
+                "Paraffina/cera a caldo: vantaggi per ambienti polverosi e sterrati",
+                "Metodo bagno di paraffina: scioglimento, immersione catena, asciugatura",
+                "Quando NON usare WD40 come lubrificante permanente (evapora velocemente)",
+                "Frequenza lubrificazione in base a uso e condizioni ambientali"
+              ],
+              "practicalCriteria": [
+                "Scelta lubrificante corretto per 4 scenari d'uso (città/pioggia/sterrato/misto)",
+                "Applicazione olio tradizionale senza eccessi né gocciolamenti",
+                "Riconoscimento catena sotto-lubrificata (rumore) o sovra-lubrificata (sporco appiccicato)",
+                "Preparazione bagno paraffina e trattamento catena completo (opzionale avanzato)"
+              ],
+              "skillTags": [
+                "manutenzione",
+                "materiali-consumo",
+                "economia",
+                "soluzioni-alternative",
+                "paraffina"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.3.5",
+                  "type": "recommended"
+                },
+                {
+                  "moduleId": "BIKE-1.2.5",
+                  "type": "mandatory"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.4.2",
+              "title": "Grassi per cuscinetti",
+              "description": "Quando serve il grasso e quale tipo usare nel recupero bici vecchie",
+              "difficulty": "base",
+              "estimatedDuration": 12,
+              "contentPath": "/content/bike-1.4.2.md",
+              "toolsRequired": [
+                "grasso al litio",
+                "grasso marino",
+                "spatola"
+              ],
+              "learningOutcomes": [
+                "Differenza tra grasso e olio (quando usare quale)",
+                "Grasso al litio multiuso: il jolly dell'officina popolare",
+                "Grasso marino per componenti esposti a pioggia",
+                "Trucco: miscelare grasso vecchio con nuovo per recupero"
+              ],
+              "practicalCriteria": [
+                "Scelta grasso corretto per 4 applicazioni diverse",
+                "Applicazione quantità corretta su cuscinetto",
+                "Pulizia e re-ingrassaggio mozzo ruota"
+              ],
+              "skillTags": [
+                "manutenzione",
+                "cuscinetti",
+                "materiali-consumo"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.4.1",
+                  "type": "mandatory"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.4.3",
+              "title": "Sgrassatori e detergenti",
+              "description": "Pulire la trasmissione e i componenti sporchi senza prodotti costosi",
+              "difficulty": "base",
+              "estimatedDuration": 10,
+              "contentPath": "/content/bike-1.4.3.md",
+              "toolsRequired": [
+                "sgrassatore",
+                "spazzole",
+                "contenitore",
+                "guanti"
+              ],
+              "learningOutcomes": [
+                "Sgrassatori specifici vs alternative economiche (benzina, gasolio, soda caustica)",
+                "Sicurezza: ventilazione, guanti, protezione pelle",
+                "Tecniche di pulizia: immersione, spazzolatura, risciacquo",
+                "Cosa NON sgrassare mai (cuscinetti sigillati, guarnizioni gomma)"
+              ],
+              "practicalCriteria": [
+                "Pulizia completa catena e pignoni",
+                "Uso sicuro sgrassatore con DPI adeguati",
+                "Riconoscimento parti da non sgrassare"
+              ],
+              "skillTags": [
+                "pulizia",
+                "sicurezza",
+                "economia"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.4.2",
+                  "type": "mandatory"
+                }
+              ]
+            },
+            {
+              "id": "BIKE-1.4.4",
+              "title": "Prodotti anti-corrosione",
+              "description": "Proteggere le bici recuperate dalla ruggine futura",
+              "difficulty": "base",
+              "estimatedDuration": 8,
+              "contentPath": "/content/bike-1.4.4.md",
+              "toolsRequired": [
+                "WD40 o equivalente",
+                "grasso protettivo",
+                "spray anti-ruggine"
+              ],
+              "learningOutcomes": [
+                "WD40 come sbloccante e protettivo temporaneo",
+                "Convertitori di ruggine per telai recuperati",
+                "Protezione interna tubi con grasso fluido o olio",
+                "Cera o vernice spray per protezione esterna economica"
+              ],
+              "practicalCriteria": [
+                "Trattamento telaio rugginoso con convertitore",
+                "Protezione interna tubi con grasso fluido",
+                "Applicazione protettivo su catena e cavi per stoccaggio"
+              ],
+              "skillTags": [
+                "protezione",
+                "prevenzione",
+                "conservazione"
+              ],
+              "revisionDate": null,
+              "dependencies": [
+                {
+                  "moduleId": "BIKE-1.4.3",
+                  "type": "mandatory"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

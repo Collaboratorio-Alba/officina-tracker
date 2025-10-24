@@ -1,119 +1,119 @@
 {
   "teachingArea": {
-    "name": "Serie Sterzo e Forcella",
-    "description": "Smontaggio, pulizia, regolazione e diagnostica di serie sterzo e forcelle rigide, tipiche delle bici da recupero.",
-    "color": "#16a085"
+    "name": "Restauro e Progetti Sociali",
+    "description": "Tecniche avanzate di restauro biciclette e gestione di progetti sociali in ciclofficina",
+    "color": "#d35400"
   },
   "modules": [
     {
       "id": "BIKE-8.1.1",
-      "title": "Identificazione serie sterzo filettata",
-      "description": "Riconoscere componenti e funzionamento delle vecchie serie sterzo a calotte filettate.",
-      "difficulty": "base",
-      "estimatedDuration": 10,
+      "title": "Valutazione bici da restaurare e pianificazione interventi",
+      "description": "Metodologia per valutare biciclette da restaurare e pianificare gli interventi in modo sistematico",
+      "difficulty": "intermedio",
+      "estimatedDuration": 25,
       "contentPath": "/content/bike-8.1.1.md",
       "toolsRequired": [
-        "chiavi fisse sottili",
-        "sgrassatore",
-        "stracci"
+        "schede valutazione",
+        "calibro",
+        "lente d'ingrandimento",
+        "metro a nastro"
       ],
       "learningOutcomes": [
-        "Riconoscere calotta, controdado, cono e cuscinetti",
-        "Differenze tra cup-and-cone e cuscinetti sigillati",
-        "Identificare filettature compatibili e standard principali",
-        "Capire regolazione del precarico manuale"
+        "Valutare stato conservazione bicicletta completa",
+        "Stimare tempi e costi di restauro",
+        "Pianificare sequenza logica interventi",
+        "Identificare parti recuperabili e da sostituire"
       ],
       "practicalCriteria": [
-        "Identificazione corretta componenti su 3 sistemi diversi",
-        "Pulizia completa e sgrassaggio parti metalliche",
-        "Rilevamento presenza gioco o attrito"
+        "Valutazione completa 3 biciclette da restaurare",
+        "Pianificazione dettagliata interventi per ogni bici",
+        "Stima realistica tempi e costi",
+        "Identificazione parti critiche da sostituire"
       ],
       "skillTags": [
-        "serie-sterzo",
-        "identificazione",
-        "diagnosi"
+        "valutazione",
+        "pianificazione",
+        "restauro"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-6.1.1",
+          "moduleId": "BIKE-2.1.7",
           "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.1",
-          "type": "mandatory",
-          "reason": "Basic tool handling for headset work"
-        },
-        {
-          "moduleId": "BIKE-1.2.5",
-          "type": "mandatory",
-          "reason": "Torque knowledge for steering safety"
         }
       ]
     },
     {
       "id": "BIKE-8.1.2",
-      "title": "Regolazione e lubrificazione serie sterzo filettata",
-      "description": "Smontare, pulire e rimontare la serie sterzo regolando correttamente il precarico.",
+      "title": "Smontaggio completo telaio e catalogazione parti",
+      "description": "Procedura sistematica per smontaggio completo del telaio e catalogazione di tutti i componenti",
       "difficulty": "intermedio",
-      "estimatedDuration": 15,
+      "estimatedDuration": 30,
       "contentPath": "/content/bike-8.1.2.md",
       "toolsRequired": [
-        "chiavi sterzo",
-        "grasso",
-        "panno"
+        "attrezzi completi smontaggio",
+        "contenitori organizzati",
+        "etichette e marcatori",
+        "macchina fotografica"
       ],
       "learningOutcomes": [
-        "Smontare calotta superiore e rimuovere cuscinetti",
-        "Pulire, ingrassare e rimontare nella posizione corretta",
-        "Regolare precarico eliminando il gioco senza attriti",
-        "Controllare scorrevolezza con test basculante"
+        "Smontare completamente il telaio senza danni",
+        "Catalogare e organizzare tutti i componenti",
+        "Documentare stato componenti con foto",
+        "Creare inventario completo del progetto"
       ],
       "practicalCriteria": [
-        "Rimontaggio completo serie sterzo con regolazione corretta",
-        "Verifica scorrevolezza e assenza gioco",
-        "Pulizia finale e protezione filetti"
+        "Smontaggio completo telaio bici vintage",
+        "Catalogazione organizzata di 50+ componenti",
+        "Documentazione fotografica stato componenti",
+        "Creazione inventario digitale/fisico"
       ],
       "skillTags": [
-        "serie-sterzo",
-        "manutenzione",
-        "lubrificazione"
+        "smontaggio",
+        "catalogazione",
+        "organizzazione"
       ],
       "revisionDate": null,
       "dependencies": [
         {
           "moduleId": "BIKE-8.1.1",
           "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.1.3",
+          "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-8.2.1",
-      "title": "Caratteristiche serie sterzo A-Head",
-      "description": "Comprendere i componenti e la logica di serraggio delle serie sterzo moderne A-head (non filettate).",
-      "difficulty": "base",
-      "estimatedDuration": 10,
-      "contentPath": "/content/bike-8.2.1.md",
+      "id": "BIKE-8.1.3",
+      "title": "Trattamento e rimozione ruggine",
+      "description": "Tecniche avanzate per trattamento e rimozione della ruggine da telai e componenti metallici",
+      "difficulty": "intermedio",
+      "estimatedDuration": 28,
+      "contentPath": "/content/bike-8.1.3.md",
       "toolsRequired": [
-        "chiavi Allen 5-6mm",
-        "spessimetro",
-        "lubrificante leggero"
+        "prodotti antiruggine",
+        "spazzole metalliche",
+        "pasta abrasiva",
+        "guanti e DPI"
       ],
       "learningOutcomes": [
-        "Identificare componenti A-head: calotte, cuscinetti, ragnetto, expander cap",
-        "Capire il principio del precarico tramite expander e vite di testa",
-        "Distinguere centraggio tramite attacco manubrio",
-        "Verificare quando sostituire cuscinetti usurati"
+        "Identificare tipi di ruggine e loro gravità",
+        "Applicare tecniche di rimozione ruggine appropriate",
+        "Utilizzare convertitori di ruggine",
+        "Prevenire ruggine futura su telai restaurati"
       ],
       "practicalCriteria": [
-        "Smontaggio parziale A-head su forcella",
-        "Lubrificazione leggera e rimontaggio corretto",
-        "Verifica assenza gioco verticale"
+        "Rimozione ruggine da telaio ossidato",
+        "Applicazione convertitore ruggine",
+        "Preparazione superficie per verniciatura",
+        "Protezione finale anti-corrosione"
       ],
       "skillTags": [
-        "sterzo",
-        "identificazione",
-        "manutenzione"
+        "ruggine",
+        "trattamento",
+        "restauro"
       ],
       "revisionDate": null,
       "dependencies": [
@@ -122,168 +122,175 @@
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.2.3",
-          "type": "mandatory",
-          "reason": "Modern standards knowledge"
-        },
-        {
-          "moduleId": "BIKE-2.1.1",
-          "type": "mandatory",
-          "reason": "Systematic diagnostic approach"
+          "moduleId": "BIKE-0.1.1",
+          "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-8.2.2",
-      "title": "Regolazione e precarico sterzo moderno",
-      "description": "Serraggio corretto senza danneggiare cuscinetti e verifiche visive di allineamento.",
+      "id": "BIKE-8.1.4",
+      "title": "Ripristino vernice o sabbiatura",
+      "description": "Tecniche per ripristino della vernice originale o sabbiatura per preparazione a nuova verniciatura",
+      "difficulty": "avanzato",
+      "estimatedDuration": 35,
+      "contentPath": "/content/bike-8.1.4.md",
+      "toolsRequired": [
+        "attrezzatura sabbiatura (o alternativa)",
+        "carta vetrata vari grana",
+        "primer e vernici",
+        "attrezzatura verniciatura"
+      ],
+      "learningOutcomes": [
+        "Preparare superficie per verniciatura",
+        "Applicare tecniche di sabbiatura controllata",
+        "Ripristinare vernice originale con tecniche conservative",
+        "Verniciare telaio con finiture professionali"
+      ],
+      "practicalCriteria": [
+        "Preparazione superficie telaio per verniciatura",
+        "Applicazione sabbiatura controllata (o alternativa)",
+        "Ripristino vernice originale su area campione",
+        "Verniciatura completa telaio con finitura uniforme"
+      ],
+      "skillTags": [
+        "verniciatura",
+        "sabbiatura",
+        "finiture"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-8.1.3",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-1.1.6",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-8.1.5",
+      "title": "Ricostruzione ruote, trasmissione e freni",
+      "description": "Ricostruzione completa dei sistemi ruote, trasmissione e freni con componenti restaurati o nuovi",
+      "difficulty": "avanzato",
+      "estimatedDuration": 40,
+      "contentPath": "/content/bike-8.1.5.md",
+      "toolsRequired": [
+        "attrezzi costruzione ruote",
+        "componenti restaurati/ricambio",
+        "lubrificanti e grassi",
+        "strumenti regolazione"
+      ],
+      "learningOutcomes": [
+        "Ricostruire ruote con componenti restaurati",
+        "Ripristinare trasmissione con compatibilità storica",
+        "Restaurare e regolare sistemi frenanti",
+        "Integrare componenti moderni in restauro storico"
+      ],
+      "practicalCriteria": [
+        "Ricostruzione ruote con mozzi e cerchi restaurati",
+        "Ripristino trasmissione con compatibilità storica",
+        "Restauro e regolazione freni vintage",
+        "Integrazione componenti moderni funzionali"
+      ],
+      "skillTags": [
+        "ricostruzione",
+        "restauro",
+        "compatibilità-storica"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-8.1.4",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-3.1.7",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-8.1.6",
+      "title": "Assemblaggio finale e collaudo funzionale",
+      "description": "Assemblaggio finale del restauro e collaudo funzionale completo per garantire sicurezza e prestazioni",
+      "difficulty": "avanzato",
+      "estimatedDuration": 30,
+      "contentPath": "/content/bike-8.1.6.md",
+      "toolsRequired": [
+        "attrezzi assemblaggio completi",
+        "chiavi dinamometriche",
+        "strumenti collaudo",
+        "area test sicura"
+      ],
+      "learningOutcomes": [
+        "Assemblare completamente bici restaurata",
+        "Applicare tutte le coppie di serraggio corrette",
+        "Eseguire collaudo funzionale completo",
+        "Documentare processo di restauro completo"
+      ],
+      "practicalCriteria": [
+        "Assemblaggio completo bici restaurata",
+        "Applicazione coppie di serraggio su tutti i componenti",
+        "Collaudo funzionale su strada/roller",
+        "Documentazione fotografica finale"
+      ],
+      "skillTags": [
+        "assemblaggio",
+        "collaudo",
+        "documentazione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-8.1.5",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-6.1.7",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-8.1.7",
+      "title": "Donazioni, progetti sociali",
+      "description": "Gestione di progetti di donazione biciclette restaurate e organizzazione di iniziative sociali in ciclofficina",
       "difficulty": "intermedio",
-      "estimatedDuration": 12,
-      "contentPath": "/content/bike-8.2.2.md",
+      "estimatedDuration": 22,
+      "contentPath": "/content/bike-8.1.7.md",
       "toolsRequired": [
-        "chiave dinamometrica economica",
-        "righello",
-        "luce radente"
+        "schede progetto",
+        "materiali comunicazione",
+        "registri donazioni",
+        "attrezzatura eventi"
       ],
       "learningOutcomes": [
-        "Applicare precarico dalla vite superiore fino a blocco iniziale",
-        "Serraggio attacco manubrio con coppia adeguata",
-        "Verifica allineamento ruota-manubrio",
-        "Test finale: caduta libera manubrio senza impuntamenti"
+        "Organizzare progetti di donazione biciclette",
+        "Gestire relazioni con enti e beneficiari",
+        "Comunicare efficacemente progetti sociali",
+        "Valutare impatto sociale delle iniziative"
       ],
       "practicalCriteria": [
-        "Regolazione completa su 2 bici diverse",
-        "Allineamento preciso sterzo-ruota",
-        "Verifica ergonomia finale manubrio"
+        "Organizzazione progetto donazione 5 biciclette",
+        "Gestione relazioni con 2 enti beneficiari",
+        "Comunicazione progetto attraverso canali appropriati",
+        "Valutazione impatto sociale iniziativa"
       ],
       "skillTags": [
-        "sterzo",
-        "regolazione",
-        "ergonomia"
+        "progetti-sociali",
+        "donazioni",
+        "comunità"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-8.2.1",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-8.3.1",
-      "title": "Identificazione e controllo forcelle rigide",
-      "description": "Verificare dimensioni sterzo, offset e compatibilità ruote per bici da recupero.",
-      "difficulty": "base",
-      "estimatedDuration": 10,
-      "contentPath": "/content/bike-8.3.1.md",
-      "toolsRequired": [
-        "metro",
-        "filo a piombo",
-        "forcella smontata"
-      ],
-      "learningOutcomes": [
-        "Misurare diametro tubo sterzo e lunghezza filettatura",
-        "Controllare offset forcella per geometria di sterzo corretta",
-        "Valutare pieghe o danni visivi",
-        "Compatibilità ruote (26'', 28'', 700C)"
-      ],
-      "practicalCriteria": [
-        "Identificazione e misurazione su 3 forcelle diverse",
-        "Valutazione danni e decisione recupero",
-        "Registrazione misure in tabella"
-      ],
-      "skillTags": [
-        "forcella",
-        "diagnosi",
-        "compatibilità"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-6.4.1",
-          "type": "mandatory"
+          "moduleId": "BIKE-8.1.6",
+          "type": "recommended"
         },
         {
-          "moduleId": "BIKE-3.3.1",
-          "type": "mandatory",
-          "reason": "Wheel removal prerequisite"
-        },
-        {
-          "moduleId": "BIKE-2.1.3",
-          "type": "mandatory",
-          "reason": "Structural safety assessment"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-8.3.2",
-      "title": "Sostituzione forcella e verifica allineamenti",
-      "description": "Rimuovere forcelle rigide danneggiate e installare forcelle compatibili.",
-      "difficulty": "intermedio",
-      "estimatedDuration": 15,
-      "contentPath": "/content/bike-8.3.2.md",
-      "toolsRequired": [
-        "chiavi Allen",
-        "lime",
-        "grasso anti-seizing",
-        "righello"
-      ],
-      "learningOutcomes": [
-        "Smontaggio forcella da serie sterzo con attenzione",
-        "Applicazione grasso anti-seizing su tubo sterzo",
-        "Rimontaggio nuova forcella e verifica campanatura",
-        "Allineamento ruota e manubrio con riferimenti visivi"
-      ],
-      "practicalCriteria": [
-        "Sostituzione completa su bici da recupero",
-        "Ispezione corretta e test post-intervento",
-        "Centraggio visivo perfetto ruota-forcella"
-      ],
-      "skillTags": [
-        "forcella",
-        "montaggio",
-        "sicurezza"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-8.3.1",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-8.4.1",
-      "title": "Diagnosi giochi sterzo",
-      "description": "Riconoscere sintomi di serie sterzo troppo lasca o troppo serrata.",
-      "difficulty": "base",
-      "estimatedDuration": 8,
-      "contentPath": "/content/bike-8.4.1.md",
-      "toolsRequired": [
-        "mani",
-        "freno anteriore",
-        "supporto cavalletto"
-      ],
-      "learningOutcomes": [
-        "Test freno anteriore: avanti/indietro = gioco",
-        "Impuntamenti in movimento = precarico eccessivo",
-        "Distinguere gioco superiore (cuscinetti) vs inferiore (forcella)",
-        "Uniformare regolazione tra precarico e bloccaggio"
-      ],
-      "practicalCriteria": [
-        "Diagnosi corretta su 3 casi reali",
-        "Intervento di regolazione riuscito",
-        "Verifica stabilità post test"
-      ],
-      "skillTags": [
-        "diagnosi",
-        "sterzo",
-        "sicurezza"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-8.1.2",
+          "moduleId": "BIKE-1.1.7",
           "type": "mandatory"
         }
       ]

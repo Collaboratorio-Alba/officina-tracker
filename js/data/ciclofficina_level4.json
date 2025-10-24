@@ -1,168 +1,159 @@
 {
   "teachingArea": {
-    "name": "Sistema Frenante",
-    "description": "Manutenzione, regolazione e riparazione freni a pattino e disco meccanici nelle bici di recupero",
+    "name": "Sistemi Frenanti",
+    "description": "Conoscenza, manutenzione e riparazione di tutti i tipi di sistemi frenanti per biciclette",
     "color": "#e74c3c"
   },
   "modules": [
     {
       "id": "BIKE-4.1.1",
-      "title": "Meccanica freni cantilever",
-      "description": "Capire geometria, tiraggio cavo e regolazione freni cantilever tipici delle MTB economiche",
-      "difficulty": "intermedio",
-      "estimatedDuration": 15,
+      "title": "Tipologie di freni: caliper, cantilever, bacchetta, disco",
+      "description": "Riconoscimento e caratteristiche dei principali sistemi frenanti utilizzati in bicicletta",
+      "difficulty": "base",
+      "estimatedDuration": 18,
       "contentPath": "/content/bike-4.1.1.md",
       "toolsRequired": [
-        "chiavi Allen 5mm",
-        "pinze",
-        "cavo di recupero"
+        "esempi diversi freni",
+        "chiavi specifiche",
+        "metro a nastro",
+        "calibro"
       ],
       "learningOutcomes": [
-        "Comprendere triangolazione forze e tiraggio centrale",
-        "Regolare altezza pattini e convergenza (toe-in)",
-        "Bilanciare simmetria molla ritorno",
-        "Trucco: piegare leggermente braccetti con pinze per regolazioni fini"
+        "Identificare i 4 principali tipi di freni",
+        "Comprendere vantaggi e limiti di ogni sistema",
+        "Riconoscere compatibilità con diversi telai",
+        "Valutare appropriatezza per diversi utilizzi"
       ],
       "practicalCriteria": [
-        "Smontaggio completo, pulizia e rimontaggio cantilever",
-        "Regolazione simmetrica su 2 bici diverse",
-        "Test frenata efficace e bilanciata"
+        "Identificazione corretta 5 sistemi frenanti diversi",
+        "Analisi vantaggi/svantaggi per 3 scenari d'uso",
+        "Valutazione compatibilità freno-telaio"
       ],
       "skillTags": [
-        "freni-pattino",
-        "cantilever",
-        "regolazione"
+        "freni",
+        "tipologie",
+        "compatibilità"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-2.2.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.4.1",
+          "moduleId": "BIKE-2.1.7",
           "type": "mandatory"
         }
       ]
     },
     {
       "id": "BIKE-4.1.2",
-      "title": "Freni a bacchetta",
-      "description": "Manutenzione freni contropedale e a bacchetta tipici di city bike e bici vintage",
+      "title": "Diagnosi e ispezione impianti frenanti",
+      "description": "Procedura sistematica per diagnosticare problemi e valutare lo stato degli impianti frenanti",
       "difficulty": "base",
-      "estimatedDuration": 12,
+      "estimatedDuration": 16,
       "contentPath": "/content/bike-4.1.2.md",
       "toolsRequired": [
-        "chiavi 13-15mm",
-        "grasso",
-        "stracci"
+        "lente d'ingrandimento",
+        "calibro spessore",
+        "indicatore usura",
+        "pompa freno (per idraulici)"
       ],
       "learningOutcomes": [
-        "Riconoscere meccanismo mozzo freno interno",
-        "Regolare tensione bacchetta e braccio reazione",
-        "Lubrificare articolazioni e snodi",
-        "Diagnosi problemi: freno bloccato, inefficace, rumoroso"
+        "Applicare metodo diagnostico strutturato",
+        "Riconoscere usura pattini e pastiglie",
+        "Identificare problemi cavi e guaine",
+        "Valutare stato dischi e cerchi frenanti"
       ],
       "practicalCriteria": [
-        "Regolazione corretta tensione bacchetta su 2 bici",
-        "Lubrificazione completa meccanismo",
-        "Verifica efficacia frenata"
+        "Diagnosi completa 3 impianti frenanti diversi",
+        "Identificazione 5 problemi comuni",
+        "Valutazione stato usura componenti"
       ],
       "skillTags": [
-        "freni-pattino",
-        "bacchetta",
-        "city-bike"
+        "diagnosi",
+        "ispezione",
+        "sicurezza"
       ],
       "revisionDate": null,
       "dependencies": [
         {
           "moduleId": "BIKE-4.1.1",
-          "type": "recommended"
-        },
-        {
-          "moduleId": "BIKE-1.3.2",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.4.2",
           "type": "mandatory"
         }
       ]
     },
     {
       "id": "BIKE-4.1.3",
-      "title": "Freni caliper",
-      "description": "Regolazione freni a singolo perno (side-pull) e doppio perno (center-pull) da bici da corsa economiche",
+      "title": "Regolazione avancorsa e allineamento pattini",
+      "description": "Tecniche per regolare correttamente l'avancorsa e allineare i pattini freno sui cerchi",
       "difficulty": "base",
-      "estimatedDuration": 10,
+      "estimatedDuration": 20,
       "contentPath": "/content/bike-4.1.3.md",
       "toolsRequired": [
-        "chiavi Allen 5mm",
-        "cacciavite piccolo"
+        "chiavi specifiche freni",
+        "chiavi Allen",
+        "martelletto di gomma",
+        "indicatore allineamento"
       ],
       "learningOutcomes": [
-        "Differenza single-pivot vs dual-pivot",
-        "Centratura pattini rispetto al cerchio",
-        "Regolazione vite centraggio (quando presente)",
-        "Sostituzione pattini usurati"
+        "Regolare avancorsa per ottimale risposta frenante",
+        "Allineare perfettamente pattini sul cerchio",
+        "Bilanciare forza frenante tra due pattini",
+        "Risolvere problemi di strisciamento o attrito"
       ],
       "practicalCriteria": [
-        "Centratura perfetta su 2 freni caliper",
-        "Sostituzione pattini e verifica allineamento",
-        "Test frenata senza sfregamenti"
+        "Regolazione completa freno a pattini",
+        "Allineamento perfetto pattini su cerchio",
+        "Bilanciamento forza frenante",
+        "Eliminazione strisciamenti indesiderati"
       ],
       "skillTags": [
-        "freni-pattino",
-        "caliper",
-        "city-corsa"
+        "regolazione",
+        "allineamento",
+        "precisione"
       ],
       "revisionDate": null,
       "dependencies": [
         {
           "moduleId": "BIKE-4.1.2",
-          "type": "recommended"
-        },
-        {
-          "moduleId": "BIKE-1.3.1",
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.3.3",
+          "moduleId": "BIKE-1.1.3",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-2.1.3",
           "type": "mandatory"
         }
       ]
     },
     {
       "id": "BIKE-4.1.4",
-      "title": "Regolazione altezza e convergenza pattini",
-      "description": "Tecniche universali per posizionare correttamente i pattini su qualsiasi freno a pattino",
+      "title": "Sostituzione e lubrificazione cavi e guaine",
+      "description": "Procedura per sostituire cavi freno e guaine, con corretta lubrificazione per prestazioni ottimali",
       "difficulty": "base",
-      "estimatedDuration": 12,
+      "estimatedDuration": 22,
       "contentPath": "/content/bike-4.1.4.md",
       "toolsRequired": [
-        "chiavi Allen",
-        "spessore cartoncino",
-        "righello"
+        "tagliacavi",
+        "pinze",
+        "lubrificante cavi",
+        "cavi e guaine di ricambio"
       ],
       "learningOutcomes": [
-        "Posizione verticale: 1-2mm sotto bordo cerchio",
-        "Convergenza (toe-in): punta anteriore pattino più vicina di 0.5-1mm",
-        "Evitare contatto con gomma pneumatico",
-        "Trucco: cartoncino tra pattino e cerchio per distanza uniforme"
+        "Sostituire cavi e guaine senza danni",
+        "Tagliare cavi alla lunghezza corretta",
+        "Lubrificare correttamente cavi e guaine",
+        "Regolare tensione dopo sostituzione"
       ],
       "practicalCriteria": [
-        "Regolazione corretta su 3 tipi di freno diversi",
-        "Misurazione convergenza con spessimetro improvvisato",
-        "Verifica assenza rumori e usura anomala"
+        "Sostituzione completa cavo e guaina freno",
+        "Taglio preciso senza sfilacciamenti",
+        "Lubrificazione corretta",
+        "Regolazione tensione post-sostituzione"
       ],
       "skillTags": [
-        "freni-pattino",
-        "regolazione-fine",
-        "prevenzione"
+        "sostituzione",
+        "lubrificazione",
+        "manutenzione"
       ],
       "revisionDate": null,
       "dependencies": [
@@ -171,436 +162,135 @@
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.3.1",
+          "moduleId": "BIKE-1.1.6",
           "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-4.2.1",
-      "title": "Componenti sistema disco meccanico",
-      "description": "Anatomia freno a disco: pinza, pastiglie, rotore, adattatore, cavo",
-      "difficulty": "base",
-      "estimatedDuration": 10,
-      "contentPath": "/content/bike-4.2.1.md",
-      "toolsRequired": [
-        "freno disco smontato",
-        "manuale identificazione"
-      ],
-      "learningOutcomes": [
-        "Riconoscere componenti e loro funzione",
-        "Differenza tra standard IS, PM, Flat Mount",
-        "Capire tiraggio cavo e movimento pistoncini",
-        "Ispezione visiva: usura pastiglie, deformazione rotore"
-      ],
-      "practicalCriteria": [
-        "Identificazione corretta componenti su 2 freni diversi",
-        "Riconoscimento standard montaggio",
-        "Valutazione stato usura pastiglie e rotore"
-      ],
-      "skillTags": [
-        "freni-disco",
-        "riconoscimento",
-        "diagnosi"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-4.1.4",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.4.1",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-4.2.2",
-      "title": "Sostituzione pastiglie freno disco",
-      "description": "Rimuovere pastiglie usurate e installare nuove senza contaminare superficie frenante",
-      "difficulty": "base",
-      "estimatedDuration": 12,
-      "contentPath": "/content/bike-4.2.2.md",
-      "toolsRequired": [
-        "chiavi Allen 3-5mm",
-        "cacciavite piatto",
-        "alcool isopropilico",
-        "stracci puliti"
-      ],
-      "learningOutcomes": [
-        "Rimuovere perno o clip trattenimento pastiglie",
-        "Pulire sede con alcool (mai toccare pastiglie con dita unte)",
-        "Installare pastiglie nuove orientate correttamente",
-        "Rodaggio: 20-30 frenate moderate prima del test intenso"
-      ],
-      "practicalCriteria": [
-        "Sostituzione pastiglie su 2 freni disco diversi",
-        "Pulizia corretta senza contaminazione",
-        "Rodaggio e test efficacia frenata"
-      ],
-      "skillTags": [
-        "freni-disco",
-        "manutenzione",
-        "pulizia"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-4.2.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.4.3",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-4.2.3",
-      "title": "Regolazione e centratura pinza disco",
-      "description": "Centrare pinza rispetto al rotore per evitare sfregamenti continui",
+      "id": "BIKE-4.1.5",
+      "title": "Spurgo freni a disco idraulici",
+      "description": "Procedura completa per spurgo dei freni idraulici a disco, rimozione aria e sostituzione liquido",
       "difficulty": "intermedio",
-      "estimatedDuration": 15,
-      "contentPath": "/content/bike-4.2.3.md",
+      "estimatedDuration": 30,
+      "contentPath": "/content/bike-4.1.5.md",
       "toolsRequired": [
-        "chiavi Allen",
-        "luce radente",
-        "spessori carta"
+        "kit spurgo freni",
+        "liquido freni appropriato",
+        "chiavi specifiche",
+        "contenitori raccolta",
+        "guanti di protezione"
       ],
       "learningOutcomes": [
-        "Allentare viti fissaggio pinza",
-        "Tirare leva freno e serrare viti con pinza autocentrata",
-        "Verifica gioco uniforme con luce o spessimetro carta",
-        "Trucco: distanziali carta tra pastiglia e rotore per centratura fine"
+        "Identificare tipo di liquido freni (DOT o minerale)",
+        "Eseguire spurgo completo sistema idraulico",
+        "Rimuovere aria dal circuito",
+        "Sostituire liquido freni esausto"
       ],
       "practicalCriteria": [
-        "Centratura corretta su 3 freni disco",
-        "Assenza sfregamenti a ruota libera",
-        "Test frenata simmetrica"
+        "Spurgo completo freno idraulico anteriore e posteriore",
+        "Rimozione completa aria dal sistema",
+        "Sostituzione liquido freni senza perdite",
+        "Verifica funzionalità post-spurgo"
       ],
       "skillTags": [
-        "freni-disco",
-        "regolazione-fine",
-        "troubleshooting"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-4.2.2",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.1",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-4.2.4",
-      "title": "Verifica e raddrizzatura rotore",
-      "description": "Controllare planarità disco e raddrizzare deformazioni lievi",
-      "difficulty": "intermedio",
-      "estimatedDuration": 12,
-      "contentPath": "/content/bike-4.2.4.md",
-      "toolsRequired": [
-        "chiave raddrizza rotori o pinza regolabile",
-        "riferimento fisso"
-      ],
-      "learningOutcomes": [
-        "Test planarità: rotazione ruota lenta osservando oscillazione",
-        "Identificare zona piegata con riferimento fisso (pinza, dito)",
-        "Piegare delicatamente con strumento dedicato o pinza a mano",
-        "Attenzione: rotori danneggiati gravemente vanno sostituiti"
-      ],
-      "practicalCriteria": [
-        "Controllo planarità su 3 rotori",
-        "Raddrizzatura deformazione lieve con successo",
-        "Decisione sostituire vs raddrizzare motivata"
-      ],
-      "skillTags": [
-        "freni-disco",
-        "raddrizzatura",
-        "precisione"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-4.2.3",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.1",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-4.3.1",
-      "title": "Sostituzione cavo freno",
-      "description": "Rimuovere cavo vecchio e installare nuovo rispettando percorso e tensione",
-      "difficulty": "base",
-      "estimatedDuration": 15,
-      "contentPath": "/content/bike-4.3.1.md",
-      "toolsRequired": [
-        "tronchese",
-        "chiavi Allen",
-        "cavo nuovo",
-        "terminali"
-      ],
-      "learningOutcomes": [
-        "Allentare dado fissaggio e rimuovere cavo vecchio",
-        "Infilare cavo nuovo seguendo percorso guaine",
-        "Fissare con tensione corretta e tagliare eccesso",
-        "Applicare terminale per evitare sfilacciamento"
-      ],
-      "practicalCriteria": [
-        "Sostituzione completa cavo freno anteriore e posteriore",
-        "Tensione corretta con corsa leva 2/3",
-        "Terminale applicato correttamente"
-      ],
-      "skillTags": [
-        "cavi-freni",
-        "sostituzione",
-        "manutenzione"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-4.2.4",
-          "type": "recommended"
-        },
-        {
-          "moduleId": "BIKE-4.1.4",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-4.3.2",
-      "title": "Regolazione tensione con registri",
-      "description": "Uso dei registri micrometrici su leva e telaio per regolazioni fini senza scollegare cavo",
-      "difficulty": "base",
-      "estimatedDuration": 8,
-      "contentPath": "/content/bike-4.3.2.md",
-      "toolsRequired": [
-        "solo mani"
-      ],
-      "learningOutcomes": [
-        "Individuare registro su leva freno o telaio",
-        "Regola: svitare = aumenta tensione, avvitare = riduce",
-        "Fare regolazioni piccole (1/4 giro) e testare",
-        "Quando registro è al limite, reimpostare tensione al dado"
-      ],
-      "practicalCriteria": [
-        "Regolazione fine su 3 freni usando solo registri",
-        "Correzione progressiva con test intermedi",
-        "Reset e reimpostazione quando registro esaurito"
-      ],
-      "skillTags": [
-        "cavi-freni",
-        "regolazione-veloce",
-        "troubleshooting"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-4.3.1",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-4.3.3",
-      "title": "Lubrificazione cavi e guaine",
-      "description": "Mantenere scorrevolezza sistema con lubrificanti adeguati senza contaminare freni",
-      "difficulty": "base",
-      "estimatedDuration": 10,
-      "contentPath": "/content/bike-4.3.3.md",
-      "toolsRequired": [
-        "olio leggero o spray PTFE",
-        "stracci",
-        "guanti"
-      ],
-      "learningOutcomes": [
-        "Scollegare cavo e lubrificare interno guaina con spray",
-        "Evitare lubrificanti troppo densi che attraggono sporco",
-        "Non contaminare pattini o rotori (pulizia immediata se succede)",
-        "Frecuenza: ogni 6-12 mesi o a sensazione attriti"
-      ],
-      "practicalCriteria": [
-        "Lubrificazione completa sistema freni anteriore e posteriore",
-        "Test scorrevolezza migliorata",
-        "Nessuna contaminazione freni"
-      ],
-      "skillTags": [
-        "cavi-freni",
-        "lubrificazione",
-        "prevenzione"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-4.3.2",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.4.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.4.3",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-4.4.1",
-      "title": "Freni che non mordono",
-      "description": "Diagnosticare cause: pattini usurati, olio su superficie, cavo allentato, aria nel sistema",
-      "difficulty": "base",
-      "estimatedDuration": 12,
-      "contentPath": "/content/bike-4.4.1.md",
-      "toolsRequired": [
-        "alcool",
-        "stracci",
-        "chiavi base"
-      ],
-      "learningOutcomes": [
-        "Check-list sistematica: spessore pattini, tensione cavo, pulizia cerchio/disco",
-        "Test: corsa leva eccessiva = cavo allentato",
-        "Pulizia superfici con alcool (mai benzina su disco)",
-        "Sostituzione immediata se pattini <2mm"
-      ],
-      "practicalCriteria": [
-        "Diagnosi su 3 casi diversi di freni inefficaci",
-        "Risoluzione problema con intervento mirato",
-        "Verifica efficacia dopo riparazione"
-      ],
-      "skillTags": [
-        "diagnosi",
-        "freni-inefficaci",
+        "idraulico",
+        "spurgo",
         "sicurezza"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-4.3.3",
+          "moduleId": "BIKE-4.1.4",
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.4.3",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.2",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.3",
+          "moduleId": "BIKE-1.1.6",
           "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-4.4.2",
-      "title": "Rumori durante frenata",
-      "description": "Identificare cigolii, stridii, colpi: cause e soluzioni",
+      "id": "BIKE-4.1.6",
+      "title": "Manutenzione e pulizia pastiglie",
+      "description": "Pulizia, controllo e sostituzione delle pastiglie freno a disco per mantenere prestazioni ottimali",
       "difficulty": "base",
-      "estimatedDuration": 10,
-      "contentPath": "/content/bike-4.4.2.md",
+      "estimatedDuration": 18,
+      "contentPath": "/content/bike-4.1.6.md",
       "toolsRequired": [
-        "carta vetrata fine",
-        "alcool",
-        "lima"
+        "chiavi specifiche pinze",
+        "alcool isopropilico",
+        "spazzole piccole",
+        "pastiglie di ricambio",
+        "spread tool"
       ],
       "learningOutcomes": [
-        "Cigolio pattini: superfici vetrificate, carteggiare e pulire",
-        "Stridio disco: pastiglie contaminate o rotore sporco",
-        "Colpo secco: pattino male allineato o vite allentata",
-        "Prevenzione: convergenza corretta, pulizia regolare"
+        "Rimuovere e installare pastiglie correttamente",
+        "Pulire e decontaminare pastiglie",
+        "Controllare spessore e usura pastiglie",
+        "Riconoscere pastiglie contaminate o usurate"
       ],
       "practicalCriteria": [
-        "Identificazione rumore su 3 freni problematici",
-        "Risoluzione con carteggiatura, pulizia o riallineamento",
-        "Test silenziosità dopo intervento"
+        "Sostituzione pastiglie su pinza freno",
+        "Pulizia e decontaminazione pastiglie",
+        "Controllo usura e sostituzione se necessario",
+        "Verifica funzionamento post-manutenzione"
       ],
       "skillTags": [
-        "diagnosi",
-        "rumori",
-        "troubleshooting"
+        "pastiglie",
+        "pulizia",
+        "manutenzione"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-4.4.1",
-          "type": "mandatory"
+          "moduleId": "BIKE-4.1.5",
+          "type": "recommended"
         },
         {
-          "moduleId": "BIKE-1.4.3",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.3",
+          "moduleId": "BIKE-4.1.2",
           "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-4.4.3",
-      "title": "Attrito continuo e sfregamenti",
-      "description": "Risolvere pattini o disco che sfregano costantemente senza frenare intenzionalmente",
-      "difficulty": "base",
-      "estimatedDuration": 10,
-      "contentPath": "/content/bike-4.4.3.md",
+      "id": "BIKE-4.1.7",
+      "title": "Diagnosi vibrazioni, rumori e perdita di potenza frenante",
+      "description": "Identificazione e risoluzione di problemi complessi come vibrazioni, rumori e perdita di efficienza frenante",
+      "difficulty": "intermedio",
+      "estimatedDuration": 25,
+      "contentPath": "/content/bike-4.1.7.md",
       "toolsRequired": [
-        "chiavi regolazione",
-        "spessimetro carta"
+        "indicatore runout dischi",
+        "chiavi dinamometriche",
+        "strumenti diagnostici vari",
+        "liquido freni"
       ],
       "learningOutcomes": [
-        "Cause: centratura errata, ruota male installata, rotore storto",
-        "Controllo: ruota ben serrata e centrata nel telaio",
-        "Ricentratura pattini o pinza disco",
-        "Verifica: ruota gira liberamente per almeno 5 secondi"
+        "Diagnosticare cause vibrazioni freno",
+        "Identificare origine rumori anomali",
+        "Risolvere problemi perdita potenza frenante",
+        "Applicare soluzioni per problemi complessi"
       ],
       "practicalCriteria": [
-        "Risoluzione sfregamenti su 3 bici diverse",
-        "Test rotazione libera soddisfacente",
-        "Assenza perdita efficienza per attriti parassiti"
+        "Diagnosi e risoluzione 3 problemi freno complessi",
+        "Eliminazione vibrazioni su disco deformato",
+        "Risoluzione rumori anomali",
+        "Ripristino potenza frenante ottimale"
       ],
       "skillTags": [
-        "diagnosi",
-        "centratura",
-        "efficienza"
+        "diagnosi-avanzata",
+        "risoluzione-problemi",
+        "prestazioni"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-4.4.2",
+          "moduleId": "BIKE-4.1.6",
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.3.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.2",
+          "moduleId": "BIKE-3.1.6",
           "type": "mandatory"
         }
       ]

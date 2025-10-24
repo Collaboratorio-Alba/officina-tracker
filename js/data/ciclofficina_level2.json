@@ -1,109 +1,111 @@
 {
   "teachingArea": {
-    "name": "Diagnostica e Verifica",
-    "description": "Metodologia sistematica per ispezionare, testare e documentare i problemi prima di intervenire",
+    "name": "Conoscenze Teoriche e Tecniche Base",
+    "description": "Fondamentali teorici, tipologie di biciclette, standard tecnici e utilizzo della documentazione",
     "color": "#3498db"
   },
   "modules": [
     {
       "id": "BIKE-2.1.1",
-      "title": "Check-list pre-riparazione",
-      "description": "Ispezione sistematica: guardare prima di smontare, metodo per non dimenticare nulla",
+      "title": "Tipologie di bici: urbana, corsa, MTB, pieghevole, cargo",
+      "description": "Riconoscimento e caratteristiche delle principali tipologie di biciclette e loro specificità tecniche",
       "difficulty": "base",
-      "estimatedDuration": 12,
+      "estimatedDuration": 18,
       "contentPath": "/content/bike-2.1.1.md",
       "toolsRequired": [
-        "checklist cartacea",
-        "torcia",
-        "specchietto ispezione"
+        "metro a nastro",
+        "calibro",
+        "esempi di diverse bici"
       ],
       "learningOutcomes": [
-        "Seguire una sequenza logica di ispezione (dall'alto in basso, da sinistra a destra)",
-        "Usare checklist per non dimenticare componenti nascosti",
-        "Identificare problemi evidenti vs quelli che richiedono test dinamici",
-        "Annotare tutto prima di smontare (foto col telefono, appunti)"
+        "Identificare le principali categorie di biciclette",
+        "Riconoscere caratteristiche distintive di ogni tipologia",
+        "Comprendere differenze di geometria e componentistica",
+        "Valutare appropriatezza per diversi utilizzi"
       ],
       "practicalCriteria": [
-        "Ispezione completa di una bici in 10 minuti senza dimenticanze",
-        "Compilazione checklist con almeno 15 voci di controllo",
-        "Identificazione 3+ problemi evidenti su bici non funzionante"
+        "Classificazione corretta di 10 biciclette diverse",
+        "Identificazione caratteristiche specifiche per categoria",
+        "Valutazione appropriatezza per scenario d'uso"
       ],
       "skillTags": [
-        "diagnosi",
-        "metodologia",
-        "organizzazione"
+        "classificazione",
+        "tipologie",
+        "geometria"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-1.1.2",
+          "moduleId": "BIKE-1.1.3",
           "type": "mandatory"
         }
       ]
     },
     {
       "id": "BIKE-2.1.2",
-      "title": "Identificazione usura componenti",
-      "description": "Riconoscere quando un pezzo è da sostituire o solo da pulire/regolare",
+      "title": "Filettature standard e passi metrici",
+      "description": "Conoscenza delle principali filettature utilizzate in bicicletta e loro caratteristiche metriche",
       "difficulty": "base",
-      "estimatedDuration": 15,
+      "estimatedDuration": 16,
       "contentPath": "/content/bike-2.1.2.md",
       "toolsRequired": [
-        "calibro usura catena",
-        "luce radente",
-        "comparatori visivi"
+        "calibro",
+        "pettine filettature",
+        "campioni viti e dadi",
+        "lente d'ingrandimento"
       ],
       "learningOutcomes": [
-        "Usura pattini freno: meno di 2mm = sostituire",
-        "Denti corone/pignoni: forma a squalo = cambio obbligatorio",
-        "Cavi sfilacciati, arrugginiti o con nodi = sostituzione",
-        "Cuscinetti ruvidi al tatto = smontaggio e pulizia o sostituzione sfere"
+        "Riconoscere filettature metriche e in pollici",
+        "Misurare passo e diametro delle filettature",
+        "Identificare standard specifici per componenti bicicletta",
+        "Applicare tecniche per filettature danneggiate"
       ],
       "practicalCriteria": [
-        "Valutazione corretta usura su 10 componenti diversi",
-        "Decisione sostituire/recuperare giustificata",
-        "Uso calibro catena e interpretazione risultato"
+        "Identificazione corretta 8 tipi di filettature",
+        "Misurazione precisa passo e diametro",
+        "Riparazione filettatura leggermente danneggiata"
       ],
       "skillTags": [
-        "diagnosi",
-        "usura",
-        "valutazione-economica"
+        "filettature",
+        "misurazione",
+        "standard"
       ],
       "revisionDate": null,
       "dependencies": [
         {
           "moduleId": "BIKE-2.1.1",
-          "type": "mandatory"
+          "type": "recommended"
         }
       ]
     },
     {
       "id": "BIKE-2.1.3",
-      "title": "Rilevamento danni strutturali",
-      "description": "Distinguere bici riparabili da quelle pericolose: crepe, piegamenti, rotture",
-      "difficulty": "intermedio",
-      "estimatedDuration": 12,
+      "title": "Coppie di serraggio e uso dinamometrica",
+      "description": "Principi delle coppie di serraggio, utilizzo della chiave dinamometrica e valori standard",
+      "difficulty": "base",
+      "estimatedDuration": 20,
       "contentPath": "/content/bike-2.1.3.md",
       "toolsRequired": [
-        "lente d'ingrandimento",
-        "liquido penetrante colorato",
-        "righello"
+        "chiave dinamometrica",
+        "set chiavi Allen",
+        "marcatore permanente",
+        "tabella coppie di serraggio"
       ],
       "learningOutcomes": [
-        "Identificare crepe su telaio alluminio (punti di saldatura, giunzioni)",
-        "Riconoscere forcella piegata o telaio storto (test con filo a piombo)",
-        "Valutare quando una riparazione è pericolosa (zone strutturali critiche)",
-        "Decidere: recuperabile con cautela vs da rottamare per sicurezza"
+        "Comprendere il concetto di coppia di serraggio",
+        "Utilizzare correttamente la chiave dinamometrica",
+        "Applicare valori di coppia appropriati per ogni componente",
+        "Riconoscere segni di serraggio eccessivo o insufficiente"
       ],
       "practicalCriteria": [
-        "Ispezione completa telaio e forcella con lente",
-        "Test allineamento con filo e squadra",
-        "Decisione motivata su 3 casi limite (riparabile/non riparabile)"
+        "Applicazione corretta coppie su 5 componenti critici",
+        "Utilizzo dinamometrica senza errori",
+        "Identificazione problemi da serraggio errato"
       ],
       "skillTags": [
-        "diagnosi",
-        "sicurezza",
-        "strutturale"
+        "coppia",
+        "precisione",
+        "sicurezza"
       ],
       "revisionDate": null,
       "dependencies": [
@@ -112,72 +114,79 @@
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.1.1",
+          "moduleId": "BIKE-1.1.3",
           "type": "mandatory"
         }
       ]
     },
     {
       "id": "BIKE-2.1.4",
-      "title": "Valutazione stato generale",
-      "description": "Assegnare un punteggio: bici perfetta, buona, recuperabile, da ricambi, da rottamare",
+      "title": "Nomenclatura componenti principali",
+      "description": "Terminologia corretta per identificare e descrivere i componenti della bicicletta",
       "difficulty": "base",
-      "estimatedDuration": 10,
+      "estimatedDuration": 14,
       "contentPath": "/content/bike-2.1.4.md",
       "toolsRequired": [
-        "scheda valutazione",
-        "etichette colorate"
+        "schede illustrative",
+        "bici completa smontabile",
+        "componenti campione"
       ],
       "learningOutcomes": [
-        "Sistema di punteggio 1-5 per ogni sottosistema (freni, trasmissione, ruote, sterzo)",
-        "Calcolare costo stimato riparazione vs valore bici finita",
-        "Decidere destinazione: vendita, prestito, donazione, smontaggio parti",
-        "Etichettatura bici in officina per gestione magazzino"
+        "Utilizzare terminologia corretta per tutti i componenti",
+        "Identificare parti intercambiabili tra diverse bici",
+        "Descrivere problemi usando terminologia appropriata",
+        "Comunicare efficacemente con altri tecnici"
       ],
       "practicalCriteria": [
-        "Valutazione completa e punteggio su 5 bici diverse",
-        "Stima costo/tempo di recupero realistica",
-        "Classificazione corretta destinazione d'uso"
+        "Denominazione corretta 25 componenti principali",
+        "Identificazione parti compatibili tra 3 bici diverse",
+        "Descrizione problema usando terminologia corretta"
       ],
       "skillTags": [
-        "valutazione-economica",
-        "gestione-magazzino",
-        "diagnosi"
+        "terminologia",
+        "comunicazione",
+        "identificazione"
       ],
       "revisionDate": null,
       "dependencies": [
         {
           "moduleId": "BIKE-2.1.3",
+          "type": "recommended"
+        },
+        {
+          "moduleId": "BIKE-2.1.1",
           "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-2.2.1",
-      "title": "Prova freni (teoria e metodo)",
-      "description": "Test statico e dinamico dei freni: morsa, corsa leva, bilanciamento",
+      "id": "BIKE-2.1.5",
+      "title": "Uso documentazione tecnica: manuali, PDF, dataset online",
+      "description": "Ricerca, interpretazione e utilizzo della documentazione tecnica dei produttori",
       "difficulty": "base",
-      "estimatedDuration": 12,
-      "contentPath": "/content/bike-2.2.1.md",
+      "estimatedDuration": 22,
+      "contentPath": "/content/bike-2.1.5.md",
       "toolsRequired": [
-        "cavalletto o supporto",
-        "spazio sicuro per test"
+        "computer/smartphone",
+        "connessione internet",
+        "stampante (opzionale)",
+        "blocco note digitale"
       ],
       "learningOutcomes": [
-        "Test morsa: freno deve bloccare ruota su cavalletto",
-        "Corsa leva: max 2/3 prima di mordere, altrimenti cavo da tendere",
-        "Bilanciamento: pattini devono toccare contemporaneamente",
-        "Test dinamico: frenata controllata in spazio sicuro"
+        "Localizzare documentazione tecnica online",
+        "Interpretare diagrammi esplosi e schemi",
+        "Comprendere tabelle di compatibilità",
+        "Organizzare documentazione per futuri riferimenti"
       ],
       "practicalCriteria": [
-        "Esecuzione test completo freni anteriore e posteriore",
-        "Identificazione problema specifico (pattini, cavo, registro)",
-        "Decisione: funzionante/da regolare/da sostituire parti"
+        "Ricerca e download manuali per 3 componenti diversi",
+        "Interpretazione corretta diagramma esploso",
+        "Creazione archivio documentazione organizzato"
       ],
       "skillTags": [
-        "test-funzionali",
-        "freni",
-        "sicurezza"
+        "ricerca",
+        "documentazione",
+        "interpretazione"
       ],
       "revisionDate": null,
       "dependencies": [
@@ -188,247 +197,78 @@
       ]
     },
     {
-      "id": "BIKE-2.2.2",
-      "title": "Test cambio e trasmissione",
-      "description": "Verificare scorrevolezza cambiata, rumori anomali, salti di catena",
-      "difficulty": "base",
-      "estimatedDuration": 15,
-      "contentPath": "/content/bike-2.2.2.md",
-      "toolsRequired": [
-        "cavalletto",
-        "orecchio attento"
-      ],
-      "learningOutcomes": [
-        "Test cambio su cavalletto: tutte le marce devono inserirsi senza esitazioni",
-        "Rumori: catena secca (cigolio), catena usurata (scatto metallico), deragliatore storto (sfregamento)",
-        "Salti di catena: catena usurata, pignoni consumati o deragliatore male regolato",
-        "Metodo diagnostico: isolare il problema (catena/cavi/deragliatore/pignoni)"
-      ],
-      "practicalCriteria": [
-        "Test completo tutte le combinazioni di marce",
-        "Identificazione causa problema specifico (3 casi diversi)",
-        "Diagnosi differenziale: cambio vs catena vs pignoni"
-      ],
-      "skillTags": [
-        "test-funzionali",
-        "trasmissione",
-        "diagnosi-differenziale"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-2.2.1",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-2.2.3",
-      "title": "Verifica giochi cuscinetti",
-      "description": "Test manuale giochi: sterzo, movimento centrale, mozzi, pedali",
+      "id": "BIKE-2.1.6",
+      "title": "Identificazione compatibilità componenti",
+      "description": "Valutazione della compatibilità tra componenti di diversi produttori e standard",
       "difficulty": "intermedio",
-      "estimatedDuration": 15,
-      "contentPath": "/content/bike-2.2.3.md",
+      "estimatedDuration": 18,
+      "contentPath": "/content/bike-2.1.6.md",
       "toolsRequired": [
-        "mani sensibili",
-        "orecchio"
+        "calibro di precisione",
+        "tabelle compatibilità",
+        "componenti di diversi standard",
+        "software compatibilità (opzionale)"
       ],
       "learningOutcomes": [
-        "Test sterzo: tenere freno anteriore, muovere bici avanti/indietro (clac = gioco)",
-        "Test movimento centrale: muovere pedivelle lateralmente (gioco = coni allentati)",
-        "Test mozzi: sollevare ruota, muovere lateralmente (gioco = coni da stringere)",
-        "Distinguere gioco (pericoloso) da scorrevolezza (normale)"
+        "Valutare compatibilità tra gruppi diversi",
+        "Identificare standard intercambiabili",
+        "Risolvere problemi di compatibilità con adattatori",
+        "Prevenire errori di montaggio per incompatibilità"
       ],
       "practicalCriteria": [
-        "Test sistematico tutti i cuscinetti su una bici",
-        "Identificazione gioco e quantificazione (poco/molto)",
-        "Diagnosi: cuscinetti da regolare vs da sostituire"
+        "Valutazione compatibilità 5 combinazioni componenti",
+        "Identificazione soluzioni per incompatibilità",
+        "Scelta componenti compatibili per progetto specifico"
       ],
       "skillTags": [
-        "test-funzionali",
-        "cuscinetti",
-        "sensibilità-tattile"
+        "compatibilità",
+        "standard",
+        "risoluzione-problemi"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-2.2.2",
+          "moduleId": "BIKE-2.1.5",
           "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-2.2.4",
-      "title": "Controllo allineamenti ruote",
-      "description": "Verificare centratura, campanatura, allineamento telaio-ruota",
+      "id": "BIKE-2.1.7",
+      "title": "Anatomia generale della bicicletta",
+      "description": "Conoscenza approfondita della struttura e funzionamento di tutti i sistemi della bicicletta",
       "difficulty": "base",
-      "estimatedDuration": 10,
-      "contentPath": "/content/bike-2.2.4.md",
+      "estimatedDuration": 16,
+      "contentPath": "/content/bike-2.1.7.md",
       "toolsRequired": [
-        "cavalletto",
-        "filo o riferimento fisso"
+        "bici completa smontabile",
+        "schede anatomiche",
+        "modelli didattici"
       ],
       "learningOutcomes": [
-        "Test centratura: ruota su cavalletto, guardare luce tra pattino e cerchio",
-        "Campanatura: ruota vista di lato, verificare se 'a ombrello'",
-        "Allineamento ruota posteriore con anteriore (filo lungo telaio)",
-        "Decidere: centrare vs sostituire ruota"
+        "Descrivere funzionamento di tutti i sistemi bicicletta",
+        "Identificare relazioni tra componenti diversi",
+        "Comprendere principi fisici di funzionamento",
+        "Diagnosticare problemi in base a sintomi sistemici"
       ],
       "practicalCriteria": [
-        "Controllo centratura e campanatura su 3 ruote",
-        "Identificazione sbandamento e quantificazione (lieve/grave)",
-        "Test allineamento ruote con filo"
+        "Descrizione completa funzionamento 5 sistemi principali",
+        "Identificazione relazioni tra componenti correlati",
+        "Diagnosi problema basata su sintomi sistemici"
       ],
       "skillTags": [
-        "test-funzionali",
-        "ruote",
-        "allineamento"
+        "anatomia",
+        "sistemi",
+        "diagnosi"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-2.2.3",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-2.3.1",
-      "title": "Classificazione tipologie guasti",
-      "description": "Categorizzare i problemi: sicurezza critica, funzionalità, comfort, estetica",
-      "difficulty": "base",
-      "estimatedDuration": 10,
-      "contentPath": "/content/bike-2.3.1.md",
-      "toolsRequired": [
-        "schema classificazione",
-        "colori/etichette"
-      ],
-      "learningOutcomes": [
-        "Priorità 1 (rosso): sicurezza - freni, sterzo, telaio, forcella",
-        "Priorità 2 (arancio): funzionalità - cambio, trasmissione, luci",
-        "Priorità 3 (giallo): comfort - sella, manopole, ammortizzatori",
-        "Priorità 4 (verde): estetica - vernice, adesivi, accessori"
-      ],
-      "practicalCriteria": [
-        "Classificazione corretta 10 problemi diversi",
-        "Creazione lista priorità su bici complessa",
-        "Giustificazione scelte di priorità"
-      ],
-      "skillTags": [
-        "organizzazione",
-        "sicurezza",
-        "prioritizzazione"
-      ],
-      "revisionDate": null,
-      "dependencies": [
+          "moduleId": "BIKE-2.1.6",
+          "type": "recommended"
+        },
         {
-          "moduleId": "BIKE-2.2.4",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-2.3.2",
-      "title": "Priorità interventi",
-      "description": "Decidere ordine riparazioni: cosa fare prima, cosa può aspettare, cosa delegare",
-      "difficulty": "base",
-      "estimatedDuration": 12,
-      "contentPath": "/content/bike-2.3.2.md",
-      "toolsRequired": [
-        "scheda interventi",
-        "planning settimanale"
-      ],
-      "learningOutcomes": [
-        "Metodo ABC: A=urgente e importante, B=importante non urgente, C=né urgente né importante",
-        "Considerare tempo disponibile, competenze, disponibilità pezzi",
-        "Quando delegare a meccanico più esperto (saldature, ruote storte gravi)",
-        "Pianificare sessioni officina per efficienza"
-      ],
-      "practicalCriteria": [
-        "Pianificazione ordine interventi su 3 bici diverse",
-        "Stima tempo realistica per ogni intervento",
-        "Identificazione interventi da delegare"
-      ],
-      "skillTags": [
-        "pianificazione",
-        "gestione-tempo",
-        "delega"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-2.3.1",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-2.3.3",
-      "title": "Stima costi riparazione",
-      "description": "Calcolare ricambi + tempo: capire se vale la pena riparare",
-      "difficulty": "intermedio",
-      "estimatedDuration": 15,
-      "contentPath": "/content/bike-2.3.3.md",
-      "toolsRequired": [
-        "listino ricambi",
-        "calcolatrice",
-        "scheda costi"
-      ],
-      "learningOutcomes": [
-        "Costo ricambi: cercare online prezzi realistici (no componenti di lusso)",
-        "Costo tempo: stimare ore lavoro anche se officina è gratuita (risorsa scarsa)",
-        "Confronto: costo riparazione vs valore bici finita vs bici usata equivalente",
-        "Decidere: riparare, usare per ricambi, donare ad altra officina"
-      ],
-      "practicalCriteria": [
-        "Preventivo dettagliato su 3 bici con problemi diversi",
-        "Ricerca prezzi ricambi online e documentazione fonti",
-        "Decisione motivata economicamente (riparare si/no)"
-      ],
-      "skillTags": [
-        "valutazione-economica",
-        "ricerca-ricambi",
-        "sostenibilità"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-2.3.2",
-          "type": "mandatory"
-        }
-      ]
-    },
-    {
-      "id": "BIKE-2.3.4",
-      "title": "Registro manutenzioni",
-      "description": "Documentare ogni intervento: chi, quando, cosa, per tracciabilità e apprendimento",
-      "difficulty": "base",
-      "estimatedDuration": 8,
-      "contentPath": "/content/bike-2.3.4.md",
-      "toolsRequired": [
-        "registro cartaceo o digitale",
-        "fotocamera smartphone"
-      ],
-      "learningOutcomes": [
-        "Creare scheda bici: numero identificativo, stato iniziale, problemi rilevati",
-        "Registro interventi: data, operatore, azione, ricambi usati, esito",
-        "Foto prima/durante/dopo per documentazione e didattica",
-        "Utilità: garanzia lavoro, tracciabilità, statistica ricambi, portfolio personale"
-      ],
-      "practicalCriteria": [
-        "Compilazione scheda completa su una riparazione reale",
-        "Serie fotografica documentativa (min 5 foto)",
-        "Archiviazione e recupero informazioni dal registro"
-      ],
-      "skillTags": [
-        "documentazione",
-        "tracciabilità",
-        "apprendimento-continuo"
-      ],
-      "revisionDate": null,
-      "dependencies": [
-        {
-          "moduleId": "BIKE-2.3.3",
+          "moduleId": "BIKE-2.1.4",
           "type": "mandatory"
         }
       ]

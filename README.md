@@ -22,22 +22,14 @@ dispositivo.
 - 📊 **Statistiche Dettagliate** - Metriche avanzate per area didattica
 - 🎯 **Goal Tracking** - Pianificazione e tracciamento obiettivi
 
-### 🌳 Visualizzazioni
-- 🌳 **Albero Dipendenze** - Mappa interattiva delle relazioni tra moduli
-- 🔗 **Analisi Connessioni** - 11 livelli di dipendenze interconnesse
-- 🎨 **Visualizzazione Grafica** - Cytoscape.js per grafi complessi
+### 🌳 Knowledge Tree Structure
+- **Struttura ad albero delle competenze** - Ispirata al progetto [MakerSkillTree](https://github.com/sjpiper145/MakerSkillTree)
+- **10 livelli di dipendenze interconnesse** con 122 relazioni tra moduli
+- **Visualizzazione SVG** - [`js/data/skilltree.svg`](js/data/skilltree.svg) - Rappresentazione grafica dell'intera struttura
+- **Mappa concettuale** - [`js/data/schema/ciclofficina_2-150.jpg`](js/data/schema/ciclofficina_2-150.jpg) - Overview visivo delle aree didattiche
+- **Visualizzazione Grafica** - Cytoscape.js per grafi complessi e interattivi
 
-### 🔧 Gestione Dati
-- 🏷️ **Schema Esteso 1.1.0** - Skill tags e classificazione competenze
-- 🔗 **Integrazione Typemill** - Separazione contenuti/progressi
-- 📅 **Versionamento** - Revision date per aggiornamenti
-- 🔄 **Migrazione Automatica** - Transizione senza perdita dati
-
-### 🎯 Goal & Planning
-- 🗺️ **Path Planning** - Calcolo percorso ottimale per obiettivi
-- 📋 **Step-by-Step** - Guida sequenziale ai moduli richiesti
-- ⏱️ **Stima Tempi** - Pianificazione realistico dei tempi di completamento
-- 🔍 **Analisi Prerequisiti** - Identificazione dipendenze critiche
+La struttura modulare segue un approccio di "albero delle competenze" dove ogni nodo rappresenta una skill specifica e le dipendenze definiscono il percorso di apprendimento ottimale.
 
 ## 🚀 Installazione
 
@@ -95,10 +87,6 @@ Il sistema supporta navigazione diretta ai contenuti `contentPath`.
 
 ## 📊 Dati del Sistema di tracciamento dell'apprendimento per ciclofficina
 
-- **11 Livelli** di formazione
-- **Moduli interconnessi** con dipendenze complesse
-- **Categorie multiple** per organizzazione avanzata
-- **Timeline progressi** con dati storici
 
 ## 🛠️ Tecnologie
 

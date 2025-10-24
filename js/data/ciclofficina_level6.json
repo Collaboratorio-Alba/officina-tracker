@@ -1,87 +1,76 @@
 {
   "teachingArea": {
-    "name": "Ruote e Mozzi",
-    "description": "Smontaggio, centratura e manutenzione delle ruote e dei mozzi tradizionali a coni e sfere.",
-    "color": "#1abc9c"
+    "name": "Sistemi di Cambiata",
+    "description": "Manutenzione, regolazione e riparazione dei sistemi di cambiata per trasmissioni efficienti e precise",
+    "color": "#9b59b6"
   },
   "modules": [
     {
       "id": "BIKE-6.1.1",
-      "title": "Smontaggio mozzo tradizionale",
-      "description": "Rimuovere asse, coni e sfere da un mozzo per manutenzione completa.",
-      "difficulty": "intermedio",
-      "estimatedDuration": 15,
+      "title": "Tipologie e principi di funzionamento dei sistemi di cambiata",
+      "description": "Conoscenza dei diversi sistemi di cambiata e loro principi di funzionamento",
+      "difficulty": "base",
+      "estimatedDuration": 18,
       "contentPath": "/content/bike-6.1.1.md",
       "toolsRequired": [
-        "chiavi coniche 13-15mm",
-        "grasso",
-        "stracci",
-        "recipiente sfere"
+        "esempi diversi cambi",
+        "leve comando",
+        "schemi funzionamento",
+        "calibro"
       ],
       "learningOutcomes": [
-        "Identificare lato destro/sinistro e differenti filettature",
-        "Smontare con attenzione senza perdere le sfere",
-        "Pulire perno, coni e calotte con sgrassante",
-        "Controllare presenza rigature sul cono o corrosione"
+        "Identificare i principali sistemi di cambiata (index, friction, elettronico)",
+        "Comprendere i principi fisici del funzionamento",
+        "Riconoscere vantaggi e limiti di ogni sistema",
+        "Valutare appropriatezza per diversi utilizzi"
       ],
       "practicalCriteria": [
-        "Smontaggio completo di mozzo anteriore e posteriore",
-        "Ispezione visiva e classificazione condizioni",
-        "Stoccaggio correttamente delle sfere e componenti"
+        "Identificazione corretta 4 sistemi di cambiata",
+        "Analisi vantaggi/svantaggi per 3 scenari d'uso",
+        "Descrizione principio funzionamento di ogni sistema"
       ],
       "skillTags": [
-        "mozzi",
-        "smontaggio",
-        "precisione"
+        "cambiata",
+        "principi",
+        "tipologie"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-2.2.3",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.2",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.4.2",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.4.3",
+          "moduleId": "BIKE-5.1.1",
           "type": "mandatory"
         }
       ]
     },
     {
       "id": "BIKE-6.1.2",
-      "title": "Lubrificazione e rimontaggio mozzo",
-      "description": "Rimontare un mozzo tradizionale applicando grasso e regolando gioco conico.",
-      "difficulty": "intermedio",
-      "estimatedDuration": 18,
+      "title": "Installazione e regolazione cambio posteriore",
+      "description": "Procedura completa per installare e regolare il cambio posteriore per cambiata precisa e affidabile",
+      "difficulty": "base",
+      "estimatedDuration": 22,
       "contentPath": "/content/bike-6.1.2.md",
       "toolsRequired": [
-        "chiavi coniche",
-        "siringa grasso",
-        "cavalletto",
-        "guanti"
+        "chiavi specifiche cambio",
+        "chiavi Allen",
+        "indicatore allineamento",
+        "cavo cambio"
       ],
       "learningOutcomes": [
-        "Applicare grasso nelle calotte e posizionare sfere uniformemente",
-        "Regolare gioco assiale con chiavi coniche in opposizione",
-        "Controllare scorrevolezza e assenza gioco",
-        "Trucco: segnare posizione con un pennarello per regolazioni future"
+        "Installare correttamente il cambio posteriore",
+        "Regolare limiti di corsa (H e L)",
+        "Allineare parallelo cambio con pacco pignoni",
+        "Verizzare distanza guida puleggia dai pignoni"
       ],
       "practicalCriteria": [
-        "Rimontaggio completo mozzo con regolazione corretta",
-        "Test scorrevolezza su cavalletto",
-        "Verifica assenza gioco dopo 10 min di rotazione"
+        "Installazione cambio posteriore su telaio",
+        "Regolazione corretta limiti di corsa",
+        "Allineamento parallelo cambio-pignoni",
+        "Verifica distanza guida puleggia"
       ],
       "skillTags": [
-        "mozzi",
-        "lubrificazione",
-        "regolazione-fine"
+        "cambio-posteriore",
+        "installazione",
+        "regolazione"
       ],
       "revisionDate": null,
       "dependencies": [
@@ -90,190 +79,221 @@
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.4.2",
+          "moduleId": "BIKE-5.1.3",
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.3.5",
+          "moduleId": "BIKE-1.1.3",
           "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-6.2.1",
-      "title": "Controllo tensione raggi",
-      "description": "Controllare e misurare la tensione dei raggi per capire la stabilità della ruota.",
+      "id": "BIKE-6.1.3",
+      "title": "Allineamento e regolazione deragliatore anteriore",
+      "description": "Tecniche per allineare e regolare il deragliatore anteriore per cambiata fluida e senza attriti",
       "difficulty": "base",
-      "estimatedDuration": 12,
-      "contentPath": "/content/bike-6.2.1.md",
+      "estimatedDuration": 20,
+      "contentPath": "/content/bike-6.1.3.md",
       "toolsRequired": [
-        "chiave raggi",
-        "fonometro (alternativo)",
-        "dito indice"
+        "chiavi specifiche deragliatore",
+        "indicatore allineamento",
+        "cavo deragliatore",
+        "chiavi Allen"
       ],
       "learningOutcomes": [
-        "Controllare tensione battendo i raggi e ascoltando il suono",
-        "Riconoscere differenze di tono tra raggi troppo lenti o tesi",
-        "Uso chiave raggi per piccoli aggiustamenti",
-        "Prevenire rotture mantenendo tensione uniforme"
+        "Allineare correttamente il deragliatore anteriore",
+        "Regolare limiti di corsa (H e L)",
+        "Ottimizzare altezza e parallelo rispetto alla guarnitura",
+        "Risolvere problemi di attrito o sfregamento"
       ],
       "practicalCriteria": [
-        "Controllo tensione su 3 cerchi diversi",
-        "Correzione differenze con piccoli aggiustamenti",
-        "Test sonora e verifica stabilità"
+        "Allineamento deragliatore anteriore su telaio",
+        "Regolazione corretta limiti di corsa",
+        "Ottimizzazione altezza e parallelo",
+        "Eliminazione attriti e sfregamenti"
       ],
       "skillTags": [
-        "ruote",
-        "raggi",
-        "diagnosi-sonora"
+        "deragliatore-anteriore",
+        "allineamento",
+        "regolazione"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-2.2.4",
+          "moduleId": "BIKE-6.1.2",
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.3.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.2",
+          "moduleId": "BIKE-5.1.3",
           "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-6.2.2",
-      "title": "Centratura laterale ruota",
-      "description": "Centratura della ruota in senso laterale (ondeggiamento destra-sinistra).",
+      "id": "BIKE-6.1.4",
+      "title": "Regolazione tensione cavi e indicizzazione",
+      "description": "Regolazione fine della tensione cavi e indicizzazione per cambiata precisa in tutte le marce",
       "difficulty": "intermedio",
       "estimatedDuration": 18,
-      "contentPath": "/content/bike-6.2.2.md",
+      "contentPath": "/content/bike-6.1.4.md",
       "toolsRequired": [
-        "centraruote o forcella",
-        "chiave raggi",
-        "marcatore"
+        "chiavi regolazione tensione",
+        "cavi di ricambio",
+        "lubrificante cavi",
+        "strumenti diagnostici"
       ],
       "learningOutcomes": [
-        "Rotazione lenta per individuare deviazioni laterali",
-        "Uso chiave raggi: stringere da lato opposto alla deviazione",
-        "Procedere con piccoli incrementi e controlli frequenti",
-        "Trucco: usare penna o fascetta come riferimento fisso"
+        "Regolare finemente la tensione dei cavi",
+        "Eseguire indicizzazione precisa del cambio",
+        "Risolvere problemi di cambiata imprecisa",
+        "Ottimizzare risposta e precisione cambiata"
       ],
       "practicalCriteria": [
-        "Centratura completa entro 1mm di tolleranza",
-        "Ruota testata libera da oscillazioni laterali evidenti",
-        "Annotazione correzioni su foglio lavoro"
+        "Regolazione fine tensione cavi cambio",
+        "Indicizzazione precisa in tutte le marce",
+        "Risoluzione problema cambiata imprecisa",
+        "Ottimizzazione risposta cambiata"
       ],
       "skillTags": [
-        "ruote",
-        "centratura",
+        "tensione-cavi",
+        "indicizzazione",
         "precisione"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-6.2.1",
+          "moduleId": "BIKE-6.1.3",
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.3.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.2",
+          "moduleId": "BIKE-4.1.4",
           "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-6.3.1",
-      "title": "Valutazione stato cerchio",
-      "description": "Distinguere cerchi recuperabili da quelli deformati o crepati.",
-      "difficulty": "base",
-      "estimatedDuration": 10,
-      "contentPath": "/content/bike-6.3.1.md",
+      "id": "BIKE-6.1.5",
+      "title": "Diagnosi problemi di cambiata e interventi correttivi",
+      "description": "Identificazione e risoluzione di problemi complessi di cambiata e applicazione di interventi correttivi",
+      "difficulty": "intermedio",
+      "estimatedDuration": 25,
+      "contentPath": "/content/bike-6.1.5.md",
       "toolsRequired": [
-        "righello",
-        "filo a piombo",
-        "luce radente"
+        "strumenti diagnostici",
+        "attrezzi specifici",
+        "cavi e guaine di ricambio",
+        "lubrificanti"
       ],
       "learningOutcomes": [
-        "Identificare deformazioni radiali e crepe nelle piste frenanti",
-        "Determinare se centratura vale la pena del tempo richiesto",
-        "Controllare rivetti interni e sede nipples",
-        "Trucco: appoggiare su vetro piano per individuare ondulazioni"
+        "Diagnosticare cause problemi di cambiata complessi",
+        "Identificare usure o danni ai componenti",
+        "Applicare interventi correttivi appropriati",
+        "Risolvere problemi di saltellamento o mancato ingranamento"
       ],
       "practicalCriteria": [
-        "Ispezione completa di 3 cerchi diversi",
-        "Classificazione: recuperabile, marginale, scarto",
-        "Documentazione fotografica dei danni"
+        "Diagnosi completa sistema cambiata con problemi",
+        "Identificazione cause 3 problemi diversi",
+        "Applicazione interventi correttivi efficaci",
+        "Risoluzione problemi saltellamento o mancato ingranamento"
       ],
       "skillTags": [
-        "cerchi",
         "diagnosi",
-        "recupero"
+        "risoluzione-problemi",
+        "interventi-correttivi"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-6.2.2",
+          "moduleId": "BIKE-6.1.4",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-5.1.6",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-6.1.6",
+      "title": "Sostituzione e manutenzione leve comando e guaine",
+      "description": "Procedura per sostituire e manutenere leve comando e guaine del cambio per ottimizzare le prestazioni",
+      "difficulty": "base",
+      "estimatedDuration": 20,
+      "contentPath": "/content/bike-6.1.6.md",
+      "toolsRequired": [
+        "tagliacavi",
+        "pinze",
+        "lubrificante cavi",
+        "guaine e cavi di ricambio"
+      ],
+      "learningOutcomes": [
+        "Sostituire leve comando usurate o danneggiate",
+        "Installare nuove guaine con taglio preciso",
+        "Lubrificare correttamente cavi e guaine",
+        "Regolare tensione dopo sostituzione"
+      ],
+      "practicalCriteria": [
+        "Sostituzione leva comando cambio",
+        "Installazione guaine con taglio preciso",
+        "Lubrificazione cavi e guaine",
+        "Regolazione tensione post-sostituzione"
+      ],
+      "skillTags": [
+        "sostituzione",
+        "manutenzione",
+        "leve-comando"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-6.1.5",
           "type": "recommended"
         },
         {
-          "moduleId": "BIKE-1.1.1",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.1.4",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.3.1",
+          "moduleId": "BIKE-4.1.4",
           "type": "mandatory"
         }
       ]
     },
     {
-      "id": "BIKE-6.4.1",
-      "title": "Rimozione ruota con sgancio rapido e dadi",
-      "description": "Rimuovere e reinstallare correttamente ruote anteriori e posteriori.",
-      "difficulty": "base",
-      "estimatedDuration": 10,
-      "contentPath": "/content/bike-6.4.1.md",
+      "id": "BIKE-6.1.7",
+      "title": "Compatibilità trasmissioni e sincronizzazione finale",
+      "description": "Valutazione della compatibilità tra componenti di trasmissione e sincronizzazione finale per prestazioni ottimali",
+      "difficulty": "intermedio",
+      "estimatedDuration": 22,
+      "contentPath": "/content/bike-6.1.7.md",
       "toolsRequired": [
-        "chiavi 15mm",
-        "grasso leggero"
+        "tabelle compatibilità",
+        "strumenti regolazione",
+        "componenti diversi",
+        "software compatibilità (opzionale)"
       ],
       "learningOutcomes": [
-        "Uso corretto dello sgancio rapido: serraggio e posizionamento leva",
-        "Rimozione ruote con dadi e reinstallazione senza disallineamenti",
-        "Applicazione grasso sottile per prevenire bloccaggi",
-        "Controllo visivo sede ruota e pattini"
+        "Valutare compatibilità tra cambio, pacco pignoni e leve",
+        "Sincronizzare perfettamente cambio anteriore e posteriore",
+        "Ottimizzare prestazioni con regolazioni finali",
+        "Risolvere problemi di compatibilità con adattatori"
       ],
       "practicalCriteria": [
-        "Rimozione e rimontaggio sicuro su 2 bici diverse",
-        "Allineamento corretto telaio-ruota",
-        "Serraggio adeguato (senza eccesso)"
+        "Valutazione compatibilità 3 combinazioni componenti",
+        "Sincronizzazione cambio anteriore e posteriore",
+        "Ottimizzazione prestazioni con regolazioni finales",
+        "Risoluzione problema incompatibilità"
       ],
       "skillTags": [
-        "ruote",
-        "sgancio-rapido",
-        "montaggio"
+        "compatibilità",
+        "sincronizzazione",
+        "ottimizzazione"
       ],
       "revisionDate": null,
       "dependencies": [
         {
-          "moduleId": "BIKE-3.3.1",
+          "moduleId": "BIKE-6.1.6",
           "type": "mandatory"
         },
         {
-          "moduleId": "BIKE-1.3.2",
-          "type": "mandatory"
-        },
-        {
-          "moduleId": "BIKE-1.4.2",
+          "moduleId": "BIKE-5.1.7",
           "type": "mandatory"
         }
       ]

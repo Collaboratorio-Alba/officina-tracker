@@ -1,0 +1,337 @@
+{
+  "teachingArea": {
+    "name": "Ergonomia e posizione del ciclista",
+    "description": "Principi di biomeccanica, regolazione posizionale e comfort per ottimizzare l'esperienza di guida e prevenire infortuni",
+    "color": "#d35400"
+  },
+  "modules": [
+    {
+      "id": "BIKE-9.1.1",
+      "title": "Principi base di ergonomia ciclistica",
+      "description": "Fondamentali di biomeccanica e postura per ottimizzare comfort e prevenire infortuni",
+      "difficulty": "base",
+      "estimatedDuration": 12,
+      "contentPath": "/content/bike-9.1.1.md",
+      "toolsRequired": [
+        "metro",
+        "livella",
+        "scheda valutazione posturale"
+      ],
+      "learningOutcomes": [
+        "Comprendere principi base di biomeccanica applicata al ciclismo",
+        "Valutare importanza del fit per comfort e prevenzione infortuni",
+        "Applicare metodi di valutazione base (altezza, reach, angolazioni)",
+        "Riconoscere segnali di posizionamento errato"
+      ],
+      "practicalCriteria": [
+        "Valutazione posturale su 2 biciclette diverse",
+        "Identificazione 3 problemi di posizionamento comuni",
+        "Applicazione metodi di misurazione base"
+      ],
+      "skillTags": [
+        "ergonomia",
+        "biomeccanica",
+        "postura",
+        "prevenzione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-1.1.3",
+          "type": "mandatory",
+          "reason": "Bike classification knowledge for proper fit assessment"
+        },
+        {
+          "moduleId": "BIKE-2.1.1",
+          "type": "mandatory",
+          "reason": "Systematic diagnostic approach for ergonomic assessment"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-9.1.2",
+      "title": "Standard e compatibilità reggisella",
+      "description": "Riconoscere diametri, materiali e sistemi di serraggio dei reggisella comuni",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-9.1.1.md",
+      "toolsRequired": [
+        "calibro",
+        "metro",
+        "grasso leggero"
+      ],
+      "learningOutcomes": [
+        "Identificare diametro corretto (da 25,4 a 31,8 mm)",
+        "Capire differenza tra reggisella lisci e zigrinati",
+        "Distinguere materiali: acciaio, alluminio, carbonio",
+        "Controllare coppia serraggio e fatica materiale"
+      ],
+      "practicalCriteria": [
+        "Misurazione corretta diametro su 3 esempi diversi",
+        "Identificazione meccanismo serraggio corretto",
+        "Applicazione grasso e reinserimento reggisella"
+      ],
+      "skillTags": [
+        "reggisella",
+        "misurazione",
+        "materiali",
+        "compatibilità"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-9.1.1",
+          "type": "mandatory",
+          "reason": "Ergonomic principles for proper seatpost selection"
+        },
+        {
+          "moduleId": "BIKE-1.1.4",
+          "type": "mandatory",
+          "reason": "Measurement skills for seatpost sizing"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-9.1.3",
+      "title": "Recupero e manutenzione reggisella",
+      "description": "Tecniche economiche e graduali per liberare un reggisella incastrato senza danneggiare il telaio",
+      "difficulty": "intermedio",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-9.1.2.md",
+      "toolsRequired": [
+        "olio penetrante",
+        "morsa imbottita",
+        "mazzetta di gomma"
+      ],
+      "learningOutcomes": [
+        "Applicazione progressiva di calore o sbloccante",
+        "Tecniche di rotazione controllata senza ovalizzare tubo sella",
+        "Uso corretto della morsa e protezioni telaio",
+        "Quando fermarsi per non compromettere la bici"
+      ],
+      "practicalCriteria": [
+        "Liberazione riuscita su reggisella ossidato",
+        "Assenza danni a tubo sella",
+        "Pulizia e reingrassaggio post-operazione"
+      ],
+      "skillTags": [
+        "recupero",
+        "manutenzione",
+        "sicurezza",
+        "problem-solving"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-9.1.2",
+          "type": "mandatory",
+          "reason": "Seatpost standards knowledge for proper recovery approach"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-9.2.1",
+      "title": "Regolazione altezza e inclinazione sella",
+      "description": "Determinare la corretta altezza e inclinazione per comfort e prevenzione dolori",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-9.2.1.md",
+      "toolsRequired": [
+        "chiave Allen 5mm",
+        "livella",
+        "metro"
+      ],
+      "learningOutcomes": [
+        "Altezza: gamba quasi estesa al punto morto inferiore",
+        "Inclinazione neutra: seduta parallela al terreno",
+        "Correzione arretramento tramite slitta sella",
+        "Controllo coppia di serraggio per sicurezza"
+      ],
+      "practicalCriteria": [
+        "Regolazione ergonomica su 2 biciclette diverse",
+        "Test comfort in pedalata simulata",
+        "Coppia serraggio verificata e segnata"
+      ],
+      "skillTags": [
+        "ergonomia",
+        "regolazione",
+        "comfort",
+        "biomeccanica"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-9.1.2",
+          "type": "mandatory",
+          "reason": "Seatpost standards knowledge for proper adjustment"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-9.2.2",
+      "title": "Arretramento e centraggio sella",
+      "description": "Impostare la corretta posizione longitudinale rispetto al movimento centrale",
+      "difficulty": "intermedio",
+      "estimatedDuration": 12,
+      "contentPath": "/content/bike-9.2.2.md",
+      "toolsRequired": [
+        "filo a piombo",
+        "metro"
+      ],
+      "learningOutcomes": [
+        "Verifica posizione ginocchio-pedale (regola KOPS)",
+        "Ruolo della lunghezza pedivelle e postura",
+        "Arretramento per comfort e potenza",
+        "Bloccare serraggio senza scivolamenti"
+      ],
+      "practicalCriteria": [
+        "Misura e regolazione assetto con filo a piombo",
+        "Verifica stabilità sella post-regolazione",
+        "Annotazione posizione ideale su scheda bici"
+      ],
+      "skillTags": [
+        "ergonomia",
+        "posizionamento",
+        "biomeccanica",
+        "ottimizzazione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-9.2.1",
+          "type": "mandatory",
+          "reason": "Saddle height knowledge for proper fore-aft positioning"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-9.3.1",
+      "title": "Posizionamento manubrio e attacco",
+      "description": "Regolare altezza, reach e angolazione manubrio per comfort e controllo ottimali",
+      "difficulty": "intermedio",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-9.3.1.md",
+      "toolsRequired": [
+        "chiavi Allen",
+        "metro",
+        "livella"
+      ],
+      "learningOutcomes": [
+        "Determinare altezza ottimale manubrio in base a disciplina",
+        "Regolare reach per comfort spalle e schiena",
+        "Scegliere angolazione manubrio per controllo e comfort polsi",
+        "Adattare setup per diverse discipline (city, corsa, MTB)"
+      ],
+      "practicalCriteria": [
+        "Regolazione completa manubrio su 2 bici diverse",
+        "Test comfort in posizione di guida",
+        "Verifica controllo e stabilità post-regolazione"
+      ],
+      "skillTags": [
+        "ergonomia",
+        "manubrio",
+        "controllo",
+        "comfort"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-8.2.2",
+          "type": "mandatory",
+          "reason": "Handlebar and stem basics for proper positioning"
+        },
+        {
+          "moduleId": "BIKE-9.1.1",
+          "type": "mandatory",
+          "reason": "Ergonomic principles for handlebar positioning"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-9.3.2",
+      "title": "Setup pedali e posizione piede",
+      "description": "Ottimizzare allineamento pedali e posizione piede per efficienza e comfort",
+      "difficulty": "intermedio",
+      "estimatedDuration": 12,
+      "contentPath": "/content/bike-9.3.2.md",
+      "toolsRequired": [
+        "chiave pedali",
+        "metro",
+        "livella"
+      ],
+      "learningOutcomes": [
+        "Allineare pedali per simmetria e efficienza pedalata",
+        "Configurare cleats per pedali automatici (base)",
+        "Scegliere scarpe e solette per comfort e supporto",
+        "Prevenire problemi di ginocchio e caviglia"
+      ],
+      "practicalCriteria": [
+        "Setup completo pedali su 2 bici diverse",
+        "Test simmetria e comfort pedalata",
+        "Verifica allineamento cleats (se applicabile)"
+      ],
+      "skillTags": [
+        "ergonomia",
+        "pedali",
+        "biomeccanica",
+        "efficienza"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-5.3.1",
+          "type": "mandatory",
+          "reason": "Pedal basics for proper setup"
+        },
+        {
+          "moduleId": "BIKE-9.1.1",
+          "type": "mandatory",
+          "reason": "Ergonomic principles for foot positioning"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-9.3.3",
+      "title": "Diagnosi e risoluzione problemi comfort",
+      "description": "Individuare e risolvere rumorosità e problemi di comfort legati alla posizione",
+      "difficulty": "base",
+      "estimatedDuration": 8,
+      "contentPath": "/content/bike-9.3.1.md",
+      "toolsRequired": [
+        "grasso",
+        "stracci",
+        "chiavi Allen"
+      ],
+      "learningOutcomes": [
+        "Isolare fonte rumore (sella, morsetto, tubo sella)",
+        "Pulire e lubrificare giunzioni per comfort",
+        "Verificare coppie di serraggio insufficienti o eccessive",
+        "Prevenire ritorno scricchiolii con grasso al litio"
+      ],
+      "practicalCriteria": [
+        "Eliminazione rumore su bici con sella rumorosa",
+        "Verifica fissaggio corretto",
+        "Pulizia e reinstallazione reggisella"
+      ],
+      "skillTags": [
+        "diagnosi",
+        "comfort",
+        "manutenzione",
+        "problem-solving"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-9.3.1",
+          "type": "mandatory",
+          "reason": "Handlebar positioning knowledge for comfort troubleshooting"
+        },
+        {
+          "moduleId": "BIKE-9.3.2",
+          "type": "mandatory",
+          "reason": "Pedal setup knowledge for complete comfort assessment"
+        }
+      ]
+    }
+  ]
+}
