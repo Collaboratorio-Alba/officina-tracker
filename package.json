@@ -5,7 +5,9 @@
   "type": "module",
   "main": "js/app.js",
   "scripts": {
-    "dev": "npx http-server -p 8080 -o",
+    "dev": "vite",
+    "build": "node build.js",
+    "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -22,6 +24,7 @@
     "dexie": "^4.0.11"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "vite": "^6.4.1"
   }
 }

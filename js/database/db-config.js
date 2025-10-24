@@ -3,7 +3,7 @@
  * Setup dello schema per il tracker formazione ciclofficina
  */
 
-import Dexie from '../../node_modules/dexie/dist/dexie.mjs';
+import Dexie from 'dexie';
 
 // Creazione istanza database
 const db = new Dexie('CiclofficinaTracker', { autoOpen: true });
