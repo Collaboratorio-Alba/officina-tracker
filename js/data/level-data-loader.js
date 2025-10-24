@@ -68,10 +68,7 @@ class LevelDataLoader {
       'ciclofficina_level6.json',
       'ciclofficina_level7.json',
       'ciclofficina_level8.json',
-      'ciclofficina_level9.json',
-      'ciclofficina_level10.json',
-      'ciclofficina_level11.json',
-      'ciclofficina_level12.json'
+      'ciclofficina_level9.json'
     ];
   }
 
