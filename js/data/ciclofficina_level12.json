@@ -1,0 +1,375 @@
+{
+  "teachingArea": {
+    "name": "Pulizia e Recupero Biciclette",
+    "description": "Tecniche pratiche di pulizia per biciclette economiche, vecchie, abbandonate e moderne con cuscinetti sigillati/sospensioni. Focus su bici di fascia bassa e metodi low-cost.",
+    "color": "#27ae60"
+  },
+  "modules": [
+    {
+      "id": "BIKE-12.1",
+      "title": "Pulizia telaio: metalli, vernici, carbonio",
+      "description": "Procedura per pulire telai di ferro, acciaio, alluminio, carbonio e trattamenti per vernici e finiture con prodotti safe e low-cost.",
+      "difficulty": "base",
+      "estimatedDuration": 12,
+      "contentPath": "/content/bike-12.1.md",
+      "toolsRequired": [
+        "acqua",
+        "sapone neutro",
+        "spugna morbida",
+        "spazzola dura",
+        "WD-40",
+        "stracci",
+        "guanti protezione",
+        "spazzola metallica (solo metallo rugginoso)",
+        "pennello"
+      ],
+      "learningOutcomes": [
+        "Pulizia telaio senza danneggiare vernici con metodi low-cost",
+        "Rimozione ruggine superficiale da telai economici",
+        "Protezione post-lavaggio per prevenire ossidazione futura",
+        "Riconoscere quando usare prodotti aggressivi e quando evitarli"
+      ],
+      "practicalCriteria": [
+        "Pulizia completa di almeno tre tipi di telaio diversi",
+        "Uso corretto prodotti non corrosivi sulla vernice",
+        "Applicazione protezione post-pulizia efficace"
+      ],
+      "skillTags": [
+        "pulizia",
+        "protezione",
+        "recupero",
+        "telaio"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-1.1.1",
+          "type": "mandatory",
+          "reason": "Frame material identification for appropriate cleaning methods"
+        },
+        {
+          "moduleId": "BIKE-1.4.3",
+          "type": "mandatory",
+          "reason": "Degreaser and cleaning safety knowledge"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-12.2",
+      "title": "Rimozione ruggine: metodi rapidi ed economici",
+      "description": "Uso di rimedi casalinghi e low-cost (aceto, bicarbonato, WD-40, Coca-Cola, carta stagnola) e utensili di base per eliminazione ruggine e trattamento preventivo.",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-12.2.md",
+      "toolsRequired": [
+        "aceto bianco",
+        "bicarbonato di sodio",
+        "spazzola metallica",
+        "carta stagnola",
+        "WD-40",
+        "guanti protezione",
+        "stracci",
+        "contenitore plastica"
+      ],
+      "learningOutcomes": [
+        "Rimozione ruggine superficiale con metodi economici e sicuri",
+        "Valutazione danni da ruggine: recuperabile vs irreparabile",
+        "Applicazione prevenzione ruggine dopo pulizia",
+        "Tecniche fai-da-te con materiali domestici comuni"
+      ],
+      "practicalCriteria": [
+        "Pulizia di componenti rugginosi con almeno 2 metodi diversi",
+        "Valutazione del risultato e raccomandazioni post-trattamento",
+        "Documentazione fotografica prima/dopo intervento"
+      ],
+      "skillTags": [
+        "ruggine",
+        "recupero",
+        "protezione",
+        "economia"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-12.1",
+          "type": "mandatory",
+          "reason": "Frame cleaning basics for rust removal"
+        },
+        {
+          "moduleId": "BIKE-1.4.4",
+          "type": "recommended",
+          "reason": "Anti-corrosion product knowledge"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-12.3",
+      "title": "Pulizia trasmissione: catena, pignoni, guarnitura",
+      "description": "Pulizia profonda di catena e trasmissione senza smontaggio completo usando spazzole, sgrassatori economici e corretta lubrificazione.",
+      "difficulty": "base",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-12.3.md",
+      "toolsRequired": [
+        "spazzolino da denti vecchio",
+        "spazzola catena",
+        "detergente catena",
+        "sgrassatore",
+        "WD-40",
+        "stracci",
+        "lubrificante catena",
+        "contenitore immersione",
+        "guanti protezione"
+      ],
+      "learningOutcomes": [
+        "Pulizia efficace della trasmissione su bici economiche e abbandonate",
+        "Tecniche senza smontaggio completo per velocizzare il lavoro",
+        "Rispetto della lubrificazione minima per evitare danni",
+        "Riconoscimento del livello di sporcizia e scelta del metodo adeguato"
+      ],
+      "practicalCriteria": [
+        "Documentazione risultato prima e dopo pulizia trasmissione",
+        "Applicazione del lubrificante nella quantità corretta",
+        "Test scorrevolezza catena post-intervento"
+      ],
+      "skillTags": [
+        "trasmissione",
+        "catena",
+        "pulizia",
+        "lubrificazione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-5.1.2",
+          "type": "mandatory",
+          "reason": "Chain cleaning and lubrication fundamentals"
+        },
+        {
+          "moduleId": "BIKE-1.4.3",
+          "type": "mandatory",
+          "reason": "Degreaser safety and usage"
+        },
+        {
+          "moduleId": "BIKE-1.4.1",
+          "type": "mandatory",
+          "reason": "Chain oil and lubrication knowledge"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-12.4",
+      "title": "Pulizia ruote, cerchi e pneumatici",
+      "description": "Come pulire ruote, cerchi e copertoni, rimuovere residui con attrezzi semplici e ripristinare vecchie gomme abbandonate.",
+      "difficulty": "base",
+      "estimatedDuration": 9,
+      "contentPath": "/content/bike-12.4.md",
+      "toolsRequired": [
+        "acqua",
+        "sapone neutro",
+        "spazzola dura",
+        "spugna",
+        "cacciavite a croce",
+        "stracci",
+        "guanti protezione"
+      ],
+      "learningOutcomes": [
+        "Pulizia cerchi e copertoni senza danneggiare gomme",
+        "Ripristino pneumatici molto sporchi o trascurati da bici abbandonate",
+        "Riconoscimento deterioramento gomma vs sporcizia superficiale",
+        "Tecniche per rimuovere incrostazioni e residui organici"
+      ],
+      "practicalCriteria": [
+        "Risultato pulizia prima/dopo su gomme recuperate",
+        "Valutazione stato gomme e raccomandazioni sostituzione",
+        "Pulizia completa di almeno 2 set ruote diverse"
+      ],
+      "skillTags": [
+        "ruote",
+        "copertoni",
+        "recupero",
+        "pulizia"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-3.2.1",
+          "type": "recommended",
+          "reason": "Tire condition assessment knowledge"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-12.5",
+      "title": "Gestione parti moderne: cuscinetti sigillati e sospensioni",
+      "description": "Note pratiche su cosa NON pulire con acqua pressurizzata/sgrassatori forti, procedure per proteggere sospensioni e cuscinetti sigillati su bici moderne.",
+      "difficulty": "base",
+      "estimatedDuration": 10,
+      "contentPath": "/content/bike-12.5.md",
+      "toolsRequired": [
+        "pennello morbido",
+        "detergente delicato",
+        "stracci microfibra",
+        "lubrificante silicone",
+        "aria compressa (facoltativa)",
+        "spugna morbida"
+      ],
+      "learningOutcomes": [
+        "Identificare dove NON usare acqua ad alta pressione o sgrassatori potenti",
+        "Procedure di sicurezza su sospensioni e cuscinetti sigillati",
+        "Tecniche di pulizia delicate per componenti moderni",
+        "Manutenzione base steli forcella e ammortizzatori"
+      ],
+      "practicalCriteria": [
+        "Valutazione correttezza pulizia su parti delicate",
+        "Dimostrazione metodo sicuro senza danneggiare guarnizioni",
+        "Identificazione corretta zone critiche su 2 bici moderne"
+      ],
+      "skillTags": [
+        "cuscinetti-sigillati",
+        "sospensioni",
+        "sicurezza",
+        "pulizia",
+        "componenti-moderni"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-12.3",
+          "type": "recommended",
+          "reason": "Understanding of cleaning methods and their impact"
+        },
+        {
+          "moduleId": "BIKE-6.1.1",
+          "type": "recommended",
+          "reason": "Hub bearing knowledge for sealed bearing care"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-12.6",
+      "title": "Pulizia freni: pattini, pinze, dischi",
+      "description": "Pulizia e manutenzione componenti frenanti per garantire efficacia e sicurezza, con attenzione a freni a pattini e dischi.",
+      "difficulty": "base",
+      "estimatedDuration": 8,
+      "contentPath": "/content/bike-12.6.md",
+      "toolsRequired": [
+        "alcool isopropilico",
+        "carta vetrata fine",
+        "stracci puliti",
+        "spazzola metallica morbida",
+        "guanti protezione",
+        "sgrassatore specifico dischi"
+      ],
+      "learningOutcomes": [
+        "Pulizia superfici frenanti senza contaminazione",
+        "Rimozione vetrosità da pattini e pastiglie",
+        "Pulizia dischi freno senza lasciare residui oleosi",
+        "Riconoscimento contaminazione vs usura normale"
+      ],
+      "practicalCriteria": [
+        "Pulizia corretta freni a pattini e a disco",
+        "Test efficacia frenata pre e post-pulizia",
+        "Valutazione necessità sostituzione componenti"
+      ],
+      "skillTags": [
+        "freni",
+        "pulizia",
+        "sicurezza",
+        "manutenzione"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-4.2.1",
+          "type": "mandatory",
+          "reason": "Brake pad basics and maintenance"
+        },
+        {
+          "moduleId": "BIKE-4.3.1",
+          "type": "recommended",
+          "reason": "Disc brake knowledge"
+        },
+        {
+          "moduleId": "BIKE-1.4.3",
+          "type": "mandatory",
+          "reason": "Cleaning safety and product knowledge"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-12.7",
+      "title": "Lavaggio completo bici: procedura step-by-step",
+      "description": "Procedura completa per lavare una bicicletta dall'alto verso il basso, dalla più sporca alla più pulita, ottimizzando tempo e risultato.",
+      "difficulty": "base",
+      "estimatedDuration": 20,
+      "contentPath": "/content/bike-12.7.md",
+      "toolsRequired": [
+        "secchio",
+        "acqua corrente",
+        "sapone neutro",
+        "spugne e spazzole varie",
+        "sgrassatore",
+        "lubrificante catena",
+        "stracci asciugatura",
+        "guanti protezione",
+        "cavalletto o supporto"
+      ],
+      "learningOutcomes": [
+        "Applicare sequenza logica di pulizia completa",
+        "Ottimizzare tempi evitando rilavorazioni",
+        "Proteggere componenti sensibili durante il lavaggio",
+        "Asciugatura e lubrificazione finale corretta"
+      ],
+      "practicalCriteria": [
+        "Lavaggio completo di bici abbandonata/molto sporca in max 30 minuti",
+        "Documentazione fotografica prima/durante/dopo",
+        "Verifica funzionamento post-lavaggio su tutti i componenti",
+        "Nessun danno a cuscinetti o componenti elettronici"
+      ],
+      "skillTags": [
+        "pulizia",
+        "procedura",
+        "recupero",
+        "manutenzione-completa"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-12.1",
+          "type": "mandatory",
+          "reason": "Frame cleaning knowledge"
+        },
+        {
+          "moduleId": "BIKE-12.3",
+          "type": "mandatory",
+          "reason": "Drivetrain cleaning knowledge"
+        },
+        {
+          "moduleId": "BIKE-12.5",
+          "type": "mandatory",
+          "reason": "Understanding of sensitive components"
+        },
+        {
+          "moduleId": "BIKE-12.6",
+          "type": "recommended",
+          "reason": "Brake cleaning integration"
+        },
+        {
+          "moduleId": "BIKE-1.4.1",
+          "type": "mandatory",
+          "reason": "Chain lubrication knowledge for post-cleaning treatment"
+        },
+        {
+          "moduleId": "BIKE-1.4.3",
+          "type": "mandatory",
+          "reason": "Degreaser and cleaning product safety knowledge"
+        },
+        {
+          "moduleId": "BIKE-1.4.4",
+          "type": "recommended",
+          "reason": "Anti-corrosion protection knowledge for post-cleaning"
+        }
+      ]
+    }
+  ]
+}

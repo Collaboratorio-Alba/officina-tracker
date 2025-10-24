@@ -1,11 +1,94 @@
 
 {
   "teachingArea": {
-    "name": "Recupero e Restauro Telai",
-    "description": "Diagnosi, trattamento e restauro di telai di biciclette economiche e da recupero, con metodi accessibili e sicuri.",
+    "name": "Recupero e Restauro Completo",
+    "description": "Trasformazione di biciclette rotte o abbandonate in mezzi sicuri, funzionali e puliti. Processo completo dalla diagnosi iniziale alla consegna finale.",
     "color": "#7f8c8d"
   },
   "modules": [
+    {
+      "id": "BIKE-10.0.1",
+      "title": "Procedura di valutazione biciclette da restaurare",
+      "description": "Metodo sistematico per valutare biciclette abbandonate e determinare il percorso di restauro ottimale.",
+      "difficulty": "base",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-10.0.1.md",
+      "toolsRequired": [
+        "checklist valutazione",
+        "fotocamera",
+        "metro",
+        "luce radente"
+      ],
+      "learningOutcomes": [
+        "Applicare checklist standardizzata per valutazione",
+        "Identificare priorità di intervento per sicurezza",
+        "Determinare rapporto costo/beneficio del restauro",
+        "Classificare biciclette per livello di complessità restauro"
+      ],
+      "practicalCriteria": [
+        "Valutazione completa di 3 biciclette diverse",
+        "Checklist compilata correttamente",
+        "Piano restauro proposto per ogni caso",
+        "Documentazione fotografica stato iniziale"
+      ],
+      "skillTags": [
+        "procedura",
+        "valutazione",
+        "diagnosi",
+        "restauro"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-1.1.1",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-2.1.3",
+          "type": "mandatory",
+          "reason": "Structural safety assessment"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-10.0.2",
+      "title": "Metodo di smontaggio organizzato per restauro",
+      "description": "Procedura standardizzata per smontaggio completo che preserva componenti e facilita il restauro.",
+      "difficulty": "base",
+      "estimatedDuration": 20,
+      "contentPath": "/content/bike-10.0.2.md",
+      "toolsRequired": [
+        "set chiavi",
+        "vassoio parti",
+        "etichette",
+        "solvente sgrassante"
+      ],
+      "learningOutcomes": [
+        "Sequenza di smontaggio ottimizzata per restauro",
+        "Metodo di catalogazione componenti per tipo e stato",
+        "Tecniche di pulizia iniziale senza danneggiare",
+        "Identificazione componenti critici per sostituzione"
+      ],
+      "practicalCriteria": [
+        "Smontaggio completo di 1 bicicletta seguendo procedura",
+        "Catalogazione sistematica di tutte le parti",
+        "Separazione componenti per tipo di intervento",
+        "Documentazione processo di smontaggio"
+      ],
+      "skillTags": [
+        "procedura",
+        "smontaggio",
+        "organizzazione",
+        "restauro"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-10.0.1",
+          "type": "mandatory"
+        }
+      ]
+    },
     {
       "id": "BIKE-10.1.1",
       "title": "Identificazione materiali telaio",
@@ -459,6 +542,172 @@
         {
           "moduleId": "BIKE-10.5.1",
           "type": "recommended"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-10.6.1",
+      "title": "Procedura di restauro trasmissione completa",
+      "description": "Metodo sistematico per ripristinare l'intero sistema di trasmissione in modo sicuro e duraturo.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 25,
+      "contentPath": "/content/bike-10.6.1.md",
+      "toolsRequired": [
+        "sgrassatore catena",
+        "spazzole metalliche",
+        "lubrificante",
+        "chiave pignoni"
+      ],
+      "learningOutcomes": [
+        "Applicare procedura di valutazione usura trasmissione",
+        "Metodo di pulizia profonda componenti trasmissione",
+        "Procedura di ripristino funzionalità cambio",
+        "Tecniche di lubrificazione ottimale per restauro"
+      ],
+      "practicalCriteria": [
+        "Restauro completo trasmissione seguendo procedura",
+        "Documentazione stato pre/post intervento",
+        "Test funzionalità su tutti i rapporti",
+        "Verifica durata lubrificazione"
+      ],
+      "skillTags": [
+        "procedura",
+        "trasmissione",
+        "restauro",
+        "metodo"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-10.0.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-4.1.1",
+          "type": "mandatory",
+          "reason": "Chain maintenance knowledge"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-10.6.2",
+      "title": "Metodo di ripristino sistema frenante",
+      "description": "Procedura standardizzata per garantire sicurezza del sistema frenante dopo restauro.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 20,
+      "contentPath": "/content/bike-10.6.2.md",
+      "toolsRequired": [
+        "pattini freno nuovi",
+        "olio freni",
+        "chiave esagonale",
+        "pompa freni"
+      ],
+      "learningOutcomes": [
+        "Applicare checklist sicurezza sistema frenante",
+        "Metodo di sostituzione componenti freno",
+        "Procedura di regolazione centratura ottimale",
+        "Protocollo test potenza frenante post-restauro"
+      ],
+      "practicalCriteria": [
+        "Ripristino completo sistema frenante seguendo procedura",
+        "Checklist sicurezza completata",
+        "Test frenata superato su entrambe le ruote",
+        "Documentazione intervento"
+      ],
+      "skillTags": [
+        "procedura",
+        "freni",
+        "sicurezza",
+        "restauro"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-10.0.2",
+          "type": "mandatory"
+        },
+        {
+          "moduleId": "BIKE-3.1.1",
+          "type": "mandatory",
+          "reason": "Brake system knowledge"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-10.7.1",
+      "title": "Procedura di assemblaggio finale",
+      "description": "Metodo sistematico per rimontaggio completo con focus su sicurezza e qualità finale.",
+      "difficulty": "intermedio",
+      "estimatedDuration": 30,
+      "contentPath": "/content/bike-10.7.1.md",
+      "toolsRequired": [
+        "set chiavi completo",
+        "metro",
+        "livella",
+        "torsiometro"
+      ],
+      "learningOutcomes": [
+        "Applicare sequenza di assemblaggio ottimizzata",
+        "Metodo di regolazione ergonomica componenti",
+        "Procedura verifica coppia di serraggio",
+        "Checklist controllo qualità pre-collaudo"
+      ],
+      "practicalCriteria": [
+        "Assemblaggio completo seguendo procedura",
+        "Checklist controllo qualità completata",
+        "Verifica coppia serraggio componenti critici",
+        "Documentazione assemblaggio"
+      ],
+      "skillTags": [
+        "procedura",
+        "assemblaggio",
+        "sicurezza",
+        "qualità"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-10.6.2",
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "BIKE-10.7.2",
+      "title": "Protocollo di collaudo e verifica sicurezza",
+      "description": "Procedura standardizzata per testare sicurezza e funzionalità della bicicletta restaurata.",
+      "difficulty": "base",
+      "estimatedDuration": 15,
+      "contentPath": "/content/bike-10.7.2.md",
+      "toolsRequired": [
+        "checklist collaudo",
+        "area test sicura",
+        "metro",
+        "cronometro"
+      ],
+      "learningOutcomes": [
+        "Applicare protocollo di collaudo completo",
+        "Metodo di test frenata standardizzato",
+        "Procedura verifica cambio su tutti i rapporti",
+        "Protocollo collaudo su strada supervisionato"
+      ],
+      "practicalCriteria": [
+        "Protocollo collaudo completato correttamente",
+        "Test frenata superato (distanza < 5m da 15km/h)",
+        "Cambio funzionante su tutti i rapporti",
+        "Collaudo su strada positivo e documentato"
+      ],
+      "skillTags": [
+        "protocollo",
+        "sicurezza",
+        "collaudo",
+        "qualità"
+      ],
+      "revisionDate": null,
+      "dependencies": [
+        {
+          "moduleId": "BIKE-10.7.1",
+          "type": "mandatory"
         }
       ]
     }

@@ -11,28 +11,27 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// List of all level files to combine
-const levelFiles = [
-  'ciclofficina_level0.json',
-  'ciclofficina_level1.json',
-  'ciclofficina_level2.json',
-  'ciclofficina_level3.json',
-  'ciclofficina_level4.json',
-  'ciclofficina_level5.json',
-  'ciclofficina_level6.json',
-  'ciclofficina_level7.json',
-  'ciclofficina_level8.json',
-  'ciclofficina_level9.json',
-  'ciclofficina_level10.json',
-  'ciclofficina_level11.json'
-];
+// Dynamically discover level files
+function getLevelFiles() {
+  const files = fs.readdirSync(__dirname);
+  return files
+    .filter(file => file.startsWith('ciclofficina_level') && file.endsWith('.json'))
+    .sort((a, b) => {
+      // Extract level numbers for proper sorting
+      const levelA = parseInt(a.match(/level(\d+)/)?.[1] || 0);
+      const levelB = parseInt(b.match(/level(\d+)/)?.[1] || 0);
+      return levelA - levelB;
+    });
+}
+
+const levelFiles = getLevelFiles();
 
 function combineLevels() {
   console.log('🚀 Starting to combine level files...');
   
   const combinedData = {
     version: "1.1.0",
-    schemaNotes: "Combined dataset of all 12 levels for analysis purposes",
+    schemaNotes: "Combined dataset of all 13 levels for analysis purposes",
     metadata: {
       totalLevels: levelFiles.length,
       totalModules: 0,
