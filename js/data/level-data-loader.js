@@ -53,55 +53,26 @@ class LevelDataLoader {
   }
 
   /**
-   * Scopre dinamicamente i file di livello disponibili
+   * Restituisce la lista predefinita dei file di livello
    * @returns {Promise<Array>}
    */
   async discoverLevelFiles() {
-    try {
-      // Carica la lista dei file dal server
-      const response = await fetch('./js/data/');
-      if (!response.ok) {
-        throw new Error('Impossibile caricare la lista dei file');
-      }
-      
-      // In un ambiente browser, non possiamo leggere direttamente la directory
-      // Quindi usiamo un approccio alternativo: proviamo a caricare i file in sequenza
-      const maxLevels = 20; // Limite ragionevole per evitare loop infiniti
-      const levelFiles = [];
-      
-      for (let i = 0; i <= maxLevels; i++) {
-        const filename = `ciclofficina_level${i}.json`;
-        try {
-          const testResponse = await fetch(`./js/data/${filename}`);
-          if (testResponse.ok) {
-            levelFiles.push(filename);
-          }
-        } catch (error) {
-          // Continua con il prossimo livello
-          break;
-        }
-      }
-      
-      return levelFiles;
-    } catch (error) {
-      console.warn('⚠️ Impossibile scoprire file dinamicamente, usando lista predefinita:', error.message);
-      // Fallback a lista predefinita
-      return [
-        'ciclofficina_level0.json',
-        'ciclofficina_level1.json',
-        'ciclofficina_level2.json',
-        'ciclofficina_level3.json',
-        'ciclofficina_level4.json',
-        'ciclofficina_level5.json',
-        'ciclofficina_level6.json',
-        'ciclofficina_level7.json',
-        'ciclofficina_level8.json',
-        'ciclofficina_level9.json',
-        'ciclofficina_level10.json',
-        'ciclofficina_level11.json',
-        'ciclofficina_level12.json'
-      ];
-    }
+    // Lista predefinita per evitare errori 404 in produzione
+    return [
+      'ciclofficina_level0.json',
+      'ciclofficina_level1.json',
+      'ciclofficina_level2.json',
+      'ciclofficina_level3.json',
+      'ciclofficina_level4.json',
+      'ciclofficina_level5.json',
+      'ciclofficina_level6.json',
+      'ciclofficina_level7.json',
+      'ciclofficina_level8.json',
+      'ciclofficina_level9.json',
+      'ciclofficina_level10.json',
+      'ciclofficina_level11.json',
+      'ciclofficina_level12.json'
+    ];
   }
 
   /**
