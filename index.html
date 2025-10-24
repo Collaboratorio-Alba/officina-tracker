@@ -1387,6 +1387,7 @@
       <button id="export-backup-btn">📥 Esporta Backup</button>
       <button id="import-backup-btn">📤 Importa Backup</button>
       <button id="share-backup-btn">📤 Condividi Backup</button>
+      <button id="reset-setup-btn" style="background: #dc3545;">🔄 Reset Setup</button>
     </div>
   </aside>
 
@@ -1537,6 +1538,26 @@
     </div>
   </div>
   
+  <!-- Modale Reset Setup -->
+  <div id="reset-modal" class="modal">
+    <div class="modal-content">
+      <h3>⚠️ Reset Setup</h3>
+      <p><strong>ATTENZIONE:</strong> Questa operazione cancellerà tutti i tuoi dati:</p>
+      <ul style="margin: 10px 0; padding-left: 20px;">
+        <li>Tutti i progressi dei moduli</li>
+        <li>Tutte le valutazioni pratiche</li>
+        <li>Tutti i dati di backup</li>
+      </ul>
+      <p>Il database verrà ricreato da zero con la struttura modulare standard.</p>
+      <p><strong>Questa operazione non può essere annullata!</strong></p>
+      <div class="actions">
+        <button type="button" id="cancel-reset-btn" style="background: var(--gray-60);">Annulla</button>
+        <button type="button" id="confirm-reset-btn" style="background: #dc3545;">🔄 Conferma Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/js/clean-setup.js"></script>
   <script type="module" src="/js/app.js"></script>
 
 </body>

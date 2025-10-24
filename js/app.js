@@ -1203,14 +1203,18 @@ function setupEventListeners() {
   const exportBackupBtn = document.getElementById('export-backup-btn');
   const importBackupBtn = document.getElementById('import-backup-btn');
   const shareBackupBtn = document.getElementById('share-backup-btn');
+  const resetSetupBtn = document.getElementById('reset-setup-btn');
   const importModal = document.getElementById('import-modal');
   const shareModal = document.getElementById('share-modal');
+  const resetModal = document.getElementById('reset-modal');
   const importForm = document.getElementById('import-form');
   const backupFileInput = document.getElementById('backup-file');
   const backupTextArea = document.getElementById('backup-text');
   const copyBackupBtn = document.getElementById('copy-backup-btn');
   const closeShareBtn = document.getElementById('close-share-btn');
   const cancelImportBtn = document.getElementById('cancel-import-btn');
+  const cancelResetBtn = document.getElementById('cancel-reset-btn');
+  const confirmResetBtn = document.getElementById('confirm-reset-btn');
 
   if (exportBackupBtn) {
     exportBackupBtn.addEventListener('click', async () => {
@@ -1295,6 +1299,55 @@ function setupEventListeners() {
     });
   }
 
+  // Reset setup functionality
+  if (resetSetupBtn) {
+    resetSetupBtn.addEventListener('click', () => {
+      resetModal.classList.add('active');
+    });
+  }
+
+  if (cancelResetBtn) {
+    cancelResetBtn.addEventListener('click', () => {
+      resetModal.classList.remove('active');
+    });
+  }
+
+  if (confirmResetBtn) {
+    confirmResetBtn.addEventListener('click', async () => {
+      try {
+        console.log('🔄 Avvio reset setup...');
+        resetModal.classList.remove('active');
+        
+        // Show loading state
+        confirmResetBtn.disabled = true;
+        confirmResetBtn.textContent = '🔄 Reset in corso...';
+        
+        // Execute clean setup
+        const result = await window.CiclofficinaTracker.cleanSetup();
+        
+        if (result.success) {
+          console.log('✅ Reset completato con successo');
+          alert('✅ Reset completato! Il database è stato ricreato con la struttura modulare standard.');
+          
+          // Reload the application to show the fresh state
+          location.reload();
+        } else {
+          console.error('❌ Errore durante il reset:', result.error);
+          alert('❌ Errore durante il reset: ' + result.error);
+        }
+      } catch (error) {
+        console.error('❌ Errore durante il reset:', error);
+        alert('❌ Errore durante il reset: ' + error.message);
+      } finally {
+        // Reset button state
+        if (confirmResetBtn) {
+          confirmResetBtn.disabled = false;
+          confirmResetBtn.textContent = '🔄 Conferma Reset';
+        }
+      }
+    });
+  }
+
   // Chiudi modali cliccando fuori
   document.addEventListener('click', (e) => {
     if (e.target === importModal) {
@@ -1303,6 +1356,9 @@ function setupEventListeners() {
     }
     if (e.target === shareModal) {
       shareModal.classList.remove('active');
+    }
+    if (e.target === resetModal) {
+      resetModal.classList.remove('active');
     }
   });
   
