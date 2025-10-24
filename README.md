@@ -52,6 +52,18 @@ dispositivo.
    ```
 4. **Apri il browser all'indirizzo:** `http://localhost:8080`
 
+## 🌐 Deployment
+
+### GitHub Pages
+L'applicazione è pubblicata automaticamente su GitHub Pages:
+- **URL Live:** https://collaboratorio-alba.github.io/officina-tracker/
+
+### Build per Produzione
+```bash
+npm run build
+```
+Il build viene generato nella cartella `dist/` e può essere servito da qualsiasi web server statico.
+
 ## 📖 Utilizzo
 
 ### 🎯 Dashboard Views

@@ -10,7 +10,9 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: undefined
-      }
+      },
+      // Ensure Dexie is bundled
+      external: []
     },
     // Copy static files to dist
     assetsInclude: ['**/*.json']
@@ -19,5 +21,9 @@ export default defineConfig({
     port: 3000,
     open: true
   },
-  publicDir: 'public'
+  publicDir: 'public',
+  // Optimize dependencies to include Dexie
+  optimizeDeps: {
+    include: ['dexie']
+  }
 });
