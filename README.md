@@ -6,7 +6,11 @@ Funziona sui device degli utenti senza bisogno di registrazione,
 eventualmente si possono esportare i progressi e caricarli su un altro
 dispositivo.
 
-**Versione Schema: 1.1.0** - Esteso per integrazione Typemill
+## Online su GitHub Pages
+
+L'applicazione è pubblicata automaticamente su GitHub Pages:
+
+- **URL Live:** <https://collaboratorio-alba.github.io/officina-tracker/>
 
 ## ✨ Caratteristiche Principali
 
@@ -26,12 +30,13 @@ dispositivo.
 
 ### 🌳 Knowledge Tree Structure
 
-- **Struttura ad albero delle competenze** - Ispirata al progetto [MakerSkillTree](https://github.com/sjpiper145/MakerSkillTree)
+- **Versioni digitale e stampabile** - Ispirata al progetto [MakerSkillTree](https://github.com/sjpiper145/MakerSkillTree)
 - **10 livelli di dipendenze interconnesse** con 122 relazioni tra moduli
 - **Visualizzazione SVG** - [`js/data/skilltree.svg`](js/data/skilltree.svg) - Rappresentazione grafica dell'intera struttura
 - **Mappa concettuale** - [`js/data/schema/ciclofficina_2-150.jpg`](js/data/schema/ciclofficina_2-150.jpg) - Overview visivo delle aree didattiche
 
-![Mappa Concettuale Ciclofficina](js/data/schema/ciclofficina_2-150.jpg)
+![Mappa Stampata e compilata](js/data/schema/printed_skilltrees.jpg)
+
 - **Visualizzazione Grafica** - Cytoscape.js per grafi complessi e interattivi
 
 La struttura modulare segue un approccio di "albero delle competenze" dove ogni nodo rappresenta una skill specifica e le dipendenze definiscono il percorso di apprendimento ottimale.
@@ -54,12 +59,6 @@ La struttura modulare segue un approccio di "albero delle competenze" dove ogni 
 4. **Apri il browser all'indirizzo:** `http://localhost:8080`
 
 ## 🌐 Deployment
-
-### GitHub Pages
-
-L'applicazione è pubblicata automaticamente su GitHub Pages:
-
-- **URL Live:** <https://collaboratorio-alba.github.io/officina-tracker/>
 
 ### Build per Produzione
 
